@@ -70,7 +70,7 @@ const HE={
 'SALVAGE WHAT YOU CAN':'אסוף מה שאפשר','YOU':'אתה','YOUR FRAME, RECOVERED':'השלד שלך הוחזר','THE COLOSSUS WAITS':'הענק מחכה',
 'THE MAKER IS AWAKE':'היוצר ער','THE WARDEN IS WATCHING':'השומר צופה',"SHELLY'S HOUSE. THE DOOR IS OPEN.":'הבית של שלי. הדלת פתוחה.',
 'EJECT':'פליטה','IT EJECTED':'הוא נפלט','SHELL BREAK':'המעטפת נשברה','POGO':'ניתור','LAUNCH':'הקפצה','CHARGED':'טעון','STOMP':'רקיעה',
-'L: ENGLISH':'L: ENGLISH','MATRYOSHKA':'מטריושקה','ANOTHER ONE INSIDE':'עוד אחת בפנים','THE LAST DOLL':'הבובה האחרונה','ITS SMALLEST SHELL: THE DOLL':'הקליפה הקטנה שלה: הבובה','DOLL':'בובה','LIGHTNING CALL':'קריאת ברק','LIGHTNING! KEEP MOVING':'ברק! תמשיך לזוז','FLYER':'מעופף','BOMB DROP':'הטלת פצצות','A FLYING FRAME WAS INSIDE':'בפנים היה שלד מעופף','A+B TOGETHER: SPECIAL':'A+B יחד: מיוחד','CHAIN HOOK':'שרשרת וו','HOOKED':'נתפס','TOPPLED':'הופל','IT BRACES ITSELF':'הוא מתייצב','TICKING HEAD! KICK IT AWAY':'ראש מתקתק! בעט אותו','ITS HEAD IS DOWN: HIT IT':'הראש שלו למטה: הכה בו','HEADSHOT':'פגיעת ראש','HIT A HEAD TO KICK IT':'הכה בראש כדי לבעוט בו','KICK BOMBS OR HEADS UP AT THE WARDEN':'בעט פצצות או ראשים אל השומר','HEAD OFF':'הראש עף','MINI BOSS':'מיני בוס','JUMP ON THE FIST':'קפוץ על האגרוף','JUMP AND STRIKE THE HEAD':'קפוץ והכה בראש','HIT IT NOW, OR JUMP ON THE FIST':'הכה עכשיו, או קפוץ על האגרוף','ITS CORE FRAME: TITAN':'שלד הליבה שלו: טיטאן','A WALKER FRAME WAS INSIDE':'בפנים היה שלד צועד','KNIFE THROW':'זריקת סכין','SCRAP SPIN':'סחרור גרוטאות','SPEAR THRUST':'דקירת רומח','POUNCE':'זינוק','SHIELD BASH':'הלם מגן','GROUND POUND':'הלם קרקע','NO POWER':'אין כוח','POWER':'כוח','NEEDS A BODY':'צריך גוף','PLAY':'שחק','CLASSIC':'קלאסי','NOTHING TO EJECT':'אין מה לפלוט','START: CLIMB IN':'START: היכנס','START: EJECT':'START: פליטה','BEAT A ROBOT, THEN CLIMB INTO ITS BODY':'הבס רובוט, ואז היכנס לגוף שלו','NESTED':'מקונן','A: TRY AGAIN   B: TITLE':'A: נסה שוב   B: מסך פתיחה','STORY':'סיפור','BRAWL':'מכות רחוב','CHOOSE YOUR FRAME':'בחר את השלד שלך','A: START   B: BACK':'A: התחל   B: חזרה','SPEED':'מהירות','STREET CLEAR':'הרחוב נוקה','SCORE':'ניקוד','A: AGAIN   B: TITLE':'A: שוב   B: מסך פתיחה','BOSS':'בוס','GRAB':'תפיסה','THROW':'זריקה','CORE CELL':'תא ליבה','FIX +20':'תיקון +20','CORE +1':'ליבה +1','GO':'קדימה','B: HIT   A: JUMP   A+B: BURST   WALK INTO A DAZED ROBOT: GRAB':'B: מכה  A: קפיצה  A+B: פיצוץ  לך לרובוט המום: תפיסה','NEST:':'קינון:','THE CORE CANNOT CARRY A FRAME':'הליבה לא יכולה לשאת שלד','ONLY A SMALLER FRAME FITS INSIDE':'רק שלד קטן יותר נכנס בפנים','LAYER LOST':'שכבה אבדה','NEEDS A SECOND FRAME':'צריך שלד שני','NEEDS A 2ND FRAME':'צריך שלד שני','NEW: NEST A FRAME IN BATTLE PREP':'חדש: קנן שלד בהכנה לקרב','L: HEBREW':'L: עברית',
+'L: ENGLISH':'L: ENGLISH','MATRYOSHKA':'מטריושקה','ANOTHER ONE INSIDE':'עוד אחת בפנים','THE LAST DOLL':'הבובה האחרונה','ITS SMALLEST SHELL: THE DOLL':'הקליפה הקטנה שלה: הבובה','NESTING LOCKED: BEAT THE MATRYOSHKA':'קינון נעול: נצחו את המטריושקה','NESTING UNLOCKED':'קינון נפתח','CLIMB INTO A BIGGER BODY TO NEST':'היכנסו לגוף גדול יותר כדי לקנן','DOLL':'בובה','LIGHTNING CALL':'קריאת ברק','LIGHTNING! KEEP MOVING':'ברק! תמשיך לזוז','FLYER':'מעופף','BOMB DROP':'הטלת פצצות','A FLYING FRAME WAS INSIDE':'בפנים היה שלד מעופף','A+B TOGETHER: SPECIAL':'A+B יחד: מיוחד','CHAIN HOOK':'שרשרת וו','HOOKED':'נתפס','TOPPLED':'הופל','IT BRACES ITSELF':'הוא מתייצב','TICKING HEAD! KICK IT AWAY':'ראש מתקתק! בעט אותו','ITS HEAD IS DOWN: HIT IT':'הראש שלו למטה: הכה בו','HEADSHOT':'פגיעת ראש','HIT A HEAD TO KICK IT':'הכה בראש כדי לבעוט בו','KICK BOMBS OR HEADS UP AT THE WARDEN':'בעט פצצות או ראשים אל השומר','HEAD OFF':'הראש עף','MINI BOSS':'מיני בוס','JUMP ON THE FIST':'קפוץ על האגרוף','JUMP AND STRIKE THE HEAD':'קפוץ והכה בראש','HIT IT NOW, OR JUMP ON THE FIST':'הכה עכשיו, או קפוץ על האגרוף','ITS CORE FRAME: TITAN':'שלד הליבה שלו: טיטאן','A WALKER FRAME WAS INSIDE':'בפנים היה שלד צועד','KNIFE THROW':'זריקת סכין','SCRAP SPIN':'סחרור גרוטאות','SPEAR THRUST':'דקירת רומח','POUNCE':'זינוק','SHIELD BASH':'הלם מגן','GROUND POUND':'הלם קרקע','NO POWER':'אין כוח','POWER':'כוח','NEEDS A BODY':'צריך גוף','PLAY':'שחק','CLASSIC':'קלאסי','NOTHING TO EJECT':'אין מה לפלוט','START: CLIMB IN':'START: היכנס','START: EJECT':'START: פליטה','BEAT A ROBOT, THEN CLIMB INTO ITS BODY':'הבס רובוט, ואז היכנס לגוף שלו','NESTED':'מקונן','A: TRY AGAIN   B: TITLE':'A: נסה שוב   B: מסך פתיחה','STORY':'סיפור','BRAWL':'מכות רחוב','CHOOSE YOUR FRAME':'בחר את השלד שלך','A: START   B: BACK':'A: התחל   B: חזרה','SPEED':'מהירות','STREET CLEAR':'הרחוב נוקה','SCORE':'ניקוד','A: AGAIN   B: TITLE':'A: שוב   B: מסך פתיחה','BOSS':'בוס','GRAB':'תפיסה','THROW':'זריקה','CORE CELL':'תא ליבה','FIX +20':'תיקון +20','CORE +1':'ליבה +1','GO':'קדימה','B: HIT   A: JUMP   A+B: BURST   WALK INTO A DAZED ROBOT: GRAB':'B: מכה  A: קפיצה  A+B: פיצוץ  לך לרובוט המום: תפיסה','NEST:':'קינון:','THE CORE CANNOT CARRY A FRAME':'הליבה לא יכולה לשאת שלד','ONLY A SMALLER FRAME FITS INSIDE':'רק שלד קטן יותר נכנס בפנים','LAYER LOST':'שכבה אבדה','NEEDS A SECOND FRAME':'צריך שלד שני','NEEDS A 2ND FRAME':'צריך שלד שני','NEW: NEST A FRAME IN BATTLE PREP':'חדש: קנן שלד בהכנה לקרב','L: HEBREW':'L: עברית',
 'CORE':'ליבה','BASIC':'בסיסי','BRUTE':'בריון','WALKER':'צועד','TITAN':'טיטאן','KING':'מלך',
 'POWER GLOVE':'כפפת כוח','ARMOR PLATE':'לוח שריון','SWORD OF JUSTICE':'חרב הצדק','HAMMER OF MIGHT':'פטיש העוצמה',
 'SHOULDER LASER':'לייזר כתף','ROCKET LAUNCH':'שיגור טיל','GIANT SWORD':'חרב ענק','HEART SHIELD':'מגן לב','SPARE CORE':'ליבה רזרבית','JET BOOSTER':'מאיץ סילון',
@@ -251,6 +251,8 @@ function drawFrame(x,fy,fid,s,face,ph,moving,atk,fp){
   else{const ax=(face>0?tx+s.tw-1:tx-s.aw+1)+(moving?Math.round(-sw)*face:0);px(ax,armY-swing,s.aw,s.ah,fp.body);px(ax,armY-swing,s.aw,1,fp.hi);fist(ax,armY-swing+s.ah,s.aw,fp.body);hx=ax+(s.aw>>1);hy=armY-swing+s.ah;}
   return{topY:coreTop,hx,hy,lean};
 }
+// a body nested on top of another: sunk by its leg height and clipped at the lower body's top, so its legs stay hidden
+function drawRider(top,lh,draw){g.save();g.beginPath();g.rect(-1e4,-1e4,2e4,1e4+Math.round(top));g.clip();const r=draw(Math.round(top)+lh);g.restore();return r;}
 // the core's side domes ("additions" on the character sheet) appear once it is nested in a frame
 function drawDomes(cx,cy,fp){px(cx-2,cy+2,2,3,fp.body);px(cx-3,cy+3,1,1,fp.shade);px(cx+8,cy+2,2,3,fp.body);px(cx+10,cy+3,1,1,fp.shade);}
 function drawMech(x,fy,s,face,ph,moving,atk,pal){
@@ -1390,7 +1392,7 @@ function drawPlayer(){
       g.save();g.beginPath();g.rect(-20,fy-rh,W+40,rh+4);g.clip();drawFrame(x,fy,p.fid,s,p.face,0,false,0,FP.me);g.restore();
       px(x-Math.floor(s.tw/2)-5,fy-rh,s.tw+10,1,C.yl);
     }else if((T>>1)&1){px(x-Math.floor(s.tw/2),fy-1,s.tw,1,C.cyx);}
-    if(p.inner){const ns=FR[p.inner.fid].s,it=fy-s.lh-s.th,k=p.boot>24?0:Math.min(1,(24-p.boot)/12);if(p.boot<=24){const ir=drawFrame(x,Math.round(it-(1-k)*30),p.inner.fid,ns,p.face,0,false,0,FP.me);drawCore(x-4,ir.topY-7,p.face,T,true,'curious');return;}}
+    if(p.inner){const ns=FR[p.inner.fid].s,it=fy-s.lh-s.th,k=p.boot>24?0:Math.min(1,(24-p.boot)/12);if(p.boot<=24){const ir=drawRider(it,ns.lh,y=>drawFrame(x,Math.round(y-(1-k)*30),p.inner.fid,ns,p.face,0,false,0,FP.me));drawCore(x-4,ir.topY-7,p.face,T,true,'curious');return;}}
     drawCore(x-4,cy,p.face,T,true,'curious');
     return;
   }
@@ -1411,7 +1413,7 @@ function drawPlayer(){
   if(p.atkKind==='charged'&&mode===1&&p.atk>=p.hitAt-2)for(let i=0;i<3;i++)px(p.face>0?r.hx+2+i*5:r.hx-7-i*5,r.hy-4+i*3,6,1,C.yl);
   if(p.atkKind==='dive'){px(x-Math.floor(s.tw/2)-1,fy+1,s.tw+2,1,C.yl);for(let i=0;i<3;i++)px(x-5+i*5,r.topY-10-i*2,1,4,C.cyd);}
   let ctop=r.topY,cx=x+r.lean;
-  if(p.inner){const ns=FR[p.inner.fid].s,ib=moving&&((T>>3)&1)?1:0;const ir=drawFrame(cx,r.topY+ib,p.inner.fid,ns,p.face,0,false,mode===4?0:mode===5?5:0,FP.me);ctop=ir.topY;cx+=ir.lean;}
+  if(p.inner){const ns=FR[p.inner.fid].s,ib=moving&&((T>>3)&1)?1:0;const ir=drawRider(r.topY+ib,ns.lh,y=>drawFrame(cx,y,p.inner.fid,ns,p.face,0,false,mode===4?0:mode===5?5:0,FP.me));ctop=ir.topY;cx+=ir.lean;}
   drawCore(cx-4,ctop-7,p.face,T,true,mood);
   drawDomes(cx-4,ctop-7,p.charge>=24&&(T>>2)&1?FP.warn:FP.me);
   if(p.glove&&mode!==4)px(r.hx-1,r.hy-1,3,3,C.yl);
@@ -1620,8 +1622,11 @@ function bHurt(d,src){
   else{p.core--;say('CORE HIT',p.x,p.z-26,C.mg,40);if(p.core<=0){p.core=0;bw.win=false;bw.endT=0;state='bover';kick(8,1);crunch(.6,.12);beep(60,.8,'sawtooth',.07,-30);}}
 }
 const nearHusk=()=>{const p=bw.p,sz=pBody().size;let best=null,bd=99;for(const e of bw.ents){if(!e.husk)continue;const d=Math.abs(e.x-p.x)+Math.abs(e.z-p.z)*1.5;if(d<16&&d<bd&&bodyOf(e.id).size>sz){best=e;bd=d;}}return best;};
+// nesting is won by beating the Matryoshka; until then climbing in swaps bodies and leaves the old one standing
 function climbIn(h){
-  const p=bw.p;bw.ents=bw.ents.filter(e=>e!==h);p.layers.push({id:h.id,shell:h.shell,max:h.max,weapon:h.weapon});p.x=h.x;p.z=h.z;p.boot=16;p.inv=Math.max(p.inv,16);p.atk=0;p.kind=null;p.grab=null;
+  const p=bw.p;bw.ents=bw.ents.filter(e=>e!==h);
+  if(p.layers.length&&!bw.nestOK){const old=p.layers.pop();bw.ents.push({husk:true,id:old.id,shell:old.shell,max:old.max,weapon:old.weapon,x:p.x-p.face*14,z:p.z,face:p.face});
+    if(!bw.nestTold){bw.nestTold=true;say('NESTING LOCKED: BEAT THE MATRYOSHKA',p.x,p.z-58,C.gr,110);}}p.layers.push({id:h.id,shell:h.shell,max:h.max,weapon:h.weapon});p.x=h.x;p.z=h.z;p.boot=16;p.inv=Math.max(p.inv,16);p.atk=0;p.kind=null;p.grab=null;
   const b=bodyOf(h.id);bw.card={t:150,name:b.name,sub:SPNAME[SPOW[h.id]]||'',icon:SPOW[h.id]||'glove'};say(p.layers.length>1?'NESTED':b.name,p.x,p.z-44,C.cy,50);beep(180,.1,'square',.05,-60);setTimeout(()=>beep(880,.08,'square',.04,440),120);spark(p.x,p.z-14,14,[C.cy,C.yl,C.wh],1.8);glitch=Math.max(glitch,.4);
 }
 function ejectLayer(){
@@ -1797,7 +1802,7 @@ function drawBrawlPlayer(p,cam){
   const lhd=p.land>0?-(p.land>3?2:1):(p.onG&&p.jt<3?-1:(!p.onG&&p.vh>.6?1:0));
   const outer=L[L.length-1],r=drawBody(outer.id,x,fy,p.face,p.walk,moving,mode,MEPAL,FP.me,st,lhd);
   let top=r.top,cx=x+r.lean;
-  if(L.length>1){const inn=L[L.length-2],ir=drawBody(inn.id,cx,top,p.face,0,false,0,MEPAL,FP.me,'walk');top=ir.top;cx+=ir.lean;}
+  if(L.length>1){const inn=L[L.length-2],ib=bodyOf(inn.id),ilh=ib.frame?FR[inn.id].s.lh:ib.T?ib.T.lh:0,ir=drawRider(top,ilh,y=>drawBody(inn.id,cx,y,p.face,0,false,0,MEPAL,FP.me,'walk'));top=ir.top;cx+=ir.lean;}
   if(p.boot>0){const k=p.boot/16;top-=Math.round(k*20);}
   drawCore(cx-4,top-7,p.face,T,true,mood);drawDomes(cx-4,top-7,FP.me);
   if(p.kind==='melee'&&p.atk<=p.hitAt+2&&p.atk>=p.hitAt-3){const f=p.face,yy=top+8,up=p.combo===2;
@@ -2359,7 +2364,8 @@ function stepMatry(b){
     case 'pop':if(--b.t<=0){b.st='walk';b.t=30;b.castT=60;}break;
     case 'dead':
       if(b.t%6===0){spark(b.x+rnd(-10,10),b.z-rnd(4,20),8,[DOLLPAL.body,C.yl,C.wh],2.6);crunch(.08,.05);}
-      if(--b.t<=0){bw.score+=3000;bw.boss=null;bw.strikes=[];bw.ents.push({husk:true,id:'doll',shell:60,max:70,x:b.x,z:b.z,face:1});say('ITS SMALLEST SHELL: THE DOLL',b.x,80,C.cy,90);}
+      if(--b.t<=0){bw.score+=3000;bw.boss=null;bw.strikes=[];bw.ents.push({husk:true,id:'doll',shell:60,max:70,x:b.x,z:b.z,face:1});say('ITS SMALLEST SHELL: THE DOLL',b.x,80,C.cy,90);
+        bw.nestOK=true;banner={s:'NESTING UNLOCKED',t:150};say('CLIMB INTO A BIGGER BODY TO NEST',b.x,100,C.yl,150);[523,659,784,1046].forEach((f,i)=>setTimeout(()=>beep(f,.12,'square',.04),i*90));}
       break;
   }
   b.x=clamp(b.x,bw.cam+16,bw.cam+W-16);
@@ -3095,7 +3101,7 @@ function drawPrep(){
   const f=FR[run.frame];
   const psc=(run.frame==='core'||run.frame==='basic')&&!run.nest?2:1;g.save();g.translate(38,psc===1?78:70);g.scale(psc,psc);
   if(run.frame==='core'){px(-3,-3,1,3,C.cy);px(2,-3,1,3,C.cy);drawCore(-4,-10,1,T);}
-  else{const r=drawFrame(0,0,run.frame,f.s,1,0,false,0,FP.me);let ct=r.topY;if(run.nest){const ir=drawFrame(0,r.topY,run.nest,FR[run.nest].s,1,0,false,0,FP.me);ct=ir.topY;}drawCore(-4,ct-7,1,T);drawDomes(-4,ct-7,FP.me);}
+  else{const r=drawFrame(0,0,run.frame,f.s,1,0,false,0,FP.me);let ct=r.topY;if(run.nest){const ns=FR[run.nest].s,ir=drawRider(r.topY,ns.lh,y=>drawFrame(0,y,run.nest,ns,1,0,false,0,FP.me));ct=ir.topY;}drawCore(-4,ct-7,1,T);drawDomes(-4,ct-7,FP.me);}
   g.restore();
   txt(f.code,76,24,C.cy,3);
   txt(f.name,76,42,C.wh);

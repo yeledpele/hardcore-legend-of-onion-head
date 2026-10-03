@@ -8,11 +8,14 @@ window.__t={
     foes:bw.ents.filter(e=>e.type&&e.st!=='dead').map(e=>[e.x|0,e.z|0]),crates:bw.ents.filter(e=>e.crate).map(e=>[e.x|0,e.z|0]),
     husks:bw.ents.filter(e=>e.husk).map(e=>[e.x|0,e.z|0,bodyOf(e.id).size,e.id])}):{state},
   heal:()=>{bw.p.core=3;bw.p.pow=100;for(const l of bw.p.layers)l.shell=l.max;},
-  // put the player in a body (or the bare core) next to a sturdy, dazed dummy robot
-  dummy:(id,weapon)=>{bw.p.layers=id==='core'?[]:[{id,shell:bodyOf(id).shell,max:bodyOf(id).shell,weapon:weapon||undefined}];
+  // put the player in a body (or the bare core, or a nested list of bodies, inner first) next to a sturdy, dazed dummy robot
+  dummy:(id,weapon)=>{const ids=Array.isArray(id)?id:id==='core'?[]:[id];bw.p.layers=ids.map(id=>({id,shell:bodyOf(id).shell,max:bodyOf(id).shell,weapon:weapon||undefined}));
     Object.assign(bw.p,{pow:100,core:3,atk:0,kind:null,sp:null,h:0,onG:true,face:1,vx:0,z:124});
     bw.ents=bw.ents.filter(e=>!e.type);bw.items=[];const S=SECS[bw.sec];bw.p.x=S.x0+80;
     bw.ents.push({type:'scrap',T:TYPES.scrap,x:S.x0+112,z:124,h:0,vh:0,vx:0,face:-1,st:'stun',t:999,hp:500,max:500,dmg:1,hurt:0,walk:0,moving:false,boss:true,role:'wait',zo:0});},
+  // drop an empty body right next to the player; unlock (or lock) nesting
+  husk:id=>{bw.ents.push({husk:true,id,shell:bodyOf(id).shell,max:bodyOf(id).shell,x:bw.p.x,z:bw.p.z,face:1});},
+  nestOK:on=>{bw.nestOK=on;},
   dummyHp:()=>{const e=bw.ents.find(e=>e.type);return e?e.hp:-1;},
   drawMs:()=>{const t0=performance.now();for(let i=0;i<30;i++)render();return (performance.now()-t0)/30;}
 };

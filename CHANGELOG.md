@@ -2,6 +2,11 @@
 
 Each version is a complete, standalone HTML file in this folder. The live artifact always runs the newest one.
 
+## v4.2 (in progress)
+Built on v4.1.
+- **Nested bodies hide their legs**: a body nested on another (a Scrapper on a Brute, a frame on a frame) rides on its shoulders with only the torso showing, in the beat 'em up, Classic, and battle prep.
+- **Nesting is won from the Matryoshka**: before it falls, climbing into a bigger body swaps bodies and leaves the old one standing; beating it shows "NESTING UNLOCKED".
+
 ## v4.1
 Built on v4.0 (the v1.13 pixel look), as a branch beside v5.0.
 - **The v1 knife is back**: a jab, a low slash and an overhead chop, each with its own pose, a little lunge and a slash trail; v1's walking feet with toes, and tucked legs in the air.

@@ -69,7 +69,9 @@ The player is a stack of layers, listed from the inside out:
 - **Hits:** the outermost layer takes the damage. When its shell reaches 0 it breaks ("SHELL BREAK", or "LAYER LOST"), and you continue in the next layer down. With no layers left, hits cost core pips.
 - **Eject:** press START to pop the outer layer off. It stays standing on the street as an empty body, keeping its remaining shell and any mounted weapon, and you hop out. You can eject at any time.
 - **Climb in:** press START next to an empty body that is **bigger** than your current body to climb in. If you're already in a body, that body nests inside the new one.
+- **Nesting is won from the Matryoshka.** Until the Matryoshka (the boss of level 1) is beaten, climbing in while in a body **swaps** bodies: the old one is left standing beside you as an empty body ("NESTING LOCKED: BEAT THE MATRYOSHKA", shown once). Beating it shows "NESTING UNLOCKED", and from then on climbing in nests. The unlock lasts for the rest of the campaign, continues included. (Classic mode is unchanged.)
 - **Display:** the HUD shows the outer body's name and shell bar, plus the name of the layer inside it.
+- **Look:** a nested body rides on the outer body's shoulders with its legs hidden inside, so only its torso shows (as in battle prep and Classic).
 
 ### 5.2 Size rule
 
