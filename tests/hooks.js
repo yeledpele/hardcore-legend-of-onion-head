@@ -23,6 +23,9 @@ window.__t={
   body:ids=>{bw.p.layers=ids.map(id=>({id,shell:bodyOf(id).shell,max:bodyOf(id).shell}));},
   boss:()=>bw.boss?{type:bw.boss.type,st:bw.boss.st,hp:bw.boss.hp,max:bw.boss.max,x:bw.boss.x|0,z:bw.boss.z|0}:null,
   inside:()=>!!bw.p.inside,
+  // force the boss into a state, and put the player at an offset from it
+  bossState:(st,t)=>{bw.boss.st=st;bw.boss.t=t;},
+  nearBoss:(dx,dz)=>{const b=bw.boss;bw.p.x=b.x+dx;bw.p.z=clamp(b.z+(dz||0),BZ0,BZ1);bw.p.inv=0;bw.p.h=0;bw.p.onG=true;},
   secs:()=>SECS.map(s=>[s.stage,STAGES[s.stage].name,s.foes.some(f=>f[0]==='BOSS')?s.foes.find(f=>f[0]==='BOSS')[1]:null]),
   // clear the street of civilians and props, then place one next to the player (dx px ahead)
   civ:dx=>{bw.ents=bw.ents.filter(e=>!e.civ&&!e.prop);const c=addCiv(bw.p.x+dx,bw.p.z);c.st='idle';c.t=9999;},

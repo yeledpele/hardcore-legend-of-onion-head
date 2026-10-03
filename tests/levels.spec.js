@@ -3,8 +3,8 @@
 const {test,expect}=require('@playwright/test');
 const {open,press,startCampaign,snap}=require('./helpers');
 test.setTimeout(5*60*1000);
-// type, stage, the body it drops, and the signature state that must happen during the fight
-const BOSSES=[['knight',2,'walker','charge'],['crab',3,'titan','seek'],['crane',4,'e:brute','stuck'],['toad',5,'brute','full'],['cook',6,'walker','pan']];
+// type, stage, the body it drops, and its signature moves (at least one must happen during the fight; moves are picked at random)
+const BOSSES=[['knight',2,'walker',['charge','spin']],['crab',3,'titan',['seek']],['crane',4,'e:brute',['stuck','down']],['toad',5,'brute',['full']],['cook',6,'walker',['pan','stuck']]];
 async function move(page,s,tx,tz,tol=4){
   const keys=[];if(tx>s.px+tol)keys.push('ArrowRight');else if(tx<s.px-tol)keys.push('ArrowLeft');
   if(tz>s.pz+2)keys.push('ArrowDown');else if(tz<s.pz-2)keys.push('ArrowUp');
@@ -17,6 +17,9 @@ for(const [type,stage,drop,sig] of BOSSES){
     let s=await snap(page);expect(s.props.length).toBeGreaterThan(0);
     await page.evaluate(st=>{window.__t.goto(st*5+4);window.__t.body(['e:brute']);},stage);await page.waitForTimeout(300);
     expect((await page.evaluate(()=>window.__t.boss())).type).toBe(type);
+    if(type==='toad'){ // its tongue catches you in its lane and swallows you
+      await page.evaluate(()=>{window.__t.nearBoss(-50,0);window.__t.bossState('twind',4);});await page.waitForTimeout(700);
+      expect(await page.evaluate(()=>window.__t.inside())).toBe(true);}
     let b,seen=new Set();
     for(let i=0;i<2500;i++){
       b=await page.evaluate(()=>window.__t.boss());if(!b)break;seen.add(b.st);
@@ -30,7 +33,7 @@ for(const [type,stage,drop,sig] of BOSSES){
     expect(b).toBeNull();
     await page.waitForTimeout(200);s=await snap(page);
     expect(s.husks.some(h=>h[3]===drop)).toBe(true);
-    expect(seen.size).toBeGreaterThan(3);expect([...seen]).toContain(sig);
+    expect(seen.size).toBeGreaterThan(3);expect(sig.some(st=>seen.has(st))).toBe(true);
     expect(errors).toEqual([]);
   });
 }
