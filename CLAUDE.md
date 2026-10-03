@@ -16,8 +16,8 @@ A browser beat 'em up by Ben (visual artist). One self-contained HTML file when 
 
 ## Commands
 - `npm run build` → `dist/hardcore.html`
-- `npm test` → full suite (about 4 minutes, includes a scripted run through the whole campaign)
-- `npm run test:quick` → everything except the campaign run (under a minute)
+- `npm test` → full suite (about 11 minutes, includes a scripted run through the whole 8-level campaign)
+- `npm run test:quick` → everything except the campaign run (about a minute; includes a scripted fight against each new boss)
 
 ## Rules
 - After every change: `npm test` (or `npm run test:quick` while iterating, full suite before finishing). Fix failures before saying it's done.

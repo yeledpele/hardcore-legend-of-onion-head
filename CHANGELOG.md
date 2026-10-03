@@ -9,6 +9,14 @@ Built on v4.1.
 - **The Flyer has a jetpack**: hold A in the air for an upward boost with flames from both thrusters; fuel for about 1.2 s, refilled on the ground.
 - **Civilians**: small people stroll each section, panic and flee when fights come close, and get squished flat (cartoon-style, then dizzy) by big bodies, landings, thrown robots and blasts.
 - **Destructible props**: each level has its own breakable props (car wrecks, bins, barrels; pines, fences, lamps; tanks, barrels, lamps) that crack, burst into debris and rubble, and sometimes drop pickups; barrels explode and chain; walker-size bodies smash props by walking through them.
+- **Five new levels** (proposed by the new level-designer agent, picked from 14), between the Pine Forest and the Foundry, each with its own backdrop, floor, props, story lines and boss:
+  - **The Toy Works / The Wind-Up Knight**: hit the key on its back; lance charge and spin; conveyor belts. Drops a Walker frame.
+  - **Hermit Harbour / The Hermit Crab**: wears empty bodies as shells and steals new ones off the street; claw grab, sideways scuttle. Drops the Titan frame.
+  - **The Magnet Yard / The Crane**: magnet slam, lift-and-drop of bodies, heads and you (the bare core is too light); the cab topples. Drops a Brute robot body.
+  - **The Gullet Bog / The Toad King**: swallows you and digests your outer body unless you burst out; belly flop, croaks up Scrappers; mud. Drops a Brute frame.
+  - **The Giant's Kitchen / The Cook**: two giant hands; jump on the slammed pan to hit the face; knife chops, pepper. Drops a Walker frame.
+- Difficulty now rises evenly over eight levels, ending where the old level 3 was.
+- New bosses share one framework (`NB` table): one entry per boss for hits, topple, ticking heads, Flyer bombs and the Chain Hook.
 
 ## v4.1
 Built on v4.0 (the v1.13 pixel look), as a branch beside v5.0.

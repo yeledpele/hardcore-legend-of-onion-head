@@ -19,6 +19,10 @@ window.__t={
   nestOK:on=>{bw.nestOK=on;},
   // jump straight to a section (0-based across the whole campaign)
   goto:sec=>{bw.ents=bw.ents.filter(e=>e.husk);bw.items=[];bw.boss=null;bw.bombs=[];bw.strikes=[];bw.plats=[];bw.heads=[];bw.drops=[];bw.zaps=[];bw.sec=sec-1;nextSec();bw.cam=SECS[bw.sec].x0;bw.p.x=bw.cam+40;bw.p.z=124;bw.stageT=0;},
+  // put the player in these bodies (inner first) without touching the street
+  body:ids=>{bw.p.layers=ids.map(id=>({id,shell:bodyOf(id).shell,max:bodyOf(id).shell}));},
+  boss:()=>bw.boss?{type:bw.boss.type,st:bw.boss.st,hp:bw.boss.hp,max:bw.boss.max,x:bw.boss.x|0,z:bw.boss.z|0}:null,
+  inside:()=>!!bw.p.inside,
   secs:()=>SECS.map(s=>[s.stage,STAGES[s.stage].name,s.foes.some(f=>f[0]==='BOSS')?s.foes.find(f=>f[0]==='BOSS')[1]:null]),
   // clear the street of civilians and props, then place one next to the player (dx px ahead)
   civ:dx=>{bw.ents=bw.ents.filter(e=>!e.civ&&!e.prop);const c=addCiv(bw.p.x+dx,bw.p.z);c.st='idle';c.t=9999;},

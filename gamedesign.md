@@ -268,7 +268,50 @@ Every boss arena starts with a crate that always holds a **Chain Hook**.
 - **Hook:** the Chain Hook pulls it straight down.
 - **Drop:** leaves the **Flyer**.
 
-**Level 3 — The Maker** (300 HP)
+**Levels 3–7: the new street bosses.** They all stand on the street and share one set of rules: hits from a toppled/dazed boss do ×1.5; a ticking-head blast or Flyer bomb near them deals 15 (or 60% of the bomb) and knocks them down; the Chain Hook has a special effect per boss; when beaten they flash for about 2 s and leave a body.
+
+**Level 3 — The Wind-Up Knight** (240 HP, The Toy Works)
+
+- **Look:** a tall tin knight with a lance, a red plume and a brass **key** turning in its back; a key gauge under its feet.
+- **Facing:** hits from the **front** do ×0.5 ("CLANG"); hits from **behind** do ×1.5 and unwind the key by 11. The key also runs down slowly by itself.
+- **Moves:** marches at you; **Lance charge** (key spins fast, lance lowers, ~42 frames) then charges across the screen (14 damage, smashes props); **Spin** with the lance out for ~2 s (10 per hit), then **dizzy** (×1.5).
+- **Unwound:** at 0 the knight slumps ("UNWOUND") for about 3 s, then rewinds ("REWOUND"). The Chain Hook pulls the key out (long slump).
+- **Drop:** a **Walker** frame ("ITS EMPTY ARMOUR: WALKER").
+- **Level hazard:** conveyor belts in sections 2 and 4 push everyone left.
+
+**Level 4 — The Hermit Crab** (200 HP, Hermit Harbour)
+
+- **Look:** a wide pink crab wearing an empty robot body on its back as a shell (it starts in a Walker robot body); a shell gauge under it. Two empty bodies lie in the arena.
+- **Shell:** while it wears one, hits go to the **shell** (front hits halved), not its health. When the shell breaks ("SHELL BREAK") it is soft (×1.5) and **scuttles to the nearest empty body on screen and climbs in** ("IT STEALS A SHELL") — including bodies you ejected. With no body around it digs up a Basic-size shell after about 5.5 s. Deny it by climbing into the bodies first.
+- **Moves:** **Claw pinch** (claws spread, then a lunge): it **grabs** you, shakes you and throws you (12); mash B to break free sooner. **Sideways scuttle** across your lane (yellow lane dashes as a tell; 12, smashes props).
+- **Hook:** rips the shell off at once ("HOOKED: SHELL OFF"); a topple flips it on its back.
+- **Drop:** its dream shell, a **Titan** frame — the only source of the Titan in the campaign.
+
+**Level 5 — The Crane** (230 HP, The Magnet Yard)
+
+- **Look:** a gantry over the arena with an operator cab on the beam and a magnet on a cable.
+- **Moves:** **Magnet slam** on your spot (red marker; 16) — afterwards the magnet is **stuck** on the floor for ~2 s and is the only part you can hit ("HIT THE MAGNET"). **Lift:** the magnet hums (green rings) and pulls empty bodies, robots, heads — and you, if you're in a body; **the bare core is too light**. It lifts what it catches, carries it over you and drops it (12; a ticking head explodes). **Scrap roll:** three crosshair strikes down your lane.
+- **Topple:** the Chain Hook or a blast brings the **cab crashing to the floor** ("THE CAB CRASHES") for ~2.5 s, where it can be hit (×1.5).
+- **Drop:** its operator, a **Brute robot** body ("THE OPERATOR CLIMBS OUT").
+
+**Level 6 — The Toad King** (230 HP, The Gullet Bog)
+
+- **Look:** a huge squat robot toad with a crown of pipes and a throat sac.
+- **Tongue lash:** the sac swells and a yellow line runs along its lane, then the tongue shoots out ~110 px. If it catches you, it **swallows you** ("GULP"): you're inside for up to 3.5 s; **B hits it from inside** (5 per hit, at most every 10 frames); **A+B bursts out** (10). If the time runs out it spits you out and **digests your outer body** — it comes out as an empty body with half its shell, so you can climb back in; the bare core loses a core pip instead.
+- **Belly flop:** it leaps off screen, a marker follows you, and it lands with a shockwave (16), then lies **dazed** (×1.5).
+- **Croak:** spits out two Scrappers (only while fewer than two robots are alive).
+- **Hook:** during the tongue wind-up or lash it pulls the tongue out ("TONGUE PULLED", long daze); a blast makes it "BURP" (and spits you out free).
+- **Drop:** a **Brute** frame ("IT COUGHS UP A BRUTE FRAME").
+- **Level hazard:** mud patches slow you and robots to about half speed.
+
+**Level 7 — The Cook** (280 HP, The Giant's Kitchen)
+
+- **Look:** you're tiny on a giant's kitchen floor; only two huge gloved hands come down from above (one holding a pan, one a knife), and its face peers in over the top when the pan is down.
+- **Moves:** **Pan slam** on your spot (red marker; 16): the pan stays on the floor for ~3 s as a **platform** ("JUMP ON THE PAN") while the face peers in — from the pan your hits reach the **face for ×2**. The pan hand on the floor can also be hit. **Knife chops:** three chops walking along your lane (12 each); the knife hand is hittable for a moment after each chop. **Pepper:** crosshair strikes around you ("PEPPER").
+- **Topple / hook:** knocks the pan hand flat ("THE HAND IS DOWN"), hittable at ×1.5.
+- **Drop:** a **Walker** frame ("IN ITS SLEEVE: A WALKER FRAME").
+
+**Level 8 — The Maker** (300 HP)
 
 - **Moves:** a giant at the back of the street.
   - **Fist slam:** aimed at your spot, with a red floor marker. After a slam it **kneels** with its core plate glowing, and can be hit.
@@ -315,7 +358,14 @@ Every fight section (not boss arenas) has 2–3 props for its level, placed the 
 | Pine | Pine Forest | 3 | 15% | 40 | Leans when damaged |
 | Fence | Pine Forest | 1 | – | 20 | |
 | Lamp post | Pine Forest, Foundry | 2 | 10% | 30 | Flickers when damaged |
-| Tank | Foundry | 4 | 40% | 60 | Leaks steam when damaged |
+| Tank | Foundry, Magnet Yard | 4 | 40% | 60 | Leaks steam when damaged |
+| Toy blocks | Toy Works | 2 | 30% | 30 | Top block falls off |
+| Crab pot | Hermit Harbour | 2 | 40% | 30 | |
+| Car cube | Magnet Yard | 4 | 50% | 50 | Cracks |
+| Soup can | Giant's Kitchen | 3 | 40% | 40 | Dents |
+| Sugar cube | Giant's Kitchen | 2 | 50% | 30 | A corner breaks off |
+
+Per level: Toy Works blocks, bins, lamps; Hermit Harbour pots, barrels, fences; Magnet Yard cubes, barrels, tanks; Gullet Bog pines, fences, barrels; Giant's Kitchen cans, sugar cubes, bins.
 
 Drops are scrap (70%) or a core cell (30%).
 
@@ -330,13 +380,21 @@ Small people walk around every section (2–3; one in boss arenas), and more run
 
 ## 11. Campaign structure (PLAY)
 
-- **One street:** three levels laid end to end, each 1,280 units long and made of five 256-unit sections.
+- **One street:** eight levels laid end to end, each 1,280 units long and made of five 256-unit sections. The Matryoshka stays first (it unlocks nesting) and the Maker last (it plays the ending).
 
 | Level | Theme | Sections 1–5 |
 |---|---|---|
 | 1 The Burial Waste | Brick basement with gravestones | Scrappers → Scrapper/Lancer + crate → **mini-boss Brute** → mixed + crate → **Matryoshka** |
 | 2 The Pine Forest | Mossy cave with pines | Shieldbot/Scrapper → Hounds + crate → **mini-boss Walker** → mixed + crate → **Warden** |
-| 3 The Foundry | Red brick foundry, pipes, furnaces | Hound/Brute → Shieldbots/Lancer + crate → **two mini-boss Brutes** → Walker/Hound + crate → **Maker** |
+| 3 The Toy Works | Toy shelves, a mobile, a rocking horse; conveyor belts (sections 2, 4) | Scrappers/Lancer → Hounds + crate → **mini-boss Shieldbot** → Brute/Walker/Scrapper + crate → **Wind-Up Knight** |
+| 4 Hermit Harbour | Night harbour, moon over the water, pier, lighthouse | Scrappers/Lancer → Hounds + crate → **mini-boss Shieldbot** → Brute/Walker/Lancer + crate → **Hermit Crab** |
+| 5 The Magnet Yard | Stacks of crushed car cubes, sodium lamps | Scrappers → Lancer/Walker + crate → **mini-boss Brute** → Walker/Shieldbot/Scrapper + crate → **Crane** |
+| 6 The Gullet Bog | Swamp of drowned machines, reeds, fireflies; mud patches | Scrappers → Hounds + crate → **mini-boss Brute** → Shieldbot/Walker/Hound + crate → **Toad King** |
+| 7 The Giant's Kitchen | Table and chair legs as pillars, a cat's eye, tiled floor | Scrappers/Lancer → Hounds + crate → **mini-boss Walker** → Brutes/Lancer + crate → **Cook** |
+| 8 The Foundry | Red brick foundry, pipes, furnaces | Hound/Brute → Shieldbots/Lancer + crate → **two mini-boss Brutes** → Walker/Hound + crate → **Maker** |
+
+- **Difficulty:** robot health and damage scale with a difficulty tier: levels 1–2 as before (tier 0, 1), then rising evenly to tier 2 at the Foundry (health ×(1 + 0.3 × tier), damage ×(1 + 0.15 × tier)).
+- **Story:** each level's banner has its own four lines, chaining from the boss before.
 
 - **Section locks:** the camera locks until a section is clear, then "GO" lets you walk on. The camera follows you to the next lock.
 - **Seamless levels:** walking off the end of a level leads straight into the next; the backdrop changes at the seam. Each level opens with a paper banner: level number, name, and its story lines.
