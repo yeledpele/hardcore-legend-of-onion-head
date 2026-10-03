@@ -303,6 +303,29 @@ Fires a chain down your lane (reach about 130). It topples the Colossus or Maker
 - **Robot drops:** beaten robots sometimes drop scrap (25%).
 - **Collecting:** walk over a pickup while on the ground.
 
+### 10.1 Destructible props
+
+Every fight section (not boss arenas) has 2–3 props for its level, placed the same way on every retry. Any attack, special, bomb, rocket or thrown robot can break them; walker-size bodies and bigger smash them just by walking into them. A prop flashes when hit, shows damage at half health, and breaks into debris that leaves rubble on the floor.
+
+| Prop | Levels | Hits | Drop chance | Score | Notes |
+|---|---|---|---|---|---|
+| Car wreck | Burial Waste | 6 | 60% | 80 | Window cracks when damaged |
+| Bin | Burial Waste | 2 | 35% | 30 | Lid flies off |
+| Barrel | Burial Waste, Foundry | 2 | – | 40 | **Explodes**: 14 damage to robots and 9 to props within ~26 px (chain reactions), 8 to you if you're close, flattens civilians |
+| Pine | Pine Forest | 3 | 15% | 40 | Leans when damaged |
+| Fence | Pine Forest | 1 | – | 20 | |
+| Lamp post | Pine Forest, Foundry | 2 | 10% | 30 | Flickers when damaged |
+| Tank | Foundry | 4 | 40% | 60 | Leaks steam when damaged |
+
+Drops are scrap (70%) or a core cell (30%).
+
+### 10.2 Civilians
+
+Small people walk around every section (2–3; one in boss arenas), and more run across the street now and then (up to 4 at a time).
+- **Panic:** when you or a robot gets close (or a fight is on), they scream ("AAH!", "HELP!") and run away from the nearest danger, and leave the screen.
+- **Squish:** bodies of Brute size or bigger flatten them by walking over them; any body flattens them by landing on them; the bare core is too small. Thrown or falling robots, big robots walking, and barrel blasts flatten them too. Attacks pass over them.
+- **Cartoon flat:** a squished civilian lies flat for about 2 seconds, then peels up, wobbles dizzy, and runs off. "SQUISH" scores 25 and adds 3 POWER.
+
 ---
 
 ## 11. Campaign structure (PLAY)

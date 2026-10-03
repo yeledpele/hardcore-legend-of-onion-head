@@ -7,6 +7,8 @@ Built on v4.1.
 - **Nested bodies hide their legs**: a body nested on another (a Scrapper on a Brute, a frame on a frame) rides on its shoulders with only the torso showing, in the beat 'em up, Classic, and battle prep.
 - **Nesting is won from the Matryoshka**: before it falls, climbing into a bigger body swaps bodies and leaves the old one standing; beating it shows "NESTING UNLOCKED".
 - **The Flyer has a jetpack**: hold A in the air for an upward boost with flames from both thrusters; fuel for about 1.2 s, refilled on the ground.
+- **Civilians**: small people stroll each section, panic and flee when fights come close, and get squished flat (cartoon-style, then dizzy) by big bodies, landings, thrown robots and blasts.
+- **Destructible props**: each level has its own breakable props (car wrecks, bins, barrels; pines, fences, lamps; tanks, barrels, lamps) that crack, burst into debris and rubble, and sometimes drop pickups; barrels explode and chain; walker-size bodies smash props by walking through them.
 
 ## v4.1
 Built on v4.0 (the v1.13 pixel look), as a branch beside v5.0.

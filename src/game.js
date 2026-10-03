@@ -70,7 +70,7 @@ const HE={
 'SALVAGE WHAT YOU CAN':'אסוף מה שאפשר','YOU':'אתה','YOUR FRAME, RECOVERED':'השלד שלך הוחזר','THE COLOSSUS WAITS':'הענק מחכה',
 'THE MAKER IS AWAKE':'היוצר ער','THE WARDEN IS WATCHING':'השומר צופה',"SHELLY'S HOUSE. THE DOOR IS OPEN.":'הבית של שלי. הדלת פתוחה.',
 'EJECT':'פליטה','IT EJECTED':'הוא נפלט','SHELL BREAK':'המעטפת נשברה','POGO':'ניתור','LAUNCH':'הקפצה','CHARGED':'טעון','STOMP':'רקיעה',
-'L: ENGLISH':'L: ENGLISH','MATRYOSHKA':'מטריושקה','ANOTHER ONE INSIDE':'עוד אחת בפנים','THE LAST DOLL':'הבובה האחרונה','ITS SMALLEST SHELL: THE DOLL':'הקליפה הקטנה שלה: הבובה','NESTING LOCKED: BEAT THE MATRYOSHKA':'קינון נעול: נצחו את המטריושקה','NESTING UNLOCKED':'קינון נפתח','CLIMB INTO A BIGGER BODY TO NEST':'היכנסו לגוף גדול יותר כדי לקנן','DOLL':'בובה','LIGHTNING CALL':'קריאת ברק','LIGHTNING! KEEP MOVING':'ברק! תמשיך לזוז','FLYER':'מעופף','BOMB DROP':'הטלת פצצות','A FLYING FRAME WAS INSIDE':'בפנים היה שלד מעופף','A+B TOGETHER: SPECIAL':'A+B יחד: מיוחד','CHAIN HOOK':'שרשרת וו','HOOKED':'נתפס','TOPPLED':'הופל','IT BRACES ITSELF':'הוא מתייצב','TICKING HEAD! KICK IT AWAY':'ראש מתקתק! בעט אותו','ITS HEAD IS DOWN: HIT IT':'הראש שלו למטה: הכה בו','HEADSHOT':'פגיעת ראש','HIT A HEAD TO KICK IT':'הכה בראש כדי לבעוט בו','KICK BOMBS OR HEADS UP AT THE WARDEN':'בעט פצצות או ראשים אל השומר','HEAD OFF':'הראש עף','MINI BOSS':'מיני בוס','JUMP ON THE FIST':'קפוץ על האגרוף','JUMP AND STRIKE THE HEAD':'קפוץ והכה בראש','HIT IT NOW, OR JUMP ON THE FIST':'הכה עכשיו, או קפוץ על האגרוף','ITS CORE FRAME: TITAN':'שלד הליבה שלו: טיטאן','A WALKER FRAME WAS INSIDE':'בפנים היה שלד צועד','KNIFE THROW':'זריקת סכין','SCRAP SPIN':'סחרור גרוטאות','SPEAR THRUST':'דקירת רומח','POUNCE':'זינוק','SHIELD BASH':'הלם מגן','GROUND POUND':'הלם קרקע','NO POWER':'אין כוח','POWER':'כוח','NEEDS A BODY':'צריך גוף','PLAY':'שחק','CLASSIC':'קלאסי','NOTHING TO EJECT':'אין מה לפלוט','START: CLIMB IN':'START: היכנס','START: EJECT':'START: פליטה','BEAT A ROBOT, THEN CLIMB INTO ITS BODY':'הבס רובוט, ואז היכנס לגוף שלו','NESTED':'מקונן','A: TRY AGAIN   B: TITLE':'A: נסה שוב   B: מסך פתיחה','STORY':'סיפור','BRAWL':'מכות רחוב','CHOOSE YOUR FRAME':'בחר את השלד שלך','A: START   B: BACK':'A: התחל   B: חזרה','SPEED':'מהירות','STREET CLEAR':'הרחוב נוקה','SCORE':'ניקוד','A: AGAIN   B: TITLE':'A: שוב   B: מסך פתיחה','BOSS':'בוס','GRAB':'תפיסה','THROW':'זריקה','CORE CELL':'תא ליבה','FIX +20':'תיקון +20','CORE +1':'ליבה +1','GO':'קדימה','B: HIT   A: JUMP   A+B: BURST   WALK INTO A DAZED ROBOT: GRAB':'B: מכה  A: קפיצה  A+B: פיצוץ  לך לרובוט המום: תפיסה','NEST:':'קינון:','THE CORE CANNOT CARRY A FRAME':'הליבה לא יכולה לשאת שלד','ONLY A SMALLER FRAME FITS INSIDE':'רק שלד קטן יותר נכנס בפנים','LAYER LOST':'שכבה אבדה','NEEDS A SECOND FRAME':'צריך שלד שני','NEEDS A 2ND FRAME':'צריך שלד שני','NEW: NEST A FRAME IN BATTLE PREP':'חדש: קנן שלד בהכנה לקרב','L: HEBREW':'L: עברית',
+'L: ENGLISH':'L: ENGLISH','MATRYOSHKA':'מטריושקה','ANOTHER ONE INSIDE':'עוד אחת בפנים','THE LAST DOLL':'הבובה האחרונה','ITS SMALLEST SHELL: THE DOLL':'הקליפה הקטנה שלה: הבובה','NESTING LOCKED: BEAT THE MATRYOSHKA':'קינון נעול: נצחו את המטריושקה','NESTING UNLOCKED':'קינון נפתח','SQUISH':'נמעך!','BOOM':'בום','AAH!':'אאאה!','HELP!':'הצילו!','RUN!':'ברחו!','EEK!':'אִי!','CLIMB INTO A BIGGER BODY TO NEST':'היכנסו לגוף גדול יותר כדי לקנן','DOLL':'בובה','LIGHTNING CALL':'קריאת ברק','LIGHTNING! KEEP MOVING':'ברק! תמשיך לזוז','FLYER':'מעופף','BOMB DROP':'הטלת פצצות','A FLYING FRAME WAS INSIDE':'בפנים היה שלד מעופף','A+B TOGETHER: SPECIAL':'A+B יחד: מיוחד','CHAIN HOOK':'שרשרת וו','HOOKED':'נתפס','TOPPLED':'הופל','IT BRACES ITSELF':'הוא מתייצב','TICKING HEAD! KICK IT AWAY':'ראש מתקתק! בעט אותו','ITS HEAD IS DOWN: HIT IT':'הראש שלו למטה: הכה בו','HEADSHOT':'פגיעת ראש','HIT A HEAD TO KICK IT':'הכה בראש כדי לבעוט בו','KICK BOMBS OR HEADS UP AT THE WARDEN':'בעט פצצות או ראשים אל השומר','HEAD OFF':'הראש עף','MINI BOSS':'מיני בוס','JUMP ON THE FIST':'קפוץ על האגרוף','JUMP AND STRIKE THE HEAD':'קפוץ והכה בראש','HIT IT NOW, OR JUMP ON THE FIST':'הכה עכשיו, או קפוץ על האגרוף','ITS CORE FRAME: TITAN':'שלד הליבה שלו: טיטאן','A WALKER FRAME WAS INSIDE':'בפנים היה שלד צועד','KNIFE THROW':'זריקת סכין','SCRAP SPIN':'סחרור גרוטאות','SPEAR THRUST':'דקירת רומח','POUNCE':'זינוק','SHIELD BASH':'הלם מגן','GROUND POUND':'הלם קרקע','NO POWER':'אין כוח','POWER':'כוח','NEEDS A BODY':'צריך גוף','PLAY':'שחק','CLASSIC':'קלאסי','NOTHING TO EJECT':'אין מה לפלוט','START: CLIMB IN':'START: היכנס','START: EJECT':'START: פליטה','BEAT A ROBOT, THEN CLIMB INTO ITS BODY':'הבס רובוט, ואז היכנס לגוף שלו','NESTED':'מקונן','A: TRY AGAIN   B: TITLE':'A: נסה שוב   B: מסך פתיחה','STORY':'סיפור','BRAWL':'מכות רחוב','CHOOSE YOUR FRAME':'בחר את השלד שלך','A: START   B: BACK':'A: התחל   B: חזרה','SPEED':'מהירות','STREET CLEAR':'הרחוב נוקה','SCORE':'ניקוד','A: AGAIN   B: TITLE':'A: שוב   B: מסך פתיחה','BOSS':'בוס','GRAB':'תפיסה','THROW':'זריקה','CORE CELL':'תא ליבה','FIX +20':'תיקון +20','CORE +1':'ליבה +1','GO':'קדימה','B: HIT   A: JUMP   A+B: BURST   WALK INTO A DAZED ROBOT: GRAB':'B: מכה  A: קפיצה  A+B: פיצוץ  לך לרובוט המום: תפיסה','NEST:':'קינון:','THE CORE CANNOT CARRY A FRAME':'הליבה לא יכולה לשאת שלד','ONLY A SMALLER FRAME FITS INSIDE':'רק שלד קטן יותר נכנס בפנים','LAYER LOST':'שכבה אבדה','NEEDS A SECOND FRAME':'צריך שלד שני','NEEDS A 2ND FRAME':'צריך שלד שני','NEW: NEST A FRAME IN BATTLE PREP':'חדש: קנן שלד בהכנה לקרב','L: HEBREW':'L: עברית',
 'CORE':'ליבה','BASIC':'בסיסי','BRUTE':'בריון','WALKER':'צועד','TITAN':'טיטאן','KING':'מלך',
 'POWER GLOVE':'כפפת כוח','ARMOR PLATE':'לוח שריון','SWORD OF JUSTICE':'חרב הצדק','HAMMER OF MIGHT':'פטיש העוצמה',
 'SHOULDER LASER':'לייזר כתף','ROCKET LAUNCH':'שיגור טיל','GIANT SWORD':'חרב ענק','HEART SHIELD':'מגן לב','SPARE CORE':'ליבה רזרבית','JET BOOSTER':'מאיץ סילון',
@@ -1549,7 +1549,7 @@ const MEPAL={line:C.cy,fill:C.cyd,dark:C.cyx,mark:C.wh,eye:C.yl};
 const HPAL={line:C.gr,fill:C.grd,dark:C.grx,mark:C.gr,eye:C.grx};
 let bw=null,titleSel=0;
 function campaignStart(){
-  bw={cam:0,sec:-1,clear:false,score:0,ents:[],items:[],shots:[],rockets:[],beam:null,boss:null,bombs:[],strikes:[],plats:[],heads:[],drops:[],zaps:[],t:0,last:null,endT:0,win:false,stage:0,stageT:0,cont:0,
+  bw={cam:0,sec:-1,clear:false,score:0,ents:[],items:[],shots:[],rockets:[],beam:null,boss:null,bombs:[],strikes:[],plats:[],heads:[],drops:[],zaps:[],t:0,last:null,endT:0,win:false,stage:0,stageT:0,cont:0,rubble:[],
       p:{x:40,z:124,h:0,vx:0,vz:0,vh:0,face:1,layers:[],core:3,pow:50,atk:0,hitAt:0,kind:null,sp:null,combo:0,comboWin:0,buffer:false,inv:0,onG:true,walk:0,land:0,grab:null,hits:0,hitT:0,jt:99,boot:0}};
   parts=[];texts=[];bursts=[];state='brawl';banner=null;glitch=1;crunch(.25,.06);
   bw.stageT=1;nextSec();
@@ -1563,6 +1563,7 @@ function spawnSec(){
     const T0=TYPES[type],hp=Math.round(T0.hp*(boss?(boss===2?1.2:1.7):.7)*mult);
     bw.ents.push({type,T:T0,x:S.x0+x,z,h:0,vh:0,vx:0,face:-1,st:'walk',t:rnd(20,70)|0,hp,max:hp,dmg:Math.round(T0.dmg*.8*(1+.15*S.stage)),hurt:0,walk:0,moving:false,boss:!!boss,final:boss===2,role:'wait',zo:rnd(-14,14)});
   }
+  spawnStreetLife();
 }
 function nextSec(){
   bw.sec++;bw.clear=false;
@@ -1578,6 +1579,7 @@ function nextSec(){
 const bFoes=()=>bw.ents.filter(e=>e.type&&e.st!=='dead');
 const pBody=()=>{const L=bw.p.layers;return L.length?bodyOf(L[L.length-1].id):bodyOf('core');};
 function bDamage(e,d,dir,o={}){
+  if(e.crate&&e.prop){if(e.dead)return false;e.hp--;e.hurt=8;spark(e.x,e.z-PROPS[e.prop].ht/2,8,PROPS[e.prop].cols,2);crunch(.08,.06);if(e.hp<=0){e.dead=true;breakProp(e);}return true;}
   if(e.crate){e.hp--;e.hurt=8;spark(e.x,e.z-8,8,[C.gr,C.yl,C.wh],2);crunch(.08,.06);
     if(e.hp<=0){e.dead=true;spark(e.x,e.z-6,16,[C.gr,C.grd,C.yl],2.6);const r=Math.random();bw.items.push(e.drop?{kind:'wpn',w:e.drop,x:e.x,z:e.z}:r<.4?{kind:'wpn',w:WEAPONS[(Math.random()*WEAPONS.length)|0],x:e.x,z:e.z}:{kind:r<.65?'cell':'scrap',x:e.x,z:e.z});bw.score+=50;}return true;}
   if(!e.type||e.st==='dead'||e.st==='held')return false;
@@ -1596,7 +1598,7 @@ function bDamage(e,d,dir,o={}){
 function bHitBox(x0,x1,dz,maxH,d,o){
   const p=bw.p,dir=p.face;let hit=false;
   for(const e of bw.ents){
-    if(e.husk||e.dead||e.st==='dead'||e===p.grab)continue;
+    if(e.husk||e.civ||e.dead||e.st==='dead'||e===p.grab)continue;
     const ed=eDim(e);if(e.x+ed.hw<x0||e.x-ed.hw>x1||Math.abs(e.z-p.z)>dz+ed.dz-4)continue;
     if((e.h||0)>maxH&&!o.air)continue;
     if(bDamage(e,d,dir,o))hit=true;
@@ -1706,8 +1708,11 @@ function stepBrawl(){
   const foes=bFoes();
   if(bw.t%40===0)for(const e of foes.sort((a,c)=>Math.abs(a.x-p.x)-Math.abs(c.x-p.x)))if(e.role!=='attack'&&foes.filter(o=>o.role==='attack').length<2)e.role='attack';
   for(const e of bw.ents)if(e.type)stepBrawlFoe(e);
+  stepCivs();
+  // walker-size bodies and up smash props just by walking into them
+  if(pBody().size>=3&&p.onG&&Math.abs(p.vx)>.4){const pd=pDim();for(const e of bw.ents)if(e.prop&&!e.dead&&Math.abs(e.x-p.x)<PROPS[e.prop].hw+pd.hw&&Math.abs(e.z-p.z)<PROPS[e.prop].dz+3&&bw.t-(e.smashT||-99)>14){e.smashT=bw.t;bDamage(e,1,p.face,{});}}
   stepCampBoss();stepBombsB();stepStrikes();stepHeads();stepDrops();
-  bw.ents=bw.ents.filter(e=>!(e.crate&&e.dead)&&!(e.type&&e.st==='dead'&&e.t<=0)&&!(e.husk&&e.x<bw.cam-SECW));
+  bw.ents=bw.ents.filter(e=>!(e.crate&&e.dead)&&!(e.civ&&e.gone)&&!(e.type&&e.st==='dead'&&e.t<=0)&&!(e.husk&&e.x<bw.cam-SECW));
   if(!bw.clear&&bFoes().length===0&&!bw.boss){
     bw.clear=true;
     if(!SECS[bw.sec+1]){nextSec();return;}
@@ -1728,7 +1733,7 @@ function stepBrawlFoe(e){
   if(e.st==='air'||e.st==='thrown'){
     e.x=clamp(e.x+e.vx,bw.cam+6,bw.cam+W-6);e.h+=e.vh;e.vh-=.22;
     if(e.st==='thrown')for(const o of bw.ents)if(o!==e&&o.type&&o.st!=='dead'&&Math.abs(o.x-e.x)<12&&Math.abs(o.z-e.z)<8&&!o.thrownBy){o.thrownBy=e;bDamage(o,8,Math.sign(e.vx)||1,{heavy:true,force:true});}
-    if(e.h<=0){e.h=0;kick(2,.2);crunch(.08,.05);spark(e.x,e.z,6,[C.grd,C.mgd],1.5);dust(e.x,e.z,6);
+    if(e.h<=0){e.h=0;kick(2,.2);crunch(.08,.05);spark(e.x,e.z,6,[C.grd,C.mgd],1.5);dust(e.x,e.z,6);squishAt(e.x,e.z,10);
       if(e.st==='thrown'){e.hp-=6;for(const o of bw.ents)o.thrownBy=null;}
       if(e.hp<=0||e.dying){popHead(e);const ed=eDim(e);say('HEAD OFF',e.x,e.z-ed.ht-10,C.mg,30);e.noHead=true;e.st='dead';e.t=50;bw.score+=e.boss?1000:150;bw.p.pow=Math.min(100,bw.p.pow+12);spark(e.x,e.z-10,22,[C.mg,C.yl,C.wh],3);crunch(.3,.1);beep(90,.5,'sawtooth',.06,-60);if(Math.random()<.25)bw.items.push({kind:'scrap',x:e.x,z:e.z});}
       else{e.st='down';e.t=e.boss?20:40;}}
@@ -1746,7 +1751,7 @@ function stepBrawlFoe(e){
       const mx=tx-e.x,mz=tz-e.z;
       if(Math.abs(mx)>2){e.x+=Math.sign(mx)*Math.min(sp,Math.abs(mx));e.moving=true;}
       if(Math.abs(mz)>1){e.z+=Math.sign(mz)*Math.min(sp*.7,Math.abs(mz));e.moving=true;}
-      if(e.moving)e.walk+=sp;
+      if(e.moving){e.walk+=sp;if((ESIZE[e.type]||1)>=2)squishAt(e.x,e.z,5);}
       if(e.role==='attack'&&ad<=reach+2&&Math.abs(dz)<5&&e.t<=0&&state==='brawl'){e.st='wind';e.t=Math.max(16,T0.wind||24);e.face=dx<0?-1:1;beep(1000,.06,'square',.03);}
       break;}
     case 'wind':if(--e.t<=0){e.st='atk';e.t=e.type==='hound'?14:9;beep(160,.08,'sawtooth',.04,-60);}break;
@@ -1767,6 +1772,89 @@ function retrySection(){
   const p=bw.p;bw.boss=null;bw.bombs=[];bw.strikes=[];bw.plats=[];bw.heads=[];bw.drops=[];bw.zaps=[];
   Object.assign(p,{x:S.x0+40,z:124,h:0,vx:0,vz:0,vh:0,face:1,layers:[],core:3,pow:50,plat:null,atk:0,kind:null,sp:null,inv:60,onG:true,grab:null,hits:0});bw.shots=[];bw.rockets=[];bw.beam=null;
   bw.cam=S.x0;spawnSec();state='brawl';glitch=1;banner={s:'FIGHT',t:50};
+}
+// ---------- street life: civilians who panic and can be squished, and props that break ----------
+// civilian colours: skin, shirt, hair/trousers
+const CIVPAL=[['#f2c49b','#ff2a6d','#26104a'],['#c98a5e','#00f0ff','#3b3452'],['#8a5a3c','#ffe600','#231d33'],['#f2c49b','#6e6488','#0d0321'],['#e0a878','#f2f7ff','#4a0a2c'],['#6b4430','#8c1248','#231d33']];
+const PROPS={
+  car:{hp:6,hw:16,ht:13,dz:6,drop:.6,pts:80,cols:[C.mgd,C.mgx,C.cyx,C.gr]},
+  bin:{hp:2,hw:5,ht:10,dz:4,drop:.35,pts:30,cols:[C.gr,C.grd,C.grx]},
+  barrel:{hp:2,hw:5,ht:11,dz:4,drop:0,pts:40,boom:true,cols:[C.mg,C.mgd,C.yl]},
+  pine:{hp:3,hw:6,ht:26,dz:4,drop:.15,pts:40,cols:['#1f8a5a','#0b5a3a','#4a2a1a']},
+  fence:{hp:1,hw:12,ht:8,dz:3,drop:0,pts:20,cols:['#8a6a4a','#4a2a1a']},
+  lamp:{hp:2,hw:3,ht:28,dz:3,drop:.1,pts:30,cols:[C.gr,C.grd,C.yl]},
+  tank:{hp:4,hw:9,ht:16,dz:5,drop:.4,pts:60,cols:[C.cyd,C.cyx,C.wh]}
+};
+const THEMEPROPS=[['car','bin','barrel'],['pine','fence','lamp'],['tank','barrel','lamp']];
+// seeded so a retried section gets the same props
+function srnd(seed){let s=(seed*9301+49297)%233280;return()=>{s=(s*9301+49297)%233280;return s/233280;};}
+function spawnStreetLife(){
+  const S=SECS[bw.sec],th=STAGES[S.stage].theme,r=srnd(bw.sec*7+3),boss=S.foes.some(f=>f[0]==='BOSS');
+  if(!boss){const kinds=THEMEPROPS[th],n=2+(r()*2|0);
+    for(let i=0;i<n;i++){const k=kinds[(r()*kinds.length)|0],P=PROPS[k];bw.ents.push({crate:true,prop:k,x:S.x0+70+i*(150/n)+r()*30,z:BZ0+4+r()*(BZ1-BZ0-6),h:0,hp:P.hp,max:P.hp,hurt:0});}}
+  const nc=boss?1:2+(r()*2|0);for(let i=0;i<nc;i++)addCiv(S.x0+60+r()*170,BZ0+2+r()*(BZ1-BZ0-4));
+}
+function addCiv(x,z,run){const c={civ:true,x,z,face:Math.random()<.5?-1:1,walk:0,t:rnd(20,90)|0,st:run?'panic':'idle',pal:CIVPAL[(Math.random()*CIVPAL.length)|0],kid:Math.random()<.25,flat:0,spd:rnd(1,1.4)};bw.ents.push(c);return c;}
+const CIVCRY=['AAH!','HELP!','RUN!','EEK!'];
+function squish(c){if(c.flat>0||c.gone)return;c.flat=110;c.st='flat';bw.score+=25;bw.p.pow=Math.min(100,bw.p.pow+3);
+  say('SQUISH',c.x,c.z-14,C.yl,30);beep(140,.12,'square',.05,-90);crunch(.06,.05);spark(c.x,c.z-2,6,[c.pal[1],C.wh],1.4);}
+function squishAt(x,z,r){for(const c of bw.ents)if(c.civ&&Math.abs(c.x-x)<r&&Math.abs(c.z-z)<Math.max(4,r*.4))squish(c);}
+function stepCivs(){
+  const p=bw.p,pb=pBody(),pd=pDim(),foes=bFoes();
+  if(bw.t%420===210&&bw.ents.filter(e=>e.civ&&!e.gone).length<4&&!bw.boss){const l=Math.random()<.5,c=addCiv(bw.cam+(l?-8:W+8),BZ0+rnd(2,BZ1-BZ0-2),true);c.face=l?1:-1;c.cross=true;}
+  for(const c of bw.ents){if(!c.civ||c.gone)continue;
+    if(c.flat>0){if(--c.flat===0){c.st='dizzy';c.t=60;}continue;}
+    // squished by the player: big bodies just walk over them, any body lands on them
+    if(Math.abs(c.x-p.x)<pd.hw+1&&Math.abs(c.z-p.z)<4&&p.h<3&&((pb.size>=2&&p.onG)||(pb.size>=1&&p.land===6))){squish(c);continue;}
+    let dd=999,away=c.face;for(const d of [p,...foes]){const ad=Math.abs(c.x-d.x)+Math.abs(c.z-d.z)*2;if(ad<dd){dd=ad;away=c.x<d.x?-1:1;}}
+    if((c.st==='idle'||c.st==='stroll')&&(dd<70||bw.boss||!bw.clear&&foes.some(f=>f.st==='atk'))){c.st='panic';c.t=0;if(Math.random()<.5)say(CIVCRY[(Math.random()*CIVCRY.length)|0],c.x,c.z-16,C.wh,34);}
+    let mx=0,mz=0;
+    if(c.st==='idle'){if(--c.t<=0){c.st='stroll';c.t=rnd(40,120)|0;c.face=Math.random()<.5?-1:1;}}
+    else if(c.st==='stroll'){mx=c.face*.3;if(--c.t<=0){c.st='idle';c.t=rnd(40,120)|0;}}
+    else if(c.st==='dizzy'){mx=Math.sin(bw.t*.3)*.3;if(--c.t<=0){c.st='panic';}}
+    else{if(!c.cross||dd<50)c.face=away;mx=c.face*c.spd*(c.kid?1.15:1);if(--c.t<=0){c.t=rnd(12,30)|0;c.dz=rnd(-.5,.5);}mz=c.dz||0;}
+    c.x+=mx;c.z=clamp(c.z+mz,BZ0,BZ1);if(mx)c.walk+=Math.abs(mx);
+    if(c.st==='panic'&&(c.x<bw.cam-24||c.x>bw.cam+W+24))c.gone=true;
+  }
+}
+// a broken prop: debris, rubble left on the floor, maybe an item, and barrels explode
+function breakProp(e){
+  const P=PROPS[e.prop];bw.score+=P.pts;spark(e.x,e.z-P.ht/2,18,P.cols,2.6);crunch(.2,.08);kick(2,.3);
+  for(let i=0;i<3+(P.hw>>2);i++)bw.rubble.push({x:e.x+rnd(-P.hw,P.hw),z:e.z+rnd(-2,2),w:1+(Math.random()*3|0),c:P.cols[(Math.random()*P.cols.length)|0]});
+  if(bw.rubble.length>90)bw.rubble.splice(0,bw.rubble.length-90);
+  if(Math.random()<P.drop)bw.items.push({kind:Math.random()<.7?'scrap':'cell',x:e.x,z:e.z});
+  if(P.boom){say('BOOM',e.x,e.z-24,C.yl,40);bursts.push({x:Math.round(e.x-bw.cam),y:Math.round(e.z-6),t:14});kick(5,.6);crunch(.35,.12);beep(70,.4,'sawtooth',.07,-30);
+    spark(e.x,e.z-8,26,[C.yl,C.mg,C.wh],3.4);squishAt(e.x,e.z,30);
+    for(const o of bw.ents)if((o.type||o.crate)&&o!==e&&!o.dead&&o.st!=='dead'&&Math.abs(o.x-e.x)<26+eDim(o).hw&&Math.abs(o.z-e.z)<12)bDamage(o,o.crate?9:14,o.x<e.x?-1:1,{heavy:true,force:true});
+    const p=bw.p;if(Math.abs(p.x-e.x)<22&&Math.abs(p.z-e.z)<10&&p.h<12)bHurt(8,e);}
+}
+function drawCiv(c,x){
+  const [sk,sh,pn]=c.pal,y=Math.round(c.z),k=c.kid?1:0;
+  if(c.flat>0){px(x-4,y-1,9,1,sh);px(x-3,y-2,6,1,sh);px(c.face>0?x+3:x-5,y-2,2,1,sk);px(x-4,y,2,1,pn);px(x+3,y,2,1,pn);
+    if(c.flat<40&&(T>>2)&1)px(x,y-4,1,1,C.yl);return;}
+  const run=c.st==='panic',sw=Math.sin(c.walk*(run?.9:.6)),l=Math.round(sw*(run?1.5:1)),lh=3-k,th=3-k,top=y-lh-th-3;
+  px(x-1+l,y-lh,1,lh,pn);px(x+1-l,y-lh,1,lh,pn);
+  px(x-1,y-lh-th,3,th,sh);
+  if(run){const f=(T>>2)&1;px(x-2,top+1-f,1,3,sk);px(x+2,top+f,1,3,sk);}else{px(x-2,y-lh-th,1,2,sk);px(x+2,y-lh-th,1,2,sk);}
+  px(x-1,top+1,3,2,sk);px(x-1,top,3,1,pn);px(c.face>0?x+1:x-1,top+1,1,1,C.void);
+  if(c.st==='dizzy'){const a=T*.25;px(x+Math.round(Math.cos(a)*3),top-2,1,1,C.yl);px(x-Math.round(Math.cos(a)*3),top-2,1,1,C.wh);}
+}
+function drawProp(e,x){
+  const P=PROPS[e.prop],y=Math.round(e.z),hit=e.hurt>0&&(e.hurt&2),dmg=e.hp<=e.max/2,col=i=>hit?C.wh:P.cols[i];
+  switch(e.prop){
+    case 'car':px(x-16,y-9,32,6,col(0));px(x-16,y-9,32,1,col(1));px(x-9,y-14,16,5,col(0));px(x-7,y-13,5,3,dmg?C.void:col(2));px(x,y-13,5,3,col(2));
+      if(dmg){pline(x+1,y-13,x+4,y-11,C.wh);px(x+8,y-8,4,2,C.grx);}px(x-12,y-4,6,4,C.grx);px(x+6,y-4,6,4,C.grx);px(x-11,y-3,4,2,col(3));px(x+7,y-3,4,2,col(3));px(x-16,y-8,2,2,C.yl);break;
+    case 'bin':px(x-4,y-9,8,9,col(0));px(x-4,y-9,1,9,col(1));px(x-3,y-6,6,1,col(1));px(x-3,y-3,6,1,col(1));
+      if(dmg){px(x-4,y-12,6,1,col(2));px(x+2,y-11,3,1,col(2));}else px(x-5,y-10,10,2,col(2));break;
+    case 'barrel':px(x-4,y-11,8,11,col(0));px(x-4,y-9,8,1,col(1));px(x-4,y-3,8,1,col(1));px(x-4,y-11,8,1,col(2));px(x-1,y-7,2,2,col(2));
+      if(dmg&&(T>>2)&1){px(x-1,y-14,2,2,C.yl);px(x,y-16,1,1,C.mg);}break;
+    case 'pine':{const lean=dmg?2:0;px(x-1,y-6,2,6,col(2));
+      for(let i=0;i<3;i++){const w=11-i*3,ty=y-9-i*6;px(x-(w>>1)+Math.round(lean*(i+1)/2),ty,w,4,col(1));px(x-(w>>1)+1+Math.round(lean*(i+1)/2),ty,w-2,2,col(0));}break;}
+    case 'fence':for(let i=-12;i<=12;i+=6)px(x+i,y-8,2,8,col(0));px(x-12,y-6,26,1,col(1));if(!dmg)px(x-12,y-3,26,1,col(1));break;
+    case 'lamp':px(x,y-26,1,26,col(0));px(x-1,y-1,3,1,col(1));px(x-2,y-28,5,2,col(1));if(!dmg||(T>>3)&1){px(x-1,y-26,3,1,col(2));if(!hit){g.globalAlpha=.25;px(x-4,y-25,9,3,C.yl);g.globalAlpha=1;}}break;
+    case 'tank':px(x-8,y-15,16,15,col(0));px(x-8,y-15,16,2,col(1));px(x-8,y-8,16,1,col(1));px(x-6,y-13,1,10,col(2));px(x+5,y-18,2,3,col(1));
+      if(dmg){g.globalAlpha=.6;px(x+5+((T>>2)&1),y-22-((T>>1)&3),2,2,C.wh);g.globalAlpha=1;}break;
+  }
 }
 const BFLOOR=[{f:'#0b021c',l:C.grid,h:C.mg},{f:'#040b12',l:'#0b2230',h:C.cy},{f:'#0e0308',l:'#2a0a18',h:C.yl}];
 function drawBody(id,x,fy,face,walk,moving,mode,pal,fp,st,lhd){
@@ -1831,11 +1919,12 @@ function drawStreet(cam){
 function drawBrawl(){
   const cam=Math.round(bw.cam);
   drawStreet(cam);
+  for(const r of bw.rubble)px(Math.round(r.x-cam),Math.round(r.z),r.w,1,r.c);
   const list=[];
   for(const e of bw.ents)list.push({z:e.z,e});
   for(const it of bw.items)list.push({z:it.z-.1,it});
   list.push({z:bw.p.z,p:1});
-  for(const o of list){const x=(o.p?bw.p.x:o.e?o.e.x:o.it.x)-cam,w=o.p?12:o.e&&o.e.boss?30:14;g.globalAlpha=.4;px(x-w/2,o.z-1,w,3,C.void);g.globalAlpha=1;}
+  for(const o of list){const x=(o.p?bw.p.x:o.e?o.e.x:o.it.x)-cam,w=o.p?12:o.e&&o.e.boss?30:o.e&&o.e.civ?(o.e.flat?0:6):o.e&&o.e.prop?PROPS[o.e.prop].hw*2:14;g.globalAlpha=.4;px(x-w/2,o.z-1,w,3,C.void);g.globalAlpha=1;}
   if(bw.boss&&bw.boss.type==='matry')list.push({z:bw.boss.z,boss:1});
   list.sort((a,c)=>a.z-c.z);
   if(bw.boss&&bw.boss.type!=='warden'&&bw.boss.type!=='matry')drawCampBoss(cam);
@@ -1847,6 +1936,8 @@ function drawBrawl(){
     const e=o.e,x=Math.round(e.x-cam);
     if(e.husk){const r=drawBody(e.id,x,e.z,e.face,0,false,0,HPAL,FP.husk,'idle');const fr=e.shell/e.max;px(x-8,e.z+2,16,2,'#0b2a3a');px(x-8,e.z+2,Math.round(16*fr),2,fr<.35?C.mg:C.cyd);
       if(e===nh&&(T>>3)&1){px(x-1,r.top-10,3,3,C.cy);px(x-3,r.top-12,7,1,C.cy);}continue;}
+    if(e.civ){drawCiv(e,x);continue;}
+    if(e.prop){drawProp(e,x);continue;}
     if(e.crate){const pal=e.hurt>0&&(e.hurt&2)?PAL.hit:{line:C.yld,fill:'#3a2a10',dark:'#2a1e08'};box(x-7,e.z-12,14,12,pal);px(x-6,e.z-11,12,1,C.yl);pline(x-6,e.z-11,x+5,e.z-2,C.yld);pline(x+5,e.z-11,x-6,e.z-2,C.yld);continue;}
     if(e.st==='dead'&&(T>>1)&1)continue;
     const pal=(e.hurt>0&&(e.hurt&2))?PAL.hit:e.st==='wind'&&(T>>2)&1?PAL.warn:e.type==='makercore'?PAL.maker:PAL.foe;
@@ -2005,7 +2096,7 @@ function pDim(){const b=pBody();if(b.size===0)return{hw:3,ht:10,dz:3};
   if(b.doll)return{hw:11,ht:22,dz:6};
   if(b.frame){const s=FR[b.frame].s;return{hw:s.tw/2+1,ht:s.lh+s.th+7,dz:4+b.size};}
   const T0=b.T;return{hw:T0.tw/2+1,ht:T0.lh+T0.th+T0.hh+7,dz:4+b.size};}
-function eDim(e){if(e.crate)return{hw:7,ht:12,dz:6};const T0=e.T;return{hw:(T0.tw||10)/2+1,ht:(T0.lh||6)+(T0.th||10)+(T0.hh||6),dz:3+(ESIZE[e.type]||1)+(e.boss?2:0)};}
+function eDim(e){if(e.civ)return{hw:2,ht:9,dz:3};if(e.crate)return e.prop?PROPS[e.prop]:{hw:7,ht:12,dz:6};const T0=e.T;return{hw:(T0.tw||10)/2+1,ht:(T0.lh||6)+(T0.th||10)+(T0.hh||6),dz:3+(ESIZE[e.type]||1)+(e.boss?2:0)};}
 // ---------- campaign bosses: the Colossus, the Warden, the Maker ----------
 function makeBoss(type,x0){
   const hp=type==='matry'?255:type==='warden'?200:type==='maker'?300:240;
