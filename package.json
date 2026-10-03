@@ -1,0 +1,15 @@
+{
+  "name": "hardcore-legend-of-onion-head",
+  "version": "4.1.0",
+  "private": true,
+  "description": "HARDCORE: Legend of Onion Head, a browser beat 'em up by Ben",
+  "scripts": {
+    "build": "node build.js",
+    "build:test": "node build.js --test",
+    "test": "node build.js --test && playwright test",
+    "test:quick": "node build.js --test && playwright test --grep-invert \"campaign\""
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.0"
+  }
+}

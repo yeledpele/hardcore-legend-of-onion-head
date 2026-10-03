@@ -1,0 +1,109 @@
+<!doctype html>
+<!--
+  HARDCORE: Legend of Onion Head
+  v4.1    Better animation: v1 knife (jab, low slash, overhead chop with slash trails, lunge, v1 feet), crouch before jumps,
+          stretch rising, squash landing, punch speed lines, idle breathing, dust on take-off, landing, running and skids,
+          \\|/ wind-up ticks, a burst when heads pop. Squarer shapes: 8x8 core with a square ring eye and square nubs,
+          square robot heads and eyes, square hound head
+  v4.0    Back to the v1.13 pixel style (deck-style teal frames, magenta robots, neon city, pixel HUD) with all the
+          gameplay of v3.0 (see gamedesign.md). The Matryoshka Zombie is now hexagonal: hex head, hex body with a seam,
+          hex face and apron. Item cards drawn as pixel panels. The vector renderer is switched off
+  v3.0    New design language in the manner of The Binding of Isaac: smooth vector art at 4x with heavy dark outlines,
+          cel shading and highlight blobs; torn paper notes with pins; active item box with a charge bar; red boss bar
+          with a skull; basement-style levels; Isaac-style bombs; eyeball Warden. Title, story, PLAY, game over and
+          ending in vector; CLASSIC keeps the pixel renderer. Onion Head's core keeps its design
+  v2.0    New pixel art after the green mech reference: navy-outlined rounded parts, flat fills with light and shade rows,
+          blue-steel bolts, yellow stripes, chest detail; frames and robots rebuilt as segmented rigs (tall back slabs,
+          chunky forearms and fists, thigh/knee/shin/foot legs, backward knees on the Walker); green frames, rust robots,
+          gold Maker, grey empty bodies; reference-style robot heads; Flyer redrawn. Onion Head's core unchanged
+  v1.13   Level 1 boss is now the MATRYOSHKA ZOMBIE: a walking-size nested doll; break a shell and a smaller, faster doll
+          climbs out (3 shells); shambles, lurches into a ground slam, calls lightning on rings marked on the floor.
+          It leaves the DOLL frame (size 2) whose special, LIGHTNING CALL, strikes the nearest robots. No Titan drop
+  v1.12   The Warden drops the FLYER: a hovering frame (low lunges pass under it) whose special, BOMB DROP, drops a run
+          of three bombs ahead; bombs launch robots, pop heads up, and topple the Colossus/Maker at their feet
+  v1.11.1 Back to two buttons: A jump, B attack, A+B together special. Removed the SP touch button, which pushed A off
+          narrow phone screens; touch controls now scale to fit
+  v1.11   Ticking heads (about 1 in 3, explode after ~6 s, kick them away or at something). Bosses without jumping:
+          a blast or the new Chain Hook topples the Colossus/Maker so its head lies on the floor (ground hits x1.5);
+          it braces for ~7 s after getting up. The hook also pulls the Warden down and drags robots to you.
+          Every boss arena has a crate with a Chain Hook
+  v1.10   Kickable heads: a beaten robot's head lands on the street; any hit kicks it. It flies, bounces and can be kicked
+          again, knocks down robots it hits (HEADSHOT), clangs off the Colossus and Maker unless they kneel, and homes
+          up at the Warden to knock it out of the air, like the bombs
+  v1.9    Beaten robots lose their head (it pops off); empty bodies are headless and Onion Head's core takes the
+          head's place when it climbs in. Jump fix: holding attack no longer turns jump into the A+B special (both must be
+          pressed together), and jumping cancels a punch combo, so boss fights are playable again
+  v1.8    Hit boxes from body size (yours and the robots'); the bare core is small and thin, so harder to hit.
+          Bosses back in the campaign: Colossus (slam, sweep, kneel, jump on its fist for head crits; leaves a Titan),
+          the Warden (searchlight beam, walking bombs you kick back up; leaves a Walker), the Maker (Colossus moves,
+          missile rain, its core ejects at half health). Mini-bosses mid-level: big Brute, big Walker, two big Brutes
+  v1.7    Specials in the campaign: C/Shift (gamepad Y, touch SP, or A+B) uses the body's own power, fed by a POWER
+          meter filled by landing hits. Frames: knife throw, power glove, hammer of might, shoulder laser, giant sword;
+          robot bodies: spin, spear thrust, pounce, shield bash, ground pound, rocket launch. Crates drop weapons
+          (sword, hammer, laser, rocket) that mount on your body and stay with it if you eject
+  v1.6    PLAY is now a beat 'em up campaign: one street through all three levels (5 sections each, bosses),
+          start as the bare core; Enter climbs into a bigger empty body or ejects at any time; beaten robots leave
+          their bodies, smaller climbs into bigger and nests (layers break outer-first); CLASSIC keeps the map game,
+          where eject now also works at any time
+  v1.5    BRAWL: a beat 'em up mode from the title screen. Pick a frame, walk a four-section street in depth,
+          several robots at once (two attack, the rest wait), combos and launchers, grab a dazed robot and throw it
+          into the others, A+B core burst, crates with repairs and core cells, Walker boss, score and hit counter
+  v1.4.1  Nesting fix: the NEST row accepts any second frame and puts the bigger one outside; says when a second
+          frame is needed; the salvage screen announces when nesting becomes possible
+  v1.4    Nesting frames (the deck's NESTING note): pick a smaller frame in battle prep to ride inside the bigger one.
+          It stands on the lid with the core on top; damage peels layers: shell break or eject drops you to the
+          nested frame, then to the core. Extra shell shown in prep and as a second HUD bar
+  v1.3    Frames redrawn after the deck: flat teal blocks, lid plate under the core, arm blocks with finger pegs,
+          separate legs and feet, chest triangle (pentagon on the Titan and King), the Titan's splayed stepped limbs,
+          side domes on the nested core (the character sheet's "additions"), matching map and parked-rig sprites
+  v1.2    Lessons from Blaster Master: the core and its frames decide where you can go
+          - map: B parks the frame (the rig); the bare core is quicker and fits through vents; walk back in or press B
+          - gated pockets on every map: vents (core only), cracked walls (Hammer), glyph doors (Laser), deep water (Walker/Titan), chasms (Jet Booster)
+          - caches: core cells (+1 core), parts, and chalk-storyboard memories of Shelly
+          - momentum: heavy frames build speed slowly, slide and skid; the core stops on a dime (map and fights)
+          - fights started while the rig is parked are fought as the bare core; Start on the map opens the rig panel
+  v1.1    Jump and fight overhaul, Hebrew version, version numbering
+          - jump: press buffering, coyote time, variable height (tap = hop, hold = full), heavier fall, per-frame jump heights
+          - landing squash, heavy-frame stomp, air control
+          - combo finisher launches robots; juggle them in the air; knocked-down state
+          - dive: down + B in the air, bounces off robots, mines and armor (pogo)
+          - charge: keep holding B after an attack for a guard-breaking heavy strike
+          - jump cancels a punch; combo hit counter
+          - Hebrew: right-to-left pixel font, full translation, L key or the page toggle
+  v1.0    Three levels (Burial Waste, Pine Forest, Foundry), Warden and Maker bosses, new robots and parts
+  v0.3    (pre-release) Climbable Colossus, guard/parry, eject tumble, shell break debris, Shaman, rocket
+  v0.2    (pre-release) A = jump, B = attack; walk cycles
+  v0.1    (pre-release) First playable: map, battle prep, fights, eject, shell break, Colossus
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HARDCORE: Legend of Onion Head v4.1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Secular+One&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<style>/*@@STYLE@@*/</style>
+</head>
+<body>
+<div id="wrap">
+  <div id="stage"><div id="frame"><canvas id="view" width="256" height="144" tabindex="0" aria-label="Hardcore game screen. Use the keyboard or a gamepad to play."></canvas></div></div>
+  <button id="langBtn" type="button" aria-label="Switch language">עברית</button>
+  <p id="keys"></p>
+  <div id="pad" aria-label="Touch controls">
+    <div class="dpad">
+      <button data-k="up" aria-label="Up / special">▲</button>
+      <button data-k="left" aria-label="Left">◀</button>
+      <button data-k="right" aria-label="Right">▶</button>
+      <button data-k="down" aria-label="Down / guard">▼</button>
+    </div>
+    <button class="start" data-k="start" aria-label="Start">START</button>
+    <div class="ab">
+      <button class="b" data-k="b" aria-label="B, attack">B</button>
+      <button class="a" data-k="a" aria-label="A, jump">A</button>
+    </div>
+  </div>
+</div>
+<script>/*@@SCRIPT@@*/</script>
+</body>
+</html>
