@@ -12,6 +12,7 @@ A browser beat 'em up by Ben (visual artist). One self-contained HTML file when 
 - `src/index.html` page shell, `src/style.css`, `src/game.js` (all game code; still one big file — splitting it into modules is an open task).
 - `build.js` inlines src into `dist/hardcore.html` (publish this). `node build.js --test` adds `tests/hooks.js` → `dist/hardcore.test.html`.
 - `tests/` Playwright tests. `.claude/agents/` project subagents.
+- `.github/workflows/pages.yml`: every push to `main` runs the quick tests, builds, and publishes to https://yeledpele.github.io/hardcore-legend-of-onion-head/ (public repo).
 
 ## Commands
 - `npm run build` → `dist/hardcore.html`
@@ -28,7 +29,7 @@ A browser beat 'em up by Ben (visual artist). One self-contained HTML file when 
 
 ## Branches
 - `main`: v4.1, the v1.13 pixel look with all current gameplay (published).
-- `style-flat`: v5.0, the flat colour-shape style.
+- The v5.0 flat colour-shape style (`style-flat`) was dropped; its build stays in `versions/hardcore_v5.0.html`.
 
 ## Working with Ben
 - Ben gives direction with reference images; propose a short plan first, then build.
