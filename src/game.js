@@ -1665,6 +1665,12 @@ function stepBrawl(){
   if(p.onG&&Math.abs(p.vx)+Math.abs(p.vz)>.3)p.walk+=Math.abs(p.vx)+Math.abs(p.vz);
   if(p.onG&&!pBody().flyer){if(Math.abs(p.vx)>.9&&bw.t%10===0)dust(p.x-p.face*4,p.z,1,-p.face);if(dx&&Math.sign(p.vx)===-dx&&Math.abs(p.vx)>.7&&bw.t%3===0)dust(p.x+Math.sign(p.vx)*3,p.z,2,Math.sign(p.vx));}
   if(p.plat&&p.onG){const q=p.plat;if(!bw.plats.includes(q)||p.x<q.x0-2||p.x>q.x1+2||p.z<q.z0-2||p.z>q.z1+2){p.plat=null;p.onG=false;p.vh=0;}else p.h=q.h;}
+  // the Flyer's jetpack: hold A in the air to thrust upward while the fuel lasts; it refills on the ground
+  if(b.flyer){if(p.fuel===undefined)p.fuel=JET.fuel;
+    if(p.onG)p.fuel=Math.min(JET.fuel,p.fuel+JET.refill);
+    else if(K.a&&p.jt>6&&p.fuel>0&&p.kind!=='dive'&&p.kind!=='sp'){p.fuel--;p.vh=Math.min(JET.vmax,p.vh+JET.thrust);if(p.h>=JET.cap){p.h=JET.cap;p.vh=Math.min(p.vh,0);}
+      if(bw.t%2===0||p.fuel>12)for(const sx of [-7,6])parts.push({x:p.x+sx+rnd(-1,1),y:p.z-p.h-HOV+2,vx:rnd(-.2,.2),vy:rnd(.9,1.5),t:6+rnd(0,6)|0,c:[C.yl,C.yl,C.wh,C.mg][(Math.random()*4)|0],gv:0,s:Math.random()<.5?2:1});
+      if(bw.t%6===0)beep(70+rnd(0,20),.06,'sawtooth',.02,-20);}}
   if(!p.onG){const h0=p.h;p.h+=p.vh;p.vh-=p.kind==='dive'?.5:(p.vh>0?.19:.3);
     if(p.vh<0)for(const q of bw.plats)if(p.x>=q.x0&&p.x<=q.x1&&p.z>=q.z0&&p.z<=q.z1&&h0>=q.h-1&&p.h<=q.h){p.h=q.h;p.vh=0;p.onG=true;p.plat=q;p.land=4;if(p.kind==='dive'||p.kind==='air'){p.kind=null;p.atk=0;}break;}
     if(!K.a&&p.vh>1.2&&p.kind!=='dive'&&p.jt<20)p.vh*=.6;
@@ -2266,6 +2272,7 @@ function fireHook(){
 // ---------- the Flyer: the frame inside the Warden; hovers, and drops bombs ----------
 const FLYER={flyer:true,size:3,shell:80,dmg:5,spd:1.4,reach:16,name:'FLYER'};
 const HOV=12;
+const JET={fuel:70,refill:1.5,thrust:.5,vmax:2.4,cap:42};
 function drawFlyer(x,fy,face,moving,mode,fp,husk){
   // fy is the floor point under it; the body floats above
   const bob=husk?0:Math.round(Math.sin(T*.12)*1.5),y=husk?fy-6:fy-HOV-bob;

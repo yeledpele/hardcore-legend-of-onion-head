@@ -111,7 +111,7 @@ You can climb only into a body bigger than the one you're in.
 | Walker robot | 3 | 100 | 8 | ~1.14 | Rocket Launch | |
 | Maker's core | 2 | 140 | 7 | ~1.7 | Scrap Spin | |
 | Doll (from Matryoshka) | 2 | 70 | 6 | 1.15 | Lightning Call | |
-| Flyer (from Warden) | 3 | 80 | 5 | 1.40 | Bomb Drop | Hovers; low attacks pass under it |
+| Flyer (from Warden) | 3 | 80 | 5 | 1.40 | Bomb Drop | Hovers; low attacks pass under it; hold A for a jetpack boost (5.5) |
 
 Robot-body stats are worked out from the robot's own stats: damage is about 55% of the robot's damage, and speed is the robot's speed × 1.9, limited to between 0.95 and 1.7.
 
@@ -129,6 +129,8 @@ Each body speeds up and slows down at its own rate, both on the street and in Cl
 | Flyer | 0.18 | 0.95 — floaty |
 
 Heavier bodies also jump slightly lower.
+
+**The Flyer's jetpack:** tap A for a normal hop; keep holding A in the air to thrust upward (also to catch a fall), with flame puffs and an engine rumble. Fuel lasts about 70 frames (~1.2 s) of thrust and refills on the ground (1.5 per frame). The boost tops out at a height of 42, about 1.5× a normal jump, so the core stays clear of the HUD. Not during a dive or a special.
 
 ---
 

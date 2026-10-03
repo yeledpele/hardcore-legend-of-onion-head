@@ -30,6 +30,15 @@ test('nesting is locked until the Matryoshka falls',async({page})=>{
   s=await climb('walker');expect(s.layers).toEqual(['brute','walker']);
   expect(errors).toEqual([]);
 });
+test('the Flyer boosts up like a jetpack while A is held',async({page})=>{
+  const errors=await open(page);await startCampaign(page);await page.waitForTimeout(800);
+  const peak=async(id,ms)=>{await page.evaluate(id=>window.__t.dummy(id),id);await page.waitForTimeout(300);
+    await page.keyboard.down('KeyZ');let top=0;const t0=Date.now();while(Date.now()-t0<ms){top=Math.max(top,(await snap(page)).ph);await page.waitForTimeout(30);}
+    await page.keyboard.up('KeyZ');await page.waitForTimeout(1500);return top;};
+  const hop=await peak('walker',900),jet=await peak('flyer',1400);
+  expect(jet).toBeGreaterThan(hop+10);expect(jet).toBeLessThanOrEqual(46);
+  expect((await snap(page)).onG).toBe(true);expect(errors).toEqual([]);
+});
 test('a frame draws in under 4 ms',async({page})=>{
   await open(page);await startCampaign(page);await page.waitForTimeout(1500);
   expect(await page.evaluate(()=>window.__t.drawMs())).toBeLessThan(4);
