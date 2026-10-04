@@ -70,7 +70,7 @@ const HE={
 'SALVAGE WHAT YOU CAN':'אסוף מה שאפשר','YOU':'אתה','YOUR FRAME, RECOVERED':'השלד שלך הוחזר','THE COLOSSUS WAITS':'הענק מחכה',
 'THE MAKER IS AWAKE':'היוצר ער','THE WARDEN IS WATCHING':'השומר צופה',"SHELLY'S HOUSE. THE DOOR IS OPEN.":'הבית של שלי. הדלת פתוחה.',
 'EJECT':'פליטה','IT EJECTED':'הוא נפלט','SHELL BREAK':'המעטפת נשברה','POGO':'ניתור','LAUNCH':'הקפצה','CHARGED':'טעון','STOMP':'רקיעה',
-'L: ENGLISH':'L: ENGLISH','MATRYOSHKA':'מטריושקה','ANOTHER ONE INSIDE':'עוד אחת בפנים','THE LAST DOLL':'הבובה האחרונה','ITS SMALLEST SHELL: THE DOLL':'הקליפה הקטנה שלה: הבובה','NESTING LOCKED: BEAT THE MATRYOSHKA':'קינון נעול: נצחו את המטריושקה','NESTING UNLOCKED':'קינון נפתח','THE TOY WORKS':'מפעל הצעצועים','HERMIT HARBOUR':'נמל הסרטנים','THE MAGNET YARD':'מגרש המגנט','THE GULLET BOG':'ביצת הלוע',"THE GIANT'S KITCHEN":'המטבח של הענק',
+'L: ENGLISH':'L: ENGLISH','MATRYOSHKA':'מטריושקה','ANOTHER ONE INSIDE':'עוד אחת בפנים','THE LAST DOLL':'הבובה האחרונה','ITS SMALLEST SHELL: THE DOLL':'הקליפה הקטנה שלה: הבובה','NESTING LOCKED: BEAT THE MATRYOSHKA':'קינון נעול: נצחו את המטריושקה','NESTING UNLOCKED':'קינון נפתח','CONTROLLER CONNECTED':'בקר מחובר','CONTROLLER DISCONNECTED':'הבקר נותק','THE TOY WORKS':'מפעל הצעצועים','HERMIT HARBOUR':'נמל הסרטנים','THE MAGNET YARD':'מגרש המגנט','THE GULLET BOG':'ביצת הלוע',"THE GIANT'S KITCHEN":'המטבח של הענק',
 'THE WIND-UP KNIGHT':'אביר הקפיץ','THE HERMIT CRAB':'הסרטן הנזיר','THE CRANE':'העגורן','THE TOAD KING':'מלך הקרפדות','THE COOK':'הטבח',
 'THE WARDEN GOES QUIET.':'השומר משתתק.','ITS LAST SIGNAL CAME FROM THE FOUNDRY.':'האות האחרון שלו הגיע מבית היציקה.','THE ROAD RUNS THROUGH A TOY FACTORY.':'הדרך עוברת דרך מפעל צעצועים.','SOMETHING INSIDE IS STILL WOUND UP.':'משהו בפנים עדיין מתוח.',
 'THE KNIGHT RUNS DOWN.':'האביר נעצר.','THE ROAD ENDS AT A NIGHT HARBOUR.':'הדרך נגמרת בנמל לילי.','EMPTY BODIES WASH UP ON THE PIER.':'גופים ריקים נסחפים אל המזח.','SOMETHING IS COLLECTING THEM.':'משהו אוסף אותם.',
@@ -121,8 +121,8 @@ const adv=ch=>{const h=HFONT[ch];return h?h.w+1:4;};
 function setLang(l){LANG=l;try{localStorage.setItem('hc-lang',l);}catch(e){}syncLangUI();}
 
 const LEGEND={
-  en:'<b>Arrows / WASD</b> move &nbsp; <b>Z / Space</b> jump (A), hold for higher &nbsp; <b>X</b> attack (B): tap for a combo, the third hit launches &nbsp; <b>hold X</b> charge &nbsp; <b>Down + X in the air</b> dive &nbsp; <b>Up</b> special &nbsp; <b>Down</b> guard, double-tap to eject &nbsp; <b>Enter</b> start &nbsp; <b>Play: Enter</b> climb into a bigger empty body, or eject &nbsp; <b>Z + X together</b> (A+B) special: each body has its own power, fill POWER by landing hits; crates drop weapons &nbsp; walk into a dazed robot to grab, X to throw &nbsp; <b>Classic</b> (title menu): the map and duels &nbsp; <b>On the map: X</b> park or climb into your frame, <b>Enter</b> rig panel &nbsp; <b>L</b> עברית',
-  he:'<b>חצים / WASD</b> תנועה &nbsp; <b>Z / רווח</b> קפיצה (A), החזק לגובה &nbsp; <b>X</b> מכה (B): הקש לקומבו, המכה השלישית מקפיצה &nbsp; <b>החזק X</b> טעינה &nbsp; <b>למטה + X באוויר</b> צלילה &nbsp; <b>למעלה</b> מיוחד &nbsp; <b>למטה</b> הגנה, פעמיים לפליטה &nbsp; <b>Enter</b> התחלה &nbsp; <b>במשחק: Enter</b> היכנס לגוף ריק גדול יותר, או פליטה &nbsp; <b>Z + X יחד</b> (A+B) מיוחד: לכל גוף כוח משלו, ממלאים כוח במכות; ארגזים מפילים נשקים &nbsp; לך לרובוט המום כדי לתפוס, X לזריקה &nbsp; <b>קלאסי</b> (בתפריט): המפה והדו־קרבות &nbsp; <b>במפה: X</b> חניית השלד או כניסה אליו, <b>Enter</b> לוח השלד &nbsp; <b>L</b> English'};
+  en:'<b>Arrows / WASD</b> move &nbsp; <b>Z / Space</b> jump (A), hold for higher &nbsp; <b>X</b> attack (B): tap for a combo, the third hit launches &nbsp; <b>hold X</b> charge &nbsp; <b>Down + X in the air</b> dive &nbsp; <b>Up</b> special &nbsp; <b>Down</b> guard, double-tap to eject &nbsp; <b>Enter</b> start &nbsp; <b>Play: Enter</b> climb into a bigger empty body, or eject &nbsp; <b>Z + X together</b> (A+B) special: each body has its own power, fill POWER by landing hits; crates drop weapons &nbsp; walk into a dazed robot to grab, X to throw &nbsp; <b>Classic</b> (title menu): the map and duels &nbsp; <b>On the map: X</b> park or climb into your frame, <b>Enter</b> rig panel &nbsp; <b>Controller</b> stick / D-pad move, A or B jump, X attack, Y / LB / RB special, Start, Back: language &nbsp; <b>L</b> עברית',
+  he:'<b>חצים / WASD</b> תנועה &nbsp; <b>Z / רווח</b> קפיצה (A), החזק לגובה &nbsp; <b>X</b> מכה (B): הקש לקומבו, המכה השלישית מקפיצה &nbsp; <b>החזק X</b> טעינה &nbsp; <b>למטה + X באוויר</b> צלילה &nbsp; <b>למעלה</b> מיוחד &nbsp; <b>למטה</b> הגנה, פעמיים לפליטה &nbsp; <b>Enter</b> התחלה &nbsp; <b>במשחק: Enter</b> היכנס לגוף ריק גדול יותר, או פליטה &nbsp; <b>Z + X יחד</b> (A+B) מיוחד: לכל גוף כוח משלו, ממלאים כוח במכות; ארגזים מפילים נשקים &nbsp; לך לרובוט המום כדי לתפוס, X לזריקה &nbsp; <b>קלאסי</b> (בתפריט): המפה והדו־קרבות &nbsp; <b>במפה: X</b> חניית השלד או כניסה אליו, <b>Enter</b> לוח השלד &nbsp; <b>בקר</b> סטיק / חצים תנועה, A או B קפיצה, X התקפה, Y / LB / RB מיוחד, Start, Back: שפה &nbsp; <b>L</b> English'};
 function syncLangUI(){
   const k=document.getElementById('keys'),b=document.getElementById('langBtn');
   k.innerHTML=LEGEND[LANG];k.dir=LANG==='he'?'rtl':'ltr';k.lang=LANG;
@@ -419,28 +419,39 @@ let LV=LEVELS[0];
 const KEYS=['up','down','left','right','a','b','start','jump','lang','sp'];
 const kb={},tc={},gp={},K={},P={},prev={},hit={};
 const KMAP={ArrowUp:'up',KeyW:'up',ArrowDown:'down',KeyS:'down',ArrowLeft:'left',KeyA:'left',ArrowRight:'right',KeyD:'right',KeyZ:'a',KeyJ:'a',KeyX:'b',KeyK:'b',Space:'jump',Enter:'start',Escape:'b',KeyL:'lang',KeyC:'sp',ShiftLeft:'sp',ShiftRight:'sp'};
-addEventListener('keydown',e=>{const k=KMAP[e.code];if(k){if(!e.repeat)hit[k]=true;kb[k]=true;e.preventDefault();initAudio();}});
+addEventListener('keydown',e=>{const k=KMAP[e.code];if(k){padUsed=false;if(!e.repeat)hit[k]=true;kb[k]=true;e.preventDefault();initAudio();}});
 addEventListener('keyup',e=>{const k=KMAP[e.code];if(k){kb[k]=false;e.preventDefault();}});
 addEventListener('blur',()=>{for(const k of KEYS){kb[k]=false;tc[k]=false;}});
 document.querySelectorAll('#pad button').forEach(b=>{
   const k=b.dataset.k;
-  const on=e=>{e.preventDefault();tc[k]=true;hit[k]=true;b.classList.add('on');initAudio();};
+  const on=e=>{e.preventDefault();padUsed=false;tc[k]=true;hit[k]=true;b.classList.add('on');initAudio();};
   const off=e=>{e.preventDefault();tc[k]=false;b.classList.remove('on');};
   b.addEventListener('pointerdown',on);b.addEventListener('pointerup',off);b.addEventListener('pointercancel',off);b.addEventListener('pointerleave',off);
   b.addEventListener('contextmenu',e=>e.preventDefault());
 });
 view.addEventListener('pointerdown',()=>{initAudio();if(state==='title')hit.start=true;});
+// controllers: every connected pad counts (standard mapping): stick/D-pad move, A (south) and B (east) jump,
+// X (west) attacks, Y and the shoulder buttons fire the special, Start, Back switches language
+let padUsed=false,toast=null,rumbleT=0;
 function pollPad(){
   for(const k of KEYS)gp[k]=false;
-  let pads=[];try{pads=navigator.getGamepads?navigator.getGamepads():[];}catch(e){pads=[];};let p=null;
-  for(const x of pads)if(x){p=x;break;}
-  if(!p)return;
-  const ax=p.axes[0]||0,ay=p.axes[1]||0,b=i=>!!(p.buttons[i]&&p.buttons[i].pressed);
-  gp.left=ax<-.5||b(14);gp.right=ax>.5||b(15);gp.up=ay<-.5||b(12);gp.down=ay>.5||b(13);
-  gp.up=gp.up||(state!=='brawl'&&b(3));gp.sp=b(3);gp.a=b(0);gp.b=b(2);gp.jump=b(1);gp.start=b(9);
-  if(KEYS.some(k=>gp[k]))initAudio();
+  let pads=[];try{pads=navigator.getGamepads?navigator.getGamepads():[];}catch(e){pads=[];}
+  const dz=FEEL.controller.deadzone;let any=false;
+  for(const p of pads){if(!p)continue;
+    const ax=p.axes[0]||0,ay=p.axes[1]||0,b=i=>!!(p.buttons[i]&&p.buttons[i].pressed);
+    const st={left:ax<-dz||b(14),right:ax>dz||b(15),up:ay<-dz||b(12)||(state!=='brawl'&&b(3)),down:ay>dz||b(13),a:b(0),jump:b(1),b:b(2),sp:b(3)||b(4)||b(5),start:b(9),lang:b(8)};
+    for(const k in st)if(st[k]){gp[k]=true;any=true;}
+  }
+  if(any){initAudio();padUsed=true;}
 }
-function computeKeys(){for(const k of KEYS){const v=!!(kb[k]||tc[k]||gp[k]);P[k]=(v&&!prev[k])||!!hit[k];hit[k]=false;K[k]=v||P[k];prev[k]=v;}}
+function rumble(sh){
+  const C2=FEEL.controller;if(!padUsed||C2.rumble<=0||sh<C2.rumbleFrom)return;const now=performance.now();if(now<rumbleT)return;rumbleT=now+70;
+  try{for(const p of navigator.getGamepads?navigator.getGamepads():[]){const a=p&&p.vibrationActuator;if(a&&a.playEffect)a.playEffect('dual-rumble',{duration:Math.min(260,40+sh*22),strongMagnitude:Math.min(1,sh/8)*C2.rumble,weakMagnitude:Math.min(1,sh/5)*C2.rumble}).catch(()=>{});}}catch(e){}
+}
+addEventListener('gamepadconnected',()=>{toast={s:'CONTROLLER CONNECTED',t:150};padUsed=true;});
+addEventListener('gamepaddisconnected',()=>{toast={s:'CONTROLLER DISCONNECTED',t:150};});
+function computeKeys(){for(const k of KEYS){const v=!!(kb[k]||tc[k]||gp[k]);P[k]=(v&&!prev[k])||!!hit[k];hit[k]=false;K[k]=v||P[k];prev[k]=v;}
+  if(state==='brawl'){if(P.jump)P.a=true;if(K.jump)K.a=true;}}
 
 // ---------- audio ----------
 let ac=null;
@@ -471,7 +482,7 @@ function newRun(){
 }
 function spark(x,y,n,cols,sp=2,grav=.1){for(let i=0;i<n;i++)parts.push({x,y,vx:rnd(-sp,sp),vy:rnd(-sp*1.3,sp*.4),t:rnd(14,30)|0,c:cols[(Math.random()*cols.length)|0],gv:grav,s:Math.random()<.3?2:1});}
 function say(s,x,y,c,life=45){texts.push({s,x,y,c,t:life,max:life});}
-function kick(sh,gl){if(!reduce)shake=Math.max(shake,sh);glitch=Math.max(glitch,gl);}
+function kick(sh,gl){if(!reduce)shake=Math.max(shake,sh);glitch=Math.max(glitch,gl);rumble(sh);}
 
 // ---------- backgrounds ----------
 withCtx(bg.getContext('2d'),()=>{
@@ -743,7 +754,7 @@ function reboot(){
 
 // ---------- update ----------
 function step(){
-  T++;pollPad();computeKeys();
+  T++;pollPad();computeKeys();if(toast&&--toast.t<=0)toast=null;
   if(P.lang)setLang(LANG==='he'?'en':'he');
   if(hitstop>0){hitstop--;return;}
   if(state==='title'){
@@ -3756,6 +3767,7 @@ function render(){
     case 'prep':drawPrep();break;case 'memory':drawMap();drawMemory();break;case 'fight':drawFight();break;case 'result':drawResult();break;
     case 'dead':drawDead();break;case 'ending':drawEnding();break;
   }
+  if(toast){const w=textW(toast.s)+10;g.globalAlpha=.85;px(128-w/2,2,w,11,C.void);g.globalAlpha=1;px(128-w/2,12,w,1,C.cyd);txt(toast.s,128,5,C.cy,1,'c');}
   present();
 }
 function present(){

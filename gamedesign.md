@@ -35,15 +35,16 @@ The game uses a two-button convention: **A** and **B**.
 | Action | Keyboard | Touch | Gamepad |
 |---|---|---|---|
 | Move (left, right, and up/down in depth) | Arrows / WASD | D-pad | Stick / D-pad |
-| Jump (A) | Z or Space | A | South / East button |
-| Attack (B) | X | B | West button |
-| Special (A and B together) | Z + X at the same time (also C or Shift) | A + B | Y |
+| Jump (A) | Z or Space | A | A / B (south / east) |
+| Attack (B) | X | B | X (west) |
+| Special (A and B together) | Z + X at the same time (also C or Shift) | A + B | Y, LB or RB (or A/B + X together) |
 | Climb into a body / Eject (Start) | Enter | START | Start |
-| Language (English / Hebrew) | L | page button | — |
+| Language (English / Hebrew) | L | page button | Back / Select |
 
 - Pressing A and B counts as a special only when both go down within a few frames of each other, so mashing attack and then jumping still jumps.
 - Jumping cancels a punch combo.
 - On touch screens the pad scales to fit narrow phones.
+- **Controllers:** any connected pad works (standard mapping); "CONTROLLER CONNECTED" / "DISCONNECTED" shows on any screen. Stick dead zone and rumble live in `FEEL.controller`. Big screen shakes (hits, slams, explosions) rumble the pad, only while you're playing on it; touching the keyboard or touch pad stops the rumble.
 
 ---
 
