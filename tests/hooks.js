@@ -31,6 +31,7 @@ window.__t={
   civ:dx=>{bw.ents=bw.ents.filter(e=>!e.civ&&!e.prop);const c=addCiv(bw.p.x+dx,bw.p.z);c.st='idle';c.t=9999;},
   prop:(k,dx)=>{bw.ents=bw.ents.filter(e=>!e.civ&&!e.prop);bw.ents.push({crate:true,prop:k,x:bw.p.x+dx,z:bw.p.z,h:0,hp:PROPS[k].hp,max:PROPS[k].hp,hurt:0});},
   feel:()=>FEEL,
+  frame:()=>T,
   setFeel:(group,key,v)=>{FEEL[group][key]=v;},
   dummyHp:()=>{const e=bw.ents.find(e=>e.type);return e?e.hp:-1;},
   drawMs:()=>{const t0=performance.now();for(let i=0;i<30;i++)render();return (performance.now()-t0)/30;}

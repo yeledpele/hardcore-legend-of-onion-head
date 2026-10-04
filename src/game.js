@@ -3786,7 +3786,9 @@ addEventListener('resize',fit);fit();
 let last=performance.now(),acc=0;
 function loop(now){
   acc+=Math.min(100,now-last);last=now;
-  let n=0;while(acc>=1000/60&&n<4){step();acc-=1000/60;n++;}
+  // fixed steps; FEEL.game.speed stretches the step length, so everything slows evenly
+  const dt=1000/(60*Math.max(.1,FEEL.game.speed||1));
+  let n=0;while(acc>=dt&&n<4){step();acc-=dt;n++;}
   render();requestAnimationFrame(loop);
 }
 requestAnimationFrame(loop);

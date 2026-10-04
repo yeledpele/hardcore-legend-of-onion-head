@@ -561,7 +561,8 @@ Small people walk around every section (2–3; one in boss arenas), and more run
 ## 17. Technical architecture
 
 - **One self-contained HTML file.** All art is procedural (flat vector in PLAY, pixel in Classic) and all sound is synthesized. Nothing is loaded except Google Fonts.
-- **Fixed-step loop** at 60 updates per second, at most 4 updates per frame.
+- **Fixed-step loop** at 60 × `FEEL.game.speed` updates per second (0.85 → 51 a second), at most 4 updates per frame. The game speed slows everything evenly, in both modes.
+- **Feel file:** `src/feel.js` (`FEEL`) holds the PLAY tuning numbers; the game reads it live.
 - **State machine:** `title, intro, brawl, bover, ending` (PLAY) and `map, prep, memory, fight, result, dead` (Classic).
 - **Rendering:**
   - PLAY: a flat vector renderer on a 1024 × 576 canvas with pre-drawn level strips, about 0.6 ms per frame.

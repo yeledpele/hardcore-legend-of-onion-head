@@ -1,6 +1,9 @@
 // HARDCORE feel file: the numbers that decide how the PLAY campaign feels. Change them here (or live with the dev panel, ?dev=1).
 // One value per line, "name: number," so the dev tools can rewrite values in place. Times are in frames (60 per second).
 const FEEL={
+  game:{
+    speed: 0.85           // master game speed: 1 = 60 steps a second; lower slows everything evenly (both modes)
+  },
   player:{
     jumpCore: 3.9,        // jump speed of the bare core
     jumpBody: 3.4,        // jump speed in a body

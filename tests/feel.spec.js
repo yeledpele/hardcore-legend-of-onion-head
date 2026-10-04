@@ -11,6 +11,13 @@ test('feel.js loads and every value is a finite number on its own line',()=>{
   for(const [g,o] of Object.entries(FEEL))for(const [k,v] of Object.entries(o)){if(typeof v==='object')continue;
     const re=new RegExp('^\\s*'+k+':\\s*-?[\\d.]+,?\\s*(//.*)?$','m');expect(re.test(SRC.slice(SRC.indexOf(g+':{'))),g+'.'+k).toBe(true);}
 });
+test('game speed slows the whole game evenly',async({page})=>{
+  const errors=await open(page);await page.waitForTimeout(300);
+  const rate=async v=>{await page.evaluate(v=>window.__t.setFeel('game','speed',v),v);await page.waitForTimeout(200);
+    const t0=await page.evaluate(()=>window.__t.frame());await page.waitForTimeout(1500);return (await page.evaluate(()=>window.__t.frame())-t0)/1.5;};
+  const full=await rate(1),half=await rate(.5);
+  expect(full).toBeGreaterThan(50);expect(half/full).toBeGreaterThan(.4);expect(half/full).toBeLessThan(.6);expect(errors).toEqual([]);
+});
 test('the game reads the feel file live',async({page})=>{
   const errors=await open(page);await startCampaign(page);await page.waitForTimeout(400);
   const peak=async()=>{await page.evaluate(()=>window.__t.dummy('core'));await page.waitForTimeout(200);await page.keyboard.down('KeyZ');let top=0;

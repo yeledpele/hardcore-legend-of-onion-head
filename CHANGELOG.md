@@ -18,6 +18,7 @@ Built on v4.1.
 - Difficulty now rises evenly over eight levels, ending where the old level 3 was.
 - New bosses share one framework (`NB` table): one entry per boss for hits, topple, ticking heads, Flyer bombs and the Chain Hook.
 - **Feel file** (`src/feel.js`, branch `dev-tools`): ~80 tuning numbers for the PLAY campaign moved out of the code into one commented file (movement, weight, jump, jetpack, combat timing and damage, POWER, robots, difficulty, bosses, civilians, barrels, hazards). Same values, same game.
+- **Slower overall:** a master game speed (`FEEL.game.speed`, now 0.85) slows everything evenly, about 15% calmer than before.
 
 ## v4.1
 Built on v4.0 (the v1.13 pixel look), as a branch beside v5.0.
