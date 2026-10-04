@@ -16,6 +16,7 @@ v4.2 in progress. `main` is live on GitHub Pages; the dev tools are being built 
 - **Controller support**: any pad, A/B jump, X attack, Y/LB/RB special, Start, Back = language, connect message, rumble. Also fixed: Space (and pad B) now jump in the campaign. Tested with a simulated pad; needs a real controller to confirm rumble and button layout.
 - **Boss revisions**: the Toad King is a jelly cube you beat from the inside (it digests your bodies, spits out the bare core); the Crane's pull is stronger and visible and it freezes what it catches (mash to break free); the Crane drops the MAGNET power (push special, pull on every 3rd hit).
 - **Tweaks:** glitch only on damage and fail screens; full-width belts in Toy Works sections 2-4 that drag everything; beaten robots leave a body by per-type chance; the Hermit Crab starts in a spiral sea-snail shell.
+- **Block, two specials, Matryoshka legs** (branch `block-nest`, not merged): pad B / V blocks (guard meter, breaks and stuns); nested bodies: RT/C outer special, LT/F inner special; the Matryoshka has little legs.
 - **Controller layout:** LT/RT special; Y, LB or RB climb in / eject; Start (or P) pauses. Ben has a working Xbox pad in Chrome.
 - **Game speed:** master `FEEL.game.speed` = 0.85 (was effectively 1.0), slows everything evenly. Needs a playtest.
 - **Project setup:** git + GitHub (public), GitHub Pages deploy on push to `main` (quick tests must pass), project agents including `level-designer`.
@@ -33,6 +34,7 @@ v4.2 in progress. `main` is live on GitHub Pages; the dev tools are being built 
 - A real controller: button layout, stick dead zone, and whether the rumble is too strong or too often.
 - Difficulty across the 8 levels, and each new boss's HP and attack timing.
 - The jelly Toad King: digest speed (one body per ~3 s), inside damage, how often it engulfs you. The Crane's freeze (8 presses to break free) and the MAGNET push/pull strength. The Crab's grab (mash B).
+- The block: guard meter size (100, 5 per damage point), stun length, and whether turning while blocking feels right. The two specials when nested.
 - Body drop chances: are there enough bodies to climb into, especially before the Matryoshka? And the glitch strength on hits.
 - Jetpack fuel and height; civilians' panic radius and how often they get squished.
 - Readability of the new backdrops behind the HUD (Toy Works shelves, Harbour lighthouse beam).

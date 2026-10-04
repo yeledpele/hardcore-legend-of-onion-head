@@ -57,7 +57,12 @@ const FEEL={
     powerPerHit: 5,       // POWER gained per hit landed
     powerPerKill: 12,     // POWER gained per robot beaten
     specialCost: 50,      // POWER cost of a body's special
-    knifeCost: 25         // POWER cost of the core's knife throw
+    knifeCost: 25,        // POWER cost of the core's knife throw
+    guardMax: 100,        // guard meter (block): full
+    guardPerDamage: 5,    // guard lost per point of damage blocked
+    guardRegen: 0.5,      // guard back per frame when you're not blocking
+    guardDelay: 40,       // frames after a blocked hit before the guard starts coming back
+    guardBreakStun: 70    // frames stunned when the guard breaks
   },
   robots:{
     maxAttackers: 2,      // robots allowed to attack at once
