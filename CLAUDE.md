@@ -16,8 +16,8 @@
 - Guard browser APIs that previews may block (gamepads, storage) with try/catch.
 
 ## Project structure
-- `src/index.html` page shell, touch pad and legend markup · `src/style.css` · `src/game.js` (all game code, one ~3,800-line file: data tables, Classic mode, the PLAY campaign, bosses, rendering, HUD).
-- `build.js` → `dist/hardcore.html` (publish this). `node build.js --test` also inlines `tests/hooks.js` → `dist/hardcore.test.html`.
+- `src/index.html` page shell, touch pad and legend markup · `src/style.css` · `src/feel.js` **the feel file**: tuning numbers for the PLAY campaign (`FEEL`), one `name: number,` per line · `src/game.js` (all other game code, one ~3,800-line file: data tables, Classic mode, the PLAY campaign, bosses, rendering, HUD).
+- `build.js` puts `feel.js` + `game.js` together → `dist/hardcore.html` (publish this). `node build.js --test` also inlines `tests/hooks.js` → `dist/hardcore.test.html`.
 - `tests/` Playwright tests + `hooks.js` (test-only `window.__t` helpers) + `helpers.js`.
 - `.claude/agents/` project subagents (playtester, balancer, art-director, design-doc-keeper, hebrew-reviewer, level-designer).
 - `.github/workflows/pages.yml`: every push to `main` runs the quick tests, builds, and publishes to GitHub Pages. Pushes to other branches don't publish.
@@ -33,7 +33,7 @@
 - **One task at a time.** No features or refactors that weren't asked for.
 - **Plan before coding** and wait for an OK before building. (Ben gives direction with reference images.)
 - **Content and data stay separate from logic.** New text, level layouts, enemy and prop definitions go in data tables, not inside functions.
-- **All tuning numbers in one config file.** New numbers (damage, HP, speeds, timings, costs) go there, never inline. *(That file doesn't exist yet — see PROGRESS.md.)*
+- **All tuning numbers in one config file: `src/feel.js`.** New numbers (damage, HP, speeds, timings, costs) go there, never inline; keep one `name: number,` per line with a short comment. *(Classic mode and the robot/body stat tables in `game.js` haven't moved yet — see PROGRESS.md.)*
 - **Tests for deterministic logic.** After every change: `npm run test:quick` while working, `npm test` before saying it's done. Fix failures first.
 - **Git:** commit and push each finished, tested task. Small fixes go to `main` (which publishes); big work (new levels, big mechanics, art directions, multi-feature requests) goes on its own branch, pushed, and merged only when asked.
 - **Update `PROGRESS.md` at the end of every task**; gameplay changes also update `gamedesign.md`, and each version gets a `CHANGELOG.md` entry.

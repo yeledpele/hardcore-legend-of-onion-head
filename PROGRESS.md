@@ -1,7 +1,7 @@
 # Progress
 
 ## Current state (2026-10-04)
-v4.2 in progress on `main`, live on GitHub Pages. All 18 tests pass (`npm test`, ~11 min). The PLAY campaign is playable start to finish: 8 levels, 40 sections, 8 bosses, ending. Classic mode (top-down map and duels) still works. English and Hebrew.
+v4.2 in progress. `main` is live on GitHub Pages; the dev tools are being built on branch **`dev-tools`** (not merged, not live). All 20 tests pass (`npm test`, ~10 min). The PLAY campaign is playable start to finish: 8 levels, 40 sections, 8 bosses, ending. Classic mode (top-down map and duels) still works. English and Hebrew.
 
 ## Done
 - **v4.1 baseline** (pixel look, beat 'em up campaign, bodies, specials, heads, three bosses). Full history in `CHANGELOG.md`.
@@ -12,6 +12,7 @@ v4.2 in progress on `main`, live on GitHub Pages. All 18 tests pass (`npm test`,
   - Civilians who panic and can be squished (cartoon flat, then dizzy).
   - Destructible props per level; barrels explode and chain; big bodies smash props.
   - Five new levels and bosses: Toy Works (Wind-Up Knight), Hermit Harbour (Hermit Crab), Magnet Yard (Crane), Gullet Bog (Toad King), Giant's Kitchen (Cook). New bosses share one framework (`NB` table).
+- **Dev tools, step 1 of 6 — the feel file** (branch `dev-tools`): `src/feel.js` holds ~80 tuning numbers for the PLAY campaign, grouped and commented, one `name: number,` per line; the game reads `FEEL` live. Same values as before; tests check the file format and that the game follows it.
 - **Project setup:** git + GitHub (public), GitHub Pages deploy on push to `main` (quick tests must pass), project agents including `level-designer`.
 
 ## Known bugs / issues noticed
@@ -29,7 +30,15 @@ v4.2 in progress on `main`, live on GitHub Pages. All 18 tests pass (`npm test`,
 - Readability of the new backdrops behind the HUD (Toy Works shelves, Harbour lighthouse beam).
 
 ## Next steps
-_(Waiting for Ben to pick from the conventions report.)_
+Dev tools plan (agreed 2026-10-04; tools ship in the live game too, hidden behind `?dev=1`; saving writes project files through a local dev server):
+1. ~~Feel file~~ (done)
+2. Dev mode + tiny local server (`npm run dev`, serves `src/` without a build, saves files; `?dev=1` / Backquote)
+3. Live tweak panel with a DEV button (sliders for every `FEEL` value, save to `src/feel.js`, reset, export)
+4. Debug layer (hit boxes, depth lanes, entity states, boss timers, hazard zones, FPS, slow-mo/pause/step)
+5. Jump to scene (any level/section/boss, starting body, god mode, nesting unlocked, full POWER)
+6. Level editor (place/drag robots, crates, props, civilians, hazards; pick the boss; play-test; save to a new `src/levels.js`)
+
+Still not in the feel file: Classic mode's numbers, the robot and body stat tables (`TYPES`, `FR`, `PROPS`), special-move timings (`SPTIME`), and the Maker/Warden/Matryoshka attack timings.
 
 ## Open design questions
 - Should Classic mode also lock nesting until a boss is beaten?

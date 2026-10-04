@@ -5,7 +5,8 @@ const fs=require('fs'),path=require('path');
 const test=process.argv.includes('--test');
 const shell=fs.readFileSync('src/index.html','utf8');
 const css=fs.readFileSync('src/style.css','utf8');
-let js=fs.readFileSync('src/game.js','utf8');
+// the feel file (tuning numbers) goes first so the game code can read FEEL
+let js=fs.readFileSync('src/feel.js','utf8')+'\n'+fs.readFileSync('src/game.js','utf8');
 if(test){
   const anchor='let last=performance.now()';
   if(!js.includes(anchor))throw new Error('test hook anchor not found in src/game.js: '+anchor);
