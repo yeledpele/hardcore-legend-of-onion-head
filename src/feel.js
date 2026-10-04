@@ -112,5 +112,10 @@ const FEEL={
     mudSlow: 0.45,        // share of your speed lost in mud
     mudRobotSpeed: 0.55,  // robot speed in mud
     beltPush: 0.45        // conveyor push per frame
+  },
+  controller:{
+    deadzone: 0.5,        // how far the stick must tilt before it counts
+    rumble: 0.6,          // rumble strength (0 = off)
+    rumbleFrom: 3         // only screen shakes at least this big rumble
   }
 };

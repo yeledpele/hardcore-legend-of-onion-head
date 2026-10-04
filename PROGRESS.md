@@ -1,7 +1,7 @@
 # Progress
 
 ## Current state (2026-10-04)
-v4.2 in progress. `main` is live on GitHub Pages; the dev tools are being built on branch **`dev-tools`** (not merged, not live). All 21 tests pass (`npm test`, ~10.5 min). The PLAY campaign is playable start to finish: 8 levels, 40 sections, 8 bosses, ending. Classic mode (top-down map and duels) still works. English and Hebrew.
+v4.2 in progress. `main` is live on GitHub Pages; the dev tools are being built on branch **`dev-tools`** (not merged, not live). All 24 tests pass on `controller` (`npm test`, ~11 min). The PLAY campaign is playable start to finish: 8 levels, 40 sections, 8 bosses, ending. Classic mode (top-down map and duels) still works. English and Hebrew.
 
 ## Done
 - **v4.1 baseline** (pixel look, beat 'em up campaign, bodies, specials, heads, three bosses). Full history in `CHANGELOG.md`.
@@ -13,11 +13,11 @@ v4.2 in progress. `main` is live on GitHub Pages; the dev tools are being built 
   - Destructible props per level; barrels explode and chain; big bodies smash props.
   - Five new levels and bosses: Toy Works (Wind-Up Knight), Hermit Harbour (Hermit Crab), Magnet Yard (Crane), Gullet Bog (Toad King), Giant's Kitchen (Cook). New bosses share one framework (`NB` table).
 - **Dev tools, step 1 of 6 — the feel file** (branch `dev-tools`): `src/feel.js` holds ~80 tuning numbers for the PLAY campaign, grouped and commented, one `name: number,` per line; the game reads `FEEL` live. Same values as before; tests check the file format and that the game follows it.
+- **Controller support** (branch `controller`, not merged yet): any pad, A/B jump, X attack, Y/LB/RB special, Start, Back = language, connect message, rumble. Also fixed: Space (and pad B) now jump in the campaign. Tested with a simulated pad; needs a real controller to confirm rumble and button layout.
 - **Game speed:** master `FEEL.game.speed` = 0.85 (was effectively 1.0), slows everything evenly. Needs a playtest.
 - **Project setup:** git + GitHub (public), GitHub Pages deploy on push to `main` (quick tests must pass), project agents including `level-designer`.
 
 ## Known bugs / issues noticed
-- **Space doesn't jump in PLAY** (found by reading the code, not confirmed in play): the key legend says "Z / Space jump", but the campaign only reads A (Z/J); Space maps to a separate `jump` input that only Classic mode and the menus read. The jetpack also only listens to A.
 - **"NESTING UNLOCKED" can be missed:** the level 3 title card hides banners, so if you walk on right after the Matryoshka the banner may not show (the text line above the arena still does).
 - **Bomber and Shaman don't fight in PLAY:** they exist in `TYPES` but have no campaign behaviour, so no line-up uses them.
 - **`<html lang="en">` never changes** to `he` when Hebrew is on (screen readers and browser translation see English).
@@ -27,6 +27,7 @@ v4.2 in progress. `main` is live on GitHub Pages; the dev tools are being built 
 
 ## Needs a playtest (feel, can't be checked by tests)
 - The new game speed (0.85): still too fast, or now too slow?
+- A real controller: button layout, stick dead zone, and whether the rumble is too strong or too often.
 - Difficulty across the 8 levels, and each new boss's HP and attack timing.
 - The Toad King's swallow (3.5 s inside, 5 damage per B hit) and the Crab's grab (mash B).
 - Jetpack fuel and height; civilians' panic radius and how often they get squished.
@@ -34,7 +35,7 @@ v4.2 in progress. `main` is live on GitHub Pages; the dev tools are being built 
 
 ## Next steps
 Dev tools plan (agreed 2026-10-04; tools ship in the live game too, hidden behind `?dev=1`; saving writes project files through a local dev server):
-Now: controller support (branch `controller`), then back to the dev tools.
+Now: controller support is on branch `controller`, waiting for Ben's OK to merge; then back to the dev tools.
 1. ~~Feel file~~ (done, merged to main)
 2. Dev mode + tiny local server (`npm run dev`, serves `src/` without a build, saves files; `?dev=1` / Backquote)
 3. Live tweak panel with a DEV button (sliders for every `FEEL` value, save to `src/feel.js`, reset, export)
