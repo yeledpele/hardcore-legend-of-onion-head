@@ -468,7 +468,9 @@ function crunch(d=.15,v=.08){
 }
 
 // ---------- state ----------
-let state='title',T=0,hitstop=0,shake=0,glitch=.6;
+let state='title',T=0,hitstop=0,shake=0,glitch=.6,hg=0;
+// the screen glitch shows only when you take damage (stronger for bigger hits) and on the fail screens
+function hurtGlitch(d){hg=Math.max(hg,Math.min(1,.25+d/16)*FEEL.game.glitch);}
 let mapFx=[],memView=null,mines=[],strikes=[],eprojs=[],debris=[],bursts=[],plats=[],platPrev={},fightT=0;
 let run=null,foes=[],pl=null,en=null,projs=[],parts=[],texts=[],result=null,prep=null,intro=null,curFoe=null,banner=null;
 let cam={x:0,y:0},grace=0,mapT=0,deadT=0,endT=0;
@@ -700,10 +702,10 @@ function hurtPlayer(d,srcX,unb){
   pl.inv=45;pl.kb=srcX>pl.x?-3:3;hitstop=4;kick(4,.7);beep(80,.18,'sawtooth',.07,-40);crunch(.12,.08);
   spark(pl.x,pl.y-d4.h/2,10,[C.cy,C.wh,C.mg],2.5);
   if(pl.mode==='frame'){
-    pl.shell-=d;say('-'+d,pl.x,pl.y-d4.h-6,C.mg,30);
+    hurtGlitch(d);pl.shell-=d;say('-'+d,pl.x,pl.y-d4.h-6,C.mg,30);
     if(pl.shell<=0){pl.shell=0;shellBreak();}
   }else{
-    pl.core--;say('CORE HIT',pl.x,pl.y-20,C.mg,40);
+    hurtGlitch(14);pl.core--;say('CORE HIT',pl.x,pl.y-20,C.mg,40);
     if(pl.core<=0){pl.core=0;state='dead';deadT=0;kick(8,1);crunch(.6,.12);beep(60,.8,'sawtooth',.07,-30);}
   }
   return 'hit';
@@ -1609,7 +1611,7 @@ const BZ0=110,BZ1=138,SECW=256,SL=SECW*5;
 const STAGES=[
   {theme:0,name:'THE BURIAL WASTE',secs:[[['scrap',200,120],['scrap',236,134]],[['scrap',210,116],['lancer',240,132],['C',150,128]],[['brute',220,124,1],['scrap',-30,132]],[['scrap',200,124],['lancer',-30,116],['C',120,118]],[['BOSS','matry']]]},
   {theme:1,name:'THE PINE FOREST',secs:[[['guard',220,122],['scrap',240,134]],[['hound',230,114],['hound',-30,134],['C',140,128]],[['walker',220,122,1],['hound',-30,132]],[['scrap',230,116],['guard',240,132],['C',120,124]],[['BOSS','warden']]]},
-  {theme:3,name:'THE TOY WORKS',intro:['THE WARDEN GOES QUIET.','ITS LAST SIGNAL CAME FROM THE FOUNDRY.','THE ROAD RUNS THROUGH A TOY FACTORY.','SOMETHING INSIDE IS STILL WOUND UP.'],belt:[[1,40,220,-1],[3,60,200,-1]],
+  {theme:3,name:'THE TOY WORKS',intro:['THE WARDEN GOES QUIET.','ITS LAST SIGNAL CAME FROM THE FOUNDRY.','THE ROAD RUNS THROUGH A TOY FACTORY.','SOMETHING INSIDE IS STILL WOUND UP.'],belt:[[1,0,256,-1],[2,0,256,-1],[3,0,256,-1]],
    secs:[[['scrap',200,120],['scrap',236,134],['lancer',240,116]],[['hound',230,114],['hound',-30,134],['C',140,128]],[['guard',220,124,1],['lancer',-30,132]],[['brute',210,118],['walker',240,132],['scrap',-30,124],['C',120,124]],[['BOSS','knight']]]},
   {theme:4,name:'HERMIT HARBOUR',intro:['THE KNIGHT RUNS DOWN.','THE ROAD ENDS AT A NIGHT HARBOUR.','EMPTY BODIES WASH UP ON THE PIER.','SOMETHING IS COLLECTING THEM.'],
    secs:[[['scrap',200,120],['scrap',236,134],['lancer',240,116]],[['hound',230,114],['hound',-30,134],['C',150,128]],[['guard',220,124,1],['scrap',-30,132]],[['brute',210,118],['walker',240,132],['lancer',-30,124],['C',120,124]],[['BOSS','crab']]]},
@@ -1712,6 +1714,7 @@ function bHurt(d,src){
   spark(p.x,p.z-14-p.h,10,[C.cy,C.wh,C.mg],2.4);p.atk=0;p.kind=null;
   if(p.grab){p.grab.st='down';p.grab.t=20;p.grab=null;}
   const L=p.layers;
+  hurtGlitch(d);
   if(L.length){const top=L[L.length-1];top.shell-=d;say('-'+d,p.x,p.z-34,C.mg,30);
     if(top.shell<=0){L.pop();banner={s:'SHELL BREAK',t:60};kick(7,1);crunch(.35,.12);spark(p.x,p.z-14,24,[C.cy,C.gr,C.wh],3.4);
       say(L.length?'LAYER LOST':'BACK 2 KNIFE',p.x,p.z-44,C.yl,80);p.vh=3;p.onG=false;p.inv=60;}}
@@ -1810,6 +1813,9 @@ function stepBrawlWorld(){
   if(bw.t%FEEL.robots.roleEvery===0)for(const e of foes.sort((a,c)=>Math.abs(a.x-p.x)-Math.abs(c.x-p.x)))if(e.role!=='attack'&&foes.filter(o=>o.role==='attack').length<FEEL.robots.maxAttackers)e.role='attack';
   for(const e of bw.ents)if(e.type)stepBrawlFoe(e);
   stepCivs();
+  // conveyor belts drag everything standing on them (robots and you are moved in their own code)
+  {const bp=FEEL.hazards.beltPush,mv=(o,h,keep)=>{if((h||0)>0)return;const bt=hazAt(o.x).belt;if(bt){o.x+=bt*bp;if(keep)o.x=Math.max(bw.cam+6,o.x);}};
+    for(const e of bw.ents)if(!e.type&&!e.dead)mv(e,e.h,!e.civ);for(const it of bw.items)mv(it,0,true);for(const hd of bw.heads)mv(hd,hd.h,true);for(const m of bw.bombs)if(m.st==='walk'||m.st==='fuse')mv(m,m.h,true);}
   // walker-size bodies and up smash props just by walking into them
   if(pBody().size>=3&&p.onG&&Math.abs(p.vx)>.4){const pd=pDim();for(const e of bw.ents)if(e.prop&&!e.dead&&Math.abs(e.x-p.x)<PROPS[e.prop].hw+pd.hw&&Math.abs(e.z-p.z)<PROPS[e.prop].dz+3&&bw.t-(e.smashT||-99)>14){e.smashT=bw.t;bDamage(e,1,p.face,{});}}
   stepCampBoss();stepBombsB();stepStrikes();stepHeads();stepDrops();
@@ -1827,7 +1833,7 @@ function stepBrawlWorld(){
 function stepBrawlFoe(e){
   const p=bw.p,T0=e.T;if(e.hurt>0)e.hurt--;
   if(e.st==='dead'){
-    if(--e.t<=0&&!e.final){bw.ents.push({husk:true,id:'e:'+e.type,shell:Math.round(bodyOf('e:'+e.type).shell*FEEL.robots.bodyShellLeft),max:bodyOf('e:'+e.type).shell,x:e.x,z:e.z,face:e.face});}
+    if(--e.t<=0&&!e.final){if(!e.boss&&Math.random()>=(FEEL.bodyDrop[e.type]===undefined?.5:FEEL.bodyDrop[e.type])){robotWreck(e);return;}bw.ents.push({husk:true,id:'e:'+e.type,shell:Math.round(bodyOf('e:'+e.type).shell*FEEL.robots.bodyShellLeft),max:bodyOf('e:'+e.type).shell,x:e.x,z:e.z,face:e.face});}
     return;
   }
   if(e.st==='held'){e.x=p.x+p.face*11;e.z=p.z+1;e.h=7;e.face=-p.face;return;}
@@ -1867,6 +1873,12 @@ function stepBrawlFoe(e){
   if(e.h<=0&&e.st!=='held'){const bt=hazAt(e.x).belt;if(bt)e.x+=bt*FEEL.hazards.beltPush;}
   if(e.x>bw.cam+8&&e.x<bw.cam+W-8)e.in=true;
   e.x=e.in?clamp(e.x,bw.cam+8,bw.cam+W-8):clamp(e.x,bw.cam-40,bw.cam+W+40);
+}
+// a beaten robot that leaves no usable body: it falls apart into scrap on the floor
+function robotWreck(e){
+  spark(e.x,e.z-8,14,[C.gr,C.grd,C.mgd],2.4);crunch(.12,.06);
+  for(let i=0;i<6;i++)bw.rubble.push({x:e.x+rnd(-8,8),z:e.z+rnd(-2,2),w:1+(Math.random()*3|0),c:[C.gr,C.grd,C.mgd][(Math.random()*3)|0]});
+  if(Math.random()<FEEL.robots.wreckScrap)bw.items.push({kind:'scrap',x:e.x,z:e.z});
 }
 function retrySection(){
   const cp=bw.checkpoint,S=SECS[cp.sec];
@@ -2645,6 +2657,14 @@ function crabCrack(b,why){
   for(const side of [-1,1])parts.push({x:b.x+side*4,y:b.z-24,vx:side*rnd(1,2),vy:-2.4,t:46,c:C.gr,gv:.14,s:5});
   say(why||'NOW IT IS SOFT',b.x,b.z-48,C.yl,60);if(sh)spark(b.x,b.z-22,20,[C.gr,C.grd,C.wh],3);
 }
+// the crab's own shell: a spiral sea-snail shell with a striped whorl, a spire at the back and the opening at the front
+function drawConch(x,y,f,hit){
+  const c=hit?C.wh:'#e8d0b0',st=hit?C.wh:'#c8844a',dk=hit?C.wh:'#7a4a2a';
+  for(let i=0;i<18;i++){const k=(i-9)/9.5,w=Math.round(13*Math.sqrt(Math.max(0,1-k*k)));px(x-w,y-18+i,w*2,1,i%5===2?st:c);}
+  for(let i=0;i<9;i++){const w=Math.round(1+i*.7);px(x-f*9-w,y-26+i,w*2,1,i%3===1?st:c);}
+  pline(x-f*9,y-20,x-f*2,y-14,dk);pline(x-f*2,y-14,x+f*6,y-10,dk);pline(x-f*9,y-24,x-f*7,y-21,dk);
+  px(f>0?x+6:x-11,y-10,5,9,dk);px(f>0?x+10:x-11,y-11,1,11,'#ff8aa0');px(x-12,y-1,24,1,dk);
+}
 function crabStep(b){
   const p=bw.p,dx=p.x-b.x,adx=Math.abs(dx),naked=!b.shell,sp=naked?1.1:.7;
   if(b.st==='seek'){let best=null,bd=1e9;for(const e of bw.ents)if(e.husk&&e.x>bw.cam&&e.x<bw.cam+W){const d=Math.abs(e.x-b.x)+Math.abs(e.z-b.z)*2;if(d<bd){bd=d;best=e;}}
@@ -2680,7 +2700,8 @@ function crabDraw(b,cam,hit){
   px(f>0?x+12:x-12-reach,y-10,reach+2,3,pink);px(f>0?cx-2:cx-6,y-15,8,6,pink);px(f>0?cx-2:cx-6,y-15,8,1,pl);
   if(open){px(f>0?cx+4:cx-8,y-18,3,3,pink);px(f>0?cx+4:cx-8,y-9,3,3,pink);}else px(f>0?cx+5:cx-8,y-13,3,2,pd);
   px(f>0?x-16:x+12,y-9,4,4,pink);
-  if(b.shell)drawRider(y-11,bodyOf(b.shell).frame?FR[b.shell].s.lh:(bodyOf(b.shell).T?bodyOf(b.shell).T.lh:0),yy=>drawBody(b.shell,x-f*2,yy,f,0,false,0,HPAL,FP.husk,'idle'));
+  if(b.shell==='conch')drawConch(x-f*2,y-11,f,hit);
+  else if(b.shell)drawRider(y-11,bodyOf(b.shell).frame?FR[b.shell].s.lh:(bodyOf(b.shell).T?bodyOf(b.shell).T.lh:0),yy=>drawBody(b.shell,x-f*2,yy,f,0,false,0,HPAL,FP.husk,'idle'));
   else if(b.st==='dig'){px(x-6,y-13,12,2,C.grd);if((T>>2)&1)dust(b.x,b.z,1);}
   // eye stalks, on long stalks so they show over the shell
   {const top=b.shell?y-30:y-19;for(const s of [-3,3]){px(x+f*12+s,top+2,1,y-11-top-2,pd);px(x+f*12+s-1,top,3,3,C.wh);px(x+f*13+s,top+1,1,1,C.void);}}
@@ -2767,7 +2788,7 @@ function toadInside(){
     p.pow=Math.min(100,p.pow+FEEL.combat.powerPerHit);const nx=b.x+Math.sin(bw.t*.07)*8;say('CRIT '+d,nx,b.z-34,C.mg,26);kick(3,.3);beep(1200,.06,'square',.04,-600);spark(nx,b.z-20,6,[C.mg,C.wh],1.6);nbDie(b);if(b.st==='dead')return;}
   // the jelly digests your outermost body every few seconds; once the bare core is left, it spits you out
   if(--b.dig<=0){b.dig=F.toadDigestEvery;const L=p.layers;
-    if(L.length){const top=L.pop();b.bits.push({id:top.id,t:90});say('DIGESTED',b.x,b.z-58,C.mg,60);spark(b.x,b.z-20,16,['#4adf7a',C.gr,C.wh],2.6);crunch(.3,.1);beep(90,.4,'sawtooth',.05,-60);if(!L.length)toadSpit(b,false);}
+    if(L.length){const top=L.pop();hurtGlitch(12);b.bits.push({id:top.id,t:90});say('DIGESTED',b.x,b.z-58,C.mg,60);spark(b.x,b.z-20,16,['#4adf7a',C.gr,C.wh],2.6);crunch(.3,.1);beep(90,.4,'sawtooth',.05,-60);if(!L.length)toadSpit(b,false);}
     else toadSpit(b,false);}
 }
 function toadEngulf(b){
@@ -2860,7 +2881,7 @@ const NB={
     hook(b){b.key=0;nbDown(b,200,'KEY PULLED');return true;},up(b){b.key=100;b.st='walk';b.t=50;say('REWOUND',b.x,b.z-50,C.gr,50);beep(400,.5,'square',.03,600);},
     step:knightStep,draw:knightDraw},
   crab:{drop:{id:'titan',shell:100,max:140,say:'ITS DREAM SHELL: TITAN'},
-    init(b,x0){b.shell='e:walker';b.shp=b.smax=FEEL.bosses.crabShell;b.st='walk';b.t=80;b.face=-1;b.walk=0;
+    init(b,x0){b.shell='conch';b.shp=b.smax=FEEL.bosses.crabShell;b.st='walk';b.t=80;b.face=-1;b.walk=0;
       bw.ents.push({husk:true,id:'e:scrap',shell:30,max:39,x:x0+110,z:116,face:1},{husk:true,id:'e:lancer',shell:40,max:46,x:x0+60,z:134,face:1});},
     c:b=>({x:b.x,z:b.z}),box:b=>[{x:b.x,z:b.z,hw:17,dz:7}],
     mult:b=>b.shell?1:1.5,
@@ -3843,7 +3864,7 @@ function render(){
   present();
 }
 function present(){
-  const gl=reduce?Math.min(glitch,.2):glitch;
+  const g0=Math.max(hg,(state==='bover'||state==='dead')?.45*FEEL.game.glitch:0),gl=reduce?Math.min(g0,.2):g0;
   vx.globalCompositeOperation='source-over';
   if(gl>.06){
     rc.globalCompositeOperation='source-over';rc.drawImage(buf,0,0);rc.globalCompositeOperation='multiply';rc.fillStyle='#ff0000';rc.fillRect(0,0,W,H);
@@ -3856,7 +3877,7 @@ function present(){
     for(let i=0;i<n;i++){const y=(Math.random()*H)|0,h=1+((Math.random()*7)|0),dx=Math.round((Math.random()-.5)*gl*30);vx.drawImage(buf,0,y,W,h,dx,y,W,h);}
     if(gl>.4){const cols=[C.mg,C.cy,C.yl];vx.globalAlpha=.75;for(let i=0;i<3;i++){vx.fillStyle=cols[i];vx.fillRect((Math.random()*W)|0,(Math.random()*H)|0,4+((Math.random()*30)|0),1+((Math.random()*3)|0));}vx.globalAlpha=1;}
   }else vx.drawImage(buf,0,0);
-  glitch*=.9;if(glitch<.01)glitch=0;
+  glitch*=.9;if(glitch<.01)glitch=0;hg*=.88;if(hg<.01)hg=0;
 }
 
 // ---------- loop + layout ----------

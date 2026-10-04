@@ -278,11 +278,11 @@ Every boss arena starts with a crate that always holds a **Chain Hook**.
 - **Moves:** marches at you; **Lance charge** (key spins fast, lance lowers, ~42 frames) then charges across the screen (14 damage, smashes props); **Spin** with the lance out for ~2 s (10 per hit), then **dizzy** (×1.5).
 - **Unwound:** at 0 the knight slumps ("UNWOUND") for about 3 s, then rewinds ("REWOUND"). The Chain Hook pulls the key out (long slump).
 - **Drop:** a **Walker** frame ("ITS EMPTY ARMOUR: WALKER").
-- **Level hazard:** conveyor belts in sections 2 and 4 push everyone left.
+- **Level hazard:** full-width conveyor belts in sections 2–4 drag everything on them to the left: you, robots, civilians, empty bodies, props, pickups, heads and bombs.
 
 **Level 4 — The Hermit Crab** (200 HP, Hermit Harbour)
 
-- **Look:** a wide pink crab wearing an empty robot body on its back as a shell (it starts in a Walker robot body); a shell gauge under it. Two empty bodies lie in the arena.
+- **Look:** a wide pink crab that starts in its own **spiral sea-snail shell** (cream with orange stripes, spire at the back, opening at the front); once that breaks it wears stolen robot bodies; a shell gauge under it. Two empty bodies lie in the arena.
 - **Shell:** while it wears one, hits go to the **shell** (front hits halved), not its health. When the shell breaks ("SHELL BREAK") it is soft (×1.5) and **scuttles to the nearest empty body on screen and climbs in** ("IT STEALS A SHELL") — including bodies you ejected. With no body around it digs up a Basic-size shell after about 5.5 s. Deny it by climbing into the bodies first.
 - **Moves:** **Claw pinch** (claws spread, then a lunge): it **grabs** you, shakes you and throws you (12); mash B to break free sooner. **Sideways scuttle** across your lane (yellow lane dashes as a tell; 12, smashes props).
 - **Hook:** rips the shell off at once ("HOOKED: SHELL OFF"); a topple flips it on its back.
@@ -351,6 +351,7 @@ Fires a chain down your lane (reach about 130). It topples the Colossus or Maker
 - **Core cell:** +1 core pip (up to 5).
 - **Scrap:** +20 shell on your outer body, or +1 core pip if you have no body.
 - **Robot drops:** beaten robots sometimes drop scrap (25%).
+- **Bodies left behind:** a beaten robot leaves an empty body you can climb into only by chance, per type (`FEEL.bodyDrop`): Scrapper 60%, Lancer and Hound 50%, Shieldbot 45%, Brute 40%, Walker 35%. Mini-bosses and bosses always leave theirs. Otherwise it falls apart into a wreck of rubble, with a 30% chance of scrap.
 - **Collecting:** walk over a pickup while on the ground.
 
 ### 10.1 Destructible props
@@ -393,7 +394,7 @@ Small people walk around every section (2–3; one in boss arenas), and more run
 |---|---|---|
 | 1 The Burial Waste | Brick basement with gravestones | Scrappers → Scrapper/Lancer + crate → **mini-boss Brute** → mixed + crate → **Matryoshka** |
 | 2 The Pine Forest | Mossy cave with pines | Shieldbot/Scrapper → Hounds + crate → **mini-boss Walker** → mixed + crate → **Warden** |
-| 3 The Toy Works | Toy shelves, a mobile, a rocking horse; conveyor belts (sections 2, 4) | Scrappers/Lancer → Hounds + crate → **mini-boss Shieldbot** → Brute/Walker/Scrapper + crate → **Wind-Up Knight** |
+| 3 The Toy Works | Toy shelves, a mobile, a rocking horse; full-width conveyor belts in sections 2–4 | Scrappers/Lancer → Hounds + crate → **mini-boss Shieldbot** → Brute/Walker/Scrapper + crate → **Wind-Up Knight** |
 | 4 Hermit Harbour | Night harbour, moon over the water, pier, lighthouse | Scrappers/Lancer → Hounds + crate → **mini-boss Shieldbot** → Brute/Walker/Lancer + crate → **Hermit Crab** |
 | 5 The Magnet Yard | Stacks of crushed car cubes, sodium lamps | Scrappers → Lancer/Walker + crate → **mini-boss Brute** → Walker/Shieldbot/Scrapper + crate → **Crane** |
 | 6 The Gullet Bog | Swamp of drowned machines, reeds, fireflies; mud patches | Scrappers → Hounds + crate → **mini-boss Brute** → Shieldbot/Walker/Hound + crate → **Toad King** |
@@ -568,6 +569,7 @@ Small people walk around every section (2–3; one in boss arenas), and more run
 ## 17. Technical architecture
 
 - **One self-contained HTML file.** All art is procedural (flat vector in PLAY, pixel in Classic) and all sound is synthesized. Nothing is loaded except Google Fonts.
+- **Screen glitch:** the RGB-split glitch shows only when you take damage (stronger for bigger hits) and on the fail screens; strength in `FEEL.game.glitch` (0 = off).
 - **Fixed-step loop** at 60 × `FEEL.game.speed` updates per second (0.85 → 51 a second), at most 4 updates per frame. The game speed slows everything evenly, in both modes.
 - **Feel file:** `src/feel.js` (`FEEL`) holds the PLAY tuning numbers; the game reads it live.
 - **State machine:** `title, intro, brawl, bover, ending` (PLAY) and `map, prep, memory, fight, result, dead` (Classic).

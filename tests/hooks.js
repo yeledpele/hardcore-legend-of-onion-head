@@ -22,7 +22,7 @@ window.__t={
   // put the player in these bodies (inner first) without touching the street
   body:(ids,weapon)=>{bw.p.layers=ids.map(id=>({id,shell:bodyOf(id).shell,max:bodyOf(id).shell}));if(weapon&&ids.length)bw.p.layers[ids.length-1].weapon=weapon;},
   foes:()=>bw.ents.filter(e=>e.type).map(e=>({t:e.type,x:Math.round(e.x-bw.cam),z:e.z|0,h:e.h|0,st:e.st,hp:e.hp,in:!!e.in})),
-  boss:()=>bw.boss?{type:bw.boss.type,st:bw.boss.st,hp:bw.boss.hp,max:bw.boss.max,x:bw.boss.x|0,z:bw.boss.z|0}:null,
+  boss:()=>bw.boss?{type:bw.boss.type,st:bw.boss.st,shell:bw.boss.shell,hp:bw.boss.hp,max:bw.boss.max,x:bw.boss.x|0,z:bw.boss.z|0}:null,
   inside:()=>!!bw.p.inside,
   frozen:()=>!!bw.p.frozen,
   // drop a resting (non-bomb) head dx px from the player
@@ -40,6 +40,12 @@ window.__t={
   civ:dx=>{bw.ents=bw.ents.filter(e=>!e.civ&&!e.prop);const c=addCiv(bw.p.x+dx,bw.p.z);c.st='idle';c.t=9999;},
   prop:(k,dx)=>{bw.ents=bw.ents.filter(e=>!e.civ&&!e.prop);bw.ents.push({crate:true,prop:k,x:bw.p.x+dx,z:bw.p.z,h:0,hp:PROPS[k].hp,max:PROPS[k].hp,hurt:0});},
   feel:()=>FEEL,
+  glitch:()=>hg,
+  hurt:d=>bHurt(d,{x:bw.p.x+10}),
+  // a normal (non-boss) robot dx px ahead with this much health
+  spawnFoe:(type,dx,hp)=>{const T0=TYPES[type];bw.ents.push({type,T:T0,x:bw.p.x+dx,z:bw.p.z,h:0,vh:0,vx:0,face:-1,st:'stun',t:999,hp,max:hp,dmg:1,hurt:0,walk:0,moving:false,boss:false,role:'wait',zo:0});},
+  husks:()=>bw.ents.filter(e=>e.husk).map(e=>[Math.round(e.x-bw.p.x),e.id]),
+  propXs:()=>bw.ents.filter(e=>e.prop||e.husk).map(e=>Math.round(e.x)),
   toast:()=>toast&&toast.s,
   kick:n=>kick(n,0),
   frame:()=>T,
