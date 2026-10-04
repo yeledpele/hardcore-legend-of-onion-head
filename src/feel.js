@@ -2,7 +2,8 @@
 // One value per line, "name: number," so the dev tools can rewrite values in place. Times are in frames (60 per second).
 const FEEL={
   game:{
-    speed: 0.85           // master game speed: 1 = 60 steps a second; lower slows everything evenly (both modes)
+    speed: 0.85,          // master game speed: 1 = 60 steps a second; lower slows everything evenly (both modes)
+    glitch: 1             // strength of the screen glitch, shown only when you take damage and on the fail screen (0 = off)
   },
   player:{
     jumpCore: 3.9,        // jump speed of the bare core
@@ -72,7 +73,19 @@ const FEEL={
     damagePerTier: 0.15,  // extra damage per difficulty tier
     bodyShellLeft: 0.7,   // a beaten robot's body keeps this share of its shell
     headBombChance: 0.34, // chance a popped head is a ticking bomb
-    scrapDrop: 0.25       // chance a beaten robot drops scrap
+    scrapDrop: 0.25,      // chance a beaten robot drops scrap
+    wreckScrap: 0.3       // chance a robot that leaves no body leaves scrap in its wreck
+  },
+  // chance a beaten robot leaves an empty body you can climb into (mini-bosses and bosses always do)
+  bodyDrop:{
+    scrap: 0.6,
+    lancer: 0.5,
+    hound: 0.5,
+    guard: 0.45,
+    brute: 0.4,
+    walker: 0.35,
+    bomber: 0.4,
+    shaman: 0.4
   },
   bosses:{
     wardenHp: 200,

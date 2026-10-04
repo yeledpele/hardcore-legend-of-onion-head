@@ -23,6 +23,11 @@ Built on v4.1.
   - **The Toad King is a jelly cube you beat from the inside:** outside hits barely hurt; it slides over you and engulfs you; inside, hit its nucleus while it digests your bodies one by one; at the bare core it spits you out; A+B bursts out. No more tongue.
   - **The Crane's pull and freeze:** stronger pull along visible field lines; what it catches is frozen to the magnet, including you (mash A/B to break free, or get slammed down).
   - **The Crane drops the MAGNET power:** special = MAGNET PUSH (area blast), every 3rd combo hit = PULL.
+- **Tweaks** (branch `tweaks-1`, after Ben's notes):
+  - **Fewer glitches:** the screen glitch now shows only when you take damage and on the fail screens (strength in the feel file).
+  - **Longer conveyor belts:** full width in Toy Works sections 2–4, and they drag everything: civilians, empty bodies, props, pickups, heads and bombs too.
+  - **Bodies by chance:** beaten robots leave a usable body only by a per-type chance (Scrapper 60% … Walker 35%; mini-bosses and bosses always); otherwise a wreck.
+  - **Hermit Crab** starts in a spiral sea-snail shell before stealing robot bodies.
 - **The Giant's Kitchen cat:** the dark "face" in the backdrop is now a proper cat (ears, slit eyes, nose, whiskers) that blinks, twitches an ear and flicks its tail.
 - **Slower overall:** a master game speed (`FEEL.game.speed`, now 0.85) slows everything evenly, about 15% calmer than before.
 

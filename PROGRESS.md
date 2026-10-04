@@ -1,7 +1,7 @@
 # Progress
 
 ## Current state (2026-10-04)
-v4.2 in progress. `main` is live on GitHub Pages; the dev tools are being built on branch **`dev-tools`** (not merged, not live). All 28 tests pass on `main` (`npm test`, ~11 min). The PLAY campaign is playable start to finish: 8 levels, 40 sections, 8 bosses, ending. Classic mode (top-down map and duels) still works. English and Hebrew.
+v4.2 in progress. `main` is live on GitHub Pages; the dev tools are being built on branch **`dev-tools`** (not merged, not live). All 28 tests pass on `main`, 32 on `tweaks-1` (`npm test`, ~11 min). The PLAY campaign is playable start to finish: 8 levels, 40 sections, 8 bosses, ending. Classic mode (top-down map and duels) still works. English and Hebrew.
 
 ## Done
 - **v4.1 baseline** (pixel look, beat 'em up campaign, bodies, specials, heads, three bosses). Full history in `CHANGELOG.md`.
@@ -15,6 +15,7 @@ v4.2 in progress. `main` is live on GitHub Pages; the dev tools are being built 
 - **Dev tools, step 1 of 6 — the feel file** (branch `dev-tools`): `src/feel.js` holds ~80 tuning numbers for the PLAY campaign, grouped and commented, one `name: number,` per line; the game reads `FEEL` live. Same values as before; tests check the file format and that the game follows it.
 - **Controller support**: any pad, A/B jump, X attack, Y/LB/RB special, Start, Back = language, connect message, rumble. Also fixed: Space (and pad B) now jump in the campaign. Tested with a simulated pad; needs a real controller to confirm rumble and button layout.
 - **Boss revisions**: the Toad King is a jelly cube you beat from the inside (it digests your bodies, spits out the bare core); the Crane's pull is stronger and visible and it freezes what it catches (mash to break free); the Crane drops the MAGNET power (push special, pull on every 3rd hit).
+- **Tweaks** (branch `tweaks-1`, not merged): glitch only on damage and fail screens; full-width belts in Toy Works sections 2-4 that drag everything; beaten robots leave a body by per-type chance; the Hermit Crab starts in a spiral sea-snail shell.
 - **Giant's Kitchen cat:** the "face" players asked about is now clearly a giant cat under the cupboard (ears, slit eyes, nose, whiskers; it blinks, twitches an ear, flicks its tail).
 - **Game speed:** master `FEEL.game.speed` = 0.85 (was effectively 1.0), slows everything evenly. Needs a playtest.
 - **Project setup:** git + GitHub (public), GitHub Pages deploy on push to `main` (quick tests must pass), project agents including `level-designer`.
@@ -31,7 +32,8 @@ v4.2 in progress. `main` is live on GitHub Pages; the dev tools are being built 
 - The new game speed (0.85): still too fast, or now too slow?
 - A real controller: button layout, stick dead zone, and whether the rumble is too strong or too often.
 - Difficulty across the 8 levels, and each new boss's HP and attack timing.
-- The Toad King's swallow (3.5 s inside, 5 damage per B hit) and the Crab's grab (mash B).
+- The jelly Toad King: digest speed (one body per ~3 s), inside damage, how often it engulfs you. The Crane's freeze (8 presses to break free) and the MAGNET push/pull strength. The Crab's grab (mash B).
+- Body drop chances: are there enough bodies to climb into, especially before the Matryoshka? And the glitch strength on hits.
 - Jetpack fuel and height; civilians' panic radius and how often they get squished.
 - Readability of the new backdrops behind the HUD (Toy Works shelves, Harbour lighthouse beam).
 
