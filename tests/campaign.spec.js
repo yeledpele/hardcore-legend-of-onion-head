@@ -17,6 +17,7 @@ test('the whole campaign can be finished',async({page})=>{
   for(let i=0;i<12000;i++){
     s=await snap(page);if(s.state!=='brawl')break;
     if(s.boss)bosses.add(s.boss[0]);
+    if(i%400===0)console.log('campaign step '+i+': section '+(s.sec+1)+'/40'+(s.boss?' boss '+s.boss[0]+' '+s.boss[3]+' hp '+s.boss[4]:'')+' layers '+s.layers.length);
     if(i%15===0)await page.evaluate(()=>window.__t.heal());
     const hk=s.husks.filter(h=>h[2]>s.size&&Math.abs(h[0]-s.px)<100);
     if(hk.length&&!s.foes.length&&!s.boss){const h=hk[0];if(Math.abs(h[0]-s.px)<10&&Math.abs(h[1]-s.pz)<5){await press(page,'Enter');continue;}await move(page,s,h[0],h[1]);continue;}

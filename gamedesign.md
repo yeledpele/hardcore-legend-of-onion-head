@@ -290,19 +290,25 @@ Every boss arena starts with a crate that always holds a **Chain Hook**.
 **Level 5 — The Crane** (230 HP, The Magnet Yard)
 
 - **Look:** a gantry over the arena with an operator cab on the beam and a magnet on a cable.
-- **Moves:** **Magnet slam** on your spot (red marker; 16) — afterwards the magnet is **stuck** on the floor for ~2 s and is the only part you can hit ("HIT THE MAGNET"). **Lift:** the magnet hums (green rings) and pulls empty bodies, robots, heads — and you, if you're in a body; **the bare core is too light**. It lifts what it catches, carries it over you and drops it (12; a ticking head explodes). **Scrap roll:** three crosshair strikes down your lane.
-- **Topple:** the Chain Hook or a blast brings the **cab crashing to the floor** ("THE CAB CRASHES") for ~2.5 s, where it can be hit (×1.5).
-- **Drop:** its operator, a **Brute robot** body ("THE OPERATOR CLIMBS OUT").
+- **Moves:** **Magnet slam** on your spot (red marker; 16) — afterwards the magnet is **stuck** on the floor for ~2 s and is the only part you can hit ("HIT THE MAGNET"). **Pull:** the magnet hums and everything metal within ~80 px **slides in along green field lines**: empty bodies, robots (held stunned while they slide), heads — and you, if you're in a body; **the bare core is too light**. **Freeze:** whatever it catches is **frozen to the magnet**. If that's you, you hang from it ("FROZEN TO THE MAGNET"): **mash A or B** (8 presses) to break free, or after ~2 s it slams you down (14) — and then the magnet is stuck, so you can punish it. A caught body, robot or head is carried over you and dropped (12; a ticking head explodes). **Scrap roll:** three crosshair strikes down your lane.
+- **Topple:** the Chain Hook or a blast brings the **cab crashing to the floor** ("THE CAB CRASHES") for ~2.5 s, where it can be hit (×1.5); it also lets go of whatever it held.
+- **Drop:** its **MAGNET** power ("ITS MAGNET: PUSH AND PULL"), a weapon pickup that mounts on your body:
+  - **Special (A+B) = MAGNET PUSH:** an area blast (~80 px) that throws robots away (body damage +4, launched or shoved back), pushes empty bodies and heads away, and kicks bombs.
+  - **Every 3rd hit of your combo = PULL:** yanks the nearest robot in front of you (up to ~120 px) to you, stunned; with no robot in reach it pulls the nearest empty body or head.
+- Numbers in `FEEL.bosses` (crane…) and `FEEL.magnet`.
 
-**Level 6 — The Toad King** (230 HP, The Gullet Bog)
+**Level 6 — The Toad King** (230 HP, The Gullet Bog) — a jelly cube you beat from the inside
 
-- **Look:** a huge squat robot toad with a crown of pipes and a throat sac.
-- **Tongue lash:** the sac swells and a yellow line runs along its lane, then the tongue shoots out ~110 px. If it catches you, it **swallows you** ("GULP"): you're inside for up to 3.5 s; **B hits it from inside** (5 per hit, at most every 10 frames); **A+B bursts out** (10). If the time runs out it spits you out and **digests your outer body** — it comes out as an empty body with half its shell, so you can climb back in; the bare core loses a core pip instead.
-- **Belly flop:** it leaps off screen, a marker follows you, and it lands with a shockwave (16), then lies **dazed** (×1.5).
-- **Croak:** spits out two Scrappers (only while fewer than two robots are alive).
-- **Hook:** during the tongue wind-up or lash it pulls the tongue out ("TONGUE PULLED", long daze); a blast makes it "BURP" (and spits you out free).
+- **Look:** a wobbling, see-through green **jelly cube** with the toad's face and crown floating inside it, and a pulsing magenta **nucleus**. Whatever it has swallowed shows inside it, dissolving.
+- **Outside hits barely hurt it** ("BOING", 10%); blasts do 20%. This is the boss where you're meant to lose your bodies.
+- **Engulf:** it **slides over you** and engulfs you ("IT ENGULFS YOU"); it also engulfs and digests robots it slides into, and smashes props. Its belly flop engulfs you if it lands on you.
+- **Inside:** your **B hits on the nucleus** are the real way to kill it: your body's damage ×1.5 per hit, at most one every 10 frames — bigger bodies hit harder. Every ~3 s the jelly **digests your outermost body** ("DIGESTED", gone for good). When the last one dissolves it **spits out the bare core** ("SPAT OUT"). **A+B bursts out** early and keeps the bodies you still have.
+- **Supply:** the arena starts with two empty bodies (a Brute robot and a Scrapper), and its **croak** spits out Scrappers you can beat for more — climb in and dive back in.
+- **Other moves:** **belly flop** (leaps, marker follows you, shockwave 14, then lies dazed).
+- **Hook / blasts:** knock it dazed ("BURP"); if you're inside, you pop out free.
 - **Drop:** a **Brute** frame ("IT COUGHS UP A BRUTE FRAME").
 - **Level hazard:** mud patches slow you and robots to about half speed.
+- Numbers in `FEEL.bosses` (toad…).
 
 **Level 7 — The Cook** (280 HP, The Giant's Kitchen)
 

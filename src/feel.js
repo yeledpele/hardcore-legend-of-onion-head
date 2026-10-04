@@ -84,11 +84,17 @@ const FEEL={
     crabShell: 60,         // its first shell
     craneHp: 230,
     craneStuck: 110,       // frames the magnet stays down after a slam
+    craneReach: 80,        // how far the magnet pulls
+    cranePull: 1.6,        // pull speed per frame
+    craneHold: 110,        // frames you stay frozen to the magnet before it slams you down
+    craneMash: 8,          // A/B presses to break free
+    craneSlam: 14,         // damage when it slams you down
     toadHp: 230,
-    toadSwallow: 210,      // frames you stay inside before it digests your body
-    toadInsideDamage: 5,   // damage per B hit from inside
+    toadOutside: 0.1,      // outside hits do this share of damage (it's jelly)
+    toadEngulfSpeed: 0.9,  // slide speed when it comes to engulf you
+    toadDigestEvery: 150,  // frames inside before it digests your outermost body
+    toadInsideMult: 1.5,   // inside, B hits on the nucleus do your body's damage times this
     toadInsideRate: 10,    // frames between hits from inside
-    toadBurstDamage: 10,   // damage when you burst out with A+B
     cookHp: 280,
     cookPanTime: 170       // frames the pan stays down as a platform
   },
@@ -112,5 +118,11 @@ const FEEL={
     mudSlow: 0.45,        // share of your speed lost in mud
     mudRobotSpeed: 0.55,  // robot speed in mud
     beltPush: 0.45        // conveyor push per frame
+  },
+  magnet:{
+    pushRadius: 80,       // MAGNET PUSH (special): reach
+    pushDamage: 4,        // extra damage on top of the body's damage
+    pushForce: 3,         // how hard robots are thrown away
+    pullRange: 120        // every 3rd combo hit pulls the nearest robot, body or head from this far
   }
 };

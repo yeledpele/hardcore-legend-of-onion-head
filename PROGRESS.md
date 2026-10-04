@@ -1,7 +1,7 @@
 # Progress
 
 ## Current state (2026-10-04)
-v4.2 in progress. `main` is live on GitHub Pages; the dev tools are being built on branch **`dev-tools`** (not merged, not live). All 21 tests pass (`npm test`, ~10.5 min). The PLAY campaign is playable start to finish: 8 levels, 40 sections, 8 bosses, ending. Classic mode (top-down map and duels) still works. English and Hebrew.
+v4.2 in progress. `main` is live on GitHub Pages; the dev tools are being built on branch **`dev-tools`** (not merged, not live). All 25 tests pass on `boss-revisions` (`npm test`, ~11 min). The PLAY campaign is playable start to finish: 8 levels, 40 sections, 8 bosses, ending. Classic mode (top-down map and duels) still works. English and Hebrew.
 
 ## Done
 - **v4.1 baseline** (pixel look, beat 'em up campaign, bodies, specials, heads, three bosses). Full history in `CHANGELOG.md`.
@@ -13,6 +13,7 @@ v4.2 in progress. `main` is live on GitHub Pages; the dev tools are being built 
   - Destructible props per level; barrels explode and chain; big bodies smash props.
   - Five new levels and bosses: Toy Works (Wind-Up Knight), Hermit Harbour (Hermit Crab), Magnet Yard (Crane), Gullet Bog (Toad King), Giant's Kitchen (Cook). New bosses share one framework (`NB` table).
 - **Dev tools, step 1 of 6 — the feel file** (branch `dev-tools`): `src/feel.js` holds ~80 tuning numbers for the PLAY campaign, grouped and commented, one `name: number,` per line; the game reads `FEEL` live. Same values as before; tests check the file format and that the game follows it.
+- **Boss revisions** (branch `boss-revisions`, not merged): the Toad King is a jelly cube you beat from the inside (it digests your bodies, spits out the bare core); the Crane's pull is stronger and visible and it freezes what it catches (mash to break free); the Crane drops the MAGNET power (push special, pull on every 3rd hit).
 - **Game speed:** master `FEEL.game.speed` = 0.85 (was effectively 1.0), slows everything evenly. Needs a playtest.
 - **Project setup:** git + GitHub (public), GitHub Pages deploy on push to `main` (quick tests must pass), project agents including `level-designer`.
 
@@ -45,6 +46,7 @@ Now: controller support (branch `controller`), then back to the dev tools.
 Still not in the feel file: Classic mode's numbers, the robot and body stat tables (`TYPES`, `FR`, `PROPS`), special-move timings (`SPTIME`), and the Maker/Warden/Matryoshka attack timings.
 
 ## Open design questions
+- **Giant's Kitchen backdrop "face":** players ask about it; it's meant to be a cat's eyes under a cupboard. Make it read as a cat (ears, whiskers, blinking) or remove it?
 - Should Classic mode also lock nesting until a boss is beaten?
 - Civilians: is the cartoon-flat-then-run-off right, or should squished civilians stay squished? Should squishing them ever cost you something?
 - Which of the 9 unbuilt level proposals (in `docs/plans/level-proposals.md`) are worth building next? Market Street (the Collector) now fits, since civilians exist.
