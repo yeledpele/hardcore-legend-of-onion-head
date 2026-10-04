@@ -37,8 +37,8 @@ The game uses a two-button convention: **A** and **B**.
 | Move (left, right, and up/down in depth) | Arrows / WASD | D-pad | Stick / D-pad |
 | Jump (A) | Z or Space | A | A / B (south / east) |
 | Attack (B) | X | B | X (west) |
-| Special (A and B together) | Z + X at the same time (also C or Shift) | A + B | Y, LB or RB (or A/B + X together) |
-| Climb into a body / Eject (Start) | Enter | START | Start |
+| Special (A and B together) | Z + X at the same time (also C or Shift) | A + B | LT or RT (or A/B + X together) |
+| Climb into a body / Eject (Start) | Enter | START | Y, LB or RB (or Start) |
 | Language (English / Hebrew) | L | page button | Back / Select |
 
 - Pressing A and B counts as a special only when both go down within a few frames of each other, so mashing attack and then jumping still jumps.
@@ -398,7 +398,7 @@ Small people walk around every section (2–3; one in boss arenas), and more run
 | 4 Hermit Harbour | Night harbour, moon over the water, pier, lighthouse | Scrappers/Lancer → Hounds + crate → **mini-boss Shieldbot** → Brute/Walker/Lancer + crate → **Hermit Crab** |
 | 5 The Magnet Yard | Stacks of crushed car cubes, sodium lamps | Scrappers → Lancer/Walker + crate → **mini-boss Brute** → Walker/Shieldbot/Scrapper + crate → **Crane** |
 | 6 The Gullet Bog | Swamp of drowned machines, reeds, fireflies; mud patches | Scrappers → Hounds + crate → **mini-boss Brute** → Shieldbot/Walker/Hound + crate → **Toad King** |
-| 7 The Giant's Kitchen | Table and chair legs as pillars, a giant cat watching from under a cupboard (it blinks), tiled floor | Scrappers/Lancer → Hounds + crate → **mini-boss Walker** → Brutes/Lancer + crate → **Cook** |
+| 7 The Giant's Kitchen | Table and chair legs as pillars, a pair of eyes in the dark under a cupboard, tiled floor | Scrappers/Lancer → Hounds + crate → **mini-boss Walker** → Brutes/Lancer + crate → **Cook** |
 | 8 The Foundry | Red brick foundry, pipes, furnaces | Hound/Brute → Shieldbots/Lancer + crate → **two mini-boss Brutes** → Walker/Hound + crate → **Maker** |
 
 - **Difficulty:** robot health and damage scale with a difficulty tier: levels 1–2 as before (tier 0, 1), then rising evenly to tier 2 at the Foundry (health ×(1 + 0.3 × tier), damage ×(1 + 0.15 × tier)).

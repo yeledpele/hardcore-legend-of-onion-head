@@ -121,8 +121,8 @@ const adv=ch=>{const h=HFONT[ch];return h?h.w+1:4;};
 function setLang(l){LANG=l;try{localStorage.setItem('hc-lang',l);}catch(e){}syncLangUI();}
 
 const LEGEND={
-  en:'<b>Arrows / WASD</b> move &nbsp; <b>Z / Space</b> jump (A), hold for higher &nbsp; <b>X</b> attack (B): tap for a combo, the third hit launches &nbsp; <b>hold X</b> charge &nbsp; <b>Down + X in the air</b> dive &nbsp; <b>Up</b> special &nbsp; <b>Down</b> guard, double-tap to eject &nbsp; <b>Enter</b> start &nbsp; <b>Play: Enter</b> climb into a bigger empty body, or eject &nbsp; <b>Z + X together</b> (A+B) special: each body has its own power, fill POWER by landing hits; crates drop weapons &nbsp; walk into a dazed robot to grab, X to throw &nbsp; <b>Classic</b> (title menu): the map and duels &nbsp; <b>On the map: X</b> park or climb into your frame, <b>Enter</b> rig panel &nbsp; <b>Controller</b> stick / D-pad move, A or B jump, X attack, Y / LB / RB special, Start, Back: language &nbsp; <b>L</b> עברית',
-  he:'<b>חצים / WASD</b> תנועה &nbsp; <b>Z / רווח</b> קפיצה (A), החזק לגובה &nbsp; <b>X</b> מכה (B): הקש לקומבו, המכה השלישית מקפיצה &nbsp; <b>החזק X</b> טעינה &nbsp; <b>למטה + X באוויר</b> צלילה &nbsp; <b>למעלה</b> מיוחד &nbsp; <b>למטה</b> הגנה, פעמיים לפליטה &nbsp; <b>Enter</b> התחלה &nbsp; <b>במשחק: Enter</b> היכנס לגוף ריק גדול יותר, או פליטה &nbsp; <b>Z + X יחד</b> (A+B) מיוחד: לכל גוף כוח משלו, ממלאים כוח במכות; ארגזים מפילים נשקים &nbsp; לך לרובוט המום כדי לתפוס, X לזריקה &nbsp; <b>קלאסי</b> (בתפריט): המפה והדו־קרבות &nbsp; <b>במפה: X</b> חניית השלד או כניסה אליו, <b>Enter</b> לוח השלד &nbsp; <b>בקר</b> סטיק / חצים תנועה, A או B קפיצה, X התקפה, Y / LB / RB מיוחד, Start, Back: שפה &nbsp; <b>L</b> English'};
+  en:'<b>Arrows / WASD</b> move &nbsp; <b>Z / Space</b> jump (A), hold for higher &nbsp; <b>X</b> attack (B): tap for a combo, the third hit launches &nbsp; <b>hold X</b> charge &nbsp; <b>Down + X in the air</b> dive &nbsp; <b>Up</b> special &nbsp; <b>Down</b> guard, double-tap to eject &nbsp; <b>Enter</b> start &nbsp; <b>Play: Enter</b> climb into a bigger empty body, or eject &nbsp; <b>Z + X together</b> (A+B) special: each body has its own power, fill POWER by landing hits; crates drop weapons &nbsp; walk into a dazed robot to grab, X to throw &nbsp; <b>Classic</b> (title menu): the map and duels &nbsp; <b>On the map: X</b> park or climb into your frame, <b>Enter</b> rig panel &nbsp; <b>Controller</b> stick / D-pad move, A or B jump, X attack, LT / RT special, Y / LB / RB climb in or eject, Start, Back: language &nbsp; <b>L</b> עברית',
+  he:'<b>חצים / WASD</b> תנועה &nbsp; <b>Z / רווח</b> קפיצה (A), החזק לגובה &nbsp; <b>X</b> מכה (B): הקש לקומבו, המכה השלישית מקפיצה &nbsp; <b>החזק X</b> טעינה &nbsp; <b>למטה + X באוויר</b> צלילה &nbsp; <b>למעלה</b> מיוחד &nbsp; <b>למטה</b> הגנה, פעמיים לפליטה &nbsp; <b>Enter</b> התחלה &nbsp; <b>במשחק: Enter</b> היכנס לגוף ריק גדול יותר, או פליטה &nbsp; <b>Z + X יחד</b> (A+B) מיוחד: לכל גוף כוח משלו, ממלאים כוח במכות; ארגזים מפילים נשקים &nbsp; לך לרובוט המום כדי לתפוס, X לזריקה &nbsp; <b>קלאסי</b> (בתפריט): המפה והדו־קרבות &nbsp; <b>במפה: X</b> חניית השלד או כניסה אליו, <b>Enter</b> לוח השלד &nbsp; <b>בקר</b> סטיק / חצים תנועה, A או B קפיצה, X התקפה, LT / RT מיוחד, Y / LB / RB כניסה או פליטה, Start, Back: שפה &nbsp; <b>L</b> English'};
 function syncLangUI(){
   const k=document.getElementById('keys'),b=document.getElementById('langBtn');
   k.innerHTML=LEGEND[LANG];k.dir=LANG==='he'?'rtl':'ltr';k.lang=LANG;
@@ -431,7 +431,7 @@ document.querySelectorAll('#pad button').forEach(b=>{
 });
 view.addEventListener('pointerdown',()=>{initAudio();if(state==='title')hit.start=true;});
 // controllers: every connected pad counts (standard mapping): stick/D-pad move, A (south) and B (east) jump,
-// X (west) attacks, Y and the shoulder buttons fire the special, Start, Back switches language
+// X (west) attacks, the triggers fire the special, Y and the shoulder buttons climb in / eject (as does Start), Back switches language
 let padUsed=false,toast=null,rumbleT=0;
 function pollPad(){
   for(const k of KEYS)gp[k]=false;
@@ -439,7 +439,7 @@ function pollPad(){
   const dz=FEEL.controller.deadzone;let any=false;
   for(const p of pads){if(!p)continue;
     const ax=p.axes[0]||0,ay=p.axes[1]||0,b=i=>!!(p.buttons[i]&&p.buttons[i].pressed);
-    const st={left:ax<-dz||b(14),right:ax>dz||b(15),up:ay<-dz||b(12)||(state!=='brawl'&&b(3)),down:ay>dz||b(13),a:b(0),jump:b(1),b:b(2),sp:b(3)||b(4)||b(5),start:b(9),lang:b(8)};
+    const st={left:ax<-dz||b(14),right:ax>dz||b(15),up:ay<-dz||b(12)||(state!=='brawl'&&b(3)),down:ay>dz||b(13),a:b(0),jump:b(1),b:b(2),sp:b(6)||b(7),start:b(9)||(state==='brawl'&&(b(3)||b(4)||b(5))),lang:b(8)};
     for(const k in st)if(st[k]){gp[k]=true;any=true;}
   }
   if(any){initAudio();padUsed=true;}
@@ -583,7 +583,7 @@ withCtx(bgs[7].getContext('2d'),()=>{
   px(0,0,W,16,'#3a2414');px(0,16,W,3,'#22140a');px(150,19,6,30,'#c8344a');px(146,46,14,10,'#c8344a');for(let i=0;i<3;i++)px(147+i*4,48,2,6,'#f2f7ff');
   for(const [lx,w] of [[20,22],[110,16],[214,26]]){px(lx,19,w,85,'#3a2414');px(lx+2,19,3,85,'#5a3a20');px(lx,40,w,2,'#22140a');}
   for(const lx of [70,90]){px(lx,58,8,46,'#2a190c');}px(64,56,32,4,'#2a190c');
-  px(170,76,40,28,'#0a0402');px(170,76,40,2,'#22140a'); // the dark gap under the cupboard (the cat in it is drawn live: drawKitchenCat)
+  px(176,78,30,22,'#0a0402');px(184,86,6,4,'#ffe600');px(198,86,6,4,'#ffe600');px(186,87,1,2,C.void);px(200,87,1,2,C.void);
   g.globalAlpha=.2;px(0,96,W,8,'#ff6a3d');g.globalAlpha=1;
   px(0,104,W,1,'#ff6a3d');
 });
@@ -2038,24 +2038,12 @@ function drawBrawlPlayer(p,cam){
     for(let i=0;i<3;i++){if(up)px(x+f*(6+i*3),yy+6-i*4,1,4-i,C.wh);else px(f>0?x+9+i*3:x-14-i*3,yy+2+i*3,5-i,1,C.wh);}}
   if(p.kind==='burst'&&p.atk>8){const R=(26-p.atk)*3;for(let a=0;a<24;a++){const aa=a/24*6.283;px(x+Math.cos(aa)*R,fy-10+Math.sin(aa)*R*.4,1,1,(T>>1)&1?C.cy:C.wh);}}
 }
-// the Giant's Kitchen: a giant cat watching from the dark under a cupboard; it blinks, its ears twitch, its tail flicks
-function drawKitchenCat(x,y){
-  if(x<-50||x>W+10)return;
-  const fur='#2a1a10',furD='#1a0f08',blink=(T%260)<9||(T%260>24&&T%260<30),ear=(T%400)<12?1:0,tail=Math.round(Math.sin(T*.05)*3);
-  px(x+8,y+8,24,16,fur);px(x+6,y+12,28,10,fur);px(x+8,y+22,24,2,furD);
-  px(x+8,y+3+ear,5,6,fur);px(x+9,y+5+ear,3,3,'#5a2a3a');px(x+27,y+3,5,6,fur);px(x+28,y+5,3,3,'#5a2a3a');
-  for(const ex of [x+12,x+23]){if(blink)px(ex,y+14,6,1,'#ffe600');else{px(ex,y+12,6,5,'#ffe600');px(ex+2,y+12,2,5,C.void);px(ex+1,y+12,1,1,C.wh);}}
-  px(x+19,y+18,3,2,'#ff8aa0');px(x+20,y+20,1,1,furD);
-  for(const s of [-1,1]){const wx=s<0?x+17:x+23;pline(wx,y+19,wx+s*10,y+18,'#8a7a6a');pline(wx,y+20,wx+s*10,y+21,'#8a7a6a');}
-  px(x+33,y+20+tail,6,2,fur);px(x+38,y+17+tail,2,4,fur);
-}
 function drawStreet(cam){
   const s0=stageAt(cam),s1=stageAt(cam+W-1);
   for(let s=s0;s<=s1;s++){
     const a=Math.max(0,s*SL-cam),b2=Math.min(W,(s+1)*SL-cam),th=STAGES[s].theme,FL=BFLOOR[th];
     g.save();g.beginPath();g.rect(a,0,b2-a,H);g.clip();
     const sx=Math.round(cam*.35)%W;g.drawImage(bgs[th],0,0,W,104,-sx,0,W,104);g.drawImage(bgs[th],0,0,W,104,W-sx,0,W,104);
-    if(th===7)for(const ox of [-sx,W-sx])drawKitchenCat(ox+170,76);
     px(0,104,W,40,FL.f);
     if(FL.tile){const rows=[104,107,111,116,122,129,137,144];for(let i=0;i<rows.length-1;i++){const tw=12+i*5,o=Math.round(cam*(.7+i*.08))%(tw*2);for(let x=-o-tw*2,k=0;x<W;x+=tw,k++)if((k+i)&1)px(x,rows[i],tw,rows[i+1]-rows[i],FL.tile[0]);}}
     for(let wx=Math.floor(cam/32)*32-64;wx<cam+W+64;wx+=32){const x0=wx-cam;pline(x0,105,x0+(x0-128)*.55,143,FL.l);}

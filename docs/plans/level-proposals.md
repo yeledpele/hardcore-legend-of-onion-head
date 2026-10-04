@@ -10,7 +10,7 @@ Chosen for the five most different boss mechanics: facing (Knight), husk theft (
 **Revisions after Ben's notes (2026-10-04):**
 - **The Gullet Bog / Toad King** — Ben loves it; it becomes the boss where you lose all your bodies. Now a **jelly cube**: it slides over you and engulfs you; outside hits barely hurt; you kill it **from the inside** by hitting its nucleus while it digests your extra bodies one by one; at the bare core it spits you out.
 - **The Magnet Yard / Crane** — keep, improve the pull and freeze: a stronger, visible pull, and what it catches is frozen to the magnet (you too: mash to break free). It now drops a **MAGNET** power: the special is an area **push**, every 3rd normal hit is a **pull**.
-- **The Giant's Kitchen** — players ask about the "face" in the backdrop: it's the cat's eyes under a cupboard, and it doesn't read as a cat. Decided: made it a proper cat (ears, slit eyes, whiskers, blinking).
+- **The Giant's Kitchen** — players ask about the "face" in the backdrop: it's the cat's eyes under a cupboard, and it doesn't read as a cat. Tried a proper cat (ears, whiskers, blinking); Ben preferred the original eyes in the dark, so it was reverted.
 
 **Not built (kept for later):** The Repair Ward (Surgeon), Market Street (Collector — a good fit now that civilians exist), The Big Top (Juggler), The Frost Works (Yeti), The Flooded Line (Carriage Worm), The Server Farm (Puppeteer), The Giant's Graveyard (Colossus Reborn), The Deep Quarry (Drill Mole), The Bell Tower (Bellringer).
 
