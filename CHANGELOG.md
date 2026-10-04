@@ -19,6 +19,11 @@ Built on v4.1.
 - New bosses share one framework (`NB` table): one entry per boss for hits, topple, ticking heads, Flyer bombs and the Chain Hook.
 - **Feel file** (`src/feel.js`, branch `dev-tools`): ~80 tuning numbers for the PLAY campaign moved out of the code into one commented file (movement, weight, jump, jetpack, combat timing and damage, POWER, robots, difficulty, bosses, civilians, barrels, hazards). Same values, same game.
 - **Controller support** (branch `controller`): any connected pad; B / Circle and Space now jump in the campaign (they did nothing before); Y, LB or RB fire the special; Back switches language; "CONTROLLER CONNECTED" message; rumble on big hits, slams and explosions (strength in the feel file); controller line in the key legend (English and Hebrew).
+- **Boss revisions** (branch `boss-revisions`, after Ben's notes):
+  - **The Toad King is a jelly cube you beat from the inside:** outside hits barely hurt; it slides over you and engulfs you; inside, hit its nucleus while it digests your bodies one by one; at the bare core it spits you out; A+B bursts out. No more tongue.
+  - **The Crane's pull and freeze:** stronger pull along visible field lines; what it catches is frozen to the magnet, including you (mash A/B to break free, or get slammed down).
+  - **The Crane drops the MAGNET power:** special = MAGNET PUSH (area blast), every 3rd combo hit = PULL.
+- **The Giant's Kitchen cat:** the dark "face" in the backdrop is now a proper cat (ears, slit eyes, nose, whiskers) that blinks, twitches an ear and flicks its tail.
 - **Slower overall:** a master game speed (`FEEL.game.speed`, now 0.85) slows everything evenly, about 15% calmer than before.
 
 ## v4.1

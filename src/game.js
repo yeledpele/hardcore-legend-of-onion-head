@@ -70,7 +70,7 @@ const HE={
 'SALVAGE WHAT YOU CAN':'אסוף מה שאפשר','YOU':'אתה','YOUR FRAME, RECOVERED':'השלד שלך הוחזר','THE COLOSSUS WAITS':'הענק מחכה',
 'THE MAKER IS AWAKE':'היוצר ער','THE WARDEN IS WATCHING':'השומר צופה',"SHELLY'S HOUSE. THE DOOR IS OPEN.":'הבית של שלי. הדלת פתוחה.',
 'EJECT':'פליטה','IT EJECTED':'הוא נפלט','SHELL BREAK':'המעטפת נשברה','POGO':'ניתור','LAUNCH':'הקפצה','CHARGED':'טעון','STOMP':'רקיעה',
-'L: ENGLISH':'L: ENGLISH','MATRYOSHKA':'מטריושקה','ANOTHER ONE INSIDE':'עוד אחת בפנים','THE LAST DOLL':'הבובה האחרונה','ITS SMALLEST SHELL: THE DOLL':'הקליפה הקטנה שלה: הבובה','NESTING LOCKED: BEAT THE MATRYOSHKA':'קינון נעול: נצחו את המטריושקה','NESTING UNLOCKED':'קינון נפתח','CONTROLLER CONNECTED':'בקר מחובר','CONTROLLER DISCONNECTED':'הבקר נותק','THE TOY WORKS':'מפעל הצעצועים','HERMIT HARBOUR':'נמל הסרטנים','THE MAGNET YARD':'מגרש המגנט','THE GULLET BOG':'ביצת הלוע',"THE GIANT'S KITCHEN":'המטבח של הענק',
+'L: ENGLISH':'L: ENGLISH','MATRYOSHKA':'מטריושקה','ANOTHER ONE INSIDE':'עוד אחת בפנים','THE LAST DOLL':'הבובה האחרונה','ITS SMALLEST SHELL: THE DOLL':'הקליפה הקטנה שלה: הבובה','NESTING LOCKED: BEAT THE MATRYOSHKA':'קינון נעול: נצחו את המטריושקה','NESTING UNLOCKED':'קינון נפתח','CONTROLLER CONNECTED':'בקר מחובר','CONTROLLER DISCONNECTED':'הבקר נותק','MAGNET PUSH':'דחיפה מגנטית','PULL':'משיכה','ITS MAGNET: PUSH AND PULL':'המגנט שלו: דחיפה ומשיכה','FROZEN TO THE MAGNET':'קפואים למגנט','BREAK FREE':'השתחררתם!','IT ENGULFS YOU':'הוא בולע אותך','HIT THE NUCLEUS':'הכו בגרעין','DIGESTED':'עוכל','SPAT OUT':'נירקתם החוצה','BOING':'בוינג','THE TOY WORKS':'מפעל הצעצועים','HERMIT HARBOUR':'נמל הסרטנים','THE MAGNET YARD':'מגרש המגנט','THE GULLET BOG':'ביצת הלוע',"THE GIANT'S KITCHEN":'המטבח של הענק',
 'THE WIND-UP KNIGHT':'אביר הקפיץ','THE HERMIT CRAB':'הסרטן הנזיר','THE CRANE':'העגורן','THE TOAD KING':'מלך הקרפדות','THE COOK':'הטבח',
 'THE WARDEN GOES QUIET.':'השומר משתתק.','ITS LAST SIGNAL CAME FROM THE FOUNDRY.':'האות האחרון שלו הגיע מבית היציקה.','THE ROAD RUNS THROUGH A TOY FACTORY.':'הדרך עוברת דרך מפעל צעצועים.','SOMETHING INSIDE IS STILL WOUND UP.':'משהו בפנים עדיין מתוח.',
 'THE KNIGHT RUNS DOWN.':'האביר נעצר.','THE ROAD ENDS AT A NIGHT HARBOUR.':'הדרך נגמרת בנמל לילי.','EMPTY BODIES WASH UP ON THE PIER.':'גופים ריקים נסחפים אל המזח.','SOMETHING IS COLLECTING THEM.':'משהו אוסף אותם.',
@@ -79,7 +79,7 @@ const HE={
 'THE TOAD KING BURPS ITS LAST.':'מלך הקרפדות גיהק בפעם האחרונה.','A DOOR IN THE BOG OPENS ONTO A KITCHEN.':'דלת בביצה נפתחת אל מטבח.','ONION HEAD IS TINY HERE.':'ראש בצל זעיר כאן.','THE COOK IS HUNGRY.':'הטבח רעב.',
 'THE COOK DROPS ITS PAN.':'הטבח מפיל את המחבת.','BEHIND THE STOVE LIES THE FOUNDRY,':'מאחורי הכיריים נמצא בית היציקה,','WHERE THE GIANTS ARE MADE.':'שם נבנים הענקים.','THE ONE THAT TOOK SHELLY IS THERE.':'זה שלקח את שלי נמצא שם.',
 'UNWOUND':'הקפיץ נגמר','REWOUND':'נמתח מחדש','KEY PULLED':'המפתח נשלף','DIZZY':'סחרחורת','GOTCHA':'תפסתי!','MASH B':'לחצו B שוב ושוב','NOW IT IS SOFT':'עכשיו הוא רך','HOOKED: SHELL OFF':'נתפס: הקונכייה עפה','IT STEALS A SHELL':'הוא גונב קונכייה','IT DIGS A NEW SHELL':'הוא חופר קונכייה חדשה',
-'HIT THE MAGNET':'הכו במגנט','MAGNET SLAM':'מכת מגנט','LIFTED':'הורם','THE CAB CRASHES':'התא מתרסק','GULP':'גלפ!','HIT IT FROM INSIDE':'הכו מבפנים','BURST OUT':'פורצים החוצה!','IT DIGESTS YOUR BODY':'הוא מעכל את הגוף שלך','TONGUE PULLED':'הלשון נשלפה','BURP':'גרעפס','CROAK':'קרקור',
+'HIT THE MAGNET':'הכו במגנט','MAGNET SLAM':'מכת מגנט','LIFTED':'הורם','THE CAB CRASHES':'התא מתרסק','GULP':'גלפ!','HIT IT FROM INSIDE':'הכו מבפנים','BURST OUT':'פורצים החוצה!','IT DIGESTS YOUR BODY':'הוא מעכל את הגוף שלך','BURP':'גרעפס','CROAK':'קרקור',
 'PEPPER':'פלפל','JUMP ON THE PAN':'קפצו על המחבת','THE HAND IS DOWN':'היד נפלה',
 'ITS EMPTY ARMOUR: WALKER':'השריון הריק שלו: צועד','ITS DREAM SHELL: TITAN':'קונכיית החלומות שלו: טיטאן','THE OPERATOR CLIMBS OUT':'המפעיל יוצא החוצה','IT COUGHS UP A BRUTE FRAME':'הוא משתעל שלד בריון','IN ITS SLEEVE: A WALKER FRAME':'בשרוול שלו: שלד צועד','SQUISH':'נמעך!','BOOM':'בום','AAH!':'אאאה!','HELP!':'הצילו!','RUN!':'ברחו!','EEK!':'אִי!','CLIMB INTO A BIGGER BODY TO NEST':'היכנסו לגוף גדול יותר כדי לקנן','DOLL':'בובה','LIGHTNING CALL':'קריאת ברק','LIGHTNING! KEEP MOVING':'ברק! תמשיך לזוז','FLYER':'מעופף','BOMB DROP':'הטלת פצצות','A FLYING FRAME WAS INSIDE':'בפנים היה שלד מעופף','A+B TOGETHER: SPECIAL':'A+B יחד: מיוחד','CHAIN HOOK':'שרשרת וו','HOOKED':'נתפס','TOPPLED':'הופל','IT BRACES ITSELF':'הוא מתייצב','TICKING HEAD! KICK IT AWAY':'ראש מתקתק! בעט אותו','ITS HEAD IS DOWN: HIT IT':'הראש שלו למטה: הכה בו','HEADSHOT':'פגיעת ראש','HIT A HEAD TO KICK IT':'הכה בראש כדי לבעוט בו','KICK BOMBS OR HEADS UP AT THE WARDEN':'בעט פצצות או ראשים אל השומר','HEAD OFF':'הראש עף','MINI BOSS':'מיני בוס','JUMP ON THE FIST':'קפוץ על האגרוף','JUMP AND STRIKE THE HEAD':'קפוץ והכה בראש','HIT IT NOW, OR JUMP ON THE FIST':'הכה עכשיו, או קפוץ על האגרוף','ITS CORE FRAME: TITAN':'שלד הליבה שלו: טיטאן','A WALKER FRAME WAS INSIDE':'בפנים היה שלד צועד','KNIFE THROW':'זריקת סכין','SCRAP SPIN':'סחרור גרוטאות','SPEAR THRUST':'דקירת רומח','POUNCE':'זינוק','SHIELD BASH':'הלם מגן','GROUND POUND':'הלם קרקע','NO POWER':'אין כוח','POWER':'כוח','NEEDS A BODY':'צריך גוף','PLAY':'שחק','CLASSIC':'קלאסי','NOTHING TO EJECT':'אין מה לפלוט','START: CLIMB IN':'START: היכנס','START: EJECT':'START: פליטה','BEAT A ROBOT, THEN CLIMB INTO ITS BODY':'הבס רובוט, ואז היכנס לגוף שלו','NESTED':'מקונן','A: TRY AGAIN   B: TITLE':'A: נסה שוב   B: מסך פתיחה','STORY':'סיפור','BRAWL':'מכות רחוב','CHOOSE YOUR FRAME':'בחר את השלד שלך','A: START   B: BACK':'A: התחל   B: חזרה','SPEED':'מהירות','STREET CLEAR':'הרחוב נוקה','SCORE':'ניקוד','A: AGAIN   B: TITLE':'A: שוב   B: מסך פתיחה','BOSS':'בוס','GRAB':'תפיסה','THROW':'זריקה','CORE CELL':'תא ליבה','FIX +20':'תיקון +20','CORE +1':'ליבה +1','GO':'קדימה','B: HIT   A: JUMP   A+B: BURST   WALK INTO A DAZED ROBOT: GRAB':'B: מכה  A: קפיצה  A+B: פיצוץ  לך לרובוט המום: תפיסה','NEST:':'קינון:','THE CORE CANNOT CARRY A FRAME':'הליבה לא יכולה לשאת שלד','ONLY A SMALLER FRAME FITS INSIDE':'רק שלד קטן יותר נכנס בפנים','LAYER LOST':'שכבה אבדה','NEEDS A SECOND FRAME':'צריך שלד שני','NEEDS A 2ND FRAME':'צריך שלד שני','NEW: NEST A FRAME IN BATTLE PREP':'חדש: קנן שלד בהכנה לקרב','L: HEBREW':'L: עברית',
 'CORE':'ליבה','BASIC':'בסיסי','BRUTE':'בריון','WALKER':'צועד','TITAN':'טיטאן','KING':'מלך',
@@ -581,7 +581,7 @@ withCtx(bgs[7].getContext('2d'),()=>{
   px(0,0,W,16,'#3a2414');px(0,16,W,3,'#22140a');px(150,19,6,30,'#c8344a');px(146,46,14,10,'#c8344a');for(let i=0;i<3;i++)px(147+i*4,48,2,6,'#f2f7ff');
   for(const [lx,w] of [[20,22],[110,16],[214,26]]){px(lx,19,w,85,'#3a2414');px(lx+2,19,3,85,'#5a3a20');px(lx,40,w,2,'#22140a');}
   for(const lx of [70,90]){px(lx,58,8,46,'#2a190c');}px(64,56,32,4,'#2a190c');
-  px(176,78,30,22,'#0a0402');px(184,86,6,4,'#ffe600');px(198,86,6,4,'#ffe600');px(186,87,1,2,C.void);px(200,87,1,2,C.void);
+  px(170,76,40,28,'#0a0402');px(170,76,40,2,'#22140a'); // the dark gap under the cupboard (the cat in it is drawn live: drawKitchenCat)
   g.globalAlpha=.2;px(0,96,W,8,'#ff6a3d');g.globalAlpha=1;
   px(0,104,W,1,'#ff6a3d');
 });
@@ -1743,6 +1743,7 @@ function stepBrawl(){
   const dx=K.right-K.left,dz=K.down-K.up;
   if(P.a)p.lastA=bw.t;if(P.b)p.lastB=bw.t;
   if(p.inside){toadInside();stepBrawlWorld();return;}
+  if(p.frozen){if(!bw.boss||bw.boss.type!=='crane')p.frozen=false;else{stepBrawlWorld();return;}}
   // Start: climb into a bigger empty body if one is next to you, otherwise eject the outer layer
   if(P.start&&p.onG&&!p.grab){const h=nearHusk();if(h)climbIn(h);else if(p.layers.length)ejectLayer();else{say('NOTHING TO EJECT',p.x,p.z-30,C.gr,30);beep(160,.05,'square',.03);}}
   else if((P.sp||(P.b&&bw.t-(p.lastA||-99)<FEEL.player.abWindow)||(P.a&&bw.t-(p.lastB||-99)<FEEL.player.abWindow))&&(p.atk<=0||p.kind==='melee')&&p.boot<=0&&p.kind!=='sp'){if(!p.onG&&p.jt<5&&!p.plat){p.h=0;p.vh=0;p.onG=true;}p.atk=0;p.kind=null;startSpecial();}
@@ -1786,7 +1787,7 @@ function stepBrawl(){
       if(p.kind==='lunge'){p.vx=p.face*Math.max(.5,p.atk/4);for(const e of bw.ents)if(e.type&&!p.hitSet.has(e)&&e.st!=='dead'&&Math.abs(e.x-p.x)<14&&Math.abs(e.z-p.z)<7){p.hitSet.add(e);bDamage(e,b.dmg+2,p.face,{stun:true});}}
       if(p.atk===p.hitAt){
         const reach=b.reach,x0=p.face>0?p.x:p.x-reach,x1=p.face>0?p.x+reach:p.x;
-        if(p.kind==='melee'){const n=p.combo;bHitBox(x0,x1,8,p.h+14,n===2?b.dmg*2:b.dmg+(n===1?1:0),{launch:n===2&&!core,stun:n===1,heavy:n===2});}
+        if(p.kind==='melee'){const n=p.combo;bHitBox(x0,x1,8,p.h+14,n===2?b.dmg*2:b.dmg+(n===1?1:0),{launch:n===2&&!core,stun:n===1,heavy:n===2});if(n===2&&curWeapon()==='magnet')magnetPull();}
         else if(p.kind==='air')bHitBox(x0,x1,9,p.h+20,b.dmg+2,{air:true});
         else if(p.kind==='burst'){bHitBox(p.x-44,p.x+44,16,30,6,{heavy:true,launch:true,force:true});spark(p.x,p.z-14,30,[C.cy,C.yl,C.wh],4);kick(6,.8);crunch(.3,.1);bursts.push({x:Math.round(p.x-bw.cam),y:Math.round(p.z-8),t:14});}
       }
@@ -1871,7 +1872,7 @@ function retrySection(){
   const cp=bw.checkpoint,S=SECS[cp.sec];
   bw.ents=bw.ents.filter(e=>e.husk);bw.items=[];bw.sec=cp.sec;bw.clear=false;bw.score=Math.floor(cp.score/2);bw.cont++;
   const p=bw.p;bw.boss=null;bw.bombs=[];bw.strikes=[];bw.plats=[];bw.heads=[];bw.drops=[];bw.zaps=[];
-  Object.assign(p,{inside:false,x:S.x0+40,z:124,h:0,vx:0,vz:0,vh:0,face:1,layers:[],core:3,pow:50,plat:null,atk:0,kind:null,sp:null,inv:60,onG:true,grab:null,hits:0});bw.shots=[];bw.rockets=[];bw.beam=null;
+  Object.assign(p,{inside:false,frozen:false,x:S.x0+40,z:124,h:0,vx:0,vz:0,vh:0,face:1,layers:[],core:3,pow:50,plat:null,atk:0,kind:null,sp:null,inv:60,onG:true,grab:null,hits:0});bw.shots=[];bw.rockets=[];bw.beam=null;
   bw.cam=S.x0;spawnSec();state='brawl';glitch=1;banner={s:'FIGHT',t:50};
 }
 // ---------- street life: civilians who panic and can be squished, and props that break ----------
@@ -2025,12 +2026,24 @@ function drawBrawlPlayer(p,cam){
     for(let i=0;i<3;i++){if(up)px(x+f*(6+i*3),yy+6-i*4,1,4-i,C.wh);else px(f>0?x+9+i*3:x-14-i*3,yy+2+i*3,5-i,1,C.wh);}}
   if(p.kind==='burst'&&p.atk>8){const R=(26-p.atk)*3;for(let a=0;a<24;a++){const aa=a/24*6.283;px(x+Math.cos(aa)*R,fy-10+Math.sin(aa)*R*.4,1,1,(T>>1)&1?C.cy:C.wh);}}
 }
+// the Giant's Kitchen: a giant cat watching from the dark under a cupboard; it blinks, its ears twitch, its tail flicks
+function drawKitchenCat(x,y){
+  if(x<-50||x>W+10)return;
+  const fur='#2a1a10',furD='#1a0f08',blink=(T%260)<9||(T%260>24&&T%260<30),ear=(T%400)<12?1:0,tail=Math.round(Math.sin(T*.05)*3);
+  px(x+8,y+8,24,16,fur);px(x+6,y+12,28,10,fur);px(x+8,y+22,24,2,furD);
+  px(x+8,y+3+ear,5,6,fur);px(x+9,y+5+ear,3,3,'#5a2a3a');px(x+27,y+3,5,6,fur);px(x+28,y+5,3,3,'#5a2a3a');
+  for(const ex of [x+12,x+23]){if(blink)px(ex,y+14,6,1,'#ffe600');else{px(ex,y+12,6,5,'#ffe600');px(ex+2,y+12,2,5,C.void);px(ex+1,y+12,1,1,C.wh);}}
+  px(x+19,y+18,3,2,'#ff8aa0');px(x+20,y+20,1,1,furD);
+  for(const s of [-1,1]){const wx=s<0?x+17:x+23;pline(wx,y+19,wx+s*10,y+18,'#8a7a6a');pline(wx,y+20,wx+s*10,y+21,'#8a7a6a');}
+  px(x+33,y+20+tail,6,2,fur);px(x+38,y+17+tail,2,4,fur);
+}
 function drawStreet(cam){
   const s0=stageAt(cam),s1=stageAt(cam+W-1);
   for(let s=s0;s<=s1;s++){
     const a=Math.max(0,s*SL-cam),b2=Math.min(W,(s+1)*SL-cam),th=STAGES[s].theme,FL=BFLOOR[th];
     g.save();g.beginPath();g.rect(a,0,b2-a,H);g.clip();
     const sx=Math.round(cam*.35)%W;g.drawImage(bgs[th],0,0,W,104,-sx,0,W,104);g.drawImage(bgs[th],0,0,W,104,W-sx,0,W,104);
+    if(th===7)for(const ox of [-sx,W-sx])drawKitchenCat(ox+170,76);
     px(0,104,W,40,FL.f);
     if(FL.tile){const rows=[104,107,111,116,122,129,137,144];for(let i=0;i<rows.length-1;i++){const tw=12+i*5,o=Math.round(cam*(.7+i*.08))%(tw*2);for(let x=-o-tw*2,k=0;x<W;x+=tw,k++)if((k+i)&1)px(x,rows[i],tw,rows[i+1]-rows[i],FL.tile[0]);}}
     for(let wx=Math.floor(cam/32)*32-64;wx<cam+W+64;wx+=32){const x0=wx-cam;pline(x0,105,x0+(x0-128)*.55,143,FL.l);}
@@ -2112,18 +2125,41 @@ function drawBOver(){
 
 // ---------- specials: every body has its own power; weapons from crates replace it ----------
 const SPOW={doll:'lightning',flyer:'bombs',core:'knife',basic:'glove',brute:'hammer',walker:'laser',titan:'giant','e:scrap':'spin','e:lancer':'spear','e:hound':'pounce','e:guard':'bash','e:brute':'pound','e:walker':'rocket','e:makercore':'spin'};
-const SPNAME={lightning:'LIGHTNING CALL',bombs:'BOMB DROP',hook:'CHAIN HOOK',knife:'KNIFE THROW',glove:'POWER GLOVE',hammer:'HAMMER OF MIGHT',laser:'SHOULDER LASER',giant:'GIANT SWORD',spin:'SCRAP SPIN',spear:'SPEAR THRUST',pounce:'POUNCE',bash:'SHIELD BASH',pound:'GROUND POUND',rocket:'ROCKET LAUNCH',sword:'SWORD OF JUSTICE'};
-const SPTIME={lightning:[30,12],bombs:[36,-1],hook:[24,10],knife:[14,6],glove:[22,-1],hammer:[30,14],laser:[24,8],giant:[34,16],spin:[30,-1],spear:[22,10],pounce:[60,-1],bash:[30,-1],pound:[30,14],rocket:[24,10],sword:[22,10]};
+const SPNAME={magnet:'MAGNET PUSH',lightning:'LIGHTNING CALL',bombs:'BOMB DROP',hook:'CHAIN HOOK',knife:'KNIFE THROW',glove:'POWER GLOVE',hammer:'HAMMER OF MIGHT',laser:'SHOULDER LASER',giant:'GIANT SWORD',spin:'SCRAP SPIN',spear:'SPEAR THRUST',pounce:'POUNCE',bash:'SHIELD BASH',pound:'GROUND POUND',rocket:'ROCKET LAUNCH',sword:'SWORD OF JUSTICE'};
+const SPTIME={magnet:[26,12],lightning:[30,12],bombs:[36,-1],hook:[24,10],knife:[14,6],glove:[22,-1],hammer:[30,14],laser:[24,8],giant:[34,16],spin:[30,-1],spear:[22,10],pounce:[60,-1],bash:[30,-1],pound:[30,14],rocket:[24,10],sword:[22,10]};
 const WEAPONS=['sword','hammer','laser','rocket','hook'];
-const WCOL={sword:C.cy,hammer:C.yl,laser:C.cy,rocket:C.mg,hook:C.wh};
+const WCOL={sword:C.cy,hammer:C.yl,laser:C.cy,rocket:C.mg,hook:C.wh,magnet:C.mg};
 function drawPartIcon(pt,x,y,on){
   const c=on?(WCOL[pt]||C.yl):C.gr;
   if(pt==='sword'){px(x+3,y,1,5,C.wh);px(x+1,y+5,5,1,c);px(x+3,y+6,1,1,c);}
   else if(pt==='hammer'){px(x+3,y+2,1,5,C.gr);px(x+1,y,5,3,c);}
   else if(pt==='laser'){px(x,y+3,7,1,c);px(x+1,y+2,3,3,c);px(x+6,y+2,1,3,C.mg);}
   else if(pt==='hook'){px(x+3,y,1,4,C.gr);px(x+1,y+4,1,2,c);px(x+1,y+6,4,1,c);px(x+5,y+4,1,2,c);}
+  else if(pt==='magnet'){px(x+1,y+1,5,2,c);px(x+1,y+3,2,3,c);px(x+4,y+3,2,3,c);px(x+1,y+5,2,1,C.wh);px(x+4,y+5,2,1,C.wh);}
   else if(pt==='rocket'){px(x+2,y+1,3,5,c);px(x+2,y,3,1,C.mg);px(x+3,y+6,1,1,C.yl);}
   else px(x+1,y+1,5,5,c);
+}
+function curWeapon(){const L=bw.p.layers;return L.length?L[L.length-1].weapon:null;}
+// MAGNET PUSH: an area blast that throws robots, empty bodies and heads away from you
+function magnetPush(){
+  const p=bw.p,M=FEEL.magnet,R=M.pushRadius,d=pBody().dmg+M.pushDamage;
+  for(const e of bw.ents){if(e.dead||e.st==='dead'||e.st==='held')continue;const dx=e.x-p.x,dir=dx<0?-1:1;if(Math.abs(dx)>R||Math.abs(e.z-p.z)>20)continue;
+    if(e.type){bDamage(e,d,dir,{heavy:true,launch:true,force:true});if(e.st==='air')e.vx=dir*M.pushForce;else e.x=clamp(e.x+dir*M.pushForce*8,bw.cam+8,bw.cam+W-8);}
+    else if(e.husk)e.x=clamp(e.x+dir*36,bw.cam+10,bw.cam+W-10);
+    else if(e.prop)bDamage(e,2,dir,{});
+    else if(e.civ&&!e.flat){e.x+=dir*20;e.st='panic';}}
+  for(const hd of bw.heads)if(Math.abs(hd.x-p.x)<R&&Math.abs(hd.z-p.z)<20){const dir=hd.x<p.x?-1:1;hd.st='fly';hd.hot=true;hd.vx=dir*3.6;hd.vh=3;hd.kickT=8;}
+  kickBombs(p.x-R,p.x+R,20);bossHit(p.x-R,p.x+R,20,d,{force:true,heavy:true});
+  for(let k=0;k<3;k++)parts.push({ring:1,x:p.x,y:p.z,t:10+k*4,r:4+k*6});spark(p.x,p.z-14,20,[C.mg,C.wh,C.cy],3.4);kick(6,.6);crunch(.3,.1);beep(90,.4,'sawtooth',.06,500);
+}
+// MAGNET PULL (every 3rd combo hit): yanks the nearest robot in front of you to you (or, with no robot in reach, the nearest empty body or head)
+function magnetPull(){
+  const p=bw.p,f=p.face,R=FEEL.magnet.pullRange,pd=pDim();let best=null,bd=1e9;
+  for(const o of [...bw.ents,...bw.heads]){if(o.civ||o.prop||o.crate||o.dead||o.st==='dead'||o.st==='held'||o.final)continue;const head=o.bomb!==undefined,robot=!head&&!!o.type;if(!(robot||o.husk||head))continue;
+    const dx=(o.x-p.x)*f,sc=dx+(robot?0:1000);if(dx>pd.hw+4&&dx<R&&Math.abs(o.z-p.z)<14&&sc<bd){bd=sc;best=o;}}
+  if(!best)return;const head=best.bomb!==undefined,ox=best.x,ew=!head&&best.type?eDim(best).hw:6;best.x=p.x+f*(pd.hw+ew+2);best.z=p.z;
+  if(head){best.st='rest';best.h=0;best.vx=0;}else if(best.type){best.st='stun';best.t=40;best.h=0;}
+  for(let i=0;i<8;i++)parts.push({x:ox+(best.x-ox)*i/8,y:p.z-12,vx:0,vy:0,t:8+i,c:i&1?C.mg:C.wh,gv:0,s:1});say('PULL',best.x,best.z-30,C.mg,30);beep(300,.2,'square',.05,-200);
 }
 function curSpecial(){const L=bw.p.layers;if(!L.length)return'knife';const t=L[L.length-1];return t.weapon||SPOW[t.id]||'glove';}
 const spCost=sp=>sp==='knife'?FEEL.combat.knifeCost:FEEL.combat.specialCost;
@@ -2167,6 +2203,7 @@ function stepSpecial(){
       break;
     case 'laser':p.vx*=.4;if(t===p.hitAt){spHit(p.x,p.x+f*W,7,d*2+2,{heavy:true});bw.beam={x:p.x+f*8,y:p.z-14,f,t:16};kick(3,.5);}break;
     case 'giant':p.vx*=.5;if(t===p.hitAt){spHit(p.x-f*16,p.x+f*74,16,d*3,{heavy:true,launch:true,force:true});kick(6,.7);crunch(.25,.1);spark(p.x+f*40,p.z-14,16,[C.wh,C.cy],3);}break;
+    case 'magnet':p.vx*=.4;if(t===p.hitAt)magnetPush();break;
     case 'sword':if(t===p.hitAt){spHit(p.x,p.x+f*54,10,d*2+3,{heavy:true});beep(1800,.08,'triangle',.04,-900);}break;
     case 'spear':if(t>=p.hitAt-2&&t<=p.hitAt+2){p.vx=f*2.6;spHit(p.x,p.x+f*66,7,d*2+3,{stun:true});}else p.vx*=.6;break;
     case 'spin':if(t%6===0){p.hitSet=new Set();spHit(p.x-34,p.x+34,10,Math.max(2,Math.round(d*.8)),{stun:true});beep(900,.03,'square',.02);}p.vx=clamp(p.vx+(K.right-K.left)*.25,-1.6,1.6);break;
@@ -2533,7 +2570,7 @@ const nbP=()=>bw.p;
 function nbHurt(x,z,r,dz,maxH,d){const p=bw.p,pd=pDim();if(!p.inside&&Math.abs(p.x-x)<r+pd.hw&&Math.abs(p.z-z)<dz+pd.dz&&p.h<maxH){bHurt(d,{x});return true;}return false;}
 function nbSmash(x,z,r){squishAt(x,z,r+6);for(const e of bw.ents)if(e.prop&&!e.dead&&Math.abs(e.x-x)<r+PROPS[e.prop].hw&&Math.abs(e.z-z)<10)bDamage(e,9,e.x<x?-1:1,{heavy:true});}
 function nbDown(b,t,msg){b.st='down';b.t=t;const c=NB[b.type].c(b);say(msg||'TOPPLED',c.x,c.z-46,C.yl,60);kick(6,.7);crunch(.4,.12);beep(50,.6,'sawtooth',.07,-20);spark(c.x,c.z-8,18,[C.yl,C.gr,C.wh],3);bw.last=b;}
-function nbDie(b){if(b.hp<=0&&b.st!=='dead'){b.hp=0;b.st='dead';b.t=110;if(bw.p.inside)toadSpit(b,true);bw.plats=[];}}
+function nbDie(b){if(b.hp<=0&&b.st!=='dead'){b.hp=0;b.st='dead';b.t=110;if(bw.p.inside)toadSpit(b,true);craneRelease();bw.plats=[];}}
 function nbHit(b,x0,x1,dz,d,o){
   const B=NB[b.type],p=bw.p;
   for(const hb of B.box(b)){
@@ -2543,7 +2580,7 @@ function nbHit(b,x0,x1,dz,d,o){
     const crit=m>=1.5,dd=Math.max(1,Math.round(d*m));
     p.pow=Math.min(100,p.pow+FEEL.combat.powerPerHit);p.hits=p.hitT>0?p.hits+1:1;p.hitT=90;bw.score+=10*Math.min(p.hits,10);b.hurt=8;bw.last=b;hitstop=crit?7:4;
     if(B.onHit&&B.onHit(b,dd,o,hb))return true;
-    if(m<1){spark((x0+x1)/2,p.z-14-p.h,5,[C.wh,C.gr],1.5);say('CLANG',(x0+x1)/2,p.z-30-p.h,C.gr,24);beep(1400,.05,'square',.03);}
+    if(m<1){spark((x0+x1)/2,p.z-14-p.h,5,[C.wh,C.gr],1.5);say(B.clang||'CLANG',(x0+x1)/2,p.z-30-p.h,C.gr,24);beep(B.clang?300:1400,.05,'square',.03);}
     b.hp-=dd;spark(hb.x,hb.z-14,crit?14:8,[C.yl,C.mg,C.wh],2.6);say(crit?'CRIT '+dd:String(dd),hb.x,hb.z-30,crit?C.mg:C.yl,crit?40:26);kick(crit?5:3,crit?.5:.3);beep(crit?1600:300,.1,'square',.06,crit?-1200:-80);
     nbDie(b);return true;
   }
@@ -2552,12 +2589,13 @@ function nbHit(b,x0,x1,dz,d,o){
 function nbStep(b){
   const B=NB[b.type];
   if(b.st==='dead'){const c=B.c(b);if(b.t%6===0){spark(c.x+rnd(-20,20),c.z-rnd(6,40),10,[C.mg,C.yl,C.wh,C.cy],3);crunch(.1,.06);kick(3,.6);}
-    if(--b.t<=0){const D=B.drop;bw.score+=3000;bw.boss=null;bw.plats=[];bw.ents.push({husk:true,id:D.id,shell:D.shell,max:D.max,x:clamp(c.x,bw.cam+20,bw.cam+W-20),z:clamp(c.z,BZ0+2,BZ1-2),face:1});say(D.say,c.x,88,C.cy,100);}
+    if(--b.t<=0){const D=B.drop,dx=clamp(c.x,bw.cam+20,bw.cam+W-20),dz=clamp(c.z,BZ0+2,BZ1-2);bw.score+=3000;bw.boss=null;bw.plats=[];
+      if(D.item)bw.items.push({kind:'wpn',w:D.item,x:dx,z:dz});else bw.ents.push({husk:true,id:D.id,shell:D.shell,max:D.max,x:dx,z:dz,face:1});say(D.say,c.x,88,C.cy,100);}
     return;}
   if(b.st==='down'){if(B.downStep)B.downStep(b);if(--b.t<=0)B.up(b);return;}
   B.step(b);
 }
-function nbBomb(b,x,z,dmg){const c=NB[b.type].c(b);if(Math.abs(x-c.x)<34&&Math.abs(z-c.z)<18){b.hp-=dmg;b.hurt=8;bw.last=b;nbDie(b);if(b.st!=='dead')toppleBoss('bomb');return true;}return false;}
+function nbBomb(b,x,z,dmg){const B=NB[b.type],c=B.c(b);dmg=Math.round(dmg*(B.bombMult===undefined?1:B.bombMult));if(Math.abs(x-c.x)<34&&Math.abs(z-c.z)<18){b.hp-=dmg;b.hurt=8;bw.last=b;nbDie(b);if(b.st!=='dead')toppleBoss('bomb');return true;}return false;}
 function nbDraw(cam){const b=bw.boss;if(b.st==='dead'&&(T>>1)&1)return;NB[b.type].draw(b,cam,b.hurt>0&&(b.hurt&2));}
 function nbShadow(x,z,w){g.globalAlpha=.4;px(Math.round(x-w/2),Math.round(z-1),w,3,C.void);g.globalAlpha=1;}
 function nbMarker(x,z,w){if((T>>2)&1){px(Math.round(x-w/2),Math.round(z-1),w,2,C.yl);px(Math.round(x)-1,Math.round(z)-3,2,6,C.yl);}}
@@ -2649,26 +2687,39 @@ function crabDraw(b,cam,hit){
   if(b.shell){const w=Math.round(20*b.shp/b.smax);px(x-10,y+3,20,2,C.grx);px(x-10,y+3,w,2,C.gr);}
   if(b.st==='swind'&&(T>>2)&1)for(let xx=bw.cam;xx<bw.cam+W;xx+=8)px(Math.round(xx-cam),b.z-1,3,2,C.yl);
 }
-// --- the Crane: a gantry over the yard; its magnet slams, lifts bodies and heads, and drops them on you ---
+// --- the Crane: a gantry over the yard; its magnet slams, pulls metal in along field lines, freezes what it catches to itself, and drops it on you ---
 function crPullable(){const out=[];for(const e of bw.ents)if(e.husk||e.type&&e.st!=='dead'&&e.st!=='held')out.push(e);for(const h of bw.heads)out.push(h);return out;}
+function craneRelease(){const p=bw.p;if(p.frozen){p.frozen=false;p.onG=false;p.vh=1;p.inv=Math.max(p.inv,30);}}
 function craneStep(b){
-  const p=bw.p;b.x=clamp(b.x,b.ax0+24,b.ax1-24);
+  const p=bw.p,F=FEEL.bosses;b.x=clamp(b.x,b.ax0+24,b.ax1-24);
   switch(b.st){
     case 'track':b.x=toward(b.x,p.x,1.2);b.z=toward(b.z,p.z,.6);b.h=toward(b.h,58,2);
-      if(--b.t<=0){const r=Math.random();if(r<.45){b.st='mwind';b.t=48;beep(140,.5,'sawtooth',.04,200);}else if(r<.78){b.st='lwind';b.t=60;beep(80,.8,'sine',.04,300);}else{b.st='roll';b.t=60;}}break;
+      if(--b.t<=0){const r=Math.random();if(r<.4){b.st='mwind';b.t=48;beep(140,.5,'sawtooth',.04,200);}else if(r<.8){b.st='lwind';b.t=70;beep(80,.9,'sine',.04,300);}else{b.st='roll';b.t=60;}}break;
     case 'mwind':if(b.t>16){b.x=toward(b.x,p.x,1.4);b.z=toward(b.z,p.z,.8);}if(--b.t<=0)b.st='mslam';break;
-    case 'mslam':b.h-=9;if(b.h<=0){b.h=0;nbHurt(b.x,b.z,14,6,16,16);nbSmash(b.x,b.z,14);spark(b.x,b.z,16,[C.yl,C.gr,'#ff9a2a'],3.4);kick(7,.7);crunch(.3,.12);beep(55,.4,'sawtooth',.08,-20);b.st='stuck';b.t=FEEL.bosses.craneStuck;say('HIT THE MAGNET',b.x,b.z-30,C.cy,60);}break;
+    case 'mslam':b.h-=9;if(b.h<=0){b.h=0;nbHurt(b.x,b.z,14,6,16,16);nbSmash(b.x,b.z,14);spark(b.x,b.z,16,[C.yl,C.gr,'#ff9a2a'],3.4);kick(7,.7);crunch(.3,.12);beep(55,.4,'sawtooth',.08,-20);b.st='stuck';b.t=F.craneStuck;say('HIT THE MAGNET',b.x,b.z-30,C.cy,60);}break;
     case 'stuck':if(--b.t<=0)b.st='mrise';break;
     case 'mrise':b.h=toward(b.h,58,2.4);if(b.h>=58){b.st='track';b.t=rnd(50,80)|0;}break;
-    case 'lwind':{b.h=toward(b.h,30,2);const R=72,light=pBody().size===0;
-      for(const o of crPullable()){if(Math.abs(o.x-b.x)<R&&Math.abs(o.z-b.z)<20){o.x=toward(o.x,b.x,1.1);o.z=toward(o.z,b.z,.5);}}
-      if(!light&&!p.inside&&Math.abs(p.x-b.x)<R){p.x=toward(p.x,b.x,.85);p.z=toward(p.z,b.z,.35);}
+    case 'lwind':{b.h=toward(b.h,26,2);const R=F.craneReach,pull=F.cranePull,light=pBody().size===0;
+      // everything metal in reach slides in along the field lines; robots are held stunned while they slide
+      for(const o of crPullable())if(Math.abs(o.x-b.x)<R&&Math.abs(o.z-b.z)<24){o.x=toward(o.x,b.x,pull);o.z=toward(o.z,b.z,pull*.5);if(o.T&&o.bomb===undefined&&o.st!=='air'){o.st='stun';o.t=Math.max(o.t||0,8);}}
+      if(!light&&!p.inside&&Math.abs(p.x-b.x)<R){p.x=toward(p.x,b.x,pull*.8);p.z=toward(p.z,b.z,pull*.4);}
       if(--b.t<=0){
+        if(!light&&!p.inside&&Math.abs(p.x-b.x)<12&&Math.abs(p.z-b.z)<8){
+          p.frozen=true;p.atk=0;p.kind=null;p.grab=null;b.st='holdP';b.t=F.craneHold;b.mash=0;
+          say('FROZEN TO THE MAGNET',p.x,p.z-44,C.mg,60);say('MASH B',p.x,p.z-54,C.yl,80);beep(120,.4,'square',.05,400);kick(3,.3);break;}
         let best=null,bd=16;for(const o of crPullable()){const d=Math.abs(o.x-b.x)+Math.abs(o.z-b.z);if(d<bd&&!o.boss){bd=d;best=o;}}
-        if(!light&&Math.abs(p.x-b.x)<14&&Math.abs(p.z-b.z)<8){b.st='mrise';bHurt(12,{x:b.x});say('MAGNET SLAM',p.x,p.z-36,C.mg,40);}
-        else if(best){if(bw.heads.includes(best))bw.heads=bw.heads.filter(h=>h!==best);else bw.ents=bw.ents.filter(e=>e!==best);b.carry=best;b.st='carry';b.t=70;say('LIFTED',b.x,b.z-60,C.gr,40);}
+        if(best){if(bw.heads.includes(best))bw.heads=bw.heads.filter(h=>h!==best);else bw.ents=bw.ents.filter(e=>e!==best);b.carry=best;b.st='carry';b.t=70;say('FROZEN TO THE MAGNET',b.x,b.z-60,C.gr,40);}
         else b.st='mrise';}
       break;}
+    // you, frozen to the magnet: mash A or B to break free before it slams you down
+    case 'holdP':b.h=toward(b.h,46,1.4);p.x=b.x;p.z=b.z;p.h=Math.max(0,b.h-16);p.vx=p.vz=0;p.vh=0;p.onG=false;
+      if(P.a||P.b){b.mash++;kick(1,.1);beep(600+b.mash*40,.03,'square',.03);}
+      if(b.mash>=F.craneMash){craneRelease();p.vh=2.4;b.st='mrise';say('BREAK FREE',p.x,p.z-40,C.cy,50);}
+      else if(--b.t<=0)b.st='pslam';
+      break;
+    case 'pslam':b.h-=8;p.x=b.x;p.z=b.z;p.h=Math.max(0,b.h-16);
+      if(b.h<=16){b.h=0;p.h=0;p.frozen=false;p.onG=true;p.inv=0;bHurt(F.craneSlam,{x:b.x+1});nbSmash(b.x,b.z,12);kick(7,.8);crunch(.3,.12);beep(55,.4,'sawtooth',.08,-20);b.st='stuck';b.t=F.craneStuck;}
+      break;
     case 'carry':b.h=toward(b.h,52,2);b.x=toward(b.x,p.x,1.6);b.z=toward(b.z,p.z,.8);if(--b.t<=0){b.st='drop';b.dh=b.h;}break;
     case 'drop':{b.dh-=7;const o=b.carry;if(b.dh<=0){b.carry=null;b.st='mrise';
       nbHurt(b.x,b.z,14,6,14,o.bomb!==undefined?8:12);nbSmash(b.x,b.z,10);kick(4,.4);crunch(.2,.08);spark(b.x,b.z,12,[C.gr,C.yl],2.6);
@@ -2679,71 +2730,92 @@ function craneStep(b){
   }
 }
 function craneDraw(b,cam,hit){
-  const ax0=Math.round(b.ax0-cam),ax1=Math.round(b.ax1-cam),by=24,x=Math.round(b.x-cam),dn=b.st==='down',rust=hit?C.wh:'#5a4a2a',rd=hit?C.wh:'#2a2010',org='#ff9a2a';
+  const ax0=Math.round(b.ax0-cam),ax1=Math.round(b.ax1-cam),by=24,x=Math.round(b.x-cam),dn=b.st==='down',rust=hit?C.wh:'#5a4a2a',rd=hit?C.wh:'#2a2010',org='#ff9a2a',FIELD='#7affd0';
   for(const lx of [ax0,ax1]){px(lx-3,by,6,118-by,rd);px(lx-2,by,4,118-by,rust);for(let yy=by+6;yy<116;yy+=10){pline(lx-2,yy,lx+1,yy+8,rd);}}
   px(ax0-4,by-4,ax1-ax0+8,5,rust);px(ax0-4,by-4,ax1-ax0+8,1,org);
-  const my=Math.round(b.z-b.h)-6,cabX=dn?x:x,cabY=dn?Math.round(b.z)-14:by+1;
+  const my=Math.round(b.z-b.h)-6,cabY=dn?Math.round(b.z)-14:by+1;
   if(!dn){pline(x,by+12,x,my-4,C.grd);px(x-11,by+1,22,12,rust);px(x-11,by+1,22,1,org);px(x-7,by+4,14,6,C.void);px(x-4+((T>>5)&1),by+6,3,2,C.yl);px(x+2+((T>>5)&1),by+6,3,2,C.yl);}
   nbShadow(x,b.z,Math.max(8,22-b.h/4));
   if(b.st==='mwind')nbMarker(x,b.z,24);
-  if(b.st==='lwind'){for(let i=0;i<3;i++){const r=((T*2+i*14)%40)+6;g.globalAlpha=.5;for(let a=0;a<16;a++){const aa=a/16*6.283;px(x+Math.cos(aa)*r,my+4+Math.sin(aa)*r*.35,1,1,'#7affd0');}g.globalAlpha=1;}}
-  if(dn){px(cabX-11,cabY,22,12,rust);px(cabX-7,cabY+3,14,6,C.void);px(cabX-5,cabY+5,4,1,C.yl);px(cabX+1,cabY+5,4,1,C.yl);nbStars(cabX,cabY-4);pline(x,by+12,x+18,my,C.grd);}
+  if(b.st==='lwind'){
+    // field lines from everything it pulls, crawling toward the magnet
+    const R=FEEL.bosses.craneReach,targets=crPullable().filter(o=>Math.abs(o.x-b.x)<R&&Math.abs(o.z-b.z)<24).map(o=>({x:o.x,y:o.z-(o.h||0)-6}));
+    if(pBody().size>0&&Math.abs(bw.p.x-b.x)<R)targets.push({x:bw.p.x,y:bw.p.z-bw.p.h-10});
+    for(const o of targets){const ox=Math.round(o.x-cam),n=10;for(let i=0;i<n;i++){const k=((i+(T>>1))%n)/n;px(Math.round(ox+(x-ox)*k),Math.round(o.y+(my+8-o.y)*k),1,1,FIELD);}}
+    for(let i=0;i<3;i++){const r=((T*2+i*14)%40)+6;g.globalAlpha=.5;for(let a=0;a<16;a++){const aa=a/16*6.283;px(x+Math.cos(aa)*r,my+4+Math.sin(aa)*r*.35,1,1,FIELD);}g.globalAlpha=1;}}
+  if(b.st==='holdP'||b.st==='pslam'){g.globalAlpha=.6;for(let a=0;a<12;a++){const aa=a/12*6.283+T*.2;px(x+Math.cos(aa)*12,my+18+Math.sin(aa)*6,1,1,FIELD);}g.globalAlpha=1;
+    if(b.st==='holdP'){const w=Math.round(20*b.mash/FEEL.bosses.craneMash);px(x-10,my-8,20,2,C.grx);px(x-10,my-8,w,2,C.cy);}}
+  if(dn){px(x-11,cabY,22,12,rust);px(x-7,cabY+3,14,6,C.void);px(x-5,cabY+5,4,1,C.yl);px(x+1,cabY+5,4,1,C.yl);nbStars(x,cabY-4);pline(x,by+12,x+18,my,C.grd);}
   // the magnet: a horseshoe with white tips
   const mx=x-8;px(mx,my,16,4,hit?C.wh:C.mg);px(mx,my+4,4,6,hit?C.wh:C.mg);px(mx+12,my+4,4,6,hit?C.wh:C.mg);px(mx,my+9,4,2,C.wh);px(mx+12,my+9,4,2,C.wh);px(mx+4,my,8,1,C.mgd);
-  if(b.carry){const o=b.carry;if(o.bomb!==undefined){box(x-4,my+12,8,7,{line:C.mg,fill:C.mgd,dark:C.mgx});}else drawBody(o.husk?o.id:'e:'+o.type,x,my+12+30,1,0,false,0,HPAL,FP.husk,'idle');}
-  if(b.st==='drop'&&b.carry){}
+  if(b.carry){const o=b.carry;if(o.bomb!==undefined){box(x-4,my+12,8,7,{line:C.mg,fill:C.mgd,dark:C.mgx});}else drawBody(o.husk?o.id:'e:'+o.type,x,my+12+30,1,0,false,0,HPAL,FP.husk,'idle');
+    g.globalAlpha=.5;for(let a=0;a<10;a++){const aa=a/10*6.283+T*.2;px(x+Math.cos(aa)*10,my+20+Math.sin(aa)*5,1,1,FIELD);}g.globalAlpha=1;}
 }
-// --- the Toad King: tongue lash, belly flop, croaks up robots; if its tongue catches you, it swallows you ---
+// --- the Toad King: a jelly cube with a toad inside. It slides over you and engulfs you; outside hits just wobble it.
+// Inside, hit its nucleus, but the jelly digests your bodies one by one; at the bare core it spits you out ---
 function toadSpit(b,free){
-  const p=bw.p;if(!p.inside)return;p.inside=false;p.x=clamp(b.x+b.face*28,bw.cam+10,bw.cam+W-10);p.z=b.z;p.h=6;p.vh=3;p.onG=false;p.inv=70;p.vx=b.face*2;
-  if(!free){const L=p.layers;
-    if(L.length){const top=L.pop();bw.ents.push({husk:true,id:top.id,shell:Math.max(1,top.shell>>1),max:top.max,weapon:top.weapon,x:clamp(b.x+b.face*48,bw.cam+12,bw.cam+W-12),z:b.z,face:b.face});say('IT DIGESTS YOUR BODY',b.x,b.z-60,C.mg,70);}
-    else{p.core--;say('CORE HIT',p.x,p.z-26,C.mg,40);if(p.core<=0){p.core=0;bw.win=false;bw.endT=0;state='bover';}}}
-  kick(5,.6);crunch(.3,.1);beep(160,.3,'square',.05,300);spark(b.x+b.face*16,b.z-16,16,['#c6ff4a',C.wh],3);
-  if(b.st!=='dead'){b.st='dazed';b.t=80;}
+  const p=bw.p;if(!p.inside)return;p.inside=false;p.x=clamp(b.x+b.face*30,bw.cam+10,bw.cam+W-10);p.z=b.z;p.h=6;p.vh=3;p.onG=false;p.inv=80;p.vx=b.face*2;
+  say(free?'BURST OUT':'SPAT OUT',p.x,p.z-40,C.cy,50);kick(5,.6);crunch(.3,.1);beep(160,.3,'square',.05,300);spark(b.x+b.face*16,b.z-16,16,['#4adf7a',C.wh],3);
+  if(b.st!=='dead'){b.st='dazed';b.t=70;}
 }
 function toadInside(){
-  const p=bw.p,b=bw.boss;if(!b||b.type!=='toad'){p.inside=false;return;}
+  const p=bw.p,b=bw.boss,F=FEEL.bosses;if(!b||b.type!=='toad'){p.inside=false;return;}
   p.x=b.x;p.z=b.z;p.h=0;p.vx=p.vz=0;
-  const burst=P.sp||(P.a&&P.b)||(P.b&&bw.t-(p.lastA||-99)<6)||(P.a&&bw.t-(p.lastB||-99)<6);
-  if(burst){b.hp-=FEEL.bosses.toadBurstDamage;b.hurt=8;say('BURST OUT',b.x,b.z-50,C.cy,50);nbDie(b);toadSpit(b,true);return;}
-  if(P.b&&bw.t-(p.inHit||-99)>=FEEL.bosses.toadInsideRate){p.inHit=bw.t;const d=FEEL.bosses.toadInsideDamage;b.hp-=d;b.hurt=8;bw.last=b;p.pow=Math.min(100,p.pow+4);say('CRIT '+d,b.x+rnd(-8,8),b.z-36,C.mg,26);kick(3,.3);beep(1200,.06,'square',.04,-600);nbDie(b);}
+  const burst=P.sp||(P.a&&P.b)||(P.b&&bw.t-(p.lastA||-99)<FEEL.player.abWindow)||(P.a&&bw.t-(p.lastB||-99)<FEEL.player.abWindow);
+  if(burst){toadSpit(b,true);return;}
+  if(P.b&&bw.t-(p.inHit||-99)>=F.toadInsideRate){p.inHit=bw.t;const d=Math.max(2,Math.round(pBody().dmg*F.toadInsideMult));b.hp-=d;b.hurt=8;bw.last=b;
+    p.pow=Math.min(100,p.pow+FEEL.combat.powerPerHit);const nx=b.x+Math.sin(bw.t*.07)*8;say('CRIT '+d,nx,b.z-34,C.mg,26);kick(3,.3);beep(1200,.06,'square',.04,-600);spark(nx,b.z-20,6,[C.mg,C.wh],1.6);nbDie(b);if(b.st==='dead')return;}
+  // the jelly digests your outermost body every few seconds; once the bare core is left, it spits you out
+  if(--b.dig<=0){b.dig=F.toadDigestEvery;const L=p.layers;
+    if(L.length){const top=L.pop();b.bits.push({id:top.id,t:90});say('DIGESTED',b.x,b.z-58,C.mg,60);spark(b.x,b.z-20,16,['#4adf7a',C.gr,C.wh],2.6);crunch(.3,.1);beep(90,.4,'sawtooth',.05,-60);if(!L.length)toadSpit(b,false);}
+    else toadSpit(b,false);}
+}
+function toadEngulf(b){
+  const p=bw.p,F=FEEL.bosses;p.inside=true;p.x=b.x;p.z=b.z;p.h=0;p.vx=p.vz=0;p.atk=0;p.kind=null;p.grab=null;
+  b.st='full';b.dig=F.toadDigestEvery;say('IT ENGULFS YOU',b.x,b.z-56,C.mg,60);say('HIT THE NUCLEUS',b.x,b.z-66,C.yl,90);beep(90,.4,'square',.06,-40);kick(4,.4);
 }
 function toadStep(b){
-  const p=bw.p,dx=p.x-b.x;
+  const p=bw.p,dx=p.x-b.x,F=FEEL.bosses,pd=pDim();
+  for(const e of b.bits)e.t--;b.bits=b.bits.filter(e=>e.t>0);
   switch(b.st){
-    case 'idle':b.face=dx<0?-1:1;b.hop=(b.hop||0)+1;if(b.hop%60<16&&Math.abs(dx)>50){b.x+=Math.sign(dx)*1.2;b.z=toward(b.z,p.z,.4);b.h=Math.sin((b.hop%60)/16*Math.PI)*6;}else b.h=0;
-      if(--b.t<=0){b.h=0;const r=Math.random();if(r<.45){b.st='twind';b.t=32;beep(300,.5,'sine',.04,500);}else if(r<.75){b.st='fwind';b.t=30;}else if(bFoes().length<2){b.st='croak';b.t=40;beep(70,.6,'sawtooth',.05,-20);}else{b.st='twind';b.t=32;}}break;
-    case 'twind':b.face=dx<0?-1:1;b.z=toward(b.z,p.z,.6);if(--b.t<=0){b.st='tongue';b.t=20;b.tl=0;}break;
-    case 'tongue':{const out=b.t>10;b.tl=out?Math.min(112,b.tl+14):Math.max(0,b.tl-14);
-      const tip=b.x+b.face*(18+b.tl);if(!p.inside&&p.inv<=0&&Math.abs(p.z-b.z)<6&&p.h<10&&(p.x-(b.x+b.face*16))*b.face>0&&(tip-p.x)*b.face>-pDim().hw){
-        p.inside=true;p.x=b.x;p.z=b.z;p.h=0;p.vx=p.vz=0;p.atk=0;p.kind=null;p.grab=null;b.st='full';b.t=FEEL.bosses.toadSwallow;b.tl=0;say('GULP',b.x,b.z-56,C.mg,50);say('HIT IT FROM INSIDE',b.x,b.z-66,C.yl,90);beep(90,.4,'square',.06,-40);kick(4,.4);break;}
-      if(--b.t<=0){b.st='idle';b.t=rnd(50,80)|0;}break;}
-    case 'full':if(bw.t%10===0)kick(1,.1);if(--b.t<=0)toadSpit(b,false);break;
+    case 'idle':b.face=dx<0?-1:1;
+      if(--b.t<=0){const r=Math.random();if(r<.55){b.st='slide';b.t=170;beep(70,.5,'sine',.04,30);}else if(r<.8){b.st='fwind';b.t=30;}else if(bFoes().length<2){b.st='croak';b.t=40;beep(70,.6,'sawtooth',.05,-20);}else{b.st='slide';b.t=170;}}break;
+    case 'slide':b.face=dx<0?-1:1;b.x=toward(b.x,p.x,F.toadEngulfSpeed);b.z=toward(b.z,p.z,F.toadEngulfSpeed*.5);b.walk=(b.walk||0)+1;
+      // it engulfs whatever it slides into: you, and robots (which it digests)
+      if(!p.inside&&!p.frozen&&p.inv<=0&&Math.abs(dx)<20+pd.hw-6&&Math.abs(p.z-b.z)<8&&p.h<12){toadEngulf(b);break;}
+      for(const e of bw.ents)if(e.type&&!e.boss&&e.st!=='dead'&&e.st!=='held'&&Math.abs(e.x-b.x)<20&&Math.abs(e.z-b.z)<8){e.gone=true;b.bits.push({id:'e:'+e.type,t:150});say('GULP',e.x,e.z-30,C.gr,30);}
+      bw.ents=bw.ents.filter(e=>!e.gone||e.civ);nbSmash(b.x,b.z,16);
+      if(--b.t<=0){b.st='idle';b.t=rnd(40,70)|0;}break;
+    case 'full':b.x=toward(b.x,p.x,0);if(bw.t%10===0)kick(1,.1);break;
     case 'fwind':if(--b.t<=0){b.st='fair';b.t=70;b.vh=6;crunch(.2,.08);beep(400,.3,'square',.04,600);}break;
     case 'fair':b.h+=b.vh;b.vh=Math.max(0,b.vh-.15);if(b.t>18){b.x=toward(b.x,p.x,2.2);b.z=toward(b.z,p.z,1.2);}if(--b.t<=0)b.st='fland';break;
-    case 'fland':b.h-=10;if(b.h<=0){b.h=0;nbHurt(b.x,b.z,24,8,14,16);nbSmash(b.x,b.z,22);spark(b.x,b.z,22,['#4a5a2a','#c6ff4a',C.wh],3.6);kick(8,.8);crunch(.4,.12);beep(50,.5,'sawtooth',.08,-20);bursts.push({x:Math.round(b.x-bw.cam),y:Math.round(b.z),t:14});b.st='dazed';b.t=100;}break;
+    case 'fland':b.h-=10;if(b.h<=0){b.h=0;
+      if(!p.inside&&p.inv<=0&&Math.abs(p.x-b.x)<18&&Math.abs(p.z-b.z)<7&&p.h<10){toadEngulf(b);break;}
+      nbHurt(b.x,b.z,26,8,14,14);nbSmash(b.x,b.z,22);spark(b.x,b.z,22,['#4adf7a','#c6ff4a',C.wh],3.6);kick(8,.8);crunch(.4,.12);beep(50,.5,'sawtooth',.08,-20);bursts.push({x:Math.round(b.x-bw.cam),y:Math.round(b.z),t:14});b.st='dazed';b.t=90;}break;
     case 'dazed':if(--b.t<=0){b.st='idle';b.t=50;}break;
-    case 'croak':if(b.t===18){for(const s of [-1,1]){const T0=TYPES.scrap,hp=Math.round(T0.hp*1.2);bw.ents.push({type:'scrap',T:T0,x:clamp(b.x+b.face*22+s*6,bw.cam+12,bw.cam+W-12),z:clamp(b.z+s*8,BZ0,BZ1),h:8,vh:2,vx:b.face,face:b.face,st:'air',t:0,hp,max:hp,dmg:8,hurt:0,walk:0,moving:false,boss:false,role:'attack',zo:0});}say('CROAK',b.x,b.z-50,C.gr,40);}if(--b.t<=0){b.st='idle';b.t=70;}break;
+    case 'croak':if(b.t===18){for(const s of [-1,1]){const T0=TYPES.scrap,hp=Math.round(T0.hp*1.2);bw.ents.push({type:'scrap',T:T0,x:clamp(b.x+b.face*24+s*6,bw.cam+12,bw.cam+W-12),z:clamp(b.z+s*8,BZ0,BZ1),h:8,vh:2,vx:b.face,face:b.face,st:'air',t:0,hp,max:hp,dmg:8,hurt:0,walk:0,moving:false,boss:false,role:'attack',zo:0});}say('CROAK',b.x,b.z-50,C.gr,40);}if(--b.t<=0){b.st='idle';b.t=70;}break;
   }
   b.x=clamp(b.x,bw.cam+24,bw.cam+W-24);
 }
 function toadDraw(b,cam,hit){
-  const x=Math.round(b.x-cam),z=Math.round(b.z),y=Math.round(b.z-b.h),f=b.face,body=hit?C.wh:'#3a5a2a',dark=hit?C.wh:'#1e3214',lite=hit?C.wh:'#6a8a3a',eye='#c6ff4a';
-  nbShadow(x,z,b.h>20?Math.max(10,44-b.h/3):44);
+  const x=Math.round(b.x-cam),z=Math.round(b.z),y=Math.round(b.z-b.h),f=b.face,p=bw.p;
+  const sq=b.st==='fwind'?4:b.st==='dazed'?2:0,wob=Math.round(Math.sin(bw.t*(b.st==='slide'?.35:.12))*2),w=46+wob+sq,h=38-wob-sq;
+  nbShadow(x,z,b.h>20?Math.max(10,w-b.h/3):w);
   if(b.st==='fair'||b.st==='fland'){nbMarker(x,z,34);if(b.h>110)return;}
-  const sq=b.st==='fwind'?3:b.st==='dazed'?2:0,full=b.st==='full',wob=full?Math.round(Math.sin(bw.t*.5)*2):0;
-  for(let i=0;i<26-sq;i++){const k=i/(26-sq),w=Math.round(22*Math.sqrt(1-(1-k)*(1-k)*.8))+(full?3:0)+(i>18?2:0);px(x-w+wob,y-26+sq+i,w*2,1,i<2?lite:body);}
-  px(x-22,y-4,44,4,dark);for(let i=-16;i<=16;i+=8)px(x+i,y-16+sq,1,1,lite);
-  for(const s of [-1,1]){px(x+s*16-3,y-1,7,2,dark);px(x+s*20-2,y-1,5,1,body);}
-  const ex=x+f*6;for(const s of [-8,4]){px(ex+s,y-31+sq,6,6,body);px(ex+s+1,y-30+sq,4,4,eye);px(ex+s+(f>0?3:1),y-29+sq,1,2,C.void);}
-  for(let i=0;i<3;i++)px(x-6+i*5,y-35+sq,2,5,C.yl);
-  const sac=b.st==='twind'?Math.round((32-b.t)/32*7):b.st==='croak'?((T>>2)&1)*4:0;if(sac){g.fillStyle=hit?C.wh:'#ff8aa0';for(let i=-sac;i<=sac;i++){const w=Math.round(Math.sqrt(sac*sac-i*i));g.fillRect(x+f*12-w,y-10+i,w*2,1);}}
-  px(x+f*8-(f<0?10:0),y-14+sq,12,1,dark);
-  if(b.st==='twind'&&(T>>2)&1)for(let xx=x+f*20;f>0?xx<x+f*134:xx>x+f*134;xx+=f*6)px(xx,z-1,3,2,C.yl);
-  if(b.st==='tongue'&&b.tl>0){const tx=x+f*14;px(f>0?tx:tx-b.tl,y-12,b.tl,2,C.mg);px(f>0?tx+b.tl-2:tx-b.tl-2,y-14,5,5,'#ff8aa0');}
-  if(full){px(x-4+wob,y-14,8,6,C.cyd);if((T>>3)&1)px(x-1+wob,y-12,2,2,C.cy);}
-  if(b.st==='dazed'||b.st==='down')nbStars(x,y-38);
+  const L=x-(w>>1),Tp=y-h;
+  // what's inside: digested bodies fading, the toad face, the nucleus, and you
+  for(const e of b.bits){g.globalAlpha=Math.min(1,e.t/60)*.8;drawBody(e.id,x+((e.t*7)%20)-10,y-4-((150-e.t)>>3),1,0,false,0,HPAL,FP.husk,'idle');}g.globalAlpha=1;
+  const ex=x+f*6;for(const s of [-9,4]){px(ex+s,Tp+7,6,6,'#2c4a2a');px(ex+s+1,Tp+8,4,4,'#c6ff4a');px(ex+s+(f>0?3:1),Tp+9,1,2,C.void);}
+  for(let i=0;i<3;i++)px(x-6+i*5,Tp+1,2,5,C.yl);px(x+f*8-(f<0?10:0),Tp+17,12,1,'#1e3214');
+  const nx=Math.round(x+Math.sin(bw.t*.07)*8),ny=Math.round(y-20+Math.cos(bw.t*.09)*4),pul=(T>>3)&1;pixHex(nx,ny,4+pul,1,b.hurt>0&&(b.hurt&2)?C.wh:C.mg,true);px(nx-1,ny-1,2,2,C.wh);
+  if(p.inside){const was=p.inside;p.inside=false;drawBrawlPlayer(p,cam);p.inside=was;}
+  // the jelly, see-through, over everything inside it
+  const jel=hit?C.wh:'#4adf7a',edge=hit?C.wh:'#9affb8';
+  g.globalAlpha=.42;px(L+2,Tp,w-4,h,jel);px(L,Tp+2,w,h-4,jel);g.globalAlpha=.25;px(L+3,Tp+2,w-6,4,C.wh);g.globalAlpha=1;
+  px(L+2,Tp,w-4,1,edge);px(L+2,y-1,w-4,1,edge);px(L,Tp+2,1,h-4,edge);px(L+w-1,Tp+2,1,h-4,edge);px(L+4,Tp+3,2,6,C.wh);
+  for(let i=0;i<3;i++){const dxp=L+8+i*14,dl=2+((T>>3)+i)%3;px(dxp,y-1,2,dl,edge);}
+  if(b.st==='full'){const k=b.dig/FEEL.bosses.toadDigestEvery;px(x-12,Tp-6,24,2,C.grx);px(x-12,Tp-6,Math.round(24*k),2,C.mg);}
+  if(b.st==='dazed'||b.st==='down')nbStars(x,Tp-6);
 }
 // --- the Cook: a giant's two hands come down from above; jump on its pan to hit the face peering in ---
 function cookStep(b){
@@ -2796,16 +2868,16 @@ const NB={
       spark(b.x,b.z-22,6,[C.gr,C.wh],1.8);say((front?'CLANG ':'')+sd,b.x,b.z-36,C.gr,26);beep(front?1400:600,.05,'square',.03);if(b.shp<=0)crabCrack(b);return true;},
     hook(b){if(b.shell){crabCrack(b,'HOOKED: SHELL OFF');return true;}return toppleBoss('hook');},
     up(b){b.st=b.shell?'walk':'seek';b.t=40;},step:crabStep,draw:crabDraw},
-  crane:{drop:{id:'e:brute',shell:64,max:64,say:'THE OPERATOR CLIMBS OUT'},
+  crane:{drop:{item:'magnet',say:'ITS MAGNET: PUSH AND PULL'},
     init(b,x0){b.ax0=x0+14;b.ax1=x0+242;b.x=x0+150;b.z=124;b.h=58;b.st='track';b.t=90;},
     c:b=>({x:b.x,z:b.z}),box:b=>b.st==='down'?[{x:b.x,z:b.z,hw:14,dz:8}]:b.h<14?[{x:b.x,z:b.z,hw:10,dz:6}]:[],
     downStep(b){b.h=toward(b.h,0,6);},up(b){b.st='mrise';},
-    topple(b){if(b.carry){const o=b.carry;b.carry=null;o.x=b.x;o.z=b.z;o.h=0;if(o.bomb!==undefined){o.st='rest';bw.heads.push(o);}else bw.ents.push(o);}nbDown(b,160,'THE CAB CRASHES');return true;},
+    topple(b){craneRelease();if(b.carry){const o=b.carry;b.carry=null;o.x=b.x;o.z=b.z;o.h=0;if(o.bomb!==undefined){o.st='rest';bw.heads.push(o);}else bw.ents.push(o);}nbDown(b,160,'THE CAB CRASHES');return true;},
     step:craneStep,draw:craneDraw},
-  toad:{drop:{id:'brute',shell:70,max:70,say:'IT COUGHS UP A BRUTE FRAME'},
-    init(b,x0){b.x=x0+170;b.z=124;b.h=0;b.st='idle';b.t=70;b.face=-1;b.tl=0;},
-    c:b=>({x:b.x,z:b.z}),box:b=>b.h>20?[]:[{x:b.x,z:b.z,hw:20,dz:8}],
-    hook(b){if(b.st==='tongue'||b.st==='twind'){nbDown(b,190,'TONGUE PULLED');return true;}return toppleBoss('hook');},
+  toad:{drop:{id:'brute',shell:70,max:70,say:'IT COUGHS UP A BRUTE FRAME'},clang:'BOING',bombMult:.2,
+    init(b,x0){b.x=x0+170;b.z=124;b.h=0;b.st='idle';b.t=70;b.face=-1;b.bits=[];b.dig=0;
+      bw.ents.push({husk:true,id:'e:brute',shell:50,max:64,x:x0+60,z:118,face:1},{husk:true,id:'e:scrap',shell:30,max:39,x:x0+90,z:134,face:1});},
+    c:b=>({x:b.x,z:b.z}),box:b=>b.h>20||b.st==='full'?[]:[{x:b.x,z:b.z,hw:22,dz:8}],mult:()=>FEEL.bosses.toadOutside,
     topple(b){if(b.st==='full')toadSpit(b,true);b.h=0;nbDown(b,150,'BURP');return true;},
     up(b){b.st='idle';b.t=50;},step:toadStep,draw:toadDraw},
   cook:{drop:{id:'walker',shell:90,max:110,say:'IN ITS SLEEVE: A WALKER FRAME'},

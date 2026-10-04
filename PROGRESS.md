@@ -1,7 +1,7 @@
 # Progress
 
 ## Current state (2026-10-04)
-v4.2 in progress. `main` is live on GitHub Pages; the dev tools are being built on branch **`dev-tools`** (not merged, not live). All 24 tests pass on `controller` (`npm test`, ~11 min). The PLAY campaign is playable start to finish: 8 levels, 40 sections, 8 bosses, ending. Classic mode (top-down map and duels) still works. English and Hebrew.
+v4.2 in progress. `main` is live on GitHub Pages; the dev tools are being built on branch **`dev-tools`** (not merged, not live). All 28 tests pass on `main` (`npm test`, ~11 min). The PLAY campaign is playable start to finish: 8 levels, 40 sections, 8 bosses, ending. Classic mode (top-down map and duels) still works. English and Hebrew.
 
 ## Done
 - **v4.1 baseline** (pixel look, beat 'em up campaign, bodies, specials, heads, three bosses). Full history in `CHANGELOG.md`.
@@ -13,7 +13,9 @@ v4.2 in progress. `main` is live on GitHub Pages; the dev tools are being built 
   - Destructible props per level; barrels explode and chain; big bodies smash props.
   - Five new levels and bosses: Toy Works (Wind-Up Knight), Hermit Harbour (Hermit Crab), Magnet Yard (Crane), Gullet Bog (Toad King), Giant's Kitchen (Cook). New bosses share one framework (`NB` table).
 - **Dev tools, step 1 of 6 — the feel file** (branch `dev-tools`): `src/feel.js` holds ~80 tuning numbers for the PLAY campaign, grouped and commented, one `name: number,` per line; the game reads `FEEL` live. Same values as before; tests check the file format and that the game follows it.
-- **Controller support** (branch `controller`, not merged yet): any pad, A/B jump, X attack, Y/LB/RB special, Start, Back = language, connect message, rumble. Also fixed: Space (and pad B) now jump in the campaign. Tested with a simulated pad; needs a real controller to confirm rumble and button layout.
+- **Controller support**: any pad, A/B jump, X attack, Y/LB/RB special, Start, Back = language, connect message, rumble. Also fixed: Space (and pad B) now jump in the campaign. Tested with a simulated pad; needs a real controller to confirm rumble and button layout.
+- **Boss revisions**: the Toad King is a jelly cube you beat from the inside (it digests your bodies, spits out the bare core); the Crane's pull is stronger and visible and it freezes what it catches (mash to break free); the Crane drops the MAGNET power (push special, pull on every 3rd hit).
+- **Giant's Kitchen cat:** the "face" players asked about is now clearly a giant cat under the cupboard (ears, slit eyes, nose, whiskers; it blinks, twitches an ear, flicks its tail).
 - **Game speed:** master `FEEL.game.speed` = 0.85 (was effectively 1.0), slows everything evenly. Needs a playtest.
 - **Project setup:** git + GitHub (public), GitHub Pages deploy on push to `main` (quick tests must pass), project agents including `level-designer`.
 
@@ -35,7 +37,7 @@ v4.2 in progress. `main` is live on GitHub Pages; the dev tools are being built 
 
 ## Next steps
 Dev tools plan (agreed 2026-10-04; tools ship in the live game too, hidden behind `?dev=1`; saving writes project files through a local dev server):
-Now: controller support is on branch `controller`, waiting for Ben's OK to merge; then back to the dev tools.
+Controller support and the boss revisions are merged; next: dev tools step 2.
 1. ~~Feel file~~ (done, merged to main)
 2. Dev mode + tiny local server (`npm run dev`, serves `src/` without a build, saves files; `?dev=1` / Backquote)
 3. Live tweak panel with a DEV button (sliders for every `FEEL` value, save to `src/feel.js`, reset, export)
