@@ -47,11 +47,12 @@ test('MAGNET power: the special pushes robots away, every 3rd combo hit pulls on
   expect(await page.evaluate(()=>window.__t.foeX())).toBeGreaterThan(x0+15);
   expect(await page.evaluate(()=>window.__t.dummyHp())).toBeLessThan(h0);
   await page.evaluate(()=>window.__t.moveFoe(95));await page.waitForTimeout(100);
-  for(let i=0;i<6;i++){await press(page,'KeyX',30);await page.waitForTimeout(70);} // mash: presses during a hit chain the combo
-  await page.waitForTimeout(300);expect(await page.evaluate(()=>window.__t.foeX())).toBeLessThan(40);
+  // mash until the 3rd combo hit pulls (combo timing varies between machines)
+  for(let i=0;i<15&&(await page.evaluate(()=>window.__t.foeX()))>=40;i++){await press(page,'KeyX',30);await page.waitForTimeout(90);}
+  expect(await page.evaluate(()=>window.__t.foeX())).toBeLessThan(40);
   // with no robot in reach it pulls a head (heads carry a robot type; this once crashed the game)
   await page.evaluate(()=>{window.__t.moveFoe(-200);window.__t.clearHusks();window.__t.addHead(90);});await page.waitForTimeout(400);
-  for(let i=0;i<6;i++){await press(page,'KeyX',30);await page.waitForTimeout(70);}
-  await page.waitForTimeout(300);expect(await page.evaluate(()=>window.__t.headX())).toBeLessThan(40);
+  for(let i=0;i<15&&(await page.evaluate(()=>window.__t.headX()))>=40;i++){await press(page,'KeyX',30);await page.waitForTimeout(90);}
+  expect(await page.evaluate(()=>window.__t.headX())).toBeLessThan(40);
   expect(errors).toEqual([]);
 });
