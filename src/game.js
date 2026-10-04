@@ -70,7 +70,7 @@ const HE={
 'SALVAGE WHAT YOU CAN':'אסוף מה שאפשר','YOU':'אתה','YOUR FRAME, RECOVERED':'השלד שלך הוחזר','THE COLOSSUS WAITS':'הענק מחכה',
 'THE MAKER IS AWAKE':'היוצר ער','THE WARDEN IS WATCHING':'השומר צופה',"SHELLY'S HOUSE. THE DOOR IS OPEN.":'הבית של שלי. הדלת פתוחה.',
 'EJECT':'פליטה','IT EJECTED':'הוא נפלט','SHELL BREAK':'המעטפת נשברה','POGO':'ניתור','LAUNCH':'הקפצה','CHARGED':'טעון','STOMP':'רקיעה',
-'L: ENGLISH':'L: ENGLISH','MATRYOSHKA':'מטריושקה','ANOTHER ONE INSIDE':'עוד אחת בפנים','THE LAST DOLL':'הבובה האחרונה','ITS SMALLEST SHELL: THE DOLL':'הקליפה הקטנה שלה: הבובה','NESTING LOCKED: BEAT THE MATRYOSHKA':'קינון נעול: נצחו את המטריושקה','NESTING UNLOCKED':'קינון נפתח','CONTROLLER CONNECTED':'בקר מחובר','CONTROLLER DISCONNECTED':'הבקר נותק','MAGNET PUSH':'דחיפה מגנטית','PULL':'משיכה','ITS MAGNET: PUSH AND PULL':'המגנט שלו: דחיפה ומשיכה','FROZEN TO THE MAGNET':'קפואים למגנט','BREAK FREE':'השתחררתם!','IT ENGULFS YOU':'הוא בולע אותך','HIT THE NUCLEUS':'הכו בגרעין','DIGESTED':'עוכל','SPAT OUT':'נירקתם החוצה','BOING':'בוינג','THE TOY WORKS':'מפעל הצעצועים','HERMIT HARBOUR':'נמל הסרטנים','THE MAGNET YARD':'מגרש המגנט','THE GULLET BOG':'ביצת הלוע',"THE GIANT'S KITCHEN":'המטבח של הענק',
+'L: ENGLISH':'L: ENGLISH','MATRYOSHKA':'מטריושקה','ANOTHER ONE INSIDE':'עוד אחת בפנים','THE LAST DOLL':'הבובה האחרונה','ITS SMALLEST SHELL: THE DOLL':'הקליפה הקטנה שלה: הבובה','NESTING LOCKED: BEAT THE MATRYOSHKA':'קינון נעול: נצחו את המטריושקה','NESTING UNLOCKED':'קינון נפתח','PAUSED':'מושהה','START OR P: RESUME':'START או P: המשך','CONTROLLER CONNECTED':'בקר מחובר','CONTROLLER DISCONNECTED':'הבקר נותק','MAGNET PUSH':'דחיפה מגנטית','PULL':'משיכה','ITS MAGNET: PUSH AND PULL':'המגנט שלו: דחיפה ומשיכה','FROZEN TO THE MAGNET':'קפואים למגנט','BREAK FREE':'השתחררתם!','IT ENGULFS YOU':'הוא בולע אותך','HIT THE NUCLEUS':'הכו בגרעין','DIGESTED':'עוכל','SPAT OUT':'נירקתם החוצה','BOING':'בוינג','THE TOY WORKS':'מפעל הצעצועים','HERMIT HARBOUR':'נמל הסרטנים','THE MAGNET YARD':'מגרש המגנט','THE GULLET BOG':'ביצת הלוע',"THE GIANT'S KITCHEN":'המטבח של הענק',
 'THE WIND-UP KNIGHT':'אביר הקפיץ','THE HERMIT CRAB':'הסרטן הנזיר','THE CRANE':'העגורן','THE TOAD KING':'מלך הקרפדות','THE COOK':'הטבח',
 'THE WARDEN GOES QUIET.':'השומר משתתק.','ITS LAST SIGNAL CAME FROM THE FOUNDRY.':'האות האחרון שלו הגיע מבית היציקה.','THE ROAD RUNS THROUGH A TOY FACTORY.':'הדרך עוברת דרך מפעל צעצועים.','SOMETHING INSIDE IS STILL WOUND UP.':'משהו בפנים עדיין מתוח.',
 'THE KNIGHT RUNS DOWN.':'האביר נעצר.','THE ROAD ENDS AT A NIGHT HARBOUR.':'הדרך נגמרת בנמל לילי.','EMPTY BODIES WASH UP ON THE PIER.':'גופים ריקים נסחפים אל המזח.','SOMETHING IS COLLECTING THEM.':'משהו אוסף אותם.',
@@ -121,8 +121,8 @@ const adv=ch=>{const h=HFONT[ch];return h?h.w+1:4;};
 function setLang(l){LANG=l;try{localStorage.setItem('hc-lang',l);}catch(e){}syncLangUI();}
 
 const LEGEND={
-  en:'<b>Arrows / WASD</b> move &nbsp; <b>Z / Space</b> jump (A), hold for higher &nbsp; <b>X</b> attack (B): tap for a combo, the third hit launches &nbsp; <b>hold X</b> charge &nbsp; <b>Down + X in the air</b> dive &nbsp; <b>Up</b> special &nbsp; <b>Down</b> guard, double-tap to eject &nbsp; <b>Enter</b> start &nbsp; <b>Play: Enter</b> climb into a bigger empty body, or eject &nbsp; <b>Z + X together</b> (A+B) special: each body has its own power, fill POWER by landing hits; crates drop weapons &nbsp; walk into a dazed robot to grab, X to throw &nbsp; <b>Classic</b> (title menu): the map and duels &nbsp; <b>On the map: X</b> park or climb into your frame, <b>Enter</b> rig panel &nbsp; <b>Controller</b> stick / D-pad move, A or B jump, X attack, LT / RT special, Y / LB / RB climb in or eject, Start, Back: language &nbsp; <b>L</b> עברית',
-  he:'<b>חצים / WASD</b> תנועה &nbsp; <b>Z / רווח</b> קפיצה (A), החזק לגובה &nbsp; <b>X</b> מכה (B): הקש לקומבו, המכה השלישית מקפיצה &nbsp; <b>החזק X</b> טעינה &nbsp; <b>למטה + X באוויר</b> צלילה &nbsp; <b>למעלה</b> מיוחד &nbsp; <b>למטה</b> הגנה, פעמיים לפליטה &nbsp; <b>Enter</b> התחלה &nbsp; <b>במשחק: Enter</b> היכנס לגוף ריק גדול יותר, או פליטה &nbsp; <b>Z + X יחד</b> (A+B) מיוחד: לכל גוף כוח משלו, ממלאים כוח במכות; ארגזים מפילים נשקים &nbsp; לך לרובוט המום כדי לתפוס, X לזריקה &nbsp; <b>קלאסי</b> (בתפריט): המפה והדו־קרבות &nbsp; <b>במפה: X</b> חניית השלד או כניסה אליו, <b>Enter</b> לוח השלד &nbsp; <b>בקר</b> סטיק / חצים תנועה, A או B קפיצה, X התקפה, LT / RT מיוחד, Y / LB / RB כניסה או פליטה, Start, Back: שפה &nbsp; <b>L</b> English'};
+  en:'<b>Arrows / WASD</b> move &nbsp; <b>Z / Space</b> jump (A), hold for higher &nbsp; <b>X</b> attack (B): tap for a combo, the third hit launches &nbsp; <b>hold X</b> charge &nbsp; <b>Down + X in the air</b> dive &nbsp; <b>Up</b> special &nbsp; <b>Down</b> guard, double-tap to eject &nbsp; <b>Enter</b> start &nbsp; <b>Play: Enter</b> climb into a bigger empty body, or eject &nbsp; <b>Z + X together</b> (A+B) special: each body has its own power, fill POWER by landing hits; crates drop weapons &nbsp; walk into a dazed robot to grab, X to throw &nbsp; <b>Classic</b> (title menu): the map and duels &nbsp; <b>On the map: X</b> park or climb into your frame, <b>Enter</b> rig panel &nbsp; <b>Controller</b> stick / D-pad move, A or B jump, X attack, LT / RT special, Y / LB / RB climb in or eject, Start pause, Back: language &nbsp; <b>P</b> pause &nbsp; <b>L</b> עברית',
+  he:'<b>חצים / WASD</b> תנועה &nbsp; <b>Z / רווח</b> קפיצה (A), החזק לגובה &nbsp; <b>X</b> מכה (B): הקש לקומבו, המכה השלישית מקפיצה &nbsp; <b>החזק X</b> טעינה &nbsp; <b>למטה + X באוויר</b> צלילה &nbsp; <b>למעלה</b> מיוחד &nbsp; <b>למטה</b> הגנה, פעמיים לפליטה &nbsp; <b>Enter</b> התחלה &nbsp; <b>במשחק: Enter</b> היכנס לגוף ריק גדול יותר, או פליטה &nbsp; <b>Z + X יחד</b> (A+B) מיוחד: לכל גוף כוח משלו, ממלאים כוח במכות; ארגזים מפילים נשקים &nbsp; לך לרובוט המום כדי לתפוס, X לזריקה &nbsp; <b>קלאסי</b> (בתפריט): המפה והדו־קרבות &nbsp; <b>במפה: X</b> חניית השלד או כניסה אליו, <b>Enter</b> לוח השלד &nbsp; <b>בקר</b> סטיק / חצים תנועה, A או B קפיצה, X התקפה, LT / RT מיוחד, Y / LB / RB כניסה או פליטה, Start השהיה, Back: שפה &nbsp; <b>P</b> השהיה &nbsp; <b>L</b> English'};
 function syncLangUI(){
   const k=document.getElementById('keys'),b=document.getElementById('langBtn');
   k.innerHTML=LEGEND[LANG];k.dir=LANG==='he'?'rtl':'ltr';k.lang=LANG;
@@ -416,9 +416,9 @@ LEVELS.forEach(l=>{l.tufts=[];for(let i=0;i<160;i++)l.tufts.push({x:rnd(0,WW)|0,
 let LV=LEVELS[0];
 
 // ---------- input ----------
-const KEYS=['up','down','left','right','a','b','start','jump','lang','sp'];
+const KEYS=['up','down','left','right','a','b','start','jump','lang','sp','pause'];
 const kb={},tc={},gp={},K={},P={},prev={},hit={};
-const KMAP={ArrowUp:'up',KeyW:'up',ArrowDown:'down',KeyS:'down',ArrowLeft:'left',KeyA:'left',ArrowRight:'right',KeyD:'right',KeyZ:'a',KeyJ:'a',KeyX:'b',KeyK:'b',Space:'jump',Enter:'start',Escape:'b',KeyL:'lang',KeyC:'sp',ShiftLeft:'sp',ShiftRight:'sp'};
+const KMAP={ArrowUp:'up',KeyW:'up',ArrowDown:'down',KeyS:'down',ArrowLeft:'left',KeyA:'left',ArrowRight:'right',KeyD:'right',KeyZ:'a',KeyJ:'a',KeyX:'b',KeyK:'b',Space:'jump',Enter:'start',Escape:'b',KeyL:'lang',KeyC:'sp',KeyP:'pause',ShiftLeft:'sp',ShiftRight:'sp'};
 addEventListener('keydown',e=>{const k=KMAP[e.code];if(k){padUsed=false;if(!e.repeat)hit[k]=true;kb[k]=true;e.preventDefault();initAudio();}});
 addEventListener('keyup',e=>{const k=KMAP[e.code];if(k){kb[k]=false;e.preventDefault();}});
 addEventListener('blur',()=>{for(const k of KEYS){kb[k]=false;tc[k]=false;}});
@@ -431,7 +431,7 @@ document.querySelectorAll('#pad button').forEach(b=>{
 });
 view.addEventListener('pointerdown',()=>{initAudio();if(state==='title')hit.start=true;});
 // controllers: every connected pad counts (standard mapping): stick/D-pad move, A (south) and B (east) jump,
-// X (west) attacks, the triggers fire the special, Y and the shoulder buttons climb in / eject (as does Start), Back switches language
+// X (west) attacks, the triggers fire the special, Y and the shoulder buttons climb in / eject, Start pauses, Back switches language
 let padUsed=false,toast=null,rumbleT=0;
 function pollPad(){
   for(const k of KEYS)gp[k]=false;
@@ -439,7 +439,7 @@ function pollPad(){
   const dz=FEEL.controller.deadzone;let any=false;
   for(const p of pads){if(!p)continue;
     const ax=p.axes[0]||0,ay=p.axes[1]||0,b=i=>!!(p.buttons[i]&&p.buttons[i].pressed);
-    const st={left:ax<-dz||b(14),right:ax>dz||b(15),up:ay<-dz||b(12)||(state!=='brawl'&&b(3)),down:ay>dz||b(13),a:b(0),jump:b(1),b:b(2),sp:b(6)||b(7),start:b(9)||(state==='brawl'&&(b(3)||b(4)||b(5))),lang:b(8)};
+    const st={left:ax<-dz||b(14),right:ax>dz||b(15),up:ay<-dz||b(12)||(state!=='brawl'&&b(3)),down:ay>dz||b(13),a:b(0),jump:b(1),b:b(2),sp:b(6)||b(7),start:state==='brawl'?(b(3)||b(4)||b(5)):b(9),pause:state==='brawl'&&b(9),lang:b(8)};
     for(const k in st)if(st[k]){gp[k]=true;any=true;}
   }
   if(any){initAudio();padUsed=true;}
@@ -468,7 +468,7 @@ function crunch(d=.15,v=.08){
 }
 
 // ---------- state ----------
-let state='title',T=0,hitstop=0,shake=0,glitch=.6,hg=0;
+let state='title',T=0,hitstop=0,shake=0,glitch=.6,hg=0,paused=false,wasBrawl=false;
 // the screen glitch shows only when you take damage (stronger for bigger hits) and on the fail screens
 function hurtGlitch(d){hg=Math.max(hg,Math.min(1,.25+d/16)*FEEL.game.glitch);}
 let mapFx=[],memView=null,mines=[],strikes=[],eprojs=[],debris=[],bursts=[],plats=[],platPrev={},fightT=0;
@@ -758,6 +758,11 @@ function reboot(){
 function step(){
   T++;pollPad();computeKeys();if(toast&&--toast.t<=0)toast=null;
   if(P.lang)setLang(LANG==='he'?'en':'he');
+  // pause (pad Start or P) freezes the campaign
+  // (a Start press that began on the screen before, like skipping the intro, doesn't pause)
+  if(state!=='brawl'){paused=false;wasBrawl=false;}else if(P.pause&&wasBrawl){paused=!paused;beep(paused?300:600,.08,'square',.04,paused?-100:100);}
+  if(state==='brawl')wasBrawl=true;
+  if(paused)return;
   if(hitstop>0){hitstop--;return;}
   if(state==='title'){
     if(Math.random()<.02)glitch=Math.max(glitch,.45);
@@ -3848,6 +3853,7 @@ function render(){
     case 'prep':drawPrep();break;case 'memory':drawMap();drawMemory();break;case 'fight':drawFight();break;case 'result':drawResult();break;
     case 'dead':drawDead();break;case 'ending':drawEnding();break;
   }
+  if(paused){g.globalAlpha=.6;px(0,0,W,H,C.void);g.globalAlpha=1;px(0,42,W,50,C.void);px(0,42,W,1,C.cyd);px(0,91,W,1,C.cyd);txt('PAUSED',129,57,C.mg,3,'c');txt('PAUSED',128,56,C.yl,3,'c');txt('START OR P: RESUME',128,82,C.cy,1,'c');}
   if(toast){const w=textW(toast.s)+10;g.globalAlpha=.85;px(128-w/2,2,w,11,C.void);g.globalAlpha=1;px(128-w/2,12,w,1,C.cyd);txt(toast.s,128,5,C.cy,1,'c');}
   present();
 }

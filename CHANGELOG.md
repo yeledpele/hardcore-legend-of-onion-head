@@ -23,6 +23,7 @@ Built on v4.1.
   - **The Toad King is a jelly cube you beat from the inside:** outside hits barely hurt; it slides over you and engulfs you; inside, hit its nucleus while it digests your bodies one by one; at the bare core it spits you out; A+B bursts out. No more tongue.
   - **The Crane's pull and freeze:** stronger pull along visible field lines; what it catches is frozen to the magnet, including you (mash A/B to break free, or get slammed down).
   - **The Crane drops the MAGNET power:** special = MAGNET PUSH (area blast), every 3rd combo hit = PULL.
+- **Pause:** the pad's Start (or P) pauses the campaign; press again to resume.
 - **Controller layout:** the triggers (LT/RT) fire the special; Y, LB or RB climb in or eject (Start still does too).
 - **Tweaks** (branch `tweaks-1`, after Ben's notes):
   - **Fewer glitches:** the screen glitch now shows only when you take damage and on the fail screens (strength in the feel file).

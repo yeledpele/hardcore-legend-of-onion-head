@@ -39,6 +39,7 @@ The game uses a two-button convention: **A** and **B**.
 | Attack (B) | X | B | X (west) |
 | Special (A and B together) | Z + X at the same time (also C or Shift) | A + B | LT or RT (or A/B + X together) |
 | Climb into a body / Eject (Start) | Enter | START | Y, LB or RB (or Start) |
+| Pause (campaign) | P | — | Start |
 | Language (English / Hebrew) | L | page button | Back / Select |
 
 - Pressing A and B counts as a special only when both go down within a few frames of each other, so mashing attack and then jumping still jumps.

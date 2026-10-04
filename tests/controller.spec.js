@@ -42,6 +42,15 @@ test('connecting shows a message, big hits rumble the pad, keyboard play stops t
   expect(await page.evaluate(()=>window.__pad.rumbles.length)).toBe(n); // playing on the keyboard: no rumble
   expect(errors).toEqual([]);
 });
+test('the pad Start button and the P key pause and resume the campaign',async({page})=>{
+  await page.addInitScript(FAKE);const errors=await open(page);await startCampaign(page);await page.waitForTimeout(400);
+  const frozen=async()=>{const a=await page.evaluate(()=>window.__t.bwT());await page.waitForTimeout(300);return a===await page.evaluate(()=>window.__t.bwT());};
+  await hold(page,9);await page.waitForTimeout(100);expect(await page.evaluate(()=>window.__t.paused())).toBe(true);expect(await frozen()).toBe(true);
+  await hold(page,9);await page.waitForTimeout(100);expect(await page.evaluate(()=>window.__t.paused())).toBe(false);expect(await frozen()).toBe(false);
+  await press(page,'KeyP');await page.waitForTimeout(100);expect(await page.evaluate(()=>window.__t.paused())).toBe(true);
+  await press(page,'KeyP');await page.waitForTimeout(100);expect(await page.evaluate(()=>window.__t.paused())).toBe(false);
+  expect(errors).toEqual([]);
+});
 test('Space jumps in the campaign',async({page})=>{
   const errors=await open(page);await startCampaign(page);await page.waitForTimeout(400);
   await page.evaluate(()=>window.__t.dummy('basic'));await page.waitForTimeout(150);
