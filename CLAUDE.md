@@ -5,7 +5,7 @@
 - **Genre / core loop:** side-scrolling pixel beat 'em up with depth lanes. Fight a screen-locked section → beaten robots leave empty bodies → climb into a bigger body (after the Matryoshka, nest bodies inside bodies) → use that body's special (A+B) → beat the level's boss and take the body it drops. 8 levels, 40 sections. A second mode, **Classic**, is the older top-down map with duels.
 - **Look & feel:** 256×144 pixel canvas, neon synthwave palette (cyan core, magenta robots, yellow UI), chunky pixel font, screen shake, sparks, cartoon squash and stretch. Touch pad on phones (must fit 390 px wide).
 - **Language:** English and Hebrew (`?lang=he` or the L key). Hebrew is right-to-left: the HTML key legend gets `dir="rtl"`; canvas text goes through `tr()` (the `HE` dictionary) and `visual()` (bidi reorder) and is drawn with the Hebrew pixel font `HFONT`.
-- **Design doc:** `gamedesign.md` describes every mechanic and system. History: `CHANGELOG.md`. Status: `PROGRESS.md`. Level ideas not built yet: `docs/plans/level-proposals.md`.
+- **Design doc:** `gamedesign.md` describes every mechanic and system. History: `CHANGELOG.md`. Status: `PROGRESS.md`. Level ideas not built yet: `docs/plans/level-proposals.md`. Future feature notes: `docs/FUTURE.md`.
 - **Live:** https://yeledpele.github.io/hardcore-legend-of-onion-head/ (public repo `yeledpele/hardcore-legend-of-onion-head`).
 
 ## Tech conventions
