@@ -35,15 +35,19 @@ The game uses a two-button convention: **A** and **B**.
 | Action | Keyboard | Touch | Gamepad |
 |---|---|---|---|
 | Move (left, right, and up/down in depth) | Arrows / WASD | D-pad | Stick / D-pad |
-| Jump (A) | Z or Space | A | A / B (south / east) |
+| Jump (A) | Z or Space | A | A (south) |
+| Block (hold) | V | — | B (east) |
 | Attack (B) | X | B | X (west) |
-| Special (A and B together) | Z + X at the same time (also C or Shift) | A + B | LT or RT (or A/B + X together) |
+| Special (A and B together) | Z + X at the same time (also C or Shift) | A + B | RT (or A + X together) |
+| Inner body's special (when nested) | F | — | LT |
 | Climb into a body / Eject (Start) | Enter | START | Y, LB or RB (or Start) |
 | Pause (campaign) | P | — | Start |
 | Language (English / Hebrew) | L | page button | Back / Select |
 
 - Pressing A and B counts as a special only when both go down within a few frames of each other, so mashing attack and then jumping still jumps.
 - Jumping cancels a punch combo.
+- **Block:** hold V (or pad B) on the ground to guard: you stand still (you can still turn) and hits from the front do no damage, but each blocked point of damage drains the **guard meter** (5 per point, 100 full; shown under your shell bar while it isn't full). At 0 the guard **breaks** ("GUARD BREAK"): you're stunned for about 1.4 s, then it refills. It refills by itself 40 frames after the last blocked hit. Hits from behind and blasts (bombs, ticking heads, lightning and missile strikes, barrels) get through; grabs and engulfs aren't hits. Numbers in `FEEL.combat` (guard…).
+- **Two specials when nested:** RT / C / A+B fire the outer body's special, LT / F the inner body's (both from the same POWER bar); the HUD lists the inner one under the outer one. With one body, both fire its special.
 - On touch screens the pad scales to fit narrow phones.
 - **Controllers:** any connected pad works (standard mapping); "CONTROLLER CONNECTED" / "DISCONNECTED" shows on any screen. Stick dead zone and rumble live in `FEEL.controller`. Big screen shakes (hits, slams, explosions) rumble the pad, only while you're playing on it; touching the keyboard or touch pad stops the rumble.
 
@@ -257,6 +261,7 @@ Every boss arena starts with a crate that always holds a **Chain Hook**.
 **Level 1 — The Matryoshka Zombie** (255 HP)
 
 - **Shells:** three nested shells, 110 / 85 / 60 HP. Break one and it splits in half; a smaller, faster doll climbs out ("ANOTHER ONE INSIDE", then "THE LAST DOLL").
+- **Little legs:** each doll waddles on two stubby legs (smaller dolls, smaller legs), tucks them for the lurch and kicks them when it's down.
 - **Shamble and lurch:** it shambles toward you, rears back, lurches forward into a ground slam, then lies dazed (your hits do ×1.5).
 - **Lightning:** it calls strikes on glowing rings around you: 2, then 3, then 4 strikes for each smaller doll. Hint: "LIGHTNING! KEEP MOVING".
 - **Knockdown:** the Chain Hook, ticking heads and Flyer bombs knock it down.

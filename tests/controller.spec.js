@@ -9,20 +9,23 @@ const FAKE=()=>{
   Navigator.prototype.getGamepads=function(){return [pad,null,null,null];};
 };
 const hold=async(page,i,ms=60)=>{await page.evaluate(i=>{window.__pad.b[i]=true;},i);await page.waitForTimeout(ms);await page.evaluate(i=>{window.__pad.b[i]=false;},i);};
-test('a controller starts the game, moves, jumps (A or B), attacks (X), fires the special (triggers) and climbs in / ejects (Y, shoulders)',async({page})=>{
+test('a controller starts the game, moves, jumps (A), attacks (X), fires the special (triggers) and climbs in / ejects (Y, shoulders)',async({page})=>{
   await page.addInitScript(FAKE);const errors=await open(page);
   await hold(page,9);await page.waitForTimeout(300);await hold(page,9);await page.waitForTimeout(800);
   expect(await page.evaluate(()=>window.__t.state())).toBe('brawl');
   await page.evaluate(()=>window.__t.dummy('basic'));await page.waitForTimeout(100);
   const x0=(await snap(page)).px;await page.evaluate(()=>{window.__pad.ax=[-1,0];});await page.waitForTimeout(400);await page.evaluate(()=>{window.__pad.ax=[0,0];});
   expect((await snap(page)).px).toBeLessThan(x0-5);
-  for(const btn of [0,1]){await page.evaluate(()=>window.__t.dummy('basic'));await page.waitForTimeout(150);
+  for(const btn of [0]){await page.evaluate(()=>window.__t.dummy('basic'));await page.waitForTimeout(150);
     await hold(page,btn,120);expect((await snap(page)).ph,'button '+btn+' jumps').toBeGreaterThan(3);await page.waitForTimeout(900);}
   await page.evaluate(()=>window.__t.dummy('basic'));await page.waitForTimeout(150);await hold(page,2);await page.waitForTimeout(30);
   expect((await snap(page)).kind).toBe('melee');await page.waitForTimeout(600);
   // the special spends POWER (the Basic's punch special can end within a frame or two, so check the cost, not the move)
   await page.evaluate(()=>window.__t.dummy('basic'));await page.waitForTimeout(150);await hold(page,7);await page.waitForTimeout(30);
   expect((await snap(page)).pow).toBeLessThan(80);
+  // B blocks
+  await page.waitForTimeout(800);await page.evaluate(()=>window.__t.dummy('basic'));await page.evaluate(()=>{window.__pad.b[1]=true;});await page.waitForTimeout(150);
+  expect((await page.evaluate(()=>window.__t.guardState())).guarding).toBe(true);await page.evaluate(()=>{window.__pad.b[1]=false;});
   // Y climbs into a bigger empty body next to you; a shoulder button ejects
   await page.waitForTimeout(800);await page.evaluate(()=>{window.__t.dummy('basic');window.__t.clearHusks();window.__t.husk('e:brute');});await page.waitForTimeout(150);
   await hold(page,3);await page.waitForTimeout(300);expect((await snap(page)).layers).toEqual(['e:brute']);

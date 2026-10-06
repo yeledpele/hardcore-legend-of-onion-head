@@ -70,7 +70,7 @@ const HE={
 'SALVAGE WHAT YOU CAN':'אסוף מה שאפשר','YOU':'אתה','YOUR FRAME, RECOVERED':'השלד שלך הוחזר','THE COLOSSUS WAITS':'הענק מחכה',
 'THE MAKER IS AWAKE':'היוצר ער','THE WARDEN IS WATCHING':'השומר צופה',"SHELLY'S HOUSE. THE DOOR IS OPEN.":'הבית של שלי. הדלת פתוחה.',
 'EJECT':'פליטה','IT EJECTED':'הוא נפלט','SHELL BREAK':'המעטפת נשברה','POGO':'ניתור','LAUNCH':'הקפצה','CHARGED':'טעון','STOMP':'רקיעה',
-'L: ENGLISH':'L: ENGLISH','MATRYOSHKA':'מטריושקה','ANOTHER ONE INSIDE':'עוד אחת בפנים','THE LAST DOLL':'הבובה האחרונה','ITS SMALLEST SHELL: THE DOLL':'הקליפה הקטנה שלה: הבובה','NESTING LOCKED: BEAT THE MATRYOSHKA':'קינון נעול: נצחו את המטריושקה','NESTING UNLOCKED':'קינון נפתח','PAUSED':'מושהה','START OR P: RESUME':'START או P: המשך','CONTROLLER CONNECTED':'בקר מחובר','CONTROLLER DISCONNECTED':'הבקר נותק','MAGNET PUSH':'דחיפה מגנטית','PULL':'משיכה','ITS MAGNET: PUSH AND PULL':'המגנט שלו: דחיפה ומשיכה','FROZEN TO THE MAGNET':'קפואים למגנט','BREAK FREE':'השתחררתם!','IT ENGULFS YOU':'הוא בולע אותך','HIT THE NUCLEUS':'הכו בגרעין','DIGESTED':'עוכל','SPAT OUT':'נירקתם החוצה','BOING':'בוינג','THE TOY WORKS':'מפעל הצעצועים','HERMIT HARBOUR':'נמל הסרטנים','THE MAGNET YARD':'מגרש המגנט','THE GULLET BOG':'ביצת הלוע',"THE GIANT'S KITCHEN":'המטבח של הענק',
+'L: ENGLISH':'L: ENGLISH','MATRYOSHKA':'מטריושקה','ANOTHER ONE INSIDE':'עוד אחת בפנים','THE LAST DOLL':'הבובה האחרונה','ITS SMALLEST SHELL: THE DOLL':'הקליפה הקטנה שלה: הבובה','NESTING LOCKED: BEAT THE MATRYOSHKA':'קינון נעול: נצחו את המטריושקה','NESTING UNLOCKED':'קינון נפתח','GUARD BREAK':'השמירה נשברה','GUARD':'שמירה','PAUSED':'מושהה','START OR P: RESUME':'START או P: המשך','CONTROLLER CONNECTED':'בקר מחובר','CONTROLLER DISCONNECTED':'הבקר נותק','MAGNET PUSH':'דחיפה מגנטית','PULL':'משיכה','ITS MAGNET: PUSH AND PULL':'המגנט שלו: דחיפה ומשיכה','FROZEN TO THE MAGNET':'קפואים למגנט','BREAK FREE':'השתחררתם!','IT ENGULFS YOU':'הוא בולע אותך','HIT THE NUCLEUS':'הכו בגרעין','DIGESTED':'עוכל','SPAT OUT':'נירקתם החוצה','BOING':'בוינג','THE TOY WORKS':'מפעל הצעצועים','HERMIT HARBOUR':'נמל הסרטנים','THE MAGNET YARD':'מגרש המגנט','THE GULLET BOG':'ביצת הלוע',"THE GIANT'S KITCHEN":'המטבח של הענק',
 'THE WIND-UP KNIGHT':'אביר הקפיץ','THE HERMIT CRAB':'הסרטן הנזיר','THE CRANE':'העגורן','THE TOAD KING':'מלך הקרפדות','THE COOK':'הטבח',
 'THE WARDEN GOES QUIET.':'השומר משתתק.','ITS LAST SIGNAL CAME FROM THE FOUNDRY.':'האות האחרון שלו הגיע מבית היציקה.','THE ROAD RUNS THROUGH A TOY FACTORY.':'הדרך עוברת דרך מפעל צעצועים.','SOMETHING INSIDE IS STILL WOUND UP.':'משהו בפנים עדיין מתוח.',
 'THE KNIGHT RUNS DOWN.':'האביר נעצר.','THE ROAD ENDS AT A NIGHT HARBOUR.':'הדרך נגמרת בנמל לילי.','EMPTY BODIES WASH UP ON THE PIER.':'גופים ריקים נסחפים אל המזח.','SOMETHING IS COLLECTING THEM.':'משהו אוסף אותם.',
@@ -121,8 +121,8 @@ const adv=ch=>{const h=HFONT[ch];return h?h.w+1:4;};
 function setLang(l){LANG=l;try{localStorage.setItem('hc-lang',l);}catch(e){}syncLangUI();}
 
 const LEGEND={
-  en:'<b>Arrows / WASD</b> move &nbsp; <b>Z / Space</b> jump (A), hold for higher &nbsp; <b>X</b> attack (B): tap for a combo, the third hit launches &nbsp; <b>hold X</b> charge &nbsp; <b>Down + X in the air</b> dive &nbsp; <b>Up</b> special &nbsp; <b>Down</b> guard, double-tap to eject &nbsp; <b>Enter</b> start &nbsp; <b>Play: Enter</b> climb into a bigger empty body, or eject &nbsp; <b>Z + X together</b> (A+B) special: each body has its own power, fill POWER by landing hits; crates drop weapons &nbsp; walk into a dazed robot to grab, X to throw &nbsp; <b>Classic</b> (title menu): the map and duels &nbsp; <b>On the map: X</b> park or climb into your frame, <b>Enter</b> rig panel &nbsp; <b>Controller</b> stick / D-pad move, A or B jump, X attack, LT / RT special, Y / LB / RB climb in or eject, Start pause, Back: language &nbsp; <b>P</b> pause &nbsp; <b>L</b> עברית',
-  he:'<b>חצים / WASD</b> תנועה &nbsp; <b>Z / רווח</b> קפיצה (A), החזק לגובה &nbsp; <b>X</b> מכה (B): הקש לקומבו, המכה השלישית מקפיצה &nbsp; <b>החזק X</b> טעינה &nbsp; <b>למטה + X באוויר</b> צלילה &nbsp; <b>למעלה</b> מיוחד &nbsp; <b>למטה</b> הגנה, פעמיים לפליטה &nbsp; <b>Enter</b> התחלה &nbsp; <b>במשחק: Enter</b> היכנס לגוף ריק גדול יותר, או פליטה &nbsp; <b>Z + X יחד</b> (A+B) מיוחד: לכל גוף כוח משלו, ממלאים כוח במכות; ארגזים מפילים נשקים &nbsp; לך לרובוט המום כדי לתפוס, X לזריקה &nbsp; <b>קלאסי</b> (בתפריט): המפה והדו־קרבות &nbsp; <b>במפה: X</b> חניית השלד או כניסה אליו, <b>Enter</b> לוח השלד &nbsp; <b>בקר</b> סטיק / חצים תנועה, A או B קפיצה, X התקפה, LT / RT מיוחד, Y / LB / RB כניסה או פליטה, Start השהיה, Back: שפה &nbsp; <b>P</b> השהיה &nbsp; <b>L</b> English'};
+  en:'<b>Arrows / WASD</b> move &nbsp; <b>Z / Space</b> jump (A), hold for higher &nbsp; <b>X</b> attack (B): tap for a combo, the third hit launches &nbsp; <b>hold X</b> charge &nbsp; <b>Down + X in the air</b> dive &nbsp; <b>Up</b> special &nbsp; <b>Down</b> guard, double-tap to eject &nbsp; <b>Enter</b> start &nbsp; <b>Play: Enter</b> climb into a bigger empty body, or eject &nbsp; <b>Z + X together</b> (A+B) special: each body has its own power, fill POWER by landing hits; crates drop weapons &nbsp; walk into a dazed robot to grab, X to throw &nbsp; <b>Classic</b> (title menu): the map and duels &nbsp; <b>On the map: X</b> park or climb into your frame, <b>Enter</b> rig panel &nbsp; <b>Controller</b> stick / D-pad move, A jump, B block (hold), X attack, RT special, LT inner-body special (when nested), Y / LB / RB climb in or eject, Start pause, Back: language &nbsp; <b>V</b> block (hold) &nbsp; <b>F</b> inner-body special &nbsp; <b>P</b> pause &nbsp; <b>L</b> עברית',
+  he:'<b>חצים / WASD</b> תנועה &nbsp; <b>Z / רווח</b> קפיצה (A), החזק לגובה &nbsp; <b>X</b> מכה (B): הקש לקומבו, המכה השלישית מקפיצה &nbsp; <b>החזק X</b> טעינה &nbsp; <b>למטה + X באוויר</b> צלילה &nbsp; <b>למעלה</b> מיוחד &nbsp; <b>למטה</b> הגנה, פעמיים לפליטה &nbsp; <b>Enter</b> התחלה &nbsp; <b>במשחק: Enter</b> היכנס לגוף ריק גדול יותר, או פליטה &nbsp; <b>Z + X יחד</b> (A+B) מיוחד: לכל גוף כוח משלו, ממלאים כוח במכות; ארגזים מפילים נשקים &nbsp; לך לרובוט המום כדי לתפוס, X לזריקה &nbsp; <b>קלאסי</b> (בתפריט): המפה והדו־קרבות &nbsp; <b>במפה: X</b> חניית השלד או כניסה אליו, <b>Enter</b> לוח השלד &nbsp; <b>בקר</b> סטיק / חצים תנועה, A קפיצה, B חסימה (החזיקו), X התקפה, RT מיוחד, LT מיוחד של הגוף הפנימי, Y / LB / RB כניסה או פליטה, Start השהיה, Back: שפה &nbsp; <b>V</b> חסימה (החזיקו) &nbsp; <b>F</b> מיוחד של הגוף הפנימי &nbsp; <b>P</b> השהיה &nbsp; <b>L</b> English'};
 function syncLangUI(){
   const k=document.getElementById('keys'),b=document.getElementById('langBtn');
   k.innerHTML=LEGEND[LANG];k.dir=LANG==='he'?'rtl':'ltr';k.lang=LANG;
@@ -416,9 +416,9 @@ LEVELS.forEach(l=>{l.tufts=[];for(let i=0;i<160;i++)l.tufts.push({x:rnd(0,WW)|0,
 let LV=LEVELS[0];
 
 // ---------- input ----------
-const KEYS=['up','down','left','right','a','b','start','jump','lang','sp','pause'];
+const KEYS=['up','down','left','right','a','b','start','jump','lang','sp','pause','guard','sp2'];
 const kb={},tc={},gp={},K={},P={},prev={},hit={};
-const KMAP={ArrowUp:'up',KeyW:'up',ArrowDown:'down',KeyS:'down',ArrowLeft:'left',KeyA:'left',ArrowRight:'right',KeyD:'right',KeyZ:'a',KeyJ:'a',KeyX:'b',KeyK:'b',Space:'jump',Enter:'start',Escape:'b',KeyL:'lang',KeyC:'sp',KeyP:'pause',ShiftLeft:'sp',ShiftRight:'sp'};
+const KMAP={ArrowUp:'up',KeyW:'up',ArrowDown:'down',KeyS:'down',ArrowLeft:'left',KeyA:'left',ArrowRight:'right',KeyD:'right',KeyZ:'a',KeyJ:'a',KeyX:'b',KeyK:'b',Space:'jump',Enter:'start',Escape:'b',KeyL:'lang',KeyC:'sp',KeyP:'pause',KeyV:'guard',KeyF:'sp2',ShiftLeft:'sp',ShiftRight:'sp'};
 addEventListener('keydown',e=>{const k=KMAP[e.code];if(k){padUsed=false;if(!e.repeat)hit[k]=true;kb[k]=true;e.preventDefault();initAudio();}});
 addEventListener('keyup',e=>{const k=KMAP[e.code];if(k){kb[k]=false;e.preventDefault();}});
 addEventListener('blur',()=>{for(const k of KEYS){kb[k]=false;tc[k]=false;}});
@@ -430,8 +430,8 @@ document.querySelectorAll('#pad button').forEach(b=>{
   b.addEventListener('contextmenu',e=>e.preventDefault());
 });
 view.addEventListener('pointerdown',()=>{initAudio();if(state==='title')hit.start=true;});
-// controllers: every connected pad counts (standard mapping): stick/D-pad move, A (south) and B (east) jump,
-// X (west) attacks, the triggers fire the special, Y and the shoulder buttons climb in / eject, Start pauses, Back switches language
+// controllers: every connected pad counts (standard mapping): stick/D-pad move, A (south) jumps, B (east) blocks (held),
+// X (west) attacks, RT fires the special and LT the inner body's special, Y and the shoulder buttons climb in / eject, Start pauses, Back switches language
 let padUsed=false,toast=null,rumbleT=0;
 function pollPad(){
   for(const k of KEYS)gp[k]=false;
@@ -439,7 +439,7 @@ function pollPad(){
   const dz=FEEL.controller.deadzone;let any=false;
   for(const p of pads){if(!p)continue;
     const ax=p.axes[0]||0,ay=p.axes[1]||0,b=i=>!!(p.buttons[i]&&p.buttons[i].pressed);
-    const st={left:ax<-dz||b(14),right:ax>dz||b(15),up:ay<-dz||b(12)||(state!=='brawl'&&b(3)),down:ay>dz||b(13),a:b(0),jump:b(1),b:b(2),sp:b(6)||b(7),start:state==='brawl'?(b(3)||b(4)||b(5)):b(9),pause:state==='brawl'&&b(9),lang:b(8)};
+    const st={left:ax<-dz||b(14),right:ax>dz||b(15),up:ay<-dz||b(12)||(state!=='brawl'&&b(3)),down:ay>dz||b(13),a:b(0),jump:state!=='brawl'&&b(1),guard:state==='brawl'&&b(1),b:b(2),sp:b(7),sp2:b(6),start:state==='brawl'?(b(3)||b(4)||b(5)):b(9),pause:state==='brawl'&&b(9),lang:b(8)};
     for(const k in st)if(st[k]){gp[k]=true;any=true;}
   }
   if(any){initAudio();padUsed=true;}
@@ -1713,6 +1713,9 @@ function bHitBox(x0,x1,dz,maxH,d,o){
 function bHurt(d,src){
   const p=bw.p;if(p.inv>0||state!=='brawl'||p.inside)return;
   const front=(src.x-p.x)*p.face>0,b=pBody();
+  if(p.guarding&&front&&!src.blast){const G=FEEL.combat;p.guard-=d*G.guardPerDamage;p.guardHit=bw.t;p.vx=(p.x<src.x?-1:1)*1.2;p.inv=12;spark(p.x+p.face*10,p.z-14,6,[C.cy,C.wh],1.6);
+    if(p.guard<=0){p.guard=0;p.guarding=false;p.stun=G.guardBreakStun;say('GUARD BREAK',p.x,p.z-40,C.mg,50);kick(4,.4);crunch(.2,.08);beep(140,.3,'sawtooth',.05,-80);}
+    else{say('BLOCK',p.x,p.z-36,C.cy,24);beep(900,.05,'square',.04);}return;}
   if(p.kind==='sp'&&p.sp==='bash'&&front){say('BLOCK',p.x,p.z-36,C.cy,24);beep(900,.05,'square',.04);return;}
   if(b.foe==='guard'&&front){d=Math.ceil(d/2);say('BLOCK',p.x,p.z-36,C.cy,24);beep(900,.05,'square',.04);}
   p.inv=FEEL.combat.hurtInvuln;p.vx=(p.x<src.x?-1:1)*FEEL.combat.hurtKnockback;hitstop=FEEL.combat.hurtHitstop;kick(4,.6);beep(80,.18,'sawtooth',.07,-40);crunch(.12,.08);
@@ -1752,9 +1755,16 @@ function stepBrawl(){
   if(P.a)p.lastA=bw.t;if(P.b)p.lastB=bw.t;
   if(p.inside){toadInside();stepBrawlWorld();return;}
   if(p.frozen){if(!bw.boss||bw.boss.type!=='crane')p.frozen=false;else{stepBrawlWorld();return;}}
+  // block: hold B (pad) or V. A full block from the front that drains the guard meter; when it breaks you're stunned
+  {const G=FEEL.combat;if(p.guard===undefined)p.guard=G.guardMax;
+    if(p.stun>0){p.guarding=false;p.vx*=.8;p.x=clamp(p.x+p.vx,bw.cam+8,bw.cam+W-8);if(--p.stun<=0)p.guard=G.guardMax;stepBrawlWorld();return;}
+    p.guarding=!!K.guard&&p.onG&&p.atk<=0&&!p.grab&&p.boot<=0;
+    if(!p.guarding&&p.guard<G.guardMax&&bw.t-(p.guardHit||-99)>G.guardDelay)p.guard=Math.min(G.guardMax,p.guard+G.guardRegen);
+    if(p.guarding){if(dx)p.face=dx;p.vx*=.6;p.vz=(p.vz||0)*.6;p.x=clamp(p.x+p.vx,bw.cam+8,bw.cam+W-8);p.z=clamp(p.z+p.vz,BZ0,BZ1);stepBrawlWorld();return;}}
+
   // Start: climb into a bigger empty body if one is next to you, otherwise eject the outer layer
   if(P.start&&p.onG&&!p.grab){const h=nearHusk();if(h)climbIn(h);else if(p.layers.length)ejectLayer();else{say('NOTHING TO EJECT',p.x,p.z-30,C.gr,30);beep(160,.05,'square',.03);}}
-  else if((P.sp||(P.b&&bw.t-(p.lastA||-99)<FEEL.player.abWindow)||(P.a&&bw.t-(p.lastB||-99)<FEEL.player.abWindow))&&(p.atk<=0||p.kind==='melee')&&p.boot<=0&&p.kind!=='sp'){if(!p.onG&&p.jt<5&&!p.plat){p.h=0;p.vh=0;p.onG=true;}p.atk=0;p.kind=null;startSpecial();}
+  else if((P.sp||P.sp2||(P.b&&bw.t-(p.lastA||-99)<FEEL.player.abWindow)||(P.a&&bw.t-(p.lastB||-99)<FEEL.player.abWindow))&&(p.atk<=0||p.kind==='melee')&&p.boot<=0&&p.kind!=='sp'){if(!p.onG&&p.jt<5&&!p.plat){p.h=0;p.vh=0;p.onG=true;}p.atk=0;p.kind=null;startSpecial(P.sp2&&!P.sp);}
   else if(P.a&&p.onG&&(p.atk<=0||p.kind==='melee')&&!p.grab){p.atk=0;p.kind=null;p.buffer=false;p.vh=core?FEEL.player.jumpCore:FEEL.player.jumpBody-b.size*FEEL.player.jumpSizeLoss;p.onG=false;p.jt=0;p.plat=null;beep(330,.06,'square',.03,300);dust(p.x,p.z,3);}
   else if(P.b&&p.boot<=0){
     if(p.grab){const e=p.grab;p.grab=null;e.st='thrown';e.vx=p.face*FEEL.combat.throwSpeed;e.vh=2.4;e.h=8;e.x=p.x+p.face*10;p.kind='throw';p.atk=14;p.hitAt=-1;say('THROW',p.x,p.z-36,C.cy,30);beep(180,.2,'square',.05,-60);kick(3,.3);}
@@ -1950,7 +1960,7 @@ function breakProp(e){
   if(P.boom){say('BOOM',e.x,e.z-24,C.yl,40);bursts.push({x:Math.round(e.x-bw.cam),y:Math.round(e.z-6),t:14});kick(5,.6);crunch(.35,.12);beep(70,.4,'sawtooth',.07,-30);
     spark(e.x,e.z-8,26,[C.yl,C.mg,C.wh],3.4);squishAt(e.x,e.z,30);
     for(const o of bw.ents)if((o.type||o.crate)&&o!==e&&!o.dead&&o.st!=='dead'&&Math.abs(o.x-e.x)<FEEL.props.barrelRadius+eDim(o).hw&&Math.abs(o.z-e.z)<12)bDamage(o,o.crate?FEEL.props.barrelPropDamage:FEEL.props.barrelRobotDamage,o.x<e.x?-1:1,{heavy:true,force:true});
-    const p=bw.p;if(Math.abs(p.x-e.x)<22&&Math.abs(p.z-e.z)<10&&p.h<12)bHurt(FEEL.props.barrelPlayerDamage,e);}
+    const p=bw.p;if(Math.abs(p.x-e.x)<22&&Math.abs(p.z-e.z)<10&&p.h<12)bHurt(FEEL.props.barrelPlayerDamage,{x:e.x,blast:true});}
 }
 function drawCiv(c,x){
   const [sk,sh,pn]=c.pal,y=Math.round(c.z),k=c.kid?1:0;
@@ -2007,6 +2017,12 @@ function drawBody(id,x,fy,face,walk,moving,mode,pal,fp,st,lhd){
   if(b.foe==='hound')return{top:fy-12,lean:face*11};
   return{top:fy-(T0.lh+T0.th)+1,lean:0};
 }
+// the block: a flickering shield in front of you; stars when the guard is broken
+function drawGuardFx(p,cam){
+  if(p.inside)return;const x=Math.round(p.x-cam),fy=Math.round(p.z-p.h),hw=pDim().hw,ht=pDim().ht||16;
+  if(p.guarding){const sx=x+p.face*(hw+3),k=p.guard/FEEL.combat.guardMax;for(let i=0;i<ht;i++){if((i+(T>>1))%3===0)continue;px(sx,fy-2-i,1,1,k<.3&&(T>>2)&1?C.mg:C.cy);}px(sx+p.face,fy-ht,1,ht-3,C.cyd);}
+  if(p.stun>0)nbStars(x,fy-ht-6);
+}
 function drawBrawlPlayer(p,cam){
   const x=Math.round(p.x-cam),fy=Math.round(p.z-p.h),moving=p.onG&&Math.abs(p.vx)+Math.abs(p.vz||0)>.3;
   if(p.inv>0&&p.inv<44&&(T>>1)&1||p.inside)return;
@@ -2032,6 +2048,7 @@ function drawBrawlPlayer(p,cam){
   if(p.atk>0){if(p.kind==='melee')mode=p.atk<=p.hitAt+3?[1,2,3][p.combo]:5;else if(p.kind==='air'||p.kind==='throw'||p.kind==='lunge')mode=1;else if(p.kind==='burst')mode=3;}
   if(p.kind==='sp')mode=p.atk>p.hitAt&&p.hitAt>=0?(['hammer','pound','giant','sword'].includes(p.sp)?3:5):1;
   if(p.grab)mode=3;
+  if(p.guarding)mode=4;
   const st=p.atk>0?(mode===5||mode===3&&p.kind==='sp'?'wind':'atk'):'walk';
   const lhd=p.land>0?-(p.land>3?2:1):(p.onG&&p.jt<3?-1:(!p.onG&&p.vh>.6?1:0));
   const outer=L[L.length-1],r=drawBody(outer.id,x,fy,p.face,p.walk,moving,mode,MEPAL,FP.me,st,lhd);
@@ -2075,7 +2092,7 @@ function drawBrawl(){
   for(const o of list){
     if(o.boss){drawMatry(cam);continue;}
     if(o.nb){nbDraw(cam);continue;}
-    if(o.p){drawBrawlPlayer(bw.p,cam);continue;}
+    if(o.p){drawBrawlPlayer(bw.p,cam);drawGuardFx(bw.p,cam);continue;}
     if(o.it){const x=Math.round(o.it.x-cam),y=o.it.z-6+Math.round(Math.sin(T*.12)*1.5);if(o.it.kind==='wpn'){const c=WCOL[o.it.w]||C.yl;px(x-5,y-6,11,10,c);px(x-4,y-5,9,8,C.void);drawPartIcon(o.it.w,x-3,y-4,true);}else if(o.it.kind==='cell'){pixHex(x,y,4,1,C.yl,true);px(x-1,y-1,2,2,C.wh);}else{px(x-3,y-2,7,5,C.gr);px(x-2,y-1,5,3,C.grd);px(x-1,y,3,1,C.yl);}continue;}
     const e=o.e,x=Math.round(e.x-cam);
     if(e.husk){const r=drawBody(e.id,x,e.z,e.face,0,false,0,HPAL,FP.husk,'idle');const fr=e.shell/e.max;px(x-8,e.z+2,16,2,'#0b2a3a');px(x-8,e.z+2,Math.round(16*fr),2,fr<.35?C.mg:C.cyd);
@@ -2101,9 +2118,10 @@ function drawBrawl(){
   const cx0=23,cpx=cx0+textW('CORE')+3;txt('CORE',cx0,5,C.yl);for(let i=0;i<Math.max(3,p.core);i++)px(cpx+i*6,5,4,5,i<p.core?C.yl:C.grd);
   if(L.length){const tp=L[L.length-1];txt(bodyOf(tp.id).name,23,12,C.cy);bar(23,19,80,3,tp.shell/tp.max,tp.shell<=tp.max*.3?C.mg:C.cy,C.cyx);
     if(L.length>1){const inn=L[L.length-2];txt('+ '+bodyOf(inn.id).name,23,24,C.cyd);}}
+  if(p.guard!==undefined&&(p.guarding||p.guard<FEEL.combat.guardMax||p.stun>0)){txt('GUARD',23,31,p.stun>0?C.mg:C.cyd);bar(23+textW('GUARD')+3,32,40,2,p.guard/FEEL.combat.guardMax,p.guard<30?C.mg:C.cy,C.cyx);}
   else txt('KNIFE ONLY',23,12,C.gr);
   txtS(String(bw.score).padStart(6,'0'),108,5,C.wh);
-  {const sp=curSpecial(),ok=p.pow>=spCost(sp);txt('POWER',108,13,C.yl);bar(108+textW('POWER')+3,14,44,3,p.pow/100,ok&&(T>>3)&1?C.wh:C.yl,C.yld);px(108+textW('POWER')+3+Math.round(44*spCost(sp)/100),13,1,5,C.mg);txt(SPNAME[sp],108,20,ok?C.cy:C.cyd);}
+  {const sp=curSpecial(),ok=p.pow>=spCost(sp);txt('POWER',108,13,C.yl);bar(108+textW('POWER')+3,14,44,3,p.pow/100,ok&&(T>>3)&1?C.wh:C.yl,C.yld);px(108+textW('POWER')+3+Math.round(44*spCost(sp)/100),13,1,5,C.mg);txt(SPNAME[sp],108,20,ok?C.cy:C.cyd);if(p.layers.length>1){const s2=innerSpecial();txt('+ '+SPNAME[s2],108,27,p.pow>=spCost(s2)?C.cyd:C.cyx);}}
   if(p.hits>=2){const big=p.hits>=6;txtS(p.hits+' HITS',6,32,big?C.yl:C.cy,big?2:1,'l');}
   const Lt=bw.boss&&bw.boss.st!=='dead'?bw.boss:bw.last&&bw.last.st!=='dead'?bw.last:null;
   if(Lt){txtS(scaled(Lt.T,Lt.type,0).name,252,5,C.wh,1,'r');bar(150,13,102,4,Lt.hp/Lt.max,C.mg,C.mgx);}
@@ -2166,10 +2184,11 @@ function magnetPull(){
   if(head){best.st='rest';best.h=0;best.vx=0;}else if(best.type){best.st='stun';best.t=40;best.h=0;}
   for(let i=0;i<8;i++)parts.push({x:ox+(best.x-ox)*i/8,y:p.z-12,vx:0,vy:0,t:8+i,c:i&1?C.mg:C.wh,gv:0,s:1});say('PULL',best.x,best.z-30,C.mg,30);beep(300,.2,'square',.05,-200);
 }
+function innerSpecial(){const L=bw.p.layers;if(L.length<2)return curSpecial();const t=L[L.length-2];return t.weapon||SPOW[t.id]||'glove';}
 function curSpecial(){const L=bw.p.layers;if(!L.length)return'knife';const t=L[L.length-1];return t.weapon||SPOW[t.id]||'glove';}
 const spCost=sp=>sp==='knife'?FEEL.combat.knifeCost:FEEL.combat.specialCost;
-function startSpecial(){
-  const p=bw.p,sp=curSpecial(),cost=spCost(sp);
+function startSpecial(inner){
+  const p=bw.p,sp=inner?innerSpecial():curSpecial(),cost=spCost(sp);
   if(p.pow<cost){say('NO POWER',p.x,p.z-36,C.gr,30);beep(160,.05,'square',.03);return;}
   bw.spTip=true;p.pow-=cost;p.kind='sp';p.sp=sp;p.hitSet=new Set();p.grab=null;glitch=Math.max(glitch,.35);
   say(SPNAME[sp],p.x,p.z-48,C.yl,40);
@@ -2385,7 +2404,7 @@ function stepBombsB(){
 }
 function bombBoom(m,hurtsYou){
   m.dead=true;const p=bw.p,pd=pDim();bursts.push({x:Math.round(m.x-bw.cam),y:Math.round(m.z-m.h),t:14});spark(m.x,m.z-m.h-4,14,[C.yl,C.wh,C.mg],3);kick(4,.5);crunch(.3,.1);beep(70,.35,'sawtooth',.06,-30);
-  if(hurtsYou&&Math.abs(p.x-m.x)<18+pd.hw&&Math.abs(p.z-m.z)<8+pd.dz&&p.h<14)bHurt(10,m);
+  if(hurtsYou&&Math.abs(p.x-m.x)<18+pd.hw&&Math.abs(p.z-m.z)<8+pd.dz&&p.h<14)bHurt(10,{x:m.x,blast:true});
   for(const e of bw.ents)if(e.type&&e.st!=='dead'&&Math.abs(e.x-m.x)<20&&Math.abs(e.z-m.z)<10)bDamage(e,6,e.x<m.x?-1:1,{heavy:true,force:true});
 }
 function kickBombs(x0,x1,dz){
@@ -2398,7 +2417,7 @@ function stepStrikes(){
   for(const s of bw.strikes){if(s.bolt&&s.t===1){bw.zaps.push({x:s.x,z:s.z,t:7});glitch=Math.max(glitch,.5);beep(1800,.12,'sawtooth',.05,-1500);}
     if(s.mine&&--s.t<=0){s.dead=true;bursts.push({x:Math.round(s.x-bw.cam),y:Math.round(s.z),t:12});for(const e of bw.ents)if((e.type||e.crate)&&!e.dead&&e.st!=='dead'&&Math.abs(e.x-s.x)<16+eDim(e).hw&&Math.abs(e.z-s.z)<10)bDamage(e,s.dmg,e.x<s.x?-1:1,{heavy:true,force:true});bossHit(s.x-16,s.x+16,10,s.dmg,{force:true,sky:true});kick(4,.5);crunch(.2,.08);continue;}
     if(!s.mine&&--s.t<=0){s.dead=true;bursts.push({x:Math.round(s.x-bw.cam),y:Math.round(s.z),t:14});spark(s.x,s.z-4,12,[C.yl,C.wh,C.mg],3);kick(4,.5);crunch(.25,.1);beep(70,.3,'sawtooth',.06,-30);
-    if(Math.abs(p.x-s.x)<14+pd.hw&&Math.abs(p.z-s.z)<6+pd.dz&&p.h<14)bHurt(12,s);}}
+    if(Math.abs(p.x-s.x)<14+pd.hw&&Math.abs(p.z-s.z)<6+pd.dz&&p.h<14)bHurt(12,{x:s.x,blast:true});}}
   bw.strikes=bw.strikes.filter(s=>!s.dead);
 }
 function drawCampBoss(cam){
@@ -2513,7 +2532,7 @@ function toppleBoss(why){
 function headBoom(hd){
   hd.gone=true;const p=bw.p,pd=pDim(),b=bw.boss;
   bursts.push({x:Math.round(hd.x-bw.cam),y:Math.round(hd.z-hd.h),t:18});spark(hd.x,hd.z-hd.h-4,22,[C.yl,C.wh,C.mg,C.mg],3.8);kick(6,.7);crunch(.4,.12);beep(60,.45,'sawtooth',.07,-30);
-  if(Math.abs(p.x-hd.x)<20+pd.hw&&Math.abs(p.z-hd.z)<9+pd.dz&&p.h<18)bHurt(12,hd);
+  if(Math.abs(p.x-hd.x)<20+pd.hw&&Math.abs(p.z-hd.z)<9+pd.dz&&p.h<18)bHurt(12,{x:hd.x,blast:true});
   for(const e of bw.ents)if((e.type||e.crate)&&!e.dead&&e.st!=='dead'&&Math.abs(e.x-hd.x)<22+eDim(e).hw&&Math.abs(e.z-hd.z)<12)bDamage(e,10,e.x<hd.x?-1:1,{heavy:true,launch:true,force:true});
   for(const o of bw.heads)if(o!==hd&&o.bomb&&!o.gone&&Math.abs(o.x-hd.x)<24&&Math.abs(o.z-hd.z)<10)o.fuse=Math.min(o.fuse,6);
   if(b&&b.type==='warden'&&b.st!=='down'&&b.st!=='dead'&&Math.abs(b.x-hd.x)<24&&Math.abs(b.h-hd.h)<24){b.st='down';b.t=180;b.landed=false;b.hp-=16;b.hurt=8;say('DOWNED',b.x,b.z-30,C.yl,60);}
@@ -2999,7 +3018,10 @@ function drawMatry(cam){
   if(b.st==='down'){yo=Math.round(D.ht*.25);lean=b.face*3;}
   if(b.st==='pop'){yo=Math.round(Math.max(0,b.t-24)*1.2);}
   const P=b.hurt>0&&(b.hurt&2)?{body:C.wh,scarf:C.wh,face:C.wh,flower:C.wh,line:C.wh,apron:C.wh}:DOLLPAL;
-  drawDollShape(x+lean,b.z+yo,b.layer,b.face,P,{zombie:true,glow:b.st==='cast',cracks:b.lhp<MSH[b.layer].hp*.5?2:0});
+  const LH=b.st==='lurch'||b.st==='pop'?1:1+b.layer,lw=Math.max(2,b.layer),spr=Math.max(3,Math.round(D.hw*.45)),stp=b.moving?Math.round(Math.sin(b.wob*2)*1.6):0;
+  if(b.st==='down'){for(const sd of [-1,1]){const k=((T>>2)+(sd>0?1:0))&1;px(x+lean+sd*spr-(sd<0?lw+2:0),b.z-3-k,lw+2,lw,P.apron);}}
+  else for(const sd of [-1,1]){const lift=Math.max(0,sd*stp);px(x+lean+sd*spr-(lw>>1),b.z-LH-lift+yo,lw,LH,P.apron);px(x+lean+sd*spr-(lw>>1)+(b.face>0?0:-1),b.z-1-lift+yo,lw+1,1,P.line);}
+  drawDollShape(x+lean,b.z+yo-(b.st==='down'?0:LH),b.layer,b.face,P,{zombie:true,glow:b.st==='cast',cracks:b.lhp<MSH[b.layer].hp*.5?2:0});
   if(b.st==='cast'&&(T>>1)&1)for(let i=0;i<5;i++){const a=rnd(0,6.28),r=D.hw+4;px(x+Math.cos(a)*r,b.z-D.ht*.6+Math.sin(a)*r*.6,1,3,C.cy);}
   if(b.st==='down')for(let i=0;i<3;i++){const a=T*.18+i*2.1;px(x+Math.cos(a)*7,b.z-D.ht+yo-4+Math.sin(a)*2,1,1,C.yl);}
 }

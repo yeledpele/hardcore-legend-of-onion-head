@@ -44,6 +44,9 @@ window.__t={
   bwT:()=>bw?bw.t:0,
   glitch:()=>hg,
   hurt:d=>bHurt(d,{x:bw.p.x+10}),
+  hurtFrom:(d,dx,blast)=>bHurt(d,{x:bw.p.x+dx,blast:!!blast}),
+  guardState:()=>{const p=bw.p,L=p.layers;return{guard:p.guard,stun:p.stun||0,guarding:!!p.guarding,shell:L.length?L[L.length-1].shell:null,inv:p.inv};},
+  noInv:()=>{bw.p.inv=0;},
   // a normal (non-boss) robot dx px ahead with this much health
   spawnFoe:(type,dx,hp)=>{const T0=TYPES[type];bw.ents.push({type,T:T0,x:bw.p.x+dx,z:bw.p.z,h:0,vh:0,vx:0,face:-1,st:'stun',t:999,hp,max:hp,dmg:1,hurt:0,walk:0,moving:false,boss:false,role:'wait',zo:0});},
   husks:()=>bw.ents.filter(e=>e.husk).map(e=>[Math.round(e.x-bw.p.x),e.id]),
