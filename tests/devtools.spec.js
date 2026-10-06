@@ -73,3 +73,19 @@ test.describe('the dev server',()=>{
     expect(errors).toEqual([]);
   });
 });
+test('jump to scene: from the title straight to the Hermit Crab, nested, invincible, full power',async({page})=>{
+  const errors=await open(page);await page.goto(GAME+'?dev=1');await page.waitForTimeout(300);
+  await page.click('#devBtn');
+  await page.selectOption('#devLevel',{value:'3'});await page.selectOption('#devSec',{value:'4'});
+  await expect(page.locator('#devSec')).toContainText('BOSS: THE HERMIT CRAB');
+  await page.selectOption('#devBody','e:brute');await page.selectOption('#devInner','basic');await page.selectOption('#devWeapon','magnet');
+  await page.check('#devGod');await page.click('#devPanel button[data-act=goto]');await page.waitForTimeout(300);
+  expect(await page.evaluate(()=>window.__t.state())).toBe('brawl');
+  expect((await page.evaluate(()=>window.__t.boss())).type).toBe('crab');
+  const s=await page.evaluate(()=>window.__t.snap());expect(s.layers).toEqual(['basic','e:brute']);expect(s.special).toBe('magnet');expect(s.pow).toBe(100);
+  const g0=await page.evaluate(()=>window.__t.guardState());await page.evaluate(()=>{window.__t.noInv();window.__t.hurtFrom(20,-10);});
+  expect((await page.evaluate(()=>window.__t.guardState())).shell).toBe(g0.shell);                     // invincible
+  await page.reload();await page.waitForTimeout(300);await page.click('#devBtn');                        // choices remembered
+  expect(await page.inputValue('#devLevel')).toBe('3');expect(await page.inputValue('#devBody')).toBe('e:brute');
+  expect(errors).toEqual([]);
+});

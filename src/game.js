@@ -1774,7 +1774,7 @@ function bHitBox(x0,x1,dz,maxH,d,o){
 }
 // the outer layer takes the hit; when it breaks you fall back to the next layer, then to the core
 function bHurt(d,src){
-  const p=bw.p;if(p.inv>0||state!=='brawl'||p.inside)return;
+  const p=bw.p;if(p.inv>0||state!=='brawl'||p.inside||DEV.god)return;
   const front=(src.x-p.x)*p.face>0,b=pBody();
   if(p.guarding&&front&&!src.blast){const G=FEEL.combat;p.guard-=d*G.guardPerDamage;p.guardHit=bw.t;p.vx=(p.x<src.x?-1:1)*1.2;p.inv=12;spark(p.x+p.face*10,p.z-14,6,[C.cy,C.wh],1.6);
     if(p.guard<=0){p.guard=0;p.guarding=false;p.stun=G.guardBreakStun;say('GUARD BREAK',p.x,p.z-40,C.mg,50);kick(4,.4);crunch(.2,.08);beep(140,.3,'sawtooth',.05,-80);}

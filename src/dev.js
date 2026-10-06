@@ -5,6 +5,26 @@ const DEV={on:false,server:false,open:false};
 try{DEV.on=new URLSearchParams(location.search).get('dev')==='1'||localStorage.getItem('hc-dev')==='1';}catch(e){}
 if(window.HC_DEVSERVER)DEV.on=true;
 let devBtn=null,devPanel=null,devMsg='',devFilter='';
+// jump to scene: where to go and what to start with (remembered in this browser)
+DEV.scene={level:0,sec:0,body:'',inner:'',weapon:'',god:false,nest:true,full:true};
+try{Object.assign(DEV.scene,JSON.parse(localStorage.getItem('hc-devscene')||'{}'));}catch(e){}
+const DEV_BODIES=['','basic','brute','walker','titan','flyer','doll','e:scrap','e:lancer','e:hound','e:guard','e:brute','e:walker'];
+const DEV_WEAPONS=['','sword','hammer','laser','rocket','hook','magnet'];
+const bodyLabel=id=>id?bodyOf(id).name+(id.startsWith('e:')?' (ROBOT)':''):'NONE (CORE)';
+// start the campaign if needed, then put the player at the start of that section with the chosen bodies
+function devGoto(){
+  const sc=DEV.scene,sec=clamp(sc.level*5+sc.sec,0,SECS.length-1);opts=null;paused=false;
+  if(state!=='brawl'||!bw){newRun();intro=null;campaignStart();}
+  bw.ents=[];bw.items=[];bw.boss=null;bw.bombs=[];bw.strikes=[];bw.plats=[];bw.heads=[];bw.drops=[];bw.zaps=[];bw.rubble=[];
+  const p=bw.p;Object.assign(p,{inside:false,frozen:false,stun:0,guarding:false,atk:0,kind:null,sp:null,grab:null,h:0,vh:0,vx:0,vz:0,onG:true,inv:30});
+  bw.sec=sec-1;nextSec();bw.cam=SECS[bw.sec].x0;p.x=bw.cam+40;p.z=124;bw.stageT=0;bw.clear=false;
+  if(sc.nest)bw.nestOK=true;
+  const ids=[sc.inner,sc.body].filter(Boolean);p.layers=ids.map(id=>({id,shell:bodyOf(id).shell,max:bodyOf(id).shell}));
+  if(sc.weapon&&p.layers.length)p.layers[p.layers.length-1].weapon=sc.weapon;
+  if(sc.full){p.pow=100;p.core=5;}
+  DEV.god=!!sc.god;devMsg='Jumped to level '+(sc.level+1)+', section '+(sc.sec+1)+'.';devSync();
+}
+function sceneStore(){try{localStorage.setItem('hc-devscene',JSON.stringify(DEV.scene));}catch(e){}}
 
 // ---- the feel file: defaults (as written in src/feel.js), comments, and rewriting values in place
 // FEEL_SRC is the text of src/feel.js, put in by the build
@@ -49,6 +69,7 @@ function devSync(){
   const groups={};for(const l of feelLeaves()){(groups[l.g]=groups[l.g]||[]).push(l);}
   let html='<h2>DEV TOOLS</h2>'+
     '<p class="dev-status '+(DEV.server?'ok':'off')+'">'+(DEV.server?'LOCAL DEV SERVER: SAVE writes src/feel.js.':'NO DEV SERVER: tweaks stay in this browser; copy or download feel.js. Run <code>npm run dev</code> to save to files.')+'</p>'+
+    devSceneHtml()+
     '<h3>FEEL ('+changed+' changed)</h3>'+
     '<div class="dev-row"><input type="search" id="devFilter" placeholder="find a value" value="'+esc(devFilter)+'" aria-label="Find a value"></div>'+
     '<div class="dev-row dev-btns">'+(DEV.server?'<button data-act="save">SAVE TO FILE</button>':'')+'<button data-act="copy">COPY feel.js</button><button data-act="download">DOWNLOAD</button><button data-act="resetall">RESET ALL</button></div>'+
@@ -63,14 +84,28 @@ function devSync(){
         '<button data-act="reset" data-id="'+id+'" title="back to '+d+'" aria-label="reset '+esc(id)+'">↺</button>'+
         (note?'<small>'+esc(note)+'</small>':'')+'</div>';}
     html+='</details>';}
-  html+='<p class="dev-hint">` (backquote) turns dev mode on/off. Debug layer, jump to scene and the level editor come next.</p>';
+  html+='<p class="dev-hint">` (backquote) turns dev mode on/off. The level editor comes next.</p>';
   devPanel.innerHTML=html;
   const f=devPanel.querySelector('#devFilter');if(f&&devFilterFocus){f.focus();f.setSelectionRange(f.value.length,f.value.length);}
+}
+function devSceneHtml(){
+  const sc=DEV.scene,opt=(list,val,label)=>list.map(v=>'<option value="'+esc(v)+'"'+(String(v)===String(val)?' selected':'')+'>'+esc(label(v))+'</option>').join('');
+  const st=STAGES[sc.level]||STAGES[0],boss=(st.secs[4]||[]).find(f=>f[0]==='BOSS');
+  return '<h3>JUMP TO SCENE</h3>'+
+    '<div class="dev-grid"><label for="devLevel">LEVEL</label><select id="devLevel">'+opt(STAGES.map((_,i)=>i),sc.level,i=>(i+1)+'. '+STAGES[i].name)+'</select>'+
+    '<label for="devSec">SECTION</label><select id="devSec">'+opt([0,1,2,3,4],sc.sec,i=>(i+1)+(i===4&&boss?' — BOSS: '+TYPES[boss[1]].name:''))+'</select>'+
+    '<label for="devBody">BODY</label><select id="devBody">'+opt(DEV_BODIES,sc.body,bodyLabel)+'</select>'+
+    '<label for="devInner">INSIDE IT</label><select id="devInner">'+opt(DEV_BODIES,sc.inner,bodyLabel)+'</select>'+
+    '<label for="devWeapon">WEAPON</label><select id="devWeapon">'+opt(DEV_WEAPONS,sc.weapon,w=>w?SPNAME[w]:'NONE')+'</select></div>'+
+    '<div class="dev-row dev-checks"><label><input type="checkbox" id="devGod"'+(sc.god?' checked':'')+'> INVINCIBLE</label><label><input type="checkbox" id="devNest"'+(sc.nest?' checked':'')+'> NESTING UNLOCKED</label><label><input type="checkbox" id="devFull"'+(sc.full?' checked':'')+'> FULL POWER + CORES</label></div>'+
+    '<div class="dev-row dev-btns"><button data-act="goto">GO</button></div>';
 }
 let devFilterFocus=false;
 const leafById=id=>feelLeaves().find(l=>leafId(l)===id);
 function devInput(e){
   const t=e.target;
+  const sk={devLevel:'level',devSec:'sec',devBody:'body',devInner:'inner',devWeapon:'weapon',devGod:'god',devNest:'nest',devFull:'full'}[t.id];
+  if(sk){DEV.scene[sk]=t.type==='checkbox'?t.checked:(sk==='level'||sk==='sec'?+t.value:t.value);if(sk==='god')DEV.god=t.checked;sceneStore();if(sk==='level')devSync();return;}
   if(t.id==='devFilter'){devFilter=t.value;devFilterFocus=true;devSync();devFilterFocus=false;return;}
   const id=t.dataset.id;if(!id)return;const l=leafById(id),v=parseFloat(t.value);if(!l||!Number.isFinite(v))return;
   leafSet(l,v);feelStore();devMsg='';
@@ -81,6 +116,7 @@ function devInput(e){
 }
 async function devClick(e){
   const b=e.target.closest('button');if(!b)return;const act=b.dataset.act;
+  if(act==='goto'){devGoto();return;}
   if(act==='reset'){const l=leafById(b.dataset.id);if(l)leafSet(l,FEEL_DEFAULT[b.dataset.id]);feelStore();devSync();}
   else if(act==='resetall'){for(const l of feelLeaves())leafSet(l,FEEL_DEFAULT[leafId(l)]);feelStore();devMsg='All values back to the file.';devSync();}
   else if(act==='copy'){try{await navigator.clipboard.writeText(devFeelText());devMsg='feel.js copied.';}catch(err){devMsg='Copy failed: use DOWNLOAD.';}devSync();}
