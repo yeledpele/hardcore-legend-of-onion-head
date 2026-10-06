@@ -17,7 +17,8 @@
 
 ## Project structure
 - `src/index.html` page shell, touch pad and legend markup · `src/style.css` · `src/feel.js` **the feel file**: tuning numbers for the PLAY campaign (`FEEL`), one `name: number,` per line · `src/game.js` (all other game code, one ~3,800-line file: data tables, Classic mode, the PLAY campaign, bosses, rendering, HUD).
-- `build.js` puts `feel.js` + `game.js` together → `dist/hardcore.html` (publish this). `node build.js --test` also inlines `tests/hooks.js` → `dist/hardcore.test.html`.
+- `src/dev.js` dev mode (`?dev=1`, the backquote key, or `npm run dev`): DEV button and panel; inserted into the game's scope at build time. `dev-server.js` the local dev server.
+- `build.js` puts `feel.js` + `game.js` + `dev.js` together → `dist/hardcore.html` (publish this). `node build.js --test` also inlines `tests/hooks.js` → `dist/hardcore.test.html`.
 - `tests/` Playwright tests + `hooks.js` (test-only `window.__t` helpers) + `helpers.js`.
 - `.claude/agents/` project subagents (playtester, balancer, art-director, design-doc-keeper, hebrew-reviewer, level-designer).
 - `.github/workflows/pages.yml`: every push to `main` runs the quick tests, builds, and publishes to GitHub Pages. Pushes to other branches don't publish.
@@ -25,6 +26,7 @@
 - `versions/` frozen archive of every earlier build (v1.0–v5.0). Never edit those files.
 
 ## Commands
+- `npm run dev` → local dev server at http://localhost:5173/ (serves `src/` with no build, reloads on changes, lets the dev tools save `src/feel.js` / `src/levels.js`; this computer only)
 - `npm run build` → `dist/hardcore.html`
 - `npm test` → full suite (about 11 minutes, includes a scripted run through the whole 8-level campaign)
 - `npm run test:quick` → everything except the campaign run (about a minute; includes a scripted fight against each new boss)

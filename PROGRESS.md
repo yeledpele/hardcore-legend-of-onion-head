@@ -1,7 +1,7 @@
 # Progress
 
 ## Current state (2026-10-04)
-v4.2 in progress. `main` is live on GitHub Pages; the dev tools are being built on branch **`dev-tools`** (not merged, not live). All 40 tests pass on `main` (`npm test`, ~11 min). The PLAY campaign is playable start to finish: 8 levels, 40 sections, 8 bosses, ending. Classic mode (top-down map and duels) still works. English and Hebrew.
+v4.2 in progress. `main` is live on GitHub Pages; the dev tools are being built on branch **`dev-tools`** (not merged, not live). All 40 tests pass on `main`, 43 on `dev-tools` (`npm test`, ~11 min). The PLAY campaign is playable start to finish: 8 levels, 40 sections, 8 bosses, ending. Classic mode (top-down map and duels) still works. English and Hebrew.
 
 ## Done
 - **v4.1 baseline** (pixel look, beat 'em up campaign, bodies, specials, heads, three bosses). Full history in `CHANGELOG.md`.
@@ -45,7 +45,7 @@ v4.2 in progress. `main` is live on GitHub Pages; the dev tools are being built 
 Dev tools plan (agreed 2026-10-04; tools ship in the live game too, hidden behind `?dev=1`; saving writes project files through a local dev server):
 Controller support and the boss revisions are merged; next: dev tools step 2.
 1. ~~Feel file~~ (done, merged to main)
-2. Dev mode + tiny local server (`npm run dev`, serves `src/` without a build, saves files; `?dev=1` / Backquote)
+2. ~~Dev mode + tiny local server~~ (done, branch `dev-tools`) (`npm run dev`, serves `src/` without a build, saves files; `?dev=1` / Backquote)
 3. Live tweak panel with a DEV button (sliders for every `FEEL` value, save to `src/feel.js`, reset, export)
 4. Debug layer (hit boxes, depth lanes, entity states, boss timers, hazard zones, FPS, slow-mo/pause/step)
 5. Jump to scene (any level/section/boss, starting body, god mode, nesting unlocked, full POWER)

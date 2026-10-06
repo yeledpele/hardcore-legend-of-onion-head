@@ -585,6 +585,7 @@ Small people walk around every section (2–3; one in boss arenas), and more run
 - **One self-contained HTML file.** All art is procedural (flat vector in PLAY, pixel in Classic) and all sound is synthesized. Nothing is loaded except Google Fonts.
 - **Screen glitch:** the RGB-split glitch shows only when you take damage (stronger for bigger hits) and on the fail screens; strength in `FEEL.game.glitch` (0 = off).
 - **Fixed-step loop** at 60 × `FEEL.game.speed` updates per second (0.85 → 51 a second), at most 4 updates per frame. The game speed slows everything evenly, in both modes.
+- **Dev mode:** `?dev=1` or the backquote key (remembered) shows a DEV button that opens the dev panel; it ships in the live game but stays hidden. `npm run dev` serves `src/` directly on http://localhost:5173/ (dev mode on), reloads the page when a source file changes, and lets the tools read and save `src/feel.js` and `src/levels.js` (only those, only from this computer).
 - **Feel file:** `src/feel.js` (`FEEL`) holds the PLAY tuning numbers; the game reads it live.
 - **State machine:** `title, intro, brawl, bover, ending` (PLAY) and `map, prep, memory, fight, result, dead` (Classic).
 - **Rendering:**

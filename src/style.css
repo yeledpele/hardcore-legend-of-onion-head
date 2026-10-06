@@ -49,3 +49,16 @@ body.touch #pad{display:flex;align-items:center;justify-content:space-between;pa
   body.touch #pad > *{pointer-events:auto}
   body.touch .start{align-self:flex-end}
 }
+
+/* dev mode: the DEV button and panel (only with ?dev=1, the backquote key, or npm run dev) */
+#devBtn{position:fixed;top:calc(env(safe-area-inset-top,0px) + 8px);left:10px;z-index:6;font:inherit;font-size:12px;color:var(--btnink);background:var(--btn);border:1px solid var(--mg);border-radius:4px;padding:4px 10px;cursor:pointer}
+#devBtn.on{background:var(--mg);color:var(--btn)}
+#devBtn:focus-visible{outline:2px solid var(--yl);outline-offset:2px}
+#devPanel{position:fixed;top:calc(env(safe-area-inset-top,0px) + 40px);left:10px;z-index:6;width:min(320px,calc(100vw - 20px));max-height:calc(100vh - 60px);overflow:auto;background:var(--btn);color:var(--btnink);border:1px solid var(--mg);border-radius:6px;padding:10px 12px;font-size:11px;line-height:1.6}
+#devPanel h2{margin:0 0 6px;font-size:13px;font-weight:400;color:var(--mg)}
+#devPanel p{margin:6px 0}
+#devPanel .dev-status.ok{color:var(--cy)}
+#devPanel .dev-status.off{color:var(--yl)}
+#devPanel .dev-hint{opacity:.75}
+#devPanel code{font:inherit;color:var(--yl)}
+[hidden]{display:none !important}

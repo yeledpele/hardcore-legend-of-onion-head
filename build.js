@@ -1,19 +1,29 @@
 // Bundles src/ into one self-contained HTML file.
 //   node build.js         -> dist/hardcore.html        (the file you publish)
 //   node build.js --test  -> dist/hardcore.test.html   (same game + test hooks from tests/hooks.js)
+// The dev server (npm run dev) calls assemble() directly to serve src/ without writing dist/.
 const fs=require('fs'),path=require('path');
-const test=process.argv.includes('--test');
-const shell=fs.readFileSync('src/index.html','utf8');
-const css=fs.readFileSync('src/style.css','utf8');
-// the feel file (tuning numbers) goes first so the game code can read FEEL
-let js=fs.readFileSync('src/feel.js','utf8')+'\n'+fs.readFileSync('src/game.js','utf8');
-if(test){
-  const anchor='let last=performance.now()';
-  if(!js.includes(anchor))throw new Error('test hook anchor not found in src/game.js: '+anchor);
-  js=js.replace(anchor,fs.readFileSync('tests/hooks.js','utf8')+'\n'+anchor);
+const ANCHOR='let last=performance.now()';
+function assemble(root,{test=false,dev=false}={}){
+  const rd=f=>fs.readFileSync(path.join(root,f),'utf8');
+  let shell=rd('src/index.html');const css=rd('src/style.css');
+  // the feel file (tuning numbers) goes first so the game code can read FEEL
+  let js=rd('src/feel.js')+'\n'+rd('src/game.js');
+  if(!js.includes(ANCHOR))throw new Error('anchor not found in src/game.js: '+ANCHOR);
+  // dev mode (src/dev.js) sits inside the game's scope, just before the main loop; test hooks after it
+  let inject=rd('src/dev.js');
+  if(test)inject+='\n'+rd('tests/hooks.js');
+  js=js.replace(ANCHOR,()=>inject+'\n'+ANCHOR);
+  // served by the dev server: tell the page so it turns dev mode on and watches for changes
+  if(dev)shell=shell.replace('<style>','<script>window.HC_DEVSERVER=1</script>\n<style>');
+  return shell.replace('/*@@STYLE@@*/',()=>css).replace('/*@@SCRIPT@@*/',()=>js);
 }
-const out=shell.replace('/*@@STYLE@@*/',()=>css).replace('/*@@SCRIPT@@*/',()=>js);
-fs.mkdirSync('dist',{recursive:true});
-const file=path.join('dist',test?'hardcore.test.html':'hardcore.html');
-fs.writeFileSync(file,out);
-console.log('built',file,(out.length/1024).toFixed(0)+' KB');
+module.exports={assemble};
+if(require.main===module){
+  const test=process.argv.includes('--test');
+  const out=assemble(__dirname,{test});
+  fs.mkdirSync('dist',{recursive:true});
+  const file=path.join('dist',test?'hardcore.test.html':'hardcore.html');
+  fs.writeFileSync(file,out);
+  console.log('built',file,(out.length/1024).toFixed(0)+' KB');
+}

@@ -420,9 +420,9 @@ LEVELS.forEach(l=>{l.tufts=[];for(let i=0;i<160;i++)l.tufts.push({x:rnd(0,WW)|0,
 let LV=LEVELS[0];
 
 // ---------- input ----------
-const KEYS=['up','down','left','right','a','b','start','jump','lang','sp','pause','guard','sp2'];
+const KEYS=['up','down','left','right','a','b','start','jump','lang','sp','pause','guard','sp2','dev'];
 const kb={},tc={},gp={},K={},P={},prev={},hit={};
-const KMAP={ArrowUp:'up',KeyW:'up',ArrowDown:'down',KeyS:'down',ArrowLeft:'left',KeyA:'left',ArrowRight:'right',KeyD:'right',KeyZ:'a',KeyJ:'a',KeyX:'b',KeyK:'b',Space:'jump',Enter:'start',Escape:'b',KeyL:'lang',KeyC:'sp',KeyP:'pause',KeyV:'guard',KeyF:'sp2',ShiftLeft:'sp',ShiftRight:'sp'};
+const KMAP={ArrowUp:'up',KeyW:'up',ArrowDown:'down',KeyS:'down',ArrowLeft:'left',KeyA:'left',ArrowRight:'right',KeyD:'right',KeyZ:'a',KeyJ:'a',KeyX:'b',KeyK:'b',Space:'jump',Enter:'start',Escape:'b',KeyL:'lang',KeyC:'sp',KeyP:'pause',Backquote:'dev',KeyV:'guard',KeyF:'sp2',ShiftLeft:'sp',ShiftRight:'sp'};
 addEventListener('keydown',e=>{const k=KMAP[e.code];if(k){padUsed=false;if(!e.repeat)hit[k]=true;kb[k]=true;e.preventDefault();initAudio();}});
 addEventListener('keyup',e=>{const k=KMAP[e.code];if(k){kb[k]=false;e.preventDefault();}});
 addEventListener('blur',()=>{for(const k of KEYS){kb[k]=false;tc[k]=false;}});
@@ -817,6 +817,7 @@ function reboot(){
 function step(){
   T++;pollPad();computeKeys();if(toast&&--toast.t<=0)toast=null;
   if(P.lang)setLang(LANG==='he'?'en':'he');
+  if(P.dev)devSet(!DEV.on);
   if(opts){stepOptions();return;}
   // pause (pad Start or P) freezes the campaign
   // (a Start press that began on the screen before, like skipping the intro, doesn't pause)
