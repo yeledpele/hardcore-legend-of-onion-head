@@ -48,6 +48,7 @@ Controller support and the boss revisions are merged; next: dev tools step 2.
 1. ~~Feel file~~ (done, merged to main)
 2. ~~Dev mode + tiny local server~~ (done, branch `dev-tools`) (`npm run dev`, serves `src/` without a build, saves files; `?dev=1` / Backquote)
 3. ~~Live tweak panel with a DEV button~~ (done, branch `dev-tools`) (sliders for every `FEEL` value, save to `src/feel.js`, reset, export)
+**On hold (Ben, 2026-10-06): steps 4–6 are pinned for later** (see `docs/FUTURE.md`).
 4. Debug layer (hit boxes, depth lanes, entity states, boss timers, hazard zones, FPS, slow-mo/pause/step)
 5. Jump to scene (any level/section/boss, starting body, god mode, nesting unlocked, full POWER)
 6. Level editor (place/drag robots, crates, props, civilians, hazards; pick the boss; play-test; save to a new `src/levels.js`)
