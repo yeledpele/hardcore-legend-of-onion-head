@@ -7,8 +7,8 @@ const ANCHOR='let last=performance.now()';
 function assemble(root,{test=false,dev=false}={}){
   const rd=f=>fs.readFileSync(path.join(root,f),'utf8');
   let shell=rd('src/index.html');const css=rd('src/style.css');
-  // the feel file (tuning numbers) goes first so the game code can read FEEL
-  let js=rd('src/feel.js')+'\n'+rd('src/game.js');
+  // the feel file (tuning numbers) and the level data (src/levels.js) go first so the game code can read FEEL and STREET
+  let js=rd('src/feel.js')+'\n'+rd('src/levels.js')+'\n'+rd('src/game.js');
   if(!js.includes(ANCHOR))throw new Error('anchor not found in src/game.js: '+ANCHOR);
   // dev mode (src/dev.js) sits inside the game's scope, just before the main loop; test hooks after it.
   // The dev panel also gets the feel file's text (for comments, and to write values back in place);

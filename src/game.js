@@ -819,6 +819,7 @@ function step(){
   T++;pollPad();computeKeys();if(toast&&--toast.t<=0)toast=null;
   if(P.lang)setLang(LANG==='he'?'en':'he');
   if(P.dev)devSet(!DEV.on);
+  if(DEV.edit)return;
   if(opts){stepOptions();return;}
   // pause (pad Start or P) freezes the campaign
   // (a Start press that began on the screen before, like skipping the intro, doesn't pause)
@@ -1676,23 +1677,12 @@ function drawBoss(e,t,pal){
 // ---------- PLAY: the beat 'em up campaign ----------
 // one street through all three levels; robots you beat leave their bodies behind, and a smaller body can climb into a bigger one
 const BZ0=110,BZ1=138,SECW=256,SL=SECW*5;
-const STAGES=[
-  {theme:0,name:'THE BURIAL WASTE',secs:[[['scrap',200,120],['scrap',236,134]],[['scrap',210,116],['lancer',240,132],['C',150,128]],[['brute',220,124,1],['scrap',-30,132]],[['scrap',200,124],['lancer',-30,116],['C',120,118]],[['BOSS','matry']]]},
-  {theme:1,name:'THE PINE FOREST',secs:[[['guard',220,122],['scrap',240,134]],[['hound',230,114],['hound',-30,134],['C',140,128]],[['walker',220,122,1],['hound',-30,132]],[['scrap',230,116],['guard',240,132],['C',120,124]],[['BOSS','warden']]]},
-  {theme:3,name:'THE TOY WORKS',intro:['THE WARDEN GOES QUIET.','ITS LAST SIGNAL CAME FROM THE FOUNDRY.','THE ROAD RUNS THROUGH A TOY FACTORY.','SOMETHING INSIDE IS STILL WOUND UP.'],belt:[[1,0,256,-1],[2,0,256,-1],[3,0,256,-1]],
-   secs:[[['scrap',200,120],['scrap',236,134],['lancer',240,116]],[['hound',230,114],['hound',-30,134],['C',140,128]],[['guard',220,124,1],['lancer',-30,132]],[['brute',210,118],['walker',240,132],['scrap',-30,124],['C',120,124]],[['BOSS','knight']]]},
-  {theme:4,name:'HERMIT HARBOUR',intro:['THE KNIGHT RUNS DOWN.','THE ROAD ENDS AT A NIGHT HARBOUR.','EMPTY BODIES WASH UP ON THE PIER.','SOMETHING IS COLLECTING THEM.'],
-   secs:[[['scrap',200,120],['scrap',236,134],['lancer',240,116]],[['hound',230,114],['hound',-30,134],['C',150,128]],[['guard',220,124,1],['scrap',-30,132]],[['brute',210,118],['walker',240,132],['lancer',-30,124],['C',120,124]],[['BOSS','crab']]]},
-  {theme:5,name:'THE MAGNET YARD',intro:['THE CRAB LETS GO OF ITS DREAM SHELL.','PAST THE PIER, A SCRAPYARD HUMS.','A MAGNET PULLS AT EVERY BODY.','ONLY A CORE IS TOO LIGHT TO LIFT.'],
-   secs:[[['scrap',200,118],['scrap',230,132],['scrap',-30,124]],[['lancer',220,118],['walker',240,132],['C',140,126]],[['brute',220,124,1],['hound',-30,132]],[['walker',220,118],['guard',240,132],['scrap',-30,124],['C',120,124]],[['BOSS','crane']]]},
-  {theme:6,name:'THE GULLET BOG',intro:['THE CRANE FALLS SILENT.','THE ROAD SINKS INTO A SWAMP','OF DROWNED MACHINES.','SOMETHING BIG IS CROAKING.'],mud:[[0,80,150],[1,60,140],[2,120,200],[3,40,110],[4,30,90]],
-   secs:[[['scrap',200,118],['scrap',230,132],['scrap',-30,124]],[['hound',230,114],['hound',-30,134],['C',170,128]],[['brute',220,124,1],['lancer',-30,132]],[['guard',220,118],['walker',240,132],['hound',-30,124],['C',150,124]],[['BOSS','toad']]]},
-  {theme:7,name:"THE GIANT'S KITCHEN",intro:['THE TOAD KING BURPS ITS LAST.','A DOOR IN THE BOG OPENS ONTO A KITCHEN.','ONION HEAD IS TINY HERE.','THE COOK IS HUNGRY.'],
-   secs:[[['scrap',200,120],['scrap',236,134],['lancer',240,116]],[['hound',230,114],['hound',-30,134],['C',140,128]],[['walker',220,124,1],['scrap',-30,132]],[['brute',210,118],['brute',240,132],['lancer',-30,124],['C',120,124]],[['BOSS','cook']]]},
-  {theme:2,name:'THE FOUNDRY',intro:['THE COOK DROPS ITS PAN.','BEHIND THE STOVE LIES THE FOUNDRY,','WHERE THE GIANTS ARE MADE.','THE ONE THAT TOOK SHELLY IS THERE.'],secs:[[['hound',220,114],['brute',240,130]],[['guard',220,118],['guard',240,134],['lancer',-30,124],['C',150,126]],[['brute',220,116,1],['brute',240,134,1]],[['walker',230,122],['hound',240,134],['C',130,122]],[['BOSS','maker']]]}
-];
-const SECS=[];STAGES.forEach((st,si)=>st.secs.forEach((foes,i)=>{const x0=si*SL+i*SECW;SECS.push({stage:si,x0,foes,
-  mud:(st.mud||[]).filter(m=>m[0]===i).map(m=>[x0+m[1],x0+m[2]]),belt:(st.belt||[]).filter(m=>m[0]===i).map(m=>[x0+m[1],x0+m[2],m[3]])});}));
+// the level data lives in src/levels.js (STREET), written by the level editor
+const STAGES=STREET;
+const SECS=[];
+function rebuildSecs(){SECS.length=0;STAGES.forEach((st,si)=>st.secs.forEach((foes,i)=>{const x0=si*SL+i*SECW;SECS.push({stage:si,x0,foes,
+  mud:(st.mud||[]).filter(m=>m[0]===i).map(m=>[x0+m[1],x0+m[2]]),belt:(st.belt||[]).filter(m=>m[0]===i).map(m=>[x0+m[1],x0+m[2],m[3]])});}));}
+rebuildSecs();
 // difficulty: levels 1-2 as before, then rising evenly so the last level matches the old level 3
 const tierOf=st=>st<=1?st:1+(st-1)/(STAGES.length-2);
 // mud slows, belts push; checked for the section you're in and the next one
@@ -1724,6 +1714,7 @@ function spawnSec(){
   for(const [type,x,z,boss] of S.foes){
     if(type==='BOSS'){bw.boss=makeBoss(x,S.x0);bw.ents.push({crate:true,x:S.x0+70,z:132,h:0,hp:2,hurt:0,drop:'hook'});continue;}
     if(type==='C'){bw.ents.push({crate:true,x:S.x0+x,z,h:0,hp:3,hurt:0});continue;}
+    if(type==='P'||type==='H')continue;
     const T0=TYPES[type],hp=Math.round(T0.hp*(boss?(boss===2?FEEL.robots.finalHp:FEEL.robots.miniBossHp):FEEL.robots.hp)*mult);
     bw.ents.push({type,T:T0,x:S.x0+x,z,h:0,vh:0,vx:0,face:-1,st:'walk',t:rnd(20,70)|0,hp,max:hp,dmg:Math.round(T0.dmg*FEEL.robots.damage*(1+FEEL.robots.damagePerTier*tierOf(S.stage))),hurt:0,walk:0,moving:false,boss:!!boss,final:boss===2,role:'wait',zo:rnd(-14,14)});
   }
@@ -1987,9 +1978,12 @@ const THEMEPROPS=[['car','bin','barrel'],['pine','fence','lamp'],['tank','barrel
 function srnd(seed){let s=(seed*9301+49297)%233280;return()=>{s=(s*9301+49297)%233280;return s/233280;};}
 function spawnStreetLife(){
   const S=SECS[bw.sec],th=STAGES[S.stage].theme,r=srnd(bw.sec*7+3),boss=S.foes.some(f=>f[0]==='BOSS');
-  if(!boss){const kinds=THEMEPROPS[th],n=2+(r()*2|0);
+  const ownProps=S.foes.filter(f=>f[0]==='P'),ownCivs=S.foes.filter(f=>f[0]==='H');
+  for(const [,k,x,z] of ownProps){const P=PROPS[k];if(P)bw.ents.push({crate:true,prop:k,x:S.x0+x,z,h:0,hp:P.hp,max:P.hp,hurt:0});}
+  if(!boss&&!ownProps.length){const kinds=THEMEPROPS[th],n=2+(r()*2|0);
     for(let i=0;i<n;i++){const k=kinds[(r()*kinds.length)|0],P=PROPS[k];bw.ents.push({crate:true,prop:k,x:S.x0+70+i*(150/n)+r()*30,z:BZ0+4+r()*(BZ1-BZ0-6),h:0,hp:P.hp,max:P.hp,hurt:0});}}
-  const nc=boss?1:FEEL.civilians.perSection+(r()*2|0);for(let i=0;i<nc;i++)addCiv(S.x0+60+r()*170,BZ0+2+r()*(BZ1-BZ0-4));
+  for(const [,x,z] of ownCivs)addCiv(S.x0+x,z);
+  const nc=ownCivs.length?0:boss?1:FEEL.civilians.perSection+(r()*2|0);for(let i=0;i<nc;i++)addCiv(S.x0+60+r()*170,BZ0+2+r()*(BZ1-BZ0-4));
 }
 function addCiv(x,z,run){const c={civ:true,x,z,face:Math.random()<.5?-1:1,walk:0,t:rnd(20,90)|0,st:run?'panic':'idle',pal:CIVPAL[(Math.random()*CIVPAL.length)|0],kid:Math.random()<.25,flat:0,spd:rnd(FEEL.civilians.runSpeed,FEEL.civilians.runSpeed+.4)};bw.ents.push(c);return c;}
 const CIVCRY=['AAH!','HELP!','RUN!','EEK!'];
@@ -3938,6 +3932,7 @@ function render(){
     case 'prep':drawPrep();break;case 'memory':drawMap();drawMemory();break;case 'fight':drawFight();break;case 'result':drawResult();break;
     case 'dead':drawDead();break;case 'ending':drawEnding();break;
   }
+  if(DEV.edit&&state==='brawl')drawEditor();
   if(paused){g.globalAlpha=.6;px(0,0,W,H,C.void);g.globalAlpha=1;px(0,42,W,50,C.void);px(0,42,W,1,C.cyd);px(0,91,W,1,C.cyd);txt('PAUSED',129,57,C.mg,3,'c');txt('PAUSED',128,56,C.yl,3,'c');['RESUME','OPTIONS'].forEach((o,i)=>{const sel=pauseSel===i;txt((sel?'> ':'')+o+(sel?' <':''),128,76+i*8,sel?((T>>4)&1?C.yl:C.wh):C.gr,1,'c');});}
   if(opts)drawOptions();
   if(toast){const w=textW(toast.s)+10;g.globalAlpha=.85;px(128-w/2,2,w,11,C.void);g.globalAlpha=1;px(128-w/2,12,w,1,C.cyd);txt(toast.s,128,5,C.cy,1,'c');}

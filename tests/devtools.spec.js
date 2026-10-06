@@ -68,6 +68,12 @@ test.describe('the dev server',()=>{
     await page.click('#devPanel button[data-act=save]');await expect(page.locator('#devPanel')).toContainText('Saved to src/feel.js');
     const saved=fs.readFileSync(path.join(tmp,'src/feel.js'),'utf8');expect(saved).toMatch(/gravityUp: 0\.25,\s+\/\/ gravity while rising/);
     await page.waitForTimeout(2000);expect(await page.evaluate(()=>window.__marker)).toBe(1);
+    // the level editor saves src/levels.js the same way
+    await page.fill('#devFilter','');await page.click('#devPanel button[data-act=edit]');await page.click('#devPanel button[data-tool=C]');
+    const r=await page.locator('#view').boundingBox();await page.mouse.click(r.x+r.width*180/256,r.y+r.height*125/144);
+    await page.click('#devPanel button[data-act=edsave]');await expect(page.locator('#devPanel')).toContainText('Saved to src/levels.js');
+    const lv=fs.readFileSync(path.join(tmp,'src/levels.js'),'utf8');const street=new Function(lv+';return STREET;')();expect(street.flatMap(s=>s.secs).flat().some(f=>f[0]==='C'&&Math.abs(f[1]-180)<3)).toBe(true);
+    await page.click('#devPanel button[data-act=edstop]');
     fs.appendFileSync(path.join(tmp,'src/style.css'),'\n/* touched by the test */\n');
     await expect.poll(()=>page.evaluate(()=>window.__marker),{timeout:8000}).toBeUndefined();
     expect(errors).toEqual([]);
@@ -87,5 +93,37 @@ test('jump to scene: from the title straight to the Hermit Crab, nested, invinci
   expect((await page.evaluate(()=>window.__t.guardState())).shell).toBe(g0.shell);                     // invincible
   await page.reload();await page.waitForTimeout(300);await page.click('#devBtn');                        // choices remembered
   expect(await page.inputValue('#devLevel')).toBe('3');expect(await page.inputValue('#devBody')).toBe('e:brute');
+  expect(errors).toEqual([]);
+});
+test('levels.js round-trips: the editor writes back exactly the file the game loads',async({page})=>{
+  await open(page);const text=await page.evaluate(()=>window.__t.levelsText());
+  expect(text).toBe(fs.readFileSync(path.join(ROOT,'src/levels.js'),'utf8').split('\r\n').join('\n'));
+});
+// clicks on the game screen at game coordinates (x from the section's left edge, z = depth)
+const at=async(page,x,z)=>{const r=await page.locator('#view').boundingBox();return {x:r.x+x*r.width/256,y:r.y+z*r.height/144};};
+test('level editor: place, drag, delete, undo, zones, props, play-test',async({page})=>{
+  await page.setViewportSize({width:1700,height:900});
+  const errors=await open(page);await page.goto(GAME+'?dev=1');await page.waitForTimeout(300);await page.click('#devBtn');
+  await page.selectOption('#devLevel',{value:'0'});await page.selectOption('#devSec',{value:'0'});
+  await page.click('#devPanel button[data-act=edit]');await page.waitForTimeout(200);
+  expect(await page.evaluate(()=>window.__t.edit())).toMatchObject({stage:0,i:0});
+  const t0=await page.evaluate(()=>window.__t.bwT());await page.waitForTimeout(300);expect(await page.evaluate(()=>window.__t.bwT())).toBe(t0); // frozen
+  const n0=(await page.evaluate(()=>window.__t.secData(0))).length;
+  await page.click('#devPanel button[data-tool=brute]');let p=await at(page,150,126);await page.mouse.click(p.x,p.y);
+  let sec=await page.evaluate(()=>window.__t.secData(0));expect(sec.length).toBe(n0+1);expect(sec[n0][0]).toBe('brute');expect(Math.abs(sec[n0][1]-150)).toBeLessThan(3);
+  await page.click('#devPanel button[data-tool=select]');p=await at(page,150,120);const q=await at(page,100,130);
+  await page.mouse.move(p.x,p.y);await page.mouse.down();await page.mouse.move(q.x,q.y,{steps:4});await page.mouse.up();
+  sec=await page.evaluate(()=>window.__t.secData(0));expect(Math.abs(sec[n0][1]-100)).toBeLessThan(3);           // dragged
+  await page.keyboard.press('Delete');expect((await page.evaluate(()=>window.__t.secData(0))).length).toBe(n0);    // deleted
+  await page.keyboard.press('Control+KeyZ');expect((await page.evaluate(()=>window.__t.secData(0))).length).toBe(n0+1); // undone
+  await page.click('#devPanel button[data-tool=mud]');p=await at(page,40,135);const p2=await at(page,120,135);
+  await page.mouse.move(p.x,p.y);await page.mouse.down();await page.mouse.move(p2.x,p2.y,{steps:4});await page.mouse.up();
+  const mud=(await page.evaluate(()=>window.__t.stageData(0))).mud;expect(mud.some(m=>m[0]===0&&Math.abs(m[1]-40)<3&&Math.abs(m[2]-120)<3)).toBe(true);
+  await page.selectOption('#edProp','car');await page.click('#devPanel button[data-tool=P]');p=await at(page,200,118);await page.mouse.click(p.x,p.y);
+  const props=(await page.evaluate(()=>window.__t.snap())).props;expect(props.map(x=>x[2])).toEqual(['car']);     // its own prop turns the random ones off
+  await page.click('#devPanel button[data-act=edplay]');await page.waitForTimeout(400);
+  expect(await page.evaluate(()=>window.__t.edit())).toBeNull();
+  const t1=await page.evaluate(()=>window.__t.bwT());await page.waitForTimeout(300);expect(await page.evaluate(()=>window.__t.bwT())).toBeGreaterThan(t1);
+  expect((await page.evaluate(()=>window.__t.snap())).foes.length).toBe(n0+1);
   expect(errors).toEqual([]);
 });

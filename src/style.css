@@ -83,3 +83,6 @@ body.touch #pad{display:flex;align-items:center;justify-content:space-between;pa
 #devPanel .dev-checks{flex-direction:column;gap:2px}
 #devPanel .dev-checks label{display:flex;gap:6px;align-items:center;cursor:pointer}
 #devPanel button[data-act=goto]{border-color:var(--mg);color:var(--mg);padding:3px 18px}
+#devPanel .dev-tools{display:flex;flex-wrap:wrap;gap:3px;margin:4px 0}
+#devPanel .dev-tools button.on{background:var(--mg);color:var(--btn);border-color:var(--mg)}
+#devPanel button[disabled]{opacity:.4;cursor:default}
