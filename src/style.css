@@ -62,3 +62,19 @@ body.touch #pad{display:flex;align-items:center;justify-content:space-between;pa
 #devPanel .dev-hint{opacity:.75}
 #devPanel code{font:inherit;color:var(--yl)}
 [hidden]{display:none !important}
+#devPanel h3{margin:10px 0 4px;font-size:12px;font-weight:400;color:var(--yl)}
+#devPanel .dev-row{display:flex;gap:6px;flex-wrap:wrap;margin:4px 0}
+#devPanel input[type=search]{flex:1;font:inherit;font-size:11px;background:transparent;color:var(--btnink);border:1px solid var(--dim);border-radius:3px;padding:3px 6px}
+#devPanel button{font:inherit;font-size:10px;color:var(--btnink);background:transparent;border:1px solid var(--dim);border-radius:3px;padding:3px 6px;cursor:pointer}
+#devPanel button:hover{border-color:var(--cy)}
+#devPanel button[data-act=save]{border-color:var(--cy);color:var(--cy)}
+#devPanel details{margin:4px 0;border-top:1px solid rgba(127,127,127,.25);padding-top:4px}
+#devPanel summary{cursor:pointer;color:var(--cy)}
+#devPanel .dev-feel{display:grid;grid-template-columns:1fr 70px 52px 20px;gap:2px 6px;align-items:center;margin:3px 0}
+#devPanel .dev-feel label{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#devPanel .dev-feel.changed label{color:var(--yl)}
+#devPanel .dev-feel input[type=range]{width:70px;accent-color:var(--mg)}
+#devPanel .dev-feel input[type=number]{width:52px;font:inherit;font-size:10px;background:transparent;color:var(--btnink);border:1px solid var(--dim);border-radius:3px;padding:1px 3px}
+#devPanel .dev-feel button{padding:0 4px}
+#devPanel .dev-feel small{grid-column:1/-1;opacity:.6;font-size:9px;line-height:1.3}
+#devPanel .dev-msg{color:var(--cy)}

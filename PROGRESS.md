@@ -1,7 +1,7 @@
 # Progress
 
 ## Current state (2026-10-04)
-v4.2 in progress. `main` is live on GitHub Pages; the dev tools are being built on branch **`dev-tools`** (not merged, not live). All 40 tests pass on `main`, 43 on `dev-tools` (`npm test`, ~11 min). The PLAY campaign is playable start to finish: 8 levels, 40 sections, 8 bosses, ending. Classic mode (top-down map and duels) still works. English and Hebrew.
+v4.2 in progress. `main` is live on GitHub Pages; the dev tools are being built on branch **`dev-tools`** (not merged, not live). All 43 tests pass on `main`, 44 on `dev-tools` (`npm test`, ~11 min). The PLAY campaign is playable start to finish: 8 levels, 40 sections, 8 bosses, ending. Classic mode (top-down map and duels) still works. English and Hebrew.
 
 ## Done
 - **v4.1 baseline** (pixel look, beat 'em up campaign, bodies, specials, heads, three bosses). Full history in `CHANGELOG.md`.
@@ -37,6 +37,7 @@ v4.2 in progress. `main` is live on GitHub Pages; the dev tools are being built 
 - The jelly Toad King: digest speed (one body per ~3 s), inside damage, how often it engulfs you. The Crane's freeze (8 presses to break free) and the MAGNET push/pull strength. The Crab's grab (mash B).
 - The block: guard meter size (100, 5 per damage point), stun length, and whether turning while blocking feels right. The two specials when nested.
 - SYNTHWAVE MINT: does every level read well (contrast between you, robots, props and backdrops)? Any colour that should be mapped by hand?
+- The tweak panel: slider ranges (0 to 3x each value) and whether the panel layout works for you.
 - Body drop chances: are there enough bodies to climb into, especially before the Matryoshka? And the glitch strength on hits.
 - Jetpack fuel and height; civilians' panic radius and how often they get squished.
 - Readability of the new backdrops behind the HUD (Toy Works shelves, Harbour lighthouse beam).
@@ -46,7 +47,7 @@ Dev tools plan (agreed 2026-10-04; tools ship in the live game too, hidden behin
 Controller support and the boss revisions are merged; next: dev tools step 2.
 1. ~~Feel file~~ (done, merged to main)
 2. ~~Dev mode + tiny local server~~ (done, branch `dev-tools`) (`npm run dev`, serves `src/` without a build, saves files; `?dev=1` / Backquote)
-3. Live tweak panel with a DEV button (sliders for every `FEEL` value, save to `src/feel.js`, reset, export)
+3. ~~Live tweak panel with a DEV button~~ (done, branch `dev-tools`) (sliders for every `FEEL` value, save to `src/feel.js`, reset, export)
 4. Debug layer (hit boxes, depth lanes, entity states, boss timers, hazard zones, FPS, slow-mo/pause/step)
 5. Jump to scene (any level/section/boss, starting body, god mode, nesting unlocked, full POWER)
 6. Level editor (place/drag robots, crates, props, civilians, hazards; pick the boss; play-test; save to a new `src/levels.js`)

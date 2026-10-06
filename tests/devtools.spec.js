@@ -13,6 +13,27 @@ test('dev mode is off by default, on with ?dev=1, and the ` key toggles it',asyn
   await page.keyboard.press('Backquote');await page.waitForTimeout(150);
   expect(await page.locator('#devBtn').isHidden()).toBe(true);expect(await page.locator('#devPanel').isHidden()).toBe(true);
 });
+test('tweak panel: a value changes the game live, survives a reload in dev mode, resets, and exports a feel.js with comments',async({page})=>{
+  const errors=await open(page);await page.goto(GAME+'?dev=1');await page.waitForTimeout(300);
+  await page.click('#devBtn');await page.fill('#devFilter','jumpCore');await page.waitForTimeout(100);
+  const num=page.locator('#devPanel input[type=number][data-id="player.jumpCore"]');await expect(num).toBeVisible();
+  await expect(page.locator('#devPanel')).toContainText('jump speed of the bare core');                  // the comment from feel.js
+  await num.fill('5.5');await page.waitForTimeout(100);
+  expect((await page.evaluate(()=>window.__t.feel())).player.jumpCore).toBe(5.5);                        // live
+  await num.press('Enter');await num.press('KeyX');await page.waitForTimeout(150);                    // typing doesn't drive the game
+  expect(await page.evaluate(()=>window.__t.state())).toBe('title');
+  const text=await page.evaluate(()=>window.__t.devFeelText());
+  expect(text).toMatch(/jumpCore: 5\.5,\s+\/\/ jump speed of the bare core/);expect(text).toContain('const FEEL={');
+  expect(new Function(text+'\nreturn FEEL;')().player.jumpCore).toBe(5.5);                                // still a valid feel.js
+  await page.reload();await page.waitForTimeout(300);
+  expect((await page.evaluate(()=>window.__t.feel())).player.jumpCore).toBe(5.5);                        // kept in this browser
+  await page.click('#devBtn');await page.click('#devPanel button[data-act=resetall]');
+  expect((await page.evaluate(()=>window.__t.feel())).player.jumpCore).toBe(3.9);
+  await page.goto(GAME);await page.waitForTimeout(300);                                                   // without dev mode, tweaks never apply
+  await page.evaluate(()=>{localStorage.setItem('hc-feel',JSON.stringify({'player.jumpCore':9}));localStorage.setItem('hc-dev','0');});
+  await page.reload();await page.waitForTimeout(300);expect((await page.evaluate(()=>window.__t.feel())).player.jumpCore).toBe(3.9);
+  expect(errors).toEqual([]);
+});
 test.describe('the dev server',()=>{
   let tmp,proc,base;
   test.beforeAll(async()=>{
@@ -41,7 +62,12 @@ test.describe('the dev server',()=>{
     await page.goto(base+'/');await page.waitForTimeout(800);
     await expect(page.locator('#devBtn')).toBeVisible();await page.click('#devBtn');
     await expect(page.locator('#devPanel')).toContainText('LOCAL DEV SERVER');
+    // SAVE writes the tweak into src/feel.js (comments kept) and doesn't reload the page
     await page.evaluate(()=>{window.__marker=1;});
+    await page.fill('#devFilter','gravityUp');await page.locator('#devPanel input[type=number][data-id="player.gravityUp"]').fill('0.25');
+    await page.click('#devPanel button[data-act=save]');await expect(page.locator('#devPanel')).toContainText('Saved to src/feel.js');
+    const saved=fs.readFileSync(path.join(tmp,'src/feel.js'),'utf8');expect(saved).toMatch(/gravityUp: 0\.25,\s+\/\/ gravity while rising/);
+    await page.waitForTimeout(2000);expect(await page.evaluate(()=>window.__marker)).toBe(1);
     fs.appendFileSync(path.join(tmp,'src/style.css'),'\n/* touched by the test */\n');
     await expect.poll(()=>page.evaluate(()=>window.__marker),{timeout:8000}).toBeUndefined();
     expect(errors).toEqual([]);

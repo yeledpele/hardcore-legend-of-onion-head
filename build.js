@@ -10,8 +10,10 @@ function assemble(root,{test=false,dev=false}={}){
   // the feel file (tuning numbers) goes first so the game code can read FEEL
   let js=rd('src/feel.js')+'\n'+rd('src/game.js');
   if(!js.includes(ANCHOR))throw new Error('anchor not found in src/game.js: '+ANCHOR);
-  // dev mode (src/dev.js) sits inside the game's scope, just before the main loop; test hooks after it
-  let inject=rd('src/dev.js');
+  // dev mode (src/dev.js) sits inside the game's scope, just before the main loop; test hooks after it.
+  // The dev panel also gets the feel file's text (for comments, and to write values back in place);
+  // "<" is escaped so the text can't close the <script> tag.
+  let inject='const FEEL_SRC='+JSON.stringify(rd('src/feel.js')).split('<').join('\\x3c')+';\n'+rd('src/dev.js');
   if(test)inject+='\n'+rd('tests/hooks.js');
   js=js.replace(ANCHOR,()=>inject+'\n'+ANCHOR);
   // served by the dev server: tell the page so it turns dev mode on and watches for changes

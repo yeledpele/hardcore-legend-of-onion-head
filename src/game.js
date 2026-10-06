@@ -423,8 +423,9 @@ let LV=LEVELS[0];
 const KEYS=['up','down','left','right','a','b','start','jump','lang','sp','pause','guard','sp2','dev'];
 const kb={},tc={},gp={},K={},P={},prev={},hit={};
 const KMAP={ArrowUp:'up',KeyW:'up',ArrowDown:'down',KeyS:'down',ArrowLeft:'left',KeyA:'left',ArrowRight:'right',KeyD:'right',KeyZ:'a',KeyJ:'a',KeyX:'b',KeyK:'b',Space:'jump',Enter:'start',Escape:'b',KeyL:'lang',KeyC:'sp',KeyP:'pause',Backquote:'dev',KeyV:'guard',KeyF:'sp2',ShiftLeft:'sp',ShiftRight:'sp'};
-addEventListener('keydown',e=>{const k=KMAP[e.code];if(k){padUsed=false;if(!e.repeat)hit[k]=true;kb[k]=true;e.preventDefault();initAudio();}});
-addEventListener('keyup',e=>{const k=KMAP[e.code];if(k){kb[k]=false;e.preventDefault();}});
+const typing=e=>e.target&&e.target.closest&&(e.target.closest('#devPanel')||/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName));
+addEventListener('keydown',e=>{if(typing(e)&&e.code!=='Backquote')return;const k=KMAP[e.code];if(k){padUsed=false;if(!e.repeat)hit[k]=true;kb[k]=true;e.preventDefault();initAudio();}});
+addEventListener('keyup',e=>{if(typing(e))return;const k=KMAP[e.code];if(k){kb[k]=false;e.preventDefault();}});
 addEventListener('blur',()=>{for(const k of KEYS){kb[k]=false;tc[k]=false;}});
 document.querySelectorAll('#pad button').forEach(b=>{
   const k=b.dataset.k;

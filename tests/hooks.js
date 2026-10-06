@@ -40,6 +40,7 @@ window.__t={
   civ:dx=>{bw.ents=bw.ents.filter(e=>!e.civ&&!e.prop);const c=addCiv(bw.p.x+dx,bw.p.z);c.st='idle';c.t=9999;},
   prop:(k,dx)=>{bw.ents=bw.ents.filter(e=>!e.civ&&!e.prop);bw.ents.push({crate:true,prop:k,x:bw.p.x+dx,z:bw.p.z,h:0,hp:PROPS[k].hp,max:PROPS[k].hp,hurt:0});},
   feel:()=>FEEL,
+  devFeelText:()=>devFeelText(),
   opts:()=>opts&&{sel:opts.sel,from:opts.from},
   opt:()=>({...OPT,lang:LANG}),
   paused:()=>paused,

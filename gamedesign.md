@@ -586,6 +586,7 @@ Small people walk around every section (2–3; one in boss arenas), and more run
 - **Screen glitch:** the RGB-split glitch shows only when you take damage (stronger for bigger hits) and on the fail screens; strength in `FEEL.game.glitch` (0 = off).
 - **Fixed-step loop** at 60 × `FEEL.game.speed` updates per second (0.85 → 51 a second), at most 4 updates per frame. The game speed slows everything evenly, in both modes.
 - **Dev mode:** `?dev=1` or the backquote key (remembered) shows a DEV button that opens the dev panel; it ships in the live game but stays hidden. `npm run dev` serves `src/` directly on http://localhost:5173/ (dev mode on), reloads the page when a source file changes, and lets the tools read and save `src/feel.js` and `src/levels.js` (only those, only from this computer).
+- **Tweak panel** (dev panel, FEEL section): a slider, a number box and a reset button for every value in `src/feel.js`, grouped, with each value's comment and a search box; changes apply live and changed values are highlighted. With `npm run dev`, SAVE TO FILE writes the values into `src/feel.js` in place (comments and layout kept) without reloading. On the live site, tweaks are kept in that browser (`hc-feel`) and only apply in dev mode; COPY or DOWNLOAD gives a ready `feel.js`. RESET ALL goes back to the file.
 - **Feel file:** `src/feel.js` (`FEEL`) holds the PLAY tuning numbers; the game reads it live.
 - **State machine:** `title, intro, brawl, bover, ending` (PLAY) and `map, prep, memory, fight, result, dead` (Classic).
 - **Rendering:**
