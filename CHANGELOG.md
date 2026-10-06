@@ -24,6 +24,7 @@ Built on v4.1.
   - **The Crane's pull and freeze:** stronger pull along visible field lines; what it catches is frozen to the magnet, including you (mash A/B to break free, or get slammed down).
   - **The Crane drops the MAGNET power:** special = MAGNET PUSH (area blast), every 3rd combo hit = PULL.
 - **Block, two specials, Matryoshka legs** (branch `block-nest`): hold pad B (or V) to block — a full block from the front with a guard meter that breaks and stuns you; when nested, RT / C fire the outer body's special and LT / F the inner body's; the Matryoshka waddles on little animated legs.
+- **Options menu and the SYNTHWAVE MINT palette** (branch `options-palette`): OPTIONS on the title and pause menus; palette (Neon / Synthwave Mint), language, sound on/off, rumble on/off, remembered between visits. Synthwave Mint recolours the whole game (teal-black base, mint greens, hot pinks, cream highlights) and the page around it.
 - **Pause:** the pad's Start (or P) pauses the campaign; press again to resume.
 - **Controller layout:** the triggers (LT/RT) fire the special; Y, LB or RB climb in or eject (Start still does too).
 - **Tweaks** (branch `tweaks-1`, after Ben's notes):

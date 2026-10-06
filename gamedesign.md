@@ -441,6 +441,14 @@ Small people walk around every section (2–3; one in boss arenas), and more run
 
 **Markers:** yellow "\ | /" ticks mark the empty body you can climb into. Empty bodies show their remaining shell, and mini-bosses wear a magenta badge.
 
+## 12.1 Options
+
+- **Where:** OPTIONS on the title menu (PLAY / CLASSIC / OPTIONS) and on the pause menu (RESUME / OPTIONS).
+- **Rows:** PALETTE (NEON / SYNTHWAVE MINT), LANGUAGE (English / Hebrew), SOUND (on / off), RUMBLE (on / off), BACK. Up/down to pick, A / Enter / left / right to change, B / Escape to go back.
+- **Remembered** in this browser (`hc-opts`; the language in `hc-lang`).
+- **Palettes:** the game always draws in NEON; another palette recolours each finished frame. Key colours are mapped by role (background, panels, city, grid, your bodies in mints, robots and accents in pinks, the title in cream, the subtitle and horizon in pale mint, greys to steel, the sun in plums); every other colour snaps to the nearest swatch, with dark blues and purples going to the dark teals. The page around the game switches too (lavender `#E5E2F5` background, green and pink tokens). The hit glitch splits in the palette's own pink and green.
+- **SYNTHWAVE MINT swatches:** `#021F25 #04292C #0C5448 #006060 #165453` (darks), `#459C75 #50C37F #8DF58C #CCF5A8 #97E741 #9CCC3C` (greens), `#FF3F90 #CC3078 #6C2454 #3C243C` (pinks and plums), `#FDFCC6 #FDFBE7 #607884 #305460` (neutrals), `#E5E2F5` (page).
+
 ## 13. Localization
 
 - **Languages:** full English and Hebrew. Switch with L, the page button, or `?lang=he` in the address; the choice is remembered in localStorage.
