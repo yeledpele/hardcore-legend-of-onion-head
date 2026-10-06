@@ -4,9 +4,14 @@ const {test,expect}=require('@playwright/test');
 const fs=require('fs'),os=require('os'),path=require('path'),http=require('http'),{spawn}=require('child_process');
 const {URL:GAME,open}=require('./helpers');
 const ROOT=path.join(__dirname,'..');
-test('dev mode is off by default, on with ?dev=1, and the ` key toggles it',async({page})=>{
+test('dev mode stays locked until IDDQD, then ?dev=1 and the ` key work',async({page})=>{
   await open(page);expect(await page.locator('#devBtn').isHidden()).toBe(true);
-  await page.goto(GAME+'?dev=1');await page.waitForTimeout(300);
+  await page.goto(GAME+'?dev=1');await page.waitForTimeout(300);expect(await page.locator('#devBtn').isHidden()).toBe(true);   // locked
+  await page.keyboard.press('Backquote');await page.waitForTimeout(100);expect(await page.locator('#devBtn').isHidden()).toBe(true);
+  for(const k of ['KeyI','KeyD','KeyD','KeyQ','KeyD']){await page.keyboard.press(k);await page.waitForTimeout(30);}
+  await expect(page.locator('#devBtn')).toBeVisible();expect(await page.evaluate(()=>window.__t.toast())).toBe('DEV MODE UNLOCKED');
+  await page.keyboard.press('Backquote');await page.waitForTimeout(100);expect(await page.locator('#devBtn').isHidden()).toBe(true);
+  await page.goto(GAME+'?dev=1');await page.waitForTimeout(300);                                                               // remembered
   await expect(page.locator('#devBtn')).toBeVisible();
   await page.click('#devBtn');await expect(page.locator('#devPanel')).toBeVisible();
   await expect(page.locator('#devPanel')).toContainText('NO DEV SERVER');
@@ -14,7 +19,7 @@ test('dev mode is off by default, on with ?dev=1, and the ` key toggles it',asyn
   expect(await page.locator('#devBtn').isHidden()).toBe(true);expect(await page.locator('#devPanel').isHidden()).toBe(true);
 });
 test('tweak panel: a value changes the game live, survives a reload in dev mode, resets, and exports a feel.js with comments',async({page})=>{
-  const errors=await open(page);await page.goto(GAME+'?dev=1');await page.waitForTimeout(300);
+  const errors=await open(page);await page.evaluate(()=>localStorage.setItem('hc-devok','1'));await page.goto(GAME+'?dev=1');await page.waitForTimeout(300);
   await page.click('#devBtn');await page.fill('#devFilter','jumpCore');await page.waitForTimeout(100);
   const num=page.locator('#devPanel input[type=number][data-id="player.jumpCore"]');await expect(num).toBeVisible();
   await expect(page.locator('#devPanel')).toContainText('jump speed of the bare core');                  // the comment from feel.js
@@ -80,7 +85,7 @@ test.describe('the dev server',()=>{
   });
 });
 test('jump to scene: from the title straight to the Hermit Crab, nested, invincible, full power',async({page})=>{
-  const errors=await open(page);await page.goto(GAME+'?dev=1');await page.waitForTimeout(300);
+  const errors=await open(page);await page.evaluate(()=>localStorage.setItem('hc-devok','1'));await page.goto(GAME+'?dev=1');await page.waitForTimeout(300);
   await page.click('#devBtn');
   await page.selectOption('#devLevel',{value:'3'});await page.selectOption('#devSec',{value:'4'});
   await expect(page.locator('#devSec')).toContainText('BOSS: THE HERMIT CRAB');
@@ -103,7 +108,7 @@ test('levels.js round-trips: the editor writes back exactly the file the game lo
 const at=async(page,x,z)=>{const r=await page.locator('#view').boundingBox();return {x:r.x+x*r.width/256,y:r.y+z*r.height/144};};
 test('level editor: place, drag, delete, undo, zones, props, play-test',async({page})=>{
   await page.setViewportSize({width:1700,height:900});
-  const errors=await open(page);await page.goto(GAME+'?dev=1');await page.waitForTimeout(300);await page.click('#devBtn');
+  const errors=await open(page);await page.evaluate(()=>localStorage.setItem('hc-devok','1'));await page.goto(GAME+'?dev=1');await page.waitForTimeout(300);await page.click('#devBtn');
   await page.selectOption('#devLevel',{value:'0'});await page.selectOption('#devSec',{value:'0'});
   await page.click('#devPanel button[data-act=edit]');await page.waitForTimeout(200);
   expect(await page.evaluate(()=>window.__t.edit())).toMatchObject({stage:0,i:0});

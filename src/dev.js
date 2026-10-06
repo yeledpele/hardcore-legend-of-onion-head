@@ -2,8 +2,16 @@
 // Shows a DEV button that opens the dev panel. With the local dev server, the tools save project files
 // (src/feel.js, src/levels.js) and the page reloads when a source file changes; on the live site, tweaks stay in this browser.
 const DEV={on:false,server:false,open:false};
-try{DEV.on=new URLSearchParams(location.search).get('dev')==='1'||localStorage.getItem('hc-dev')==='1';}catch(e){}
+// on the live site dev mode stays locked until the cheat code IDDQD is typed (remembered per browser); the local dev server is always unlocked
+let devOK=!!window.HC_DEVSERVER;try{devOK=devOK||localStorage.getItem('hc-devok')==='1';}catch(e){}
+try{DEV.on=devOK&&(new URLSearchParams(location.search).get('dev')==='1'||localStorage.getItem('hc-dev')==='1');}catch(e){}
 if(window.HC_DEVSERVER)DEV.on=true;
+let cheatKeys='';
+addEventListener('keydown',e=>{
+  if(e.target&&e.target.closest&&e.target.closest('input,select,textarea'))return;
+  const m=/^Key([A-Z])$/.exec(e.code);if(!m)return;cheatKeys=(cheatKeys+m[1]).slice(-8);
+  if(cheatKeys.endsWith('IDDQD')){cheatKeys='';devOK=true;try{localStorage.setItem('hc-devok','1');}catch(err){}devSet(true);toast={s:'DEV MODE UNLOCKED',t:150};beep(523,.1,'square',.04);setTimeout(()=>beep(784,.15,'square',.04),110);}
+});
 let devBtn=null,devPanel=null,devMsg='',devFilter='';
 // jump to scene: where to go and what to start with (remembered in this browser)
 DEV.scene={level:0,sec:0,body:'',inner:'',weapon:'',god:false,nest:true,full:true};
@@ -53,7 +61,7 @@ const feelChanged=()=>feelLeaves().filter(l=>leafGet(l)!==FEEL_DEFAULT[leafId(l)
 // a slider range around the file value
 function sliderSpec(d){const a=Math.abs(d)||1,int=Number.isInteger(d),max=int?Math.max(10,Math.ceil(a*3)):Math.max(1,+(a*3).toPrecision(2)),step=int?1:Math.pow(10,Math.floor(Math.log10(a))-2);return{min:0,max,step};}
 
-function devSet(on){DEV.on=on;if(!on)DEV.open=false;try{localStorage.setItem('hc-dev',on?'1':'0');}catch(e){}devSync();}
+function devSet(on){if(on&&!devOK)return;DEV.on=on;if(!on)DEV.open=false;try{localStorage.setItem('hc-dev',on?'1':'0');}catch(e){}devSync();}
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 function devSync(){
   if(!devBtn){
@@ -84,7 +92,7 @@ function devSync(){
         '<button data-act="reset" data-id="'+id+'" title="back to '+d+'" aria-label="reset '+esc(id)+'">↺</button>'+
         (note?'<small>'+esc(note)+'</small>':'')+'</div>';}
     html+='</details>';}
-  html+='<p class="dev-hint">` (backquote) turns dev mode on/off. Editing freezes the game; PLAY-TEST runs the section.</p>';
+  html+='<p class="dev-hint">` (backquote) turns dev mode on/off (on the live site, after the cheat code IDDQD). Editing freezes the game; PLAY-TEST runs the section.</p>';
   devPanel.innerHTML=html;
   const f=devPanel.querySelector('#devFilter');if(f&&devFilterFocus){f.focus();f.setSelectionRange(f.value.length,f.value.length);}
 }
