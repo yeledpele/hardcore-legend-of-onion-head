@@ -446,7 +446,8 @@ Small people walk around every section (2–3; one in boss arenas), and more run
 - **What counts:** a campaign run, when it ends: choosing **B: END RUN** at SIGNAL LOST, or finishing the campaign (shown as **END**). Runs with continues count, marked `+nC`. Dev runs (jump to scene, invincible, the level editor, changed feel values) are never saved ("DEV RUN: NOT SAVED").
 - **Entry:** if the score makes the top 10, NEW HIGH SCORE asks for 3 initials (A–Z, 0–9): up/down change the letter, A goes to the next, B goes back. The last initials used are the default.
 - **Board:** HIGH SCORES on the title menu (PLAY / CLASSIC / HIGH SCORES / OPTIONS) and after each run: rank, initials, score, level reached (or END), continues. Your new entry flashes.
-- **Kept** in this browser (`hc-scores`). An online leaderboard (Supabase) is planned next.
+- **Kept** in this browser (`hc-scores`).
+- **Online leaderboard:** the HIGH SCORES screen has LOCAL and ONLINE tabs (left/right). The online top 10 comes from a Supabase table (`supabase/scores.sql`) and loads in the background when a campaign starts or the board opens. A score asks for initials if it makes either board; entered (non-dev) runs are sent online. Players can only add and read scores; the database checks the initials, score range (1–1,000,000), level and continues, and limits new scores to 30 a minute. If the service can't be reached, the game stays local and shows ONLINE BOARD UNAVAILABLE. Scores can be faked by a determined player (the game runs in the browser); junk rows are deleted from the Supabase dashboard.
 
 ## 12.1 Options
 

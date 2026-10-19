@@ -38,3 +38,44 @@ test('finishing the campaign counts as END; dev runs are not saved; a full board
   expect(await st(page)).toBe('scores');expect((await page.evaluate(()=>window.__t.scores()))[0].s).toBe(99999);
   expect(errors).toEqual([]);
 });
+// ---- the online board, answered by a fake leaderboard service (the real one is never touched by tests)
+async function fakeBoard(page,rows,{down=false}={}){
+  const store=rows.slice(),posts=[];
+  await page.route('https://leaderboard.invalid/**',async route=>{
+    if(down)return route.abort();
+    const req=route.request();
+    if(req.method()==='POST'){const b=JSON.parse(req.postData());posts.push(b);store.push(b);return route.fulfill({status:201,body:''});}
+    const top=store.slice().sort((a,b)=>b.score-a.score).slice(0,10);
+    return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(top)});
+  });
+  return {store,posts};
+}
+const row=(n,s,l=3,c=0)=>({initials:n,score:s,level:l,continues:c});
+test('online board: it shows on the ONLINE tab, a score that makes it asks for initials and is sent',async({page})=>{
+  const fake=await fakeBoard(page,Array.from({length:10},(_,i)=>row('ON'+i,50000-i*1000)));
+  const errors=await open(page);
+  // a full local board the new score doesn't make, so only the online board asks for it
+  await page.evaluate(()=>localStorage.setItem('hc-scores',JSON.stringify(Array.from({length:10},(_,i)=>({n:'LOC',s:900000-i,l:1,c:0,d:0})))));
+  await page.reload();await page.waitForTimeout(300);await startCampaign(page);await page.waitForTimeout(600);
+  await page.evaluate(()=>window.__t.gameOver(48500,1));await page.waitForTimeout(1400);
+  await keys(page,['KeyX']);expect(await st(page)).toBe('entry');
+  await keys(page,['ArrowDown','Enter','Enter','Enter']);await page.waitForTimeout(400);
+  expect(fake.posts).toEqual([{initials:'9AA',score:48500,level:1,continues:1}]);
+  expect(await st(page)).toBe('scores');
+  expect(errors).toEqual([]);
+});
+test('online board down: the game stays local and says the online board is unavailable',async({page})=>{
+  await fakeBoard(page,[],{down:true});
+  const errors=await open(page);await keys(page,['ArrowDown','ArrowDown','Enter']);await keys(page,['ArrowRight']);await page.waitForTimeout(400);
+  expect(await page.evaluate(()=>window.__t.onlineStatus())).toBe('down');
+  await keys(page,['Enter','ArrowUp','ArrowUp']);await startCampaign(page);await page.waitForTimeout(600);   // back to PLAY on the title menu
+  await page.evaluate(()=>window.__t.gameOver(3000,0));await page.waitForTimeout(1400);await keys(page,['KeyX','Enter','Enter','Enter']);
+  expect((await page.evaluate(()=>window.__t.scores()))[0].s).toBe(3000);expect(errors).toEqual([]);
+});
+test('dev runs are never sent online',async({page})=>{
+  const fake=await fakeBoard(page,[]);
+  const errors=await open(page);await page.evaluate(()=>localStorage.setItem('hc-devok','1'));await page.goto(require('./helpers').URL+'?dev=1');await page.waitForTimeout(300);
+  await page.click('#devBtn');await page.click('#devPanel button[data-act=goto]');await page.waitForTimeout(500);
+  await page.evaluate(()=>window.__t.gameOver(70000,0));await page.waitForTimeout(1400);await keys(page,['KeyX']);await page.waitForTimeout(300);
+  expect(await st(page)).toBe('scores');expect(fake.posts).toEqual([]);expect(errors).toEqual([]);
+});

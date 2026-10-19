@@ -6,6 +6,7 @@
 - **Look & feel:** 256×144 pixel canvas, neon synthwave palette (cyan core, magenta robots, yellow UI), chunky pixel font, screen shake, sparks, cartoon squash and stretch. Touch pad on phones (must fit 390 px wide).
 - **Language:** English and Hebrew (`?lang=he` or the L key). Hebrew is right-to-left: the HTML key legend gets `dir="rtl"`; canvas text goes through `tr()` (the `HE` dictionary) and `visual()` (bidi reorder) and is drawn with the Hebrew pixel font `HFONT`.
 - **Design doc:** `gamedesign.md` describes every mechanic and system. History: `CHANGELOG.md`. Status: `PROGRESS.md`. Level ideas not built yet: `docs/plans/level-proposals.md`. Future feature notes: `docs/FUTURE.md`.
+- **Online leaderboard:** Supabase project `hardcore-leaderboard` (ref `qqsufzmqtwuxoqynudvu`, org BENCOPLUS, free plan); table setup and cleanup SQL in `supabase/scores.sql`. The game uses the public (publishable) key; test builds point at a fake address and tests answer it themselves, so tests never write to the real board. Free projects pause after about a week unused; restore from the Supabase dashboard.
 - **Live:** https://yeledpele.github.io/hardcore-legend-of-onion-head/ (public repo `yeledpele/hardcore-legend-of-onion-head`).
 
 ## Tech conventions

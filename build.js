@@ -15,6 +15,8 @@ function assemble(root,{test=false,dev=false}={}){
   // "<" is escaped so the text can't close the <script> tag.
   let inject='const FEEL_SRC='+JSON.stringify(rd('src/feel.js')).split('<').join('\\x3c')+';\n'+rd('src/dev.js');
   if(test)inject+='\n'+rd('tests/hooks.js');
+  // test builds point the online leaderboard at a fake address (tests answer it themselves), never the real one
+  if(test)js=js.replace(/https:\/\/[a-z0-9]+\.supabase\.co/g,'https://leaderboard.invalid');
   js=js.replace(ANCHOR,()=>inject+'\n'+ANCHOR);
   // served by the dev server: tell the page so it turns dev mode on and watches for changes
   if(dev)shell=shell.replace('<style>','<script>window.HC_DEVSERVER=1</script>\n<style>');
