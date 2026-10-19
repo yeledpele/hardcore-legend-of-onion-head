@@ -40,6 +40,10 @@ window.__t={
   civ:dx=>{bw.ents=bw.ents.filter(e=>!e.civ&&!e.prop);const c=addCiv(bw.p.x+dx,bw.p.z);c.st='idle';c.t=9999;},
   prop:(k,dx)=>{bw.ents=bw.ents.filter(e=>!e.civ&&!e.prop);bw.ents.push({crate:true,prop:k,x:bw.p.x+dx,z:bw.p.z,h:0,hp:PROPS[k].hp,max:PROPS[k].hp,hurt:0});},
   feel:()=>FEEL,
+  scores:()=>loadScores(),
+  // end the run: SIGNAL LOST with this score (and continues), or the campaign ending
+  gameOver:(sc,cont)=>{bw.score=sc;bw.cont=cont||0;bw.win=false;bw.endT=0;state='bover';},
+  finishCampaign:sc=>{bw.score=sc;bw.done=true;endT=0;state='ending';},
   devFeelText:()=>devFeelText(),
   levelsText:()=>levelsText(STAGES),
   edit:()=>DEV.edit&&{stage:DEV.edit.stage,i:DEV.edit.i,tool:DEV.edit.tool,sel:DEV.edit.sel},

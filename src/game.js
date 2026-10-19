@@ -74,7 +74,7 @@ const HE={
 'SALVAGE WHAT YOU CAN':'אסוף מה שאפשר','YOU':'אתה','YOUR FRAME, RECOVERED':'השלד שלך הוחזר','THE COLOSSUS WAITS':'הענק מחכה',
 'THE MAKER IS AWAKE':'היוצר ער','THE WARDEN IS WATCHING':'השומר צופה',"SHELLY'S HOUSE. THE DOOR IS OPEN.":'הבית של שלי. הדלת פתוחה.',
 'EJECT':'פליטה','IT EJECTED':'הוא נפלט','SHELL BREAK':'המעטפת נשברה','POGO':'ניתור','LAUNCH':'הקפצה','CHARGED':'טעון','STOMP':'רקיעה',
-'L: ENGLISH':'L: ENGLISH','MATRYOSHKA':'מטריושקה','ANOTHER ONE INSIDE':'עוד אחת בפנים','THE LAST DOLL':'הבובה האחרונה','ITS SMALLEST SHELL: THE DOLL':'הקליפה הקטנה שלה: הבובה','NESTING LOCKED: BEAT THE MATRYOSHKA':'קינון נעול: נצחו את המטריושקה','NESTING UNLOCKED':'קינון נפתח','DEV MODE UNLOCKED':'מצב מפתחים נפתח','OPTIONS':'אפשרויות','PALETTE':'פלטה','NEON':'ניאון','SYNTHWAVE MINT':'סינתווייב מנטה','LANGUAGE':'שפה','ENGLISH':'אנגלית','HEBREW':'עברית','SOUND':'צליל','RUMBLE':'רטט','ON':'פועל','OFF':'כבוי','BACK':'חזרה','RESUME':'המשך','A: CHANGE   B: BACK':'A: שינוי   B: חזרה','GUARD BREAK':'השמירה נשברה','GUARD':'שמירה','PAUSED':'מושהה','START OR P: RESUME':'START או P: המשך','CONTROLLER CONNECTED':'בקר מחובר','CONTROLLER DISCONNECTED':'הבקר נותק','MAGNET PUSH':'דחיפה מגנטית','PULL':'משיכה','ITS MAGNET: PUSH AND PULL':'המגנט שלו: דחיפה ומשיכה','FROZEN TO THE MAGNET':'קפואים למגנט','BREAK FREE':'השתחררתם!','IT ENGULFS YOU':'הוא בולע אותך','HIT THE NUCLEUS':'הכו בגרעין','DIGESTED':'עוכל','SPAT OUT':'נירקתם החוצה','BOING':'בוינג','THE TOY WORKS':'מפעל הצעצועים','HERMIT HARBOUR':'נמל הסרטנים','THE MAGNET YARD':'מגרש המגנט','THE GULLET BOG':'ביצת הלוע',"THE GIANT'S KITCHEN":'המטבח של הענק',
+'L: ENGLISH':'L: ENGLISH','MATRYOSHKA':'מטריושקה','ANOTHER ONE INSIDE':'עוד אחת בפנים','THE LAST DOLL':'הבובה האחרונה','ITS SMALLEST SHELL: THE DOLL':'הקליפה הקטנה שלה: הבובה','NESTING LOCKED: BEAT THE MATRYOSHKA':'קינון נעול: נצחו את המטריושקה','NESTING UNLOCKED':'קינון נפתח','HIGH SCORES':'שיאים','NEW HIGH SCORE':'שיא חדש','ENTER YOUR INITIALS':'הכניסו ראשי תיבות','NO SCORES YET':'אין עדיין שיאים','DEV RUN: NOT SAVED':'ריצת פיתוח: לא נשמרה','A / B: TITLE':'A / B: מסך פתיחה','A: TRY AGAIN   B: END RUN':'A: נסו שוב   B: סיום ריצה','UP / DOWN: LETTER   A: NEXT   B: BACK':'למעלה / למטה: אות   A: הבא   B: חזרה','YOUR SCORE':'הניקוד שלכם','END':'סוף','DEV MODE UNLOCKED':'מצב מפתחים נפתח','OPTIONS':'אפשרויות','PALETTE':'פלטה','NEON':'ניאון','SYNTHWAVE MINT':'סינתווייב מנטה','LANGUAGE':'שפה','ENGLISH':'אנגלית','HEBREW':'עברית','SOUND':'צליל','RUMBLE':'רטט','ON':'פועל','OFF':'כבוי','BACK':'חזרה','RESUME':'המשך','A: CHANGE   B: BACK':'A: שינוי   B: חזרה','GUARD BREAK':'השמירה נשברה','GUARD':'שמירה','PAUSED':'מושהה','START OR P: RESUME':'START או P: המשך','CONTROLLER CONNECTED':'בקר מחובר','CONTROLLER DISCONNECTED':'הבקר נותק','MAGNET PUSH':'דחיפה מגנטית','PULL':'משיכה','ITS MAGNET: PUSH AND PULL':'המגנט שלו: דחיפה ומשיכה','FROZEN TO THE MAGNET':'קפואים למגנט','BREAK FREE':'השתחררתם!','IT ENGULFS YOU':'הוא בולע אותך','HIT THE NUCLEUS':'הכו בגרעין','DIGESTED':'עוכל','SPAT OUT':'נירקתם החוצה','BOING':'בוינג','THE TOY WORKS':'מפעל הצעצועים','HERMIT HARBOUR':'נמל הסרטנים','THE MAGNET YARD':'מגרש המגנט','THE GULLET BOG':'ביצת הלוע',"THE GIANT'S KITCHEN":'המטבח של הענק',
 'THE WIND-UP KNIGHT':'אביר הקפיץ','THE HERMIT CRAB':'הסרטן הנזיר','THE CRANE':'העגורן','THE TOAD KING':'מלך הקרפדות','THE COOK':'הטבח',
 'THE WARDEN GOES QUIET.':'השומר משתתק.','ITS LAST SIGNAL CAME FROM THE FOUNDRY.':'האות האחרון שלו הגיע מבית היציקה.','THE ROAD RUNS THROUGH A TOY FACTORY.':'הדרך עוברת דרך מפעל צעצועים.','SOMETHING INSIDE IS STILL WOUND UP.':'משהו בפנים עדיין מתוח.',
 'THE KNIGHT RUNS DOWN.':'האביר נעצר.','THE ROAD ENDS AT A NIGHT HARBOUR.':'הדרך נגמרת בנמל לילי.','EMPTY BODIES WASH UP ON THE PIER.':'גופים ריקים נסחפים אל המזח.','SOMETHING IS COLLECTING THEM.':'משהו אוסף אותם.',
@@ -510,6 +510,53 @@ function recolour(){
   g.putImageData(id,0,0);
 }
 
+// ---------- high scores: the top 10 campaign runs in this browser, with 3-letter initials ----------
+// a run counts when it ends: quitting from SIGNAL LOST, or finishing the campaign. Runs with continues count, marked.
+// Dev runs (jump to scene, invincible, the level editor, changed feel values) are never saved.
+let scoreEntry=null,scoreView=null;
+function loadScores(){try{const a=JSON.parse(localStorage.getItem('hc-scores')||'[]');return Array.isArray(a)?a.filter(r=>r&&typeof r.s==='number'&&typeof r.n==='string'):[];}catch(e){return [];}}
+function saveScores(list){try{localStorage.setItem('hc-scores',JSON.stringify(list.slice(0,10)));}catch(e){}}
+const scoreQualifies=sc=>{const l=loadScores();return sc>0&&(l.length<10||sc>l[l.length-1].s);};
+function finishRun(done){
+  const rec={s:bw.score,l:done?0:bw.stage+1,c:bw.cont||0,d:Date.now()};
+  const dev=bw.devRun||DEV.god||(typeof feelChanged==='function'&&feelChanged().length>0);
+  if(dev){scoreView={rank:-1,msg:'DEV RUN: NOT SAVED',score:rec.s};state='scores';return;}
+  if(scoreQualifies(rec.s)){let ini='AAA';try{ini=(localStorage.getItem('hc-initials')||'AAA').slice(0,3);}catch(e){}scoreEntry={rec,ch:ini.split(''),pos:0};state='entry';beep(660,.1,'square',.04);return;}
+  scoreView={rank:-1,msg:'',score:rec.s};state='scores';
+}
+const INI='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+function stepEntry(){
+  const e=scoreEntry,k=INI.indexOf(e.ch[e.pos]);
+  if(P.up||P.down){e.ch[e.pos]=INI[(k+(P.up?1:INI.length-1))%INI.length];beep(800,.03,'square',.03);}
+  if(P.left&&e.pos>0)e.pos--;if(P.right&&e.pos<2)e.pos++;
+  if(P.b&&e.pos>0)e.pos--;
+  if(P.a||P.start||P.jump){if(e.pos<2){e.pos++;beep(660,.05,'square',.03);}else{
+    const name=e.ch.join(''),rec=Object.assign({n:name},e.rec),list=loadScores();list.push(rec);list.sort((x,y)=>y.s-x.s);saveScores(list);
+    try{localStorage.setItem('hc-initials',name);}catch(err){}
+    scoreView={rank:list.indexOf(rec),msg:'',score:rec.s};scoreEntry=null;state='scores';[523,659,784,1046].forEach((f,i)=>setTimeout(()=>beep(f,.1,'square',.04),i*90));}}
+}
+// one letter at a time, so initials are never run through the translator
+function txtChars(str,x,y,col,sc){for(let i=0;i<str.length;i++)txt(str[i],x+i*(4*sc),y,col,sc,"l");}
+function drawEntry(){
+  g.drawImage(bg,0,0);g.globalAlpha=.8;px(0,0,W,H,C.void);g.globalAlpha=1;
+  txt('NEW HIGH SCORE',129,25,C.mg,2,'c');txt('NEW HIGH SCORE',128,24,C.yl,2,'c');
+  txtS('SCORE '+scoreEntry.rec.s,128,46,C.wh,1,'c');txtS('ENTER YOUR INITIALS',128,62,C.cy,1,'c');
+  const e=scoreEntry,x0=128-27;
+  for(let i=0;i<3;i++){const x=x0+i*20,on=i===e.pos;txtChars(e.ch[i],x,78,on&&(T>>3)&1?C.yl:C.wh,3);px(x,98,15,1,on?C.yl:C.grd);if(on){px(x+6,74,3,1,C.cyd);px(x+6,101,3,1,C.cyd);}}
+  txtS('UP / DOWN: LETTER   A: NEXT   B: BACK',128,118,C.grd,1,'c');
+}
+function drawScores(){
+  g.drawImage(bg,0,0);g.globalAlpha=.85;px(0,0,W,H,C.void);g.globalAlpha=1;
+  txt('HIGH SCORES',129,9,C.mg,2,'c');txt('HIGH SCORES',128,8,C.yl,2,'c');
+  const list=loadScores(),v=scoreView||{rank:-1,msg:''};
+  if(!list.length)txtS('NO SCORES YET',128,60,C.gr,1,'c');
+  list.forEach((r,i)=>{const y=30+i*9,me=i===v.rank,col=me?((T>>3)&1?C.yl:C.wh):C.cy;
+    txt(String(i+1).padStart(2,' ')+'.',62,y,col,1,'r');txtChars(r.n,70,y,col,1);txt(String(r.s).padStart(6,'0'),150,y,col,1,'r');
+    txt(r.l===0?'END':'L'+r.l,174,y,r.l===0?C.yl:C.cyd,1,'l');if(r.c)txt('+'+r.c+'C',196,y,C.grd,1,'l');});
+  if(v.msg)txtS(v.msg,128,124,C.mg,1,'c');else if(v.rank<0&&v.score!==undefined)txtS('YOUR SCORE '+v.score,128,124,C.wh,1,'c');
+  if((T>>4)&1)txt('A / B: TITLE',128,136,C.grd,1,'c');
+}
+
 // ---------- options menu (from the title or the pause screen) ----------
 let opts=null,pauseSel=0;
 const OPTROWS=['PALETTE','LANGUAGE','SOUND','RUMBLE','BACK'];
@@ -830,8 +877,8 @@ function step(){
   if(hitstop>0){hitstop--;return;}
   if(state==='title'){
     if(Math.random()<.02)glitch=Math.max(glitch,.45);
-    if(P.up||P.down){titleSel=(titleSel+(P.up?2:1))%3;beep(700,.04,'square',.03);glitch=Math.max(glitch,.3);}
-    if(P.start||P.a||P.jump){if(titleSel===2){opts={sel:0,from:'title'};beep(660,.08,'square',.03);}else if(titleSel===0){newRun();intro={i:0,c:0,campaign:true};state='intro';glitch=1;beep(440,.15,'square',.04,660);}else{newRun();intro={i:0,c:0};state='intro';glitch=1;beep(440,.15,'square',.04,440);}}
+    if(P.up||P.down){titleSel=(titleSel+(P.up?3:1))%4;beep(700,.04,'square',.03);glitch=Math.max(glitch,.3);}
+    if(P.start||P.a||P.jump){if(titleSel===3){opts={sel:0,from:'title'};beep(660,.08,'square',.03);}else if(titleSel===2){scoreView=null;state='scores';beep(660,.08,'square',.03);}else if(titleSel===0){newRun();intro={i:0,c:0,campaign:true};state='intro';glitch=1;beep(440,.15,'square',.04,660);}else{newRun();intro={i:0,c:0};state='intro';glitch=1;beep(440,.15,'square',.04,440);}}
   }else if(state==='intro'){
     const SL=intro.lines||STORY,line=tr(SL[intro.i]);intro.c+=.8;
     if(!intro.lines&&intro.i===3&&intro.c<2)kick(6,1);
@@ -845,8 +892,10 @@ function step(){
   else if(state==='result'){if(P.a||P.start||P.jump){if(result.next!=null){loadLevel(result.next);intro={lines:LV.intro,i:0,c:0};state='intro';glitch=1;}else{state='map';grace=60;glitch=.8;}}}
   else if(state==='dead'){deadT++;if(deadT>60&&(P.a||P.start||P.jump))reboot();}
   else if(state==='brawl')stepBrawl();
-  else if(state==='bover'){bw.endT++;if(bw.endT>60&&(P.a||P.start)){retrySection();}else if(bw.endT>60&&P.b){state='title';glitch=1;}}
-  else if(state==='ending'){endT++;if(endT>120&&(P.a||P.start)){state='title';glitch=1;}}
+  else if(state==='bover'){bw.endT++;if(bw.endT>60&&(P.a||P.start)){retrySection();}else if(bw.endT>60&&P.b){finishRun(false);}}
+  else if(state==='ending'){endT++;if(endT>120&&(P.a||P.start)){if(bw&&bw.done)finishRun(true);else{state='title';glitch=1;}}}
+  else if(state==='entry')stepEntry();
+  else if(state==='scores'){if(P.a||P.b||P.start||P.jump){state='title';scoreView=null;glitch=.5;}}
   for(const p of parts){if(p.ring){p.t--;continue;}p.x+=p.vx;p.y+=p.vy;p.vy+=p.gv;p.t--;if(p.y>GY+6&&state==='fight'){p.y=GY+6;p.vy*=-.4;p.vx*=.7;}}
   parts=parts.filter(p=>p.t>0);
   for(const t of texts){t.y-=.4;t.t--;}texts=texts.filter(t=>t.t>0);
@@ -1722,7 +1771,7 @@ function spawnSec(){
 }
 function nextSec(){
   bw.sec++;bw.clear=false;
-  if(bw.sec>=SECS.length){state='ending';endT=0;glitch=1;parts=[];return;}
+  if(bw.sec>=SECS.length){bw.done=true;state='ending';endT=0;glitch=1;parts=[];return;}
   spawnSec();
   const S=SECS[bw.sec];
   if(S.stage!==bw.stage||bw.sec===0){bw.stage=S.stage;bw.stageT=1;LV=LEVELS[Math.min(S.stage,LEVELS.length-1)];beep(392,.6,'sine',.04);}
@@ -2200,7 +2249,7 @@ function drawBOver(){
   drawBrawl();g.globalAlpha=.85;px(0,0,W,H,C.void);g.globalAlpha=1;
   txt('SIGNAL LOST',129,41,C.mg,3,'c');txt('SIGNAL LOST',128,40,C.cy,3,'c');
   txtS('SCORE '+bw.score,128,72,C.wh,2,'c');
-  if(bw.endT>60&&(T>>4)&1)txtS('A: TRY AGAIN   B: TITLE',128,110,C.cy,1,'c');
+  if(bw.endT>60&&(T>>4)&1)txtS('A: TRY AGAIN   B: END RUN',128,110,C.cy,1,'c');
 }
 
 // ---------- specials: every body has its own power; weapons from crates replace it ----------
@@ -3596,7 +3645,7 @@ function drawTitle(){
   txtS('LEGEND OF ONION HEAD',128,y0+29,ROLE.subtitle,1,'c');
   g.save();g.translate(112,84);g.scale(4,4);drawCore(0,0,1,T);g.restore();
   px(104,112,48,2,C.cyx);
-  ['PLAY','CLASSIC','OPTIONS'].forEach((o,i)=>{const sel=titleSel===i,y=113+i*8;txtS((sel?'> ':'')+o+(sel?' <':''),128,y,sel?((T>>4)&1?C.yl:C.wh):C.gr,1,'c');});
+  ['PLAY','CLASSIC','HIGH SCORES','OPTIONS'].forEach((o,i)=>{const sel=titleSel===i,y=108+i*7;txtS((sel?'> ':'')+o+(sel?' <':''),128,y,sel?((T>>4)&1?C.yl:C.wh):C.gr,1,'c');});
   txt('PROTOTYPE V'+VERSION,252,137,C.grd,1,'r');
   txt(LANG==='he'?'L: ENGLISH':'L: HEBREW',4,137,(T>>6)&1?C.cyd:C.grd,1,'l');
 }
@@ -3930,7 +3979,7 @@ function render(){
   switch(state){
     case 'title':drawTitle();break;case 'brawl':drawBrawl();break;case 'bover':drawBOver();break;case 'intro':drawIntro();break;case 'map':drawMap();break;
     case 'prep':drawPrep();break;case 'memory':drawMap();drawMemory();break;case 'fight':drawFight();break;case 'result':drawResult();break;
-    case 'dead':drawDead();break;case 'ending':drawEnding();break;
+    case 'dead':drawDead();break;case 'ending':drawEnding();break;case 'entry':drawEntry();break;case 'scores':drawScores();break;
   }
   if(DEV.edit&&state==='brawl')drawEditor();
   if(paused){g.globalAlpha=.6;px(0,0,W,H,C.void);g.globalAlpha=1;px(0,42,W,50,C.void);px(0,42,W,1,C.cyd);px(0,91,W,1,C.cyd);txt('PAUSED',129,57,C.mg,3,'c');txt('PAUSED',128,56,C.yl,3,'c');['RESUME','OPTIONS'].forEach((o,i)=>{const sel=pauseSel===i;txt((sel?'> ':'')+o+(sel?' <':''),128,76+i*8,sel?((T>>4)&1?C.yl:C.wh):C.gr,1,'c');});}

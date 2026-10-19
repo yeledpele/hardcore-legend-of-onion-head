@@ -441,6 +441,13 @@ Small people walk around every section (2–3; one in boss arenas), and more run
 
 **Markers:** yellow "\ | /" ticks mark the empty body you can climb into. Empty bodies show their remaining shell, and mini-bosses wear a magenta badge.
 
+## 12.0 High scores
+
+- **What counts:** a campaign run, when it ends: choosing **B: END RUN** at SIGNAL LOST, or finishing the campaign (shown as **END**). Runs with continues count, marked `+nC`. Dev runs (jump to scene, invincible, the level editor, changed feel values) are never saved ("DEV RUN: NOT SAVED").
+- **Entry:** if the score makes the top 10, NEW HIGH SCORE asks for 3 initials (A–Z, 0–9): up/down change the letter, A goes to the next, B goes back. The last initials used are the default.
+- **Board:** HIGH SCORES on the title menu (PLAY / CLASSIC / HIGH SCORES / OPTIONS) and after each run: rank, initials, score, level reached (or END), continues. Your new entry flashes.
+- **Kept** in this browser (`hc-scores`). An online leaderboard (Supabase) is planned next.
+
 ## 12.1 Options
 
 - **Where:** OPTIONS on the title menu (PLAY / CLASSIC / OPTIONS) and on the pause menu (RESUME / OPTIONS).

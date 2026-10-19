@@ -7,7 +7,7 @@ const screenColours=page=>page.evaluate(()=>{const d=document.getElementById('vi
   for(let i=0;i<d.length;i+=4)set.add('#'+[d[i],d[i+1],d[i+2]].map(n=>n.toString(16).padStart(2,'0')).join(''));return [...set];});
 test('title OPTIONS: switch to SYNTHWAVE MINT and turn the sound off; both are remembered',async({page})=>{
   const errors=await open(page);
-  await keys(page,['ArrowDown','ArrowDown','Enter']);
+  await keys(page,['ArrowDown','ArrowDown','ArrowDown','Enter']);
   expect(await page.evaluate(()=>window.__t.opts())).toEqual({sel:0,from:'title'});
   await keys(page,['Enter']);expect((await page.evaluate(()=>window.__t.opt())).pal).toBe('mint');
   await keys(page,['ArrowDown','ArrowDown','Enter']);expect((await page.evaluate(()=>window.__t.opt())).sound).toBe(false);

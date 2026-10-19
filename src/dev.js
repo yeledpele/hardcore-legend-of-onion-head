@@ -30,6 +30,7 @@ function devGoto(){
   const ids=[sc.inner,sc.body].filter(Boolean);p.layers=ids.map(id=>({id,shell:bodyOf(id).shell,max:bodyOf(id).shell}));
   if(sc.weapon&&p.layers.length)p.layers[p.layers.length-1].weapon=sc.weapon;
   if(sc.full){p.pow=100;p.core=5;}
+  bw.devRun=true;
   DEV.god=!!sc.god;devMsg='Jumped to level '+(sc.level+1)+', section '+(sc.sec+1)+'.';devSync();
 }
 function sceneStore(){try{localStorage.setItem('hc-devscene',JSON.stringify(DEV.scene));}catch(e){}}
@@ -185,6 +186,7 @@ function edRespawn(){
 function edChanged(){rebuildSecs();edRespawn();levelsStore();devSync();}
 function editStart(){
   const sc=DEV.scene;if(state!=='brawl'||!bw)devGoto();
+  bw.devRun=true;
   DEV.edit={stage:sc.level,i:sc.sec,tool:'select',sel:-1,undo:[],drag:false,zone:null};paused=false;opts=null;edRespawn();devMsg='';devSync();
 }
 function editGo(d){const e=DEV.edit,n=STAGES.length*5,k=(e.stage*5+e.i+d+n)%n;e.stage=Math.floor(k/5);e.i=k%5;e.sel=-1;e.undo=[];DEV.scene.level=e.stage;DEV.scene.sec=e.i;sceneStore();edRespawn();devSync();}
