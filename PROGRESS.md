@@ -1,7 +1,7 @@
 # Progress
 
 ## Current state (2026-10-04)
-v4.2 in progress. `main` is live on GitHub Pages; the dev tools are being built on branch **`dev-tools`** (not merged, not live). All 47 tests pass on `main`, 52 on `scoreboard` (`npm test`, ~11 min). The PLAY campaign is playable start to finish: 8 levels, 40 sections, 8 bosses, ending. Classic mode (top-down map and duels) still works. English and Hebrew.
+v4.2 in progress. `main` is live on GitHub Pages; the dev tools are being built on branch **`dev-tools`** (not merged, not live). All 52 tests pass on `main` (`npm test`, ~11 min). The PLAY campaign is playable start to finish: 8 levels, 40 sections, 8 bosses, ending. Classic mode (top-down map and duels) still works. English and Hebrew.
 
 ## Done
 - **v4.1 baseline** (pixel look, beat 'em up campaign, bodies, specials, heads, three bosses). Full history in `CHANGELOG.md`.
@@ -18,7 +18,7 @@ v4.2 in progress. `main` is live on GitHub Pages; the dev tools are being built 
 - **Tweaks:** glitch only on damage and fail screens; full-width belts in Toy Works sections 2-4 that drag everything; beaten robots leave a body by per-type chance; the Hermit Crab starts in a spiral sea-snail shell.
 - **Block, two specials, Matryoshka legs**: pad B / V blocks (guard meter, breaks and stuns); nested bodies: RT/C outer special, LT/F inner special; the Matryoshka has little legs.
 - **Options menu + SYNTHWAVE MINT palette**: title and pause menus; palette, language, sound, rumble; remembered. Mint recolours every frame (key colours by role, the rest snapped to the nearest swatch).
-- **High scores** (branch `scoreboard`, not merged): local top 10 with initials, plus the online board in Supabase (project `hardcore-leaderboard`, $0/month, created 2026-10-19).
+- **High scores**: local top 10 with initials, plus the online board in Supabase (project `hardcore-leaderboard`, $0/month, created 2026-10-19).
 - **Controller layout:** LT/RT special; Y, LB or RB climb in / eject; Start (or P) pauses. Ben has a working Xbox pad in Chrome.
 - **Game speed:** master `FEEL.game.speed` = 0.85 (was effectively 1.0), slows everything evenly. Needs a playtest.
 - **Project setup:** git + GitHub (public), GitHub Pages deploy on push to `main` (quick tests must pass), project agents including `level-designer`.
