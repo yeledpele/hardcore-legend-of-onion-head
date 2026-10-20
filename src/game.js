@@ -74,7 +74,7 @@ const HE={
 'SALVAGE WHAT YOU CAN':'אסוף מה שאפשר','YOU':'אתה','YOUR FRAME, RECOVERED':'השלד שלך הוחזר','THE COLOSSUS WAITS':'הענק מחכה',
 'THE MAKER IS AWAKE':'היוצר ער','THE WARDEN IS WATCHING':'השומר צופה',"SHELLY'S HOUSE. THE DOOR IS OPEN.":'הבית של שלי. הדלת פתוחה.',
 'EJECT':'פליטה','IT EJECTED':'הוא נפלט','SHELL BREAK':'המעטפת נשברה','POGO':'ניתור','LAUNCH':'הקפצה','CHARGED':'טעון','STOMP':'רקיעה',
-'L: ENGLISH':'L: ENGLISH','MATRYOSHKA':'מטריושקה','ANOTHER ONE INSIDE':'עוד אחת בפנים','THE LAST DOLL':'הבובה האחרונה','ITS SMALLEST SHELL: THE DOLL':'הקליפה הקטנה שלה: הבובה','NESTING LOCKED: BEAT THE MATRYOSHKA':'קינון נעול: נצחו את המטריושקה','NESTING UNLOCKED':'קינון נפתח','LOCAL':'מקומי','ONLINE':'מקוון','LOADING...':'טוען...','ONLINE BOARD UNAVAILABLE':'הלוח המקוון לא זמין','< > SWITCH BOARD   A / B: TITLE':'< > החלפת לוח   A / B: פתיחה','HIGH SCORES':'שיאים','NEW HIGH SCORE':'שיא חדש','ENTER YOUR INITIALS':'הכניסו ראשי תיבות','NO SCORES YET':'אין עדיין שיאים','DEV RUN: NOT SAVED':'ריצת פיתוח: לא נשמרה','A / B: TITLE':'A / B: מסך פתיחה','A: TRY AGAIN   B: END RUN':'A: נסו שוב   B: סיום ריצה','UP / DOWN: LETTER   A: NEXT   B: BACK':'למעלה / למטה: אות   A: הבא   B: חזרה','YOUR SCORE':'הניקוד שלכם','END':'סוף','DEV MODE UNLOCKED':'מצב מפתחים נפתח','OPTIONS':'אפשרויות','PALETTE':'פלטה','NEON':'ניאון','SYNTHWAVE MINT':'סינתווייב מנטה','LANGUAGE':'שפה','ENGLISH':'אנגלית','HEBREW':'עברית','SOUND':'צליל','RUMBLE':'רטט','ON':'פועל','OFF':'כבוי','BACK':'חזרה','RESUME':'המשך','A: CHANGE   B: BACK':'A: שינוי   B: חזרה','GUARD BREAK':'השמירה נשברה','GUARD':'שמירה','PAUSED':'מושהה','START OR P: RESUME':'START או P: המשך','CONTROLLER CONNECTED':'בקר מחובר','CONTROLLER DISCONNECTED':'הבקר נותק','MAGNET PUSH':'דחיפה מגנטית','PULL':'משיכה','ITS MAGNET: PUSH AND PULL':'המגנט שלו: דחיפה ומשיכה','FROZEN TO THE MAGNET':'קפואים למגנט','BREAK FREE':'השתחררתם!','IT ENGULFS YOU':'הוא בולע אותך','HIT THE NUCLEUS':'הכו בגרעין','DIGESTED':'עוכל','SPAT OUT':'נירקתם החוצה','BOING':'בוינג','THE TOY WORKS':'מפעל הצעצועים','HERMIT HARBOUR':'נמל הסרטנים','THE MAGNET YARD':'מגרש המגנט','THE GULLET BOG':'ביצת הלוע',"THE GIANT'S KITCHEN":'המטבח של הענק',
+'L: ENGLISH':'L: ENGLISH','MATRYOSHKA':'מטריושקה','ANOTHER ONE INSIDE':'עוד אחת בפנים','THE LAST DOLL':'הבובה האחרונה','ITS SMALLEST SHELL: THE DOLL':'הקליפה הקטנה שלה: הבובה','NESTING LOCKED: BEAT THE MATRYOSHKA':'קינון נעול: נצחו את המטריושקה','NESTING UNLOCKED':'קינון נפתח','PASSED!':'עקפת!','NOW':'עכשיו','HI':'שיא','LOCAL':'מקומי','ONLINE':'מקוון','LOADING...':'טוען...','ONLINE BOARD UNAVAILABLE':'הלוח המקוון לא זמין','< > SWITCH BOARD   A / B: TITLE':'< > החלפת לוח   A / B: פתיחה','HIGH SCORES':'שיאים','NEW HIGH SCORE':'שיא חדש','ENTER YOUR INITIALS':'הכניסו ראשי תיבות','NO SCORES YET':'אין עדיין שיאים','DEV RUN: NOT SAVED':'ריצת פיתוח: לא נשמרה','A / B: TITLE':'A / B: מסך פתיחה','A: TRY AGAIN   B: END RUN':'A: נסו שוב   B: סיום ריצה','UP / DOWN: LETTER   A: NEXT   B: BACK':'למעלה / למטה: אות   A: הבא   B: חזרה','YOUR SCORE':'הניקוד שלכם','END':'סוף','DEV MODE UNLOCKED':'מצב מפתחים נפתח','OPTIONS':'אפשרויות','PALETTE':'פלטה','NEON':'ניאון','SYNTHWAVE MINT':'סינתווייב מנטה','LANGUAGE':'שפה','ENGLISH':'אנגלית','HEBREW':'עברית','SOUND':'צליל','RUMBLE':'רטט','ON':'פועל','OFF':'כבוי','BACK':'חזרה','RESUME':'המשך','A: CHANGE   B: BACK':'A: שינוי   B: חזרה','GUARD BREAK':'השמירה נשברה','GUARD':'שמירה','PAUSED':'מושהה','START OR P: RESUME':'START או P: המשך','CONTROLLER CONNECTED':'בקר מחובר','CONTROLLER DISCONNECTED':'הבקר נותק','MAGNET PUSH':'דחיפה מגנטית','PULL':'משיכה','ITS MAGNET: PUSH AND PULL':'המגנט שלו: דחיפה ומשיכה','FROZEN TO THE MAGNET':'קפואים למגנט','BREAK FREE':'השתחררתם!','IT ENGULFS YOU':'הוא בולע אותך','HIT THE NUCLEUS':'הכו בגרעין','DIGESTED':'עוכל','SPAT OUT':'נירקתם החוצה','BOING':'בוינג','THE TOY WORKS':'מפעל הצעצועים','HERMIT HARBOUR':'נמל הסרטנים','THE MAGNET YARD':'מגרש המגנט','THE GULLET BOG':'ביצת הלוע',"THE GIANT'S KITCHEN":'המטבח של הענק',
 'THE WIND-UP KNIGHT':'אביר הקפיץ','THE HERMIT CRAB':'הסרטן הנזיר','THE CRANE':'העגורן','THE TOAD KING':'מלך הקרפדות','THE COOK':'הטבח',
 'THE WARDEN GOES QUIET.':'השומר משתתק.','ITS LAST SIGNAL CAME FROM THE FOUNDRY.':'האות האחרון שלו הגיע מבית היציקה.','THE ROAD RUNS THROUGH A TOY FACTORY.':'הדרך עוברת דרך מפעל צעצועים.','SOMETHING INSIDE IS STILL WOUND UP.':'משהו בפנים עדיין מתוח.',
 'THE KNIGHT RUNS DOWN.':'האביר נעצר.','THE ROAD ENDS AT A NIGHT HARBOUR.':'הדרך נגמרת בנמל לילי.','EMPTY BODIES WASH UP ON THE PIER.':'גופים ריקים נסחפים אל המזח.','SOMETHING IS COLLECTING THEM.':'משהו אוסף אותם.',
@@ -533,6 +533,16 @@ async function onlineSubmit(rec){
 function titleLeader(){const o=ONLINE.status==='ok'&&ONLINE.list&&ONLINE.list[0],l=loadScores()[0];
   return o?'ONLINE 1ST '+o.n+' '+o.s:l?'BEST '+l.n+' '+l.s:'';}
 let titleIdle=0;
+// during a run: the score to beat (HI) and a toast each time you overtake an entry on the board (online if loaded, else local)
+const ordinal=n=>n+(n%10===1&&n%100!==11?'ST':n%10===2&&n%100!==12?'ND':n%10===3&&n%100!==13?'RD':'TH');
+function stepPassed(){
+  if(bw.t%15)return;const on=ONLINE.status==='ok'&&ONLINE.list&&ONLINE.list.length,list=on?ONLINE.list:loadScores(),where=on?'ONLINE':'LOCAL';
+  const key=where+list.length+':'+(list[0]?list[0].s:0),passed=list.filter(e=>e.s<bw.score).length;bw.hiScore=Math.max(bw.score,list[0]?list[0].s:0);
+  // a new board (it loaded mid-run, or changed) or a lower score (a continue): catch up quietly; dev runs get no toasts
+  if(bw.passKey!==key||bw.passed===undefined||passed<bw.passed||bw.devRun||DEV.god){bw.passKey=key;bw.passed=passed;return;}
+  if(passed>bw.passed){const place=list.length-passed+1;bw.passed=passed;toast={s:place===1?'1ST '+where+'!':'PASSED! NOW '+ordinal(place)+' '+where,t:150};
+    [784,988,1175].forEach((f,i)=>setTimeout(()=>beep(f,.08,'square',.04),i*70));}
+}
 const onlineQualifies=sc=>ONLINE.status==='ok'&&sc>0&&(ONLINE.list.length<10||sc>ONLINE.list[ONLINE.list.length-1].s);
 function loadScores(){try{const a=JSON.parse(localStorage.getItem('hc-scores')||'[]');return Array.isArray(a)?a.filter(r=>r&&typeof r.s==='number'&&typeof r.n==='string'):[];}catch(e){return [];}}
 function saveScores(list){try{localStorage.setItem('hc-scores',JSON.stringify(list.slice(0,10)));}catch(e){}}
@@ -1960,6 +1970,7 @@ function stepBrawl(){
 function stepBrawlWorld(){
   const p=bw.p,S=SECS[bw.sec];
   stepShots();
+  stepPassed();
   const foes=bFoes();
   if(bw.t%FEEL.robots.roleEvery===0)for(const e of foes.sort((a,c)=>Math.abs(a.x-p.x)-Math.abs(c.x-p.x)))if(e.role!=='attack'&&foes.filter(o=>o.role==='attack').length<FEEL.robots.maxAttackers)e.role='attack';
   for(const e of bw.ents)if(e.type)stepBrawlFoe(e);
@@ -2259,7 +2270,7 @@ function drawBrawl(){
     if(L.length>1){const inn=L[L.length-2];txt('+ '+bodyOf(inn.id).name,23,24,C.cyd);}}
   if(p.guard!==undefined&&(p.guarding||p.guard<FEEL.combat.guardMax||p.stun>0)){txt('GUARD',23,31,p.stun>0?C.mg:C.cyd);bar(23+textW('GUARD')+3,32,40,2,p.guard/FEEL.combat.guardMax,p.guard<30?C.mg:C.cy,C.cyx);}
   else txt('KNIFE ONLY',23,12,C.gr);
-  txtS(String(bw.score).padStart(6,'0'),108,5,C.wh);
+  txtS(String(bw.score).padStart(6,'0'),108,5,C.wh);if(bw.hiScore)txt('HI '+String(bw.hiScore).padStart(6,'0'),140,5,bw.score>=bw.hiScore?C.yl:C.grd);
   {const sp=curSpecial(),ok=p.pow>=spCost(sp);txt('POWER',108,13,C.yl);bar(108+textW('POWER')+3,14,44,3,p.pow/100,ok&&(T>>3)&1?C.wh:C.yl,C.yld);px(108+textW('POWER')+3+Math.round(44*spCost(sp)/100),13,1,5,C.mg);txt(SPNAME[sp],108,20,ok?C.cy:C.cyd);if(p.layers.length>1){const s2=innerSpecial();txt('+ '+SPNAME[s2],108,27,p.pow>=spCost(s2)?C.cyd:C.cyx);}}
   if(p.hits>=2){const big=p.hits>=6;txtS(p.hits+' HITS',6,32,big?C.yl:C.cy,big?2:1,'l');}
   const Lt=bw.boss&&bw.boss.st!=='dead'?bw.boss:bw.last&&bw.last.st!=='dead'?bw.last:null;
@@ -4018,7 +4029,8 @@ function render(){
   if(DEV.edit&&state==='brawl')drawEditor();
   if(paused){g.globalAlpha=.6;px(0,0,W,H,C.void);g.globalAlpha=1;px(0,42,W,50,C.void);px(0,42,W,1,C.cyd);px(0,91,W,1,C.cyd);txt('PAUSED',129,57,C.mg,3,'c');txt('PAUSED',128,56,C.yl,3,'c');['RESUME','OPTIONS'].forEach((o,i)=>{const sel=pauseSel===i;txt((sel?'> ':'')+o+(sel?' <':''),128,76+i*8,sel?((T>>4)&1?C.yl:C.wh):C.gr,1,'c');});}
   if(opts)drawOptions();
-  if(toast){const w=textW(toast.s)+10;g.globalAlpha=.85;px(128-w/2,2,w,11,C.void);g.globalAlpha=1;px(128-w/2,12,w,1,C.cyd);txt(toast.s,128,5,C.cy,1,'c');}
+  // toasts sit at the top, or just under the HUD during play
+  if(toast){const w=textW(toast.s)+10,ty=state==='brawl'?33:2;g.globalAlpha=.85;px(128-w/2,ty,w,11,C.void);g.globalAlpha=1;px(128-w/2,ty+10,w,1,C.cyd);txt(toast.s,128,ty+3,C.cy,1,'c');}
   recolour();
   present();
 }

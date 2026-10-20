@@ -24,6 +24,7 @@ Built on v4.1.
   - **The Crane's pull and freeze:** stronger pull along visible field lines; what it catches is frozen to the magnet, including you (mash A/B to break free, or get slammed down).
   - **The Crane drops the MAGNET power:** special = MAGNET PUSH (area blast), every 3rd combo hit = PULL.
 - **Block, two specials, Matryoshka legs** (branch `block-nest`): hold pad B (or V) to block — a full block from the front with a guard meter that breaks and stuns you; when nested, RT / C fire the outer body's special and LT / F the inner body's; the Matryoshka waddles on little animated legs.
+- **HI score and PASSED toasts:** the HUD shows the score to beat, and a toast marks each board entry you overtake during a run.
 - **The board is advertised:** the title shows the online leader (or your local best), and after 10 s idle the title cycles to the HIGH SCORES board and back, arcade-style.
 - **High scores** (branch `scoreboard`): LOCAL and ONLINE boards (online via Supabase: add and read only, checked, rate-limited; falls back to local when unreachable); a top-10 board in this browser with arcade initials; a run counts when it ends (END RUN at SIGNAL LOST, or finishing the campaign); continues allowed and marked; dev runs never saved; HIGH SCORES on the title menu.
 - **Dev mode is locked on the live site** until you type the cheat code IDDQD (remembered per browser; `npm run dev` is always unlocked).

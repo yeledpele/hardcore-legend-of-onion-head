@@ -96,3 +96,26 @@ test('offline, the title shows your best local score instead',async({page})=>{
   await page.reload();await page.waitForTimeout(600);
   expect(await page.evaluate(()=>window.__t.titleLeader())).toBe('BEST ZED 8400');expect(errors).toEqual([]);
 });
+test('during a run: HI shows the score to beat, and passing board entries shows toasts',async({page})=>{
+  await fakeBoard(page,[row('BEN',5000),row('ONI',3000),row('ZED',1000)]);
+  const errors=await open(page);await startCampaign(page);await page.waitForTimeout(800);
+  const toast=()=>page.evaluate(()=>window.__t.toast());
+  expect(await page.evaluate(()=>window.__t.hiScore())).toBe(5000);                        // the online #1 to beat
+  expect(await toast()).toBeFalsy();                                                       // nothing passed yet
+  await page.evaluate(()=>window.__t.setScore(2000));await expect.poll(toast).toBe('PASSED! NOW 3RD ONLINE');
+  await page.evaluate(()=>window.__t.setScore(3500));await expect.poll(toast).toBe('PASSED! NOW 2ND ONLINE');
+  await page.evaluate(()=>window.__t.setScore(6000));await expect.poll(toast).toBe('1ST ONLINE!');
+  await expect.poll(()=>page.evaluate(()=>window.__t.hiScore())).toBe(6000);              // HI follows you once you lead
+  // a continue halves the score: no toast for catching up again past the same entries... until you really pass one
+  await page.evaluate(()=>window.__t.setScore(1500));await page.waitForTimeout(400);
+  await page.evaluate(()=>window.__t.setScore(3200));await expect.poll(toast).toBe('PASSED! NOW 2ND ONLINE');
+  expect(errors).toEqual([]);
+});
+test('offline, the HI score and toasts use your local board',async({page})=>{
+  await fakeBoard(page,[],{down:true});
+  const errors=await open(page);await page.evaluate(()=>localStorage.setItem('hc-scores',JSON.stringify([{n:'ZED',s:800,l:2,c:0}])));
+  await page.reload();await page.waitForTimeout(300);await startCampaign(page);await page.waitForTimeout(800);
+  expect(await page.evaluate(()=>window.__t.hiScore())).toBe(800);
+  await page.evaluate(()=>window.__t.setScore(900));await expect.poll(()=>page.evaluate(()=>window.__t.toast())).toBe('1ST LOCAL!');
+  expect(errors).toEqual([]);
+});

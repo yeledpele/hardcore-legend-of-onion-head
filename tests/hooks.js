@@ -41,6 +41,8 @@ window.__t={
   prop:(k,dx)=>{bw.ents=bw.ents.filter(e=>!e.civ&&!e.prop);bw.ents.push({crate:true,prop:k,x:bw.p.x+dx,z:bw.p.z,h:0,hp:PROPS[k].hp,max:PROPS[k].hp,hurt:0});},
   feel:()=>FEEL,
   scores:()=>loadScores(),
+  setScore:v=>{bw.score=v;},
+  hiScore:()=>bw.hiScore,
   titleLeader:()=>titleLeader(),
   onlineStatus:()=>ONLINE.status,
   // end the run: SIGNAL LOST with this score (and continues), or the campaign ending

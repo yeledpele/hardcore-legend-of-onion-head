@@ -11,7 +11,7 @@ Steps 1–3, 5 and 6 are done (feel file, dev mode + `npm run dev`, tweak panel,
 - **Debug layer:** hit boxes, attack boxes and depth lanes; entity labels (type, state, HP); boss state and timers; mud and belt zones; frame time and FPS; slow motion, pause and single-frame step.
 
 ## Scoreboard
-- Ideas not built yet (2026-10-20): SIGNAL LOST showing your would-be rank and the online top 3, with clearer buttons (A: CONTINUE (SCORE ÷2) / B: SUBMIT); a "HI" score to beat in the HUD with "PASSED #n" toasts; LEVEL CLEAR cards with score and rank after each boss.
+- Ideas not built yet (2026-10-20): SIGNAL LOST showing your would-be rank and the online top 3, with clearer buttons (A: CONTINUE (SCORE ÷2) / B: SUBMIT); LEVEL CLEAR cards with score and rank after each boss.
 
 ## Scale
 - **Check the scenery's size against the humans.** Civilians are about 8–9 px tall; props, backdrops (doors, windows, lamps, cars, trees) and robots should read correctly next to them. Review every level and adjust where the scale feels off.
