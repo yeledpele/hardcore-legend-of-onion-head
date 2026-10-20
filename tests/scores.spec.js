@@ -79,3 +79,20 @@ test('dev runs are never sent online',async({page})=>{
   await page.evaluate(()=>window.__t.gameOver(70000,0));await page.waitForTimeout(1400);await keys(page,['KeyX']);await page.waitForTimeout(300);
   expect(await st(page)).toBe('scores');expect(fake.posts).toEqual([]);expect(errors).toEqual([]);
 });
+test('the title shows the leader, and attract mode cycles the board in and out',async({page})=>{
+  await fakeBoard(page,[row('BEN',48210),row('ONI',31150)]);
+  const errors=await open(page);await page.waitForTimeout(600);
+  expect(await page.evaluate(()=>window.__t.titleLeader())).toBe('ONLINE 1ST BEN 48210');
+  await page.evaluate(()=>{window.__t.setFeel('game','attractAfter',1);window.__t.setFeel('game','attractShow',1);});
+  await expect.poll(()=>st(page),{timeout:4000}).toBe('scores');                       // the board comes in by itself
+  await expect.poll(()=>st(page),{timeout:4000}).toBe('title');                        // and goes back
+  await expect.poll(()=>st(page),{timeout:4000}).toBe('scores');
+  await keys(page,['ArrowLeft']);expect(await st(page)).toBe('title');                   // any key returns to the title
+  expect(errors).toEqual([]);
+});
+test('offline, the title shows your best local score instead',async({page})=>{
+  await fakeBoard(page,[],{down:true});
+  const errors=await open(page);await page.evaluate(()=>localStorage.setItem('hc-scores',JSON.stringify([{n:'ZED',s:8400,l:2,c:0}])));
+  await page.reload();await page.waitForTimeout(600);
+  expect(await page.evaluate(()=>window.__t.titleLeader())).toBe('BEST ZED 8400');expect(errors).toEqual([]);
+});

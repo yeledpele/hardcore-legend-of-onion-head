@@ -3,7 +3,9 @@
 const FEEL={
   game:{
     speed: 0.85,          // master game speed: 1 = 60 steps a second; lower slows everything evenly (both modes)
-    glitch: 1             // strength of the screen glitch, shown only when you take damage and on the fail screen (0 = off)
+    glitch: 1,            // strength of the screen glitch, shown only when you take damage and on the fail screen (0 = off)
+    attractAfter: 10,     // seconds untouched on the title before the high-score board shows (attract mode)
+    attractShow: 8        // seconds the board stays before the title comes back
   },
   player:{
     jumpCore: 3.9,        // jump speed of the bare core

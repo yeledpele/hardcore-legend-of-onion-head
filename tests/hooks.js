@@ -41,6 +41,7 @@ window.__t={
   prop:(k,dx)=>{bw.ents=bw.ents.filter(e=>!e.civ&&!e.prop);bw.ents.push({crate:true,prop:k,x:bw.p.x+dx,z:bw.p.z,h:0,hp:PROPS[k].hp,max:PROPS[k].hp,hurt:0});},
   feel:()=>FEEL,
   scores:()=>loadScores(),
+  titleLeader:()=>titleLeader(),
   onlineStatus:()=>ONLINE.status,
   // end the run: SIGNAL LOST with this score (and continues), or the campaign ending
   gameOver:(sc,cont)=>{bw.score=sc;bw.cont=cont||0;bw.win=false;bw.endT=0;state='bover';},

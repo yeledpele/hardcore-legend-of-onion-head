@@ -529,6 +529,10 @@ async function onlineSubmit(rec){
     ONLINE.sent=r.ok;}catch(e){ONLINE.sent=false;}
   ONLINE.status='idle';onlineFetch();
 }
+// the leader shown on the title: the online #1, or your best here when offline; '' when there are no scores
+function titleLeader(){const o=ONLINE.status==='ok'&&ONLINE.list&&ONLINE.list[0],l=loadScores()[0];
+  return o?'ONLINE 1ST '+o.n+' '+o.s:l?'BEST '+l.n+' '+l.s:'';}
+let titleIdle=0;
 const onlineQualifies=sc=>ONLINE.status==='ok'&&sc>0&&(ONLINE.list.length<10||sc>ONLINE.list[ONLINE.list.length-1].s);
 function loadScores(){try{const a=JSON.parse(localStorage.getItem('hc-scores')||'[]');return Array.isArray(a)?a.filter(r=>r&&typeof r.s==='number'&&typeof r.n==='string'):[];}catch(e){return [];}}
 function saveScores(list){try{localStorage.setItem('hc-scores',JSON.stringify(list.slice(0,10)));}catch(e){}}
@@ -573,7 +577,7 @@ function drawScores(){
     txt(String(i+1).padStart(2,' ')+'.',62,y,col,1,'r');txtChars(r.n,70,y,col,1);txt(String(r.s).padStart(6,'0'),150,y,col,1,'r');
     txt(r.l===0?'END':'L'+r.l,174,y,r.l===0?C.yl:C.cyd,1,'l');if(r.c)txt('+'+r.c+'C',196,y,C.grd,1,'l');});
   if(v.msg)txtS(v.msg,128,124,C.mg,1,'c');else if(v.rank<0&&v.score!==undefined)txtS('YOUR SCORE '+v.score,128,124,C.wh,1,'c');
-  if((T>>4)&1)txt('< > SWITCH BOARD   A / B: TITLE',128,136,C.grd,1,'c');
+  if(v.attract){if((T>>4)&1)txt('PRESS START',128,136,C.yl,1,'c');}else if((T>>4)&1)txt('< > SWITCH BOARD   A / B: TITLE',128,136,C.grd,1,'c');
 }
 
 // ---------- options menu (from the title or the pause screen) ----------
@@ -894,6 +898,14 @@ function step(){
   // the pause menu: RESUME or OPTIONS
   if(paused){if(P.up||P.down){pauseSel=1-pauseSel;beep(700,.04,'square',.03);}if(P.a||P.start){if(pauseSel===0){paused=false;beep(600,.08,'square',.04,100);}else{opts={sel:0,from:'pause'};beep(660,.08,'square',.03);}}return;}
   if(hitstop>0){hitstop--;return;}
+  // attract mode: after a while untouched on the title, the high-score board shows, then the title comes back
+  if(state==='title'||(state==='scores'&&scoreView&&scoreView.attract)){
+    if(ONLINE.status==='idle')onlineFetch();
+    const anyKey=KEYS.some(k=>P[k]),sec=60*Math.max(.1,FEEL.game.speed||1);
+    if(anyKey)titleIdle=0;else titleIdle++;
+    if(state==='scores'){if(anyKey||titleIdle>FEEL.game.attractShow*sec){state='title';scoreView=null;titleIdle=0;}return;}
+    if(titleIdle>FEEL.game.attractAfter*sec&&!opts){state='scores';scoreView={rank:-1,msg:'',attract:true,tab:ONLINE.status==='ok'&&ONLINE.list&&ONLINE.list.length?'online':'local'};titleIdle=0;return;}
+  }
   if(state==='title'){
     if(Math.random()<.02)glitch=Math.max(glitch,.45);
     if(P.up||P.down){titleSel=(titleSel+(P.up?3:1))%4;beep(700,.04,'square',.03);glitch=Math.max(glitch,.3);}
@@ -3668,6 +3680,7 @@ function drawTitle(){
   px(104,112,48,2,C.cyx);
   ['PLAY','CLASSIC','HIGH SCORES','OPTIONS'].forEach((o,i)=>{const sel=titleSel===i,y=108+i*7;txtS((sel?'> ':'')+o+(sel?' <':''),128,y,sel?((T>>4)&1?C.yl:C.wh):C.gr,1,'c');});
   txt('PROTOTYPE V'+VERSION,252,137,C.grd,1,'r');
+  {const ld=titleLeader();if(ld)txtChars(ld,128-ld.length*2,137,(T>>5)&1?C.yl:C.wh,1);}
   txt(LANG==='he'?'L: ENGLISH':'L: HEBREW',4,137,(T>>6)&1?C.cyd:C.grd,1,'l');
 }
 function drawIntro(){
